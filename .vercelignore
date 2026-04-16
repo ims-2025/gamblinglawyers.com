@@ -1,0 +1,12 @@
+# Editorial planning docs (not part of the deployed site)
+01_homepage_and_global_copy.md
+02_profile_templates_and_samples.md
+03_jurisdiction_landing_pages.md
+04_practice_area_landing_pages.md
+
+# Seed data used to regenerate index.html — not served publicly
+seed_csvs/
+
+# Internal tooling
+verify.js
+*.py

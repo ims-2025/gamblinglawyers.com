@@ -1,0 +1,32 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dependencies
+node_modules/
+
+# Env files
+.env
+.env.local
+.env.*.local
+
+# Build output
+dist/
+build/
+.next/
+.vercel/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Python build artefacts from data pipeline
+__pycache__/
+*.pyc
+*.pyo
