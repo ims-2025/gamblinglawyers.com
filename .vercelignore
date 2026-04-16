@@ -7,6 +7,10 @@
 # Seed data used to regenerate index.html — not served publicly
 seed_csvs/
 
+# Internal SEO / content planning docs (not part of the deployed site)
+SEO_AUDIT.md
+CONTENT_STRATEGY.md
+
 # Internal tooling
 verify.js
 *.py

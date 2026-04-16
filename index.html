@@ -3,8 +3,36 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>GamblingLawyers.com — The Global Directory for Gambling Law</title>
-<meta name="description" content="GamblingLawyers.com is the global directory and intelligence portal for gambling law. Find specialist licensing, regulatory and transactional counsel in every regulated market.">
+<meta name="theme-color" content="#0F2A47">
+<title>Gambling Lawyers — Global Directory of Specialist Gambling &amp; iGaming Counsel</title>
+<meta name="description" content="GamblingLawyers.com is the global directory and intelligence portal for specialist gambling law. 115 verified firms across 17+ regulated markets, plus analytical coverage of licensing, regulatory and transactional developments.">
+<link rel="canonical" href="https://www.gamblinglawyers.com/">
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="GamblingLawyers.com">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://www.gamblinglawyers.com/">
+<meta property="og:title" content="Gambling Lawyers — Global Directory of Specialist Gambling &amp; iGaming Counsel">
+<meta property="og:description" content="Global directory of specialist gambling counsel. 115 verified firms across 17+ regulated markets.">
+<meta property="og:image" content="https://www.gamblinglawyers.com/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="GamblingLawyers.com — The Global Directory for Gambling Law">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gambling Lawyers — Global Directory of Specialist Gambling &amp; iGaming Counsel">
+<meta name="twitter:description" content="Global directory of specialist gambling counsel. 115 verified firms across 17+ regulated markets.">
+<meta name="twitter:image" content="https://www.gamblinglawyers.com/og-card.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -288,16 +316,16 @@ p{margin:0 0 1em}
 
 <header class="site-header">
   <div class="header-inner">
-    <a href="#/" class="brand">GamblingLawyers<span class="brand-dot">.</span>com</a>
+    <a href="/" class="brand">GamblingLawyers<span class="brand-dot">.</span>com</a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
     <nav class="main-nav" id="mainNav">
-      <a href="#/lawyers">Lawyers</a>
-      <a href="#/law-firms">Law Firms</a>
-      <a href="#/jurisdictions">Jurisdictions</a>
-      <a href="#/practice-areas">Practice Areas</a>
-      <a href="#/news">News</a>
-      <a href="#/about">About</a>
-      <a href="#/request-introduction" class="cta">Request Introduction</a>
+      <a href="/lawyers">Lawyers</a>
+      <a href="/law-firms">Law Firms</a>
+      <a href="/jurisdictions">Jurisdictions</a>
+      <a href="/practice-areas">Practice Areas</a>
+      <a href="/news">News</a>
+      <a href="/about">About</a>
+      <a href="/request-introduction" class="cta">Request Introduction</a>
     </nav>
   </div>
 </header>
@@ -318,26 +346,26 @@ p{margin:0 0 1em}
       <div>
         <h4>Directory</h4>
         <ul>
-          <li><a href="#/lawyers">Lawyers</a></li>
-          <li><a href="#/law-firms">Law Firms</a></li>
-          <li><a href="#/jurisdictions">Jurisdictions</a></li>
-          <li><a href="#/practice-areas">Practice Areas</a></li>
+          <li><a href="/lawyers">Lawyers</a></li>
+          <li><a href="/law-firms">Law Firms</a></li>
+          <li><a href="/jurisdictions">Jurisdictions</a></li>
+          <li><a href="/practice-areas">Practice Areas</a></li>
         </ul>
       </div>
       <div>
         <h4>Company</h4>
         <ul>
-          <li><a href="#/about">About</a></li>
-          <li><a href="#/news">News &amp; Insights</a></li>
-          <li><a href="#/contact">Contact</a></li>
-          <li><a href="#/get-listed">Get Listed</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/news">News &amp; Insights</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/get-listed">Get Listed</a></li>
         </ul>
       </div>
       <div>
         <h4>For Clients</h4>
         <ul>
-          <li><a href="#/request-introduction">Request an Introduction</a></li>
-          <li><a href="#/contact">Editorial Enquiries</a></li>
+          <li><a href="/request-introduction">Request an Introduction</a></li>
+          <li><a href="/contact">Editorial Enquiries</a></li>
           <li><a href="mailto:info@gamblinglawyers.com">info@gamblinglawyers.com</a></li>
         </ul>
       </div>
@@ -562,9 +590,195 @@ const routes = {
   'get-listed': renderGetListed
 };
 
+/* ============================================================
+   SEO METADATA + STRUCTURED DATA
+   ============================================================ */
+const SITE_URL = 'https://www.gamblinglawyers.com';
+const SITE_NAME = 'GamblingLawyers.com';
+const DEFAULT_DESC = 'Global directory and intelligence portal for specialist gambling and iGaming counsel. Find licensing, regulatory and transactional lawyers in every regulated market.';
+const OG_IMAGE = SITE_URL + '/og-card.png';
+
+function setMeta(name, content, attr){
+  attr = attr || 'name';
+  let el = document.querySelector('meta[' + attr + '="' + name + '"]');
+  if(!el){ el = document.createElement('meta'); el.setAttribute(attr, name); document.head.appendChild(el); }
+  el.setAttribute('content', content);
+}
+function setLink(rel, href){
+  let el = document.querySelector('link[rel="' + rel + '"]');
+  if(!el){ el = document.createElement('link'); el.setAttribute('rel', rel); document.head.appendChild(el); }
+  el.setAttribute('href', href);
+}
+function truncateDesc(s, max){
+  max = max || 160;
+  if(!s) return DEFAULT_DESC;
+  return s.length > max ? s.slice(0, max - 3).trim() + '...' : s;
+}
+
+function getPageMeta(parts){
+  const path = parts.length ? '/' + parts.join('/') : '/';
+  let title, description;
+  if(parts.length === 0){
+    title = 'Gambling Lawyers — Global Directory of Specialist Gambling & iGaming Counsel';
+    description = 'GamblingLawyers.com is the global directory and intelligence portal for specialist gambling law. 115 verified firms across 17+ regulated markets.';
+  } else if(parts.length === 1){
+    const section = parts[0];
+    const titles = {
+      'law-firms': 'Specialist Gambling Law Firms — 115 Verified Firms Worldwide | GamblingLawyers.com',
+      'lawyers': 'Gambling Lawyers — Specialist Counsel Directory | GamblingLawyers.com',
+      'jurisdictions': 'Gambling Law Jurisdictions — Regulated Markets Worldwide | GamblingLawyers.com',
+      'practice-areas': 'Gambling Law Practice Areas — From Licensing to M&A | GamblingLawyers.com',
+      'news': 'Gambling Law News & Analysis | GamblingLawyers.com',
+      'about': 'About GamblingLawyers.com — Independent. Curated. Global.',
+      'contact': 'Contact | GamblingLawyers.com',
+      'request-introduction': 'Request an Introduction to a Specialist Gambling Lawyer',
+      'get-listed': 'Get Listed on GamblingLawyers.com — Specialist Gambling Law Firms'
+    };
+    const descs = {
+      'law-firms': '115 verified specialist gambling law firms across the major regulated markets. Filter by jurisdiction, practice area and language.',
+      'lawyers': 'Directory of specialist gambling lawyers across the regulated markets we cover. Filter by jurisdiction, practice area and language.',
+      'jurisdictions': 'Gambling law market guides for 35 jurisdictions. Licensing, regulators, statutory frameworks and specialist counsel.',
+      'practice-areas': '20 specialist gambling law practice areas from licensing and compliance to M&A and disputes. Find counsel with the specific expertise you need.',
+      'news': 'Editorial analysis of licensing, regulatory and transactional developments in gambling law. Written for operators, suppliers and investors.',
+      'about': 'Independent directory and intelligence portal for specialist gambling counsel. Editorial criteria, our model, and how to contact us.',
+      'contact': 'Editorial and partnership enquiries. Email info@gamblinglawyers.com or use the contact form.',
+      'request-introduction': 'Confidential introductions to specialist gambling counsel in any market we cover. No fees for clients.',
+      'get-listed': 'Verification criteria and listing process for specialist gambling law firms. Chambers, Legal 500 and IMGL-ranked firms welcome.'
+    };
+    title = titles[section] || section + ' | ' + SITE_NAME;
+    description = descs[section] || DEFAULT_DESC;
+  } else if(parts.length === 2){
+    const section = parts[0], slug = parts[1];
+    if(section === 'law-firms'){
+      const f = findFirm(slug);
+      if(f){ title = f.firm_name + ' — Gambling Law Firm | ' + SITE_NAME; description = truncateDesc(f.short_description); }
+    } else if(section === 'lawyers'){
+      const l = findLawyer(slug);
+      if(l){ title = l.full_name + ' — ' + l.title + ', ' + firmName(l.firm_slug) + ' | Gambling Lawyer Profile'; description = truncateDesc(l.short_summary); }
+    } else if(section === 'jurisdictions'){
+      const j = findJur(slug);
+      if(j){ title = j.country_name + ' Gambling Lawyers — Licensing, Compliance & Regulatory Counsel'; description = truncateDesc('Specialist gambling lawyers in ' + j.country_name + '. ' + j.market_descriptor); }
+    } else if(section === 'practice-areas'){
+      const p = findPA(slug);
+      if(p){ title = p.practice_area + ' — Specialist Gambling Lawyers | ' + SITE_NAME; description = truncateDesc(p.description); }
+    } else if(section === 'news'){
+      const a = findArticle(slug);
+      if(a){ title = a.title + ' | ' + SITE_NAME; description = truncateDesc(a.excerpt); }
+    }
+    if(!title){ title = 'Page Not Found | ' + SITE_NAME; description = DEFAULT_DESC; }
+  } else {
+    title = 'Page Not Found | ' + SITE_NAME; description = DEFAULT_DESC;
+  }
+  return { title: title, description: description, path: path, canonical: SITE_URL + path };
+}
+
+function updatePageMeta(parts){
+  const m = getPageMeta(parts);
+  document.title = m.title;
+  setMeta('description', m.description);
+  setLink('canonical', m.canonical);
+  setMeta('og:title', m.title, 'property');
+  setMeta('og:description', m.description, 'property');
+  setMeta('og:url', m.canonical, 'property');
+  setMeta('og:image', OG_IMAGE, 'property');
+  setMeta('twitter:title', m.title);
+  setMeta('twitter:description', m.description);
+  setMeta('twitter:image', OG_IMAGE);
+  updateJsonLd(parts);
+}
+
+function orgSchema(){
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': SITE_URL + '/#org',
+    'name': SITE_NAME,
+    'url': SITE_URL,
+    'logo': SITE_URL + '/android-chrome-512x512.png',
+    'description': DEFAULT_DESC,
+    'contactPoint': { '@type':'ContactPoint', 'contactType':'editorial', 'email':'info@gamblinglawyers.com' }
+  };
+}
+
+function updateJsonLd(parts){
+  const out = [ orgSchema() ];
+  if(parts.length === 0){
+    out.push({ '@context':'https://schema.org', '@type':'WebSite', 'name':SITE_NAME, 'url':SITE_URL, 'publisher':{ '@id':SITE_URL + '/#org' } });
+  } else if(parts.length === 2){
+    const section = parts[0], slug = parts[1];
+    const sectionLabels = { 'law-firms':'Law Firms','lawyers':'Lawyers','jurisdictions':'Jurisdictions','practice-areas':'Practice Areas','news':'News' };
+    let itemName = slug;
+    if(section === 'law-firms'){ const f = findFirm(slug); if(f) itemName = f.firm_name; }
+    else if(section === 'lawyers'){ const l = findLawyer(slug); if(l) itemName = l.full_name; }
+    else if(section === 'jurisdictions'){ const j = findJur(slug); if(j) itemName = j.country_name; }
+    else if(section === 'practice-areas'){ const p = findPA(slug); if(p) itemName = p.practice_area; }
+    else if(section === 'news'){ const a = findArticle(slug); if(a) itemName = a.title; }
+    out.push({
+      '@context':'https://schema.org', '@type':'BreadcrumbList',
+      'itemListElement':[
+        { '@type':'ListItem','position':1,'name':'Home','item':SITE_URL + '/' },
+        { '@type':'ListItem','position':2,'name':sectionLabels[section]||section,'item':SITE_URL + '/' + section },
+        { '@type':'ListItem','position':3,'name':itemName,'item':SITE_URL + '/' + section + '/' + slug }
+      ]
+    });
+    if(section === 'law-firms'){
+      const f = findFirm(slug);
+      if(f){
+        const ls = { '@context':'https://schema.org', '@type':'LegalService',
+          'name':f.firm_name, 'url':SITE_URL + '/law-firms/' + f.slug,
+          'description':f.short_description,
+          'areaServed':f.jurisdictions.map(j=>({ '@type':'Country','name':jurName(j) })),
+          'serviceType':f.practice_areas.map(pa=>{ const p = findPA(pa); return p ? p.practice_area : pa; })
+        };
+        if(f.website) ls.sameAs = f.website;
+        if(f.office_locations && f.office_locations[0]) ls.address = { '@type':'PostalAddress','addressLocality':f.office_locations[0] };
+        if(f.founding_year) ls.foundingDate = String(f.founding_year);
+        out.push(ls);
+      }
+    } else if(section === 'lawyers'){
+      const l = findLawyer(slug);
+      if(l){
+        const f = findFirm(l.firm_slug);
+        const p = { '@context':'https://schema.org', '@type':'Person',
+          'name':l.full_name, 'jobTitle':l.title, 'description':l.short_summary,
+          'knowsLanguage':l.languages, 'url':SITE_URL + '/lawyers/' + l.slug,
+          'knowsAbout':l.practice_areas.map(pa=>{ const pp = findPA(pa); return pp ? pp.practice_area : pa; })
+        };
+        if(f) p.worksFor = { '@type':'LegalService','name':f.firm_name,'url':SITE_URL + '/law-firms/' + f.slug };
+        out.push(p);
+      }
+    } else if(section === 'jurisdictions'){
+      const det = JURISDICTION_DETAILS[slug];
+      if(det && det.faq && det.faq.length){
+        out.push({ '@context':'https://schema.org','@type':'FAQPage',
+          'mainEntity': det.faq.map(q=>({ '@type':'Question','name':q.q,'acceptedAnswer':{ '@type':'Answer','text':q.a } })) });
+      }
+    } else if(section === 'news'){
+      const a = findArticle(slug);
+      if(a){
+        out.push({ '@context':'https://schema.org','@type':'Article',
+          'headline':a.title, 'description':a.excerpt,
+          'datePublished':a.publish_date, 'dateModified':a.publish_date,
+          'author': a.author_slug ? { '@type':'Person','name':a.author } : { '@type':'Organization','name':a.author,'@id':SITE_URL + '/#org' },
+          'publisher':{ '@id':SITE_URL + '/#org','name':SITE_NAME,'logo':{ '@type':'ImageObject','url':SITE_URL + '/android-chrome-512x512.png' } },
+          'mainEntityOfPage':{ '@type':'WebPage','@id':SITE_URL + '/news/' + a.slug },
+          'articleSection':a.category });
+      }
+    }
+  }
+  document.querySelectorAll('script[data-ld]').forEach(s=>s.remove());
+  out.forEach((schema, i) => {
+    const s = document.createElement('script');
+    s.type = 'application/ld+json';
+    s.setAttribute('data-ld','p' + i);
+    s.textContent = JSON.stringify(schema);
+    document.head.appendChild(s);
+  });
+}
+
 function router(){
-  const hash = window.location.hash.replace(/^#\/?/, '') || '';
-  const parts = hash.split('/').filter(Boolean);
+  const path = window.location.pathname.replace(/^\/+|\/+$/g, '');
+  const parts = path ? path.split('/').filter(Boolean) : [];
   const app = document.getElementById('app');
   app.innerHTML = '';
   let html = '';
@@ -588,11 +802,13 @@ function router(){
   window.scrollTo(0,0);
   highlightNav(parts[0] || '');
   attachPageHandlers();
+  updatePageMeta(parts);
 }
 
 function highlightNav(section){
+  const target = section ? '/' + section : '/';
   document.querySelectorAll('.main-nav a').forEach(a=>{
-    a.classList.toggle('active', a.getAttribute('href') === '#/' + section);
+    a.classList.toggle('active', a.getAttribute('href') === target);
   });
 }
 
@@ -601,7 +817,7 @@ function render404(){
     <p class="eyebrow">404</p>
     <h1>Page not found</h1>
     <p class="lede" style="margin:0 auto 32px">The page you were looking for is not here. It may have moved, or never existed.</p>
-    <a href="#/" class="btn btn-primary">Return home</a>
+    <a href="/" class="btn btn-primary">Return home</a>
   </section>`;
 }
 
@@ -652,8 +868,8 @@ function renderHome(){
         <h1>Specialist gambling lawyers <em>in every regulated market.</em></h1>
         <p class="lede">A curated directory of licensing, regulatory and transactional counsel for operators, suppliers and investors in the gambling industry. Independent, confidential, and global.</p>
         <div class="btn-row">
-          <a href="#/request-introduction" class="btn btn-primary">Request an introduction</a>
-          <a href="#/lawyers" class="btn btn-ghost-light">Browse the directory</a>
+          <a href="/request-introduction" class="btn btn-primary">Request an introduction</a>
+          <a href="/lawyers" class="btn btn-ghost-light">Browse the directory</a>
         </div>
       </div>
     </div>
@@ -678,10 +894,10 @@ function renderHome(){
           <h2>Counsel in every regulated market</h2>
           <p class="lede">From the MGA and the Gambling Commission to the SPA and the GGL — browse lawyers and firms by the market you operate in.</p>
         </div>
-        <a href="#/jurisdictions" class="btn-link">View all 35 jurisdictions</a>
+        <a href="/jurisdictions" class="btn-link">View all 35 jurisdictions</a>
       </div>
       <div class="juris-grid">
-        ${featuredJur.map(j=>`<a href="#/jurisdictions/${j.slug}">${esc(j.country_name)}<span class="rg">${esc(j.regulator)}</span></a>`).join('')}
+        ${featuredJur.map(j=>`<a href="/jurisdictions/${j.slug}">${esc(j.country_name)}<span class="rg">${esc(j.regulator)}</span></a>`).join('')}
       </div>
     </div>
   </section>
@@ -694,10 +910,10 @@ function renderHome(){
           <h2>From licensing to M&amp;A, payments to disputes</h2>
           <p class="lede">Specialist counsel on the full range of legal work that regulated gaming operators and suppliers need.</p>
         </div>
-        <a href="#/practice-areas" class="btn-link">View all 20 practice areas</a>
+        <a href="/practice-areas" class="btn-link">View all 20 practice areas</a>
       </div>
       <div class="prac-grid">
-        ${pa.map(p=>`<a href="#/practice-areas/${p.slug}"><h4>${esc(p.area_name)}</h4><p>${esc(p.short_descriptor)}</p></a>`).join('')}
+        ${pa.map(p=>`<a href="/practice-areas/${p.slug}"><h4>${esc(p.area_name)}</h4><p>${esc(p.short_descriptor)}</p></a>`).join('')}
       </div>
     </div>
   </section>
@@ -710,11 +926,11 @@ function renderHome(){
           <h2>Verified gambling law practices worldwide</h2>
           <p class="lede">A curated selection of specialist firms advising the regulated gambling industry.</p>
         </div>
-        <a href="#/law-firms" class="btn-link">Browse all firms</a>
+        <a href="/law-firms" class="btn-link">Browse all firms</a>
       </div>
       <div class="grid grid-3">
         ${featuredFirms.map(f=>`
-          <a href="#/law-firms/${f.slug}" class="card-link">
+          <a href="/law-firms/${f.slug}" class="card-link">
             <div class="card">
               <h3>${esc(f.firm_name)}</h3>
               <div class="card-sub">${esc(f.office_locations[0])}${f.office_locations.length>1?' +'+(f.office_locations.length-1):''}</div>
@@ -735,11 +951,11 @@ ${featuredLawyers.length === 0 ? '' : `  <section class="section">
           <h2>Specialist counsel, on the record</h2>
           <p class="lede">Lawyers featured on GamblingLawyers.com are verified practitioners in regulated gaming work.</p>
         </div>
-        <a href="#/lawyers" class="btn-link">Browse all lawyers</a>
+        <a href="/lawyers" class="btn-link">Browse all lawyers</a>
       </div>
       <div class="grid grid-4">
         ${featuredLawyers.map(l=>`
-          <a href="#/lawyers/${l.slug}" class="card-link">
+          <a href="/lawyers/${l.slug}" class="card-link">
             <div class="card">
               <h3>${esc(l.full_name)}</h3>
               <div class="card-sub">${esc(l.title)} · ${esc(firmName(l.firm_slug))}</div>
@@ -759,11 +975,11 @@ ${latestArticles.length === 0 ? '' : `  <section class="section section-bone">
           <h2>Intelligence for gambling industry counsel</h2>
           <p class="lede">Analysis of licensing, regulatory and transactional developments across the markets we cover.</p>
         </div>
-        <a href="#/news" class="btn-link">Read all insights</a>
+        <a href="/news" class="btn-link">Read all insights</a>
       </div>
       <div class="grid grid-3">
         ${latestArticles.map(a=>`
-          <a href="#/news/${a.slug}" class="card-link">
+          <a href="/news/${a.slug}" class="card-link">
             <div class="card">
               <div class="card-sub">${esc(a.category)} · ${fmtDate(a.publish_date)}</div>
               <h3 style="font-size:1.15rem">${esc(a.title)}</h3>
@@ -824,8 +1040,8 @@ ${latestArticles.length === 0 ? '' : `  <section class="section section-bone">
       <h2>Need specialist gambling counsel?</h2>
       <p>Tell us what you need. We will introduce you to the right firm, confidentially, at no cost to you.</p>
       <div class="btn-row" style="justify-content:center">
-        <a href="#/request-introduction" class="btn btn-primary">Request an introduction</a>
-        <a href="#/get-listed" class="btn btn-ghost-light">Are you a law firm? Get listed</a>
+        <a href="/request-introduction" class="btn btn-primary">Request an introduction</a>
+        <a href="/get-listed" class="btn btn-ghost-light">Are you a law firm? Get listed</a>
       </div>
     </div>
   </section>
@@ -837,7 +1053,7 @@ function renderLawyers(){
   const html = `
   <div class="page-head">
     <div class="container">
-      <p class="crumbs"><a href="#/">Home</a><span>/</span>Lawyers</p>
+      <p class="crumbs"><a href="/">Home</a><span>/</span>Lawyers</p>
       <p class="eyebrow">Directory</p>
       <h1>Specialist gambling lawyers</h1>
       <p class="lede">Browse verified lawyers with focused gambling industry practices. Filter by jurisdiction and practice area.</p>
@@ -877,11 +1093,11 @@ function renderLawyersList(){
     const hasFilters = jur || pa || q;
     el.innerHTML = hasFilters
       ? '<div class="empty">No lawyers match these filters. Try widening your search.</div>'
-      : '<div class="empty" style="grid-column:1/-1;text-align:center;padding:80px 24px;background:var(--bone);border-radius:4px;"><p style="font-family:\'Playfair Display\',serif;font-size:1.4rem;color:var(--ink);margin-bottom:12px">Lawyer directory launching soon</p><p style="color:var(--slate)">We are finalising verified profiles of specialist gambling lawyers at the firms listed in our directory. In the meantime, <a href="#/law-firms" style="color:var(--gilt-2)">browse firms</a> or <a href="#/request-introduction" style="color:var(--gilt-2)">request an introduction</a>.</p></div>';
+      : '<div class="empty" style="grid-column:1/-1;text-align:center;padding:80px 24px;background:var(--bone);border-radius:4px;"><p style="font-family:\'Playfair Display\',serif;font-size:1.4rem;color:var(--ink);margin-bottom:12px">Lawyer directory launching soon</p><p style="color:var(--slate)">We are finalising verified profiles of specialist gambling lawyers at the firms listed in our directory. In the meantime, <a href="/law-firms" style="color:var(--gilt-2)">browse firms</a> or <a href="/request-introduction" style="color:var(--gilt-2)">request an introduction</a>.</p></div>';
     return;
   }
   el.innerHTML = list.map(l=>`
-    <a href="#/lawyers/${l.slug}" class="card-link">
+    <a href="/lawyers/${l.slug}" class="card-link">
       <div class="card">
         <h3>${esc(l.full_name)}</h3>
         <div class="card-sub">${esc(l.title)} · ${esc(firmName(l.firm_slug))}</div>
@@ -898,7 +1114,7 @@ function renderFirms(){
   const html = `
   <div class="page-head">
     <div class="container">
-      <p class="crumbs"><a href="#/">Home</a><span>/</span>Law Firms</p>
+      <p class="crumbs"><a href="/">Home</a><span>/</span>Law Firms</p>
       <p class="eyebrow">Directory</p>
       <h1>Gambling law firms worldwide</h1>
       <p class="lede">A curated selection of specialist firms advising the regulated gambling industry across every major jurisdiction.</p>
@@ -933,7 +1149,7 @@ function renderFirmsList(){
   const el=document.getElementById('firmsList');
   if(!list.length){el.innerHTML='<div class="empty">No firms match these filters. Try widening your search.</div>';return;}
   el.innerHTML = list.map(f=>`
-    <a href="#/law-firms/${f.slug}" class="card-link">
+    <a href="/law-firms/${f.slug}" class="card-link">
       <div class="card">
         <h3>${esc(f.firm_name)}</h3>
         <div class="card-sub">${esc(f.office_locations.join(' · '))}</div>
@@ -948,7 +1164,7 @@ function renderJurisdictionsIndex(){
   return `
   <div class="page-head">
     <div class="container">
-      <p class="crumbs"><a href="#/">Home</a><span>/</span>Jurisdictions</p>
+      <p class="crumbs"><a href="/">Home</a><span>/</span>Jurisdictions</p>
       <p class="eyebrow">By market</p>
       <h1>Gambling jurisdictions worldwide</h1>
       <p class="lede">Specialist counsel in every regulated gambling market. Browse the 35 jurisdictions we cover, from the MGA and the UK Gambling Commission to the SPA and the GGL.</p>
@@ -965,7 +1181,7 @@ function renderJurisdictionsIndex(){
             <div class="head-text"><p class="eyebrow">${esc(r)}</p><h2>${esc(r)}</h2></div>
           </div>
           <div class="juris-grid">
-            ${list.map(j=>`<a href="#/jurisdictions/${j.slug}">${esc(j.country_name)}<span class="rg">${esc(j.regulator)}</span></a>`).join('')}
+            ${list.map(j=>`<a href="/jurisdictions/${j.slug}">${esc(j.country_name)}<span class="rg">${esc(j.regulator)}</span></a>`).join('')}
           </div>
         </div>`;
       }).join('')}
@@ -977,7 +1193,7 @@ function renderPracticeAreasIndex(){
   return `
   <div class="page-head">
     <div class="container">
-      <p class="crumbs"><a href="#/">Home</a><span>/</span>Practice Areas</p>
+      <p class="crumbs"><a href="/">Home</a><span>/</span>Practice Areas</p>
       <p class="eyebrow">By specialism</p>
       <h1>Gambling law practice areas</h1>
       <p class="lede">The 20 practice areas that define the regulated gambling legal market — from licensing and regulatory compliance to payments, M&amp;A and responsible gaming.</p>
@@ -986,7 +1202,7 @@ function renderPracticeAreasIndex(){
   <section class="section">
     <div class="container">
       <div class="prac-grid">
-        ${DATA.practiceAreas.map(p=>`<a href="#/practice-areas/${p.slug}"><h4>${esc(p.area_name)}</h4><p>${esc(p.short_descriptor)}</p></a>`).join('')}
+        ${DATA.practiceAreas.map(p=>`<a href="/practice-areas/${p.slug}"><h4>${esc(p.area_name)}</h4><p>${esc(p.short_descriptor)}</p></a>`).join('')}
       </div>
     </div>
   </section>`;
@@ -996,7 +1212,7 @@ function renderNewsIndex(){
   return `
   <div class="page-head">
     <div class="container">
-      <p class="crumbs"><a href="#/">Home</a><span>/</span>News &amp; Insights</p>
+      <p class="crumbs"><a href="/">Home</a><span>/</span>News &amp; Insights</p>
       <p class="eyebrow">Intelligence</p>
       <h1>News &amp; insights for gambling counsel</h1>
       <p class="lede">Analysis of licensing, regulatory and transactional developments across the markets we cover. Written by specialist gambling lawyers.</p>
@@ -1006,7 +1222,7 @@ function renderNewsIndex(){
     <div class="container">
       ${articles.length ? `<div class="grid grid-3">
         ${articles.map(a=>`
-          <a href="#/news/${a.slug}" class="card-link">
+          <a href="/news/${a.slug}" class="card-link">
             <div class="card">
               <div class="card-sub">${esc(a.category)} · ${fmtDate(a.publish_date)}</div>
               <h3 style="font-size:1.2rem">${esc(a.title)}</h3>
@@ -1014,7 +1230,7 @@ function renderNewsIndex(){
               <div class="card-foot">By ${esc(a.author)}</div>
             </div>
           </a>`).join('')}
-      </div>` : `<div class="empty" style="text-align:center;padding:80px 24px;background:var(--bone);border-radius:4px;"><p style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--ink);margin-bottom:12px">Editorial launching soon</p><p style="color:var(--slate)">Our editorial team is commissioning analysis from specialist gambling counsel across the markets we cover. Check back shortly, or <a href="#/contact" style="color:var(--gilt-2)">contact us</a> to contribute.</p></div>`}
+      </div>` : `<div class="empty" style="text-align:center;padding:80px 24px;background:var(--bone);border-radius:4px;"><p style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--ink);margin-bottom:12px">Editorial launching soon</p><p style="color:var(--slate)">Our editorial team is commissioning analysis from specialist gambling counsel across the markets we cover. Check back shortly, or <a href="/contact" style="color:var(--gilt-2)">contact us</a> to contribute.</p></div>`}
     </div>
   </section>`;
 }
@@ -1022,7 +1238,7 @@ function renderAbout(){
   return `
   <div class="page-head">
     <div class="container">
-      <p class="crumbs"><a href="#/">Home</a><span>/</span>About</p>
+      <p class="crumbs"><a href="/">Home</a><span>/</span>About</p>
       <p class="eyebrow">About us</p>
       <h1>Independent. Curated. Global.</h1>
       <p class="lede">GamblingLawyers.com is the global directory and intelligence portal for gambling law. We exist to connect the operators, suppliers and investors of the regulated gambling industry with specialist counsel in every market they need.</p>
@@ -1039,7 +1255,7 @@ function renderAbout(){
       <h2>What we are not</h2>
       <p>GamblingLawyers.com is not a law firm. We do not provide legal advice. We do not engage with clients on matters. Every engagement is between the client and the firm we introduce, on the firm's standard terms. The directory is provided on an as-is basis and the inclusion of a firm on the directory is not a recommendation or endorsement of its work in any specific matter.</p>
       <h2>Contact</h2>
-      <p>All enquiries go to <a href="mailto:info@gamblinglawyers.com">info@gamblinglawyers.com</a>. The fastest route to speak to a specialist firm is via the <a href="#/request-introduction">Request Introduction</a> form.</p>
+      <p>All enquiries go to <a href="mailto:info@gamblinglawyers.com">info@gamblinglawyers.com</a>. The fastest route to speak to a specialist firm is via the <a href="/request-introduction">Request Introduction</a> form.</p>
     </div>
   </section>`;
 }
@@ -1048,10 +1264,10 @@ function renderContact(){
   return `
   <div class="page-head">
     <div class="container">
-      <p class="crumbs"><a href="#/">Home</a><span>/</span>Contact</p>
+      <p class="crumbs"><a href="/">Home</a><span>/</span>Contact</p>
       <p class="eyebrow">Contact</p>
       <h1>Get in touch</h1>
-      <p class="lede">For editorial, partnership or general enquiries, email <a href="mailto:info@gamblinglawyers.com">info@gamblinglawyers.com</a> or use the form below. If you need a lawyer, use the <a href="#/request-introduction">Request Introduction</a> form instead.</p>
+      <p class="lede">For editorial, partnership or general enquiries, email <a href="mailto:info@gamblinglawyers.com">info@gamblinglawyers.com</a> or use the form below. If you need a lawyer, use the <a href="/request-introduction">Request Introduction</a> form instead.</p>
     </div>
   </div>
   <section class="section">
@@ -1090,7 +1306,7 @@ function renderRequestIntro(){
   return `
   <div class="page-head">
     <div class="container">
-      <p class="crumbs"><a href="#/">Home</a><span>/</span>Request Introduction</p>
+      <p class="crumbs"><a href="/">Home</a><span>/</span>Request Introduction</p>
       <p class="eyebrow">For clients</p>
       <h1>Request an introduction</h1>
       <p class="lede">Tell us what you need. Our editorial team will match you with a specialist firm on the directory and introduce you confidentially. There is no charge to you, and your enquiry is never published, shared or sold.</p>
@@ -1142,7 +1358,7 @@ function renderGetListed(){
   return `
   <div class="page-head">
     <div class="container">
-      <p class="crumbs"><a href="#/">Home</a><span>/</span>Get Listed</p>
+      <p class="crumbs"><a href="/">Home</a><span>/</span>Get Listed</p>
       <p class="eyebrow">For law firms</p>
       <h1>Get listed on GamblingLawyers.com</h1>
       <p class="lede">GamblingLawyers.com is a curated directory. We list specialist firms and lawyers working in regulated gambling law. If you believe your firm is a fit, we would like to hear from you.</p>
@@ -1195,11 +1411,11 @@ function renderLawyerDetail(slug){
   return `
   <div class="profile-head">
     <div class="container">
-      <p class="crumbs" style="color:rgba(245,241,232,0.6)"><a href="#/" style="color:inherit">Home</a><span>/</span><a href="#/lawyers" style="color:inherit">Lawyers</a><span>/</span>${esc(l.full_name)}</p>
+      <p class="crumbs" style="color:rgba(245,241,232,0.6)"><a href="/" style="color:inherit">Home</a><span>/</span><a href="/lawyers" style="color:inherit">Lawyers</a><span>/</span>${esc(l.full_name)}</p>
       <p class="eyebrow">Lawyer profile</p>
       <h1>${esc(l.full_name)}</h1>
       <div class="role">${esc(l.title)}</div>
-      <div class="firm">${firm ? `<a href="#/law-firms/${firm.slug}" style="color:var(--gilt-2)">${esc(firm.firm_name)}</a>` : esc(l.firm_slug)} · ${esc(l.office_location)}</div>
+      <div class="firm">${firm ? `<a href="/law-firms/${firm.slug}" style="color:var(--gilt-2)">${esc(firm.firm_name)}</a>` : esc(l.firm_slug)} · ${esc(l.office_location)}</div>
       <div class="meta">
         <div><strong>Experience</strong>${l.experience_years} years</div>
         <div><strong>Languages</strong>${l.languages.join(', ')}</div>
@@ -1215,14 +1431,14 @@ function renderLawyerDetail(slug){
           <h2>About</h2>
           ${bio.map(p=>`<p>${esc(p)}</p>`).join('')}
           <h2>Jurisdictions</h2>
-          <p>${l.jurisdictions.map(j=>`<a href="#/jurisdictions/${j}">${esc(jurName(j))}</a>`).join(' · ')}</p>
+          <p>${l.jurisdictions.map(j=>`<a href="/jurisdictions/${j}">${esc(jurName(j))}</a>`).join(' · ')}</p>
           <h2>Practice areas</h2>
-          <div class="tag-row">${l.practice_areas.map(p=>`<a href="#/practice-areas/${p}" class="tag">${esc(paName(p))}</a>`).join('')}</div>
+          <div class="tag-row">${l.practice_areas.map(p=>`<a href="/practice-areas/${p}" class="tag">${esc(paName(p))}</a>`).join('')}</div>
           ${articlesBy.length ? `
             <h2 style="margin-top:48px">Insights by ${esc(l.full_name)}</h2>
             <div class="grid grid-2">
               ${articlesBy.map(a=>`
-                <a href="#/news/${a.slug}" class="card-link"><div class="card">
+                <a href="/news/${a.slug}" class="card-link"><div class="card">
                   <div class="card-sub">${esc(a.category)} · ${fmtDate(a.publish_date)}</div>
                   <h3 style="font-size:1.1rem">${esc(a.title)}</h3>
                   <div class="card-body">${esc(a.excerpt)}</div>
@@ -1233,13 +1449,13 @@ function renderLawyerDetail(slug){
           <div class="card">
             <h4>Request an introduction</h4>
             <p style="font-size:.9rem;color:var(--slate);margin-bottom:16px">All enquiries to ${esc(l.full_name)} are handled confidentially by our editorial team.</p>
-            <a href="#/request-introduction" class="btn btn-primary" style="display:block;text-align:center">Request introduction</a>
+            <a href="/request-introduction" class="btn btn-primary" style="display:block;text-align:center">Request introduction</a>
           </div>
           ${firm ? `<div class="card" style="margin-top:16px">
             <h4>Firm</h4>
             <p style="margin:0 0 8px;font-weight:600;color:var(--ink)">${esc(firm.firm_name)}</p>
             <p style="margin:0 0 12px;font-size:.88rem;color:var(--slate)">${esc(firm.short_description)}</p>
-            <a href="#/law-firms/${firm.slug}" class="btn-link">View firm profile</a>
+            <a href="/law-firms/${firm.slug}" class="btn-link">View firm profile</a>
           </div>` : ''}
         </aside>
       </div>
@@ -1261,7 +1477,7 @@ function renderFirmDetail(slug){
   return `
   <div class="profile-head">
     <div class="container">
-      <p class="crumbs" style="color:rgba(245,241,232,0.6)"><a href="#/" style="color:inherit">Home</a><span>/</span><a href="#/law-firms" style="color:inherit">Law Firms</a><span>/</span>${esc(f.firm_name)}</p>
+      <p class="crumbs" style="color:rgba(245,241,232,0.6)"><a href="/" style="color:inherit">Home</a><span>/</span><a href="/law-firms" style="color:inherit">Law Firms</a><span>/</span>${esc(f.firm_name)}</p>
       <p class="eyebrow">Law firm profile</p>
       <h1>${esc(f.firm_name)}</h1>
       <div class="firm">${esc(f.short_description)}</div>
@@ -1285,14 +1501,14 @@ function renderFirmDetail(slug){
           <h2>Offices</h2>
           <p>${f.office_locations.map(esc).join(' · ')}</p>
           <h2>Jurisdictions</h2>
-          <p>${f.jurisdictions.map(j=>`<a href="#/jurisdictions/${j}">${esc(jurName(j))}</a>`).join(' · ')}</p>
+          <p>${f.jurisdictions.map(j=>`<a href="/jurisdictions/${j}">${esc(jurName(j))}</a>`).join(' · ')}</p>
           <h2>Practice areas</h2>
-          <div class="tag-row">${f.practice_areas.map(p=>`<a href="#/practice-areas/${p}" class="tag">${esc(paName(p))}</a>`).join('')}</div>
+          <div class="tag-row">${f.practice_areas.map(p=>`<a href="/practice-areas/${p}" class="tag">${esc(paName(p))}</a>`).join('')}</div>
           ${lawyersAtFirm.length ? `
             <h2 style="margin-top:48px">Lawyers at this firm</h2>
             <div class="grid grid-2">
               ${lawyersAtFirm.map(l=>`
-                <a href="#/lawyers/${l.slug}" class="card-link"><div class="card">
+                <a href="/lawyers/${l.slug}" class="card-link"><div class="card">
                   <h3>${esc(l.full_name)}</h3>
                   <div class="card-sub">${esc(l.title)} · ${esc(l.office_location)}</div>
                   <div class="card-body">${esc(l.short_summary)}</div>
@@ -1302,7 +1518,7 @@ function renderFirmDetail(slug){
             <h2 style="margin-top:48px">Insights</h2>
             <div class="grid grid-2">
               ${articlesByFirm.map(a=>`
-                <a href="#/news/${a.slug}" class="card-link"><div class="card">
+                <a href="/news/${a.slug}" class="card-link"><div class="card">
                   <div class="card-sub">${esc(a.category)} · ${fmtDate(a.publish_date)}</div>
                   <h3 style="font-size:1.1rem">${esc(a.title)}</h3>
                   <div class="card-body">${esc(a.excerpt)}</div>
@@ -1313,7 +1529,7 @@ function renderFirmDetail(slug){
           <div class="card">
             <h4>Request an introduction</h4>
             <p style="font-size:.9rem;color:var(--slate);margin-bottom:16px">All enquiries to ${esc(f.firm_name)} are handled confidentially by our editorial team.</p>
-            <a href="#/request-introduction" class="btn btn-primary" style="display:block;text-align:center">Request introduction</a>
+            <a href="/request-introduction" class="btn btn-primary" style="display:block;text-align:center">Request introduction</a>
           </div>
           <div class="card" style="margin-top:16px">
             <h4>At a glance</h4>
@@ -1527,7 +1743,7 @@ function renderJurisdictionDetail(slug){
   return `
   <div class="profile-head">
     <div class="container">
-      <p class="crumbs" style="color:rgba(245,241,232,0.6)"><a href="#/" style="color:inherit">Home</a><span>/</span><a href="#/jurisdictions" style="color:inherit">Jurisdictions</a><span>/</span>${esc(j.country_name)}</p>
+      <p class="crumbs" style="color:rgba(245,241,232,0.6)"><a href="/" style="color:inherit">Home</a><span>/</span><a href="/jurisdictions" style="color:inherit">Jurisdictions</a><span>/</span>${esc(j.country_name)}</p>
       <p class="eyebrow">${esc(j.region)} · ${esc(j.market_status)}</p>
       <h1>${esc(j.country_name)} gambling lawyers</h1>
       <p class="lede" style="color:rgba(245,241,232,0.85)">${esc(j.market_descriptor)}</p>
@@ -1565,7 +1781,7 @@ function renderJurisdictionDetail(slug){
             <h2 style="margin-top:48px">Law firms in ${esc(j.country_name)}</h2>
             <div class="grid grid-2">
               ${firmsHere.map(f=>`
-                <a href="#/law-firms/${f.slug}" class="card-link"><div class="card">
+                <a href="/law-firms/${f.slug}" class="card-link"><div class="card">
                   <h3>${esc(f.firm_name)}</h3>
                   <div class="card-sub">${esc(f.office_locations[0])}</div>
                   <div class="card-body">${esc(f.short_description)}</div>
@@ -1575,7 +1791,7 @@ function renderJurisdictionDetail(slug){
             <h2 style="margin-top:48px">Lawyers in ${esc(j.country_name)}</h2>
             <div class="grid grid-2">
               ${lawyersHere.map(l=>`
-                <a href="#/lawyers/${l.slug}" class="card-link"><div class="card">
+                <a href="/lawyers/${l.slug}" class="card-link"><div class="card">
                   <h3>${esc(l.full_name)}</h3>
                   <div class="card-sub">${esc(l.title)} · ${esc(firmName(l.firm_slug))}</div>
                   <div class="card-body">${esc(l.short_summary)}</div>
@@ -1585,7 +1801,7 @@ function renderJurisdictionDetail(slug){
             <h2 style="margin-top:48px">Insights on ${esc(j.country_name)}</h2>
             <div class="grid grid-2">
               ${articlesHere.map(a=>`
-                <a href="#/news/${a.slug}" class="card-link"><div class="card">
+                <a href="/news/${a.slug}" class="card-link"><div class="card">
                   <div class="card-sub">${esc(a.category)} · ${fmtDate(a.publish_date)}</div>
                   <h3 style="font-size:1.1rem">${esc(a.title)}</h3>
                   <div class="card-body">${esc(a.excerpt)}</div>
@@ -1596,7 +1812,7 @@ function renderJurisdictionDetail(slug){
           <div class="card">
             <h4>Request an introduction</h4>
             <p style="font-size:.9rem;color:var(--slate);margin-bottom:16px">Tell us what you need in ${esc(j.country_name)}. We will introduce you to a specialist firm, confidentially.</p>
-            <a href="#/request-introduction" class="btn btn-primary" style="display:block;text-align:center">Request introduction</a>
+            <a href="/request-introduction" class="btn btn-primary" style="display:block;text-align:center">Request introduction</a>
           </div>
           <div class="card" style="margin-top:16px">
             <h4>At a glance</h4>
@@ -1623,7 +1839,7 @@ function renderPracticeAreaDetail(slug){
   return `
   <div class="profile-head">
     <div class="container">
-      <p class="crumbs" style="color:rgba(245,241,232,0.6)"><a href="#/" style="color:inherit">Home</a><span>/</span><a href="#/practice-areas" style="color:inherit">Practice Areas</a><span>/</span>${esc(p.area_name)}</p>
+      <p class="crumbs" style="color:rgba(245,241,232,0.6)"><a href="/" style="color:inherit">Home</a><span>/</span><a href="/practice-areas" style="color:inherit">Practice Areas</a><span>/</span>${esc(p.area_name)}</p>
       <p class="eyebrow">Practice area</p>
       <h1>${esc(p.area_name)} lawyers</h1>
       <p class="lede" style="color:rgba(245,241,232,0.85)">${esc(p.short_descriptor)}</p>
@@ -1650,7 +1866,7 @@ function renderPracticeAreaDetail(slug){
             <h2 style="margin-top:48px">Law firms with ${esc(p.area_name)} practices</h2>
             <div class="grid grid-2">
               ${firmsHere.map(f=>`
-                <a href="#/law-firms/${f.slug}" class="card-link"><div class="card">
+                <a href="/law-firms/${f.slug}" class="card-link"><div class="card">
                   <h3>${esc(f.firm_name)}</h3>
                   <div class="card-sub">${esc(f.office_locations[0])}</div>
                   <div class="card-body">${esc(f.short_description)}</div>
@@ -1660,7 +1876,7 @@ function renderPracticeAreaDetail(slug){
             <h2 style="margin-top:48px">${esc(p.area_name)} lawyers</h2>
             <div class="grid grid-2">
               ${lawyersHere.map(l=>`
-                <a href="#/lawyers/${l.slug}" class="card-link"><div class="card">
+                <a href="/lawyers/${l.slug}" class="card-link"><div class="card">
                   <h3>${esc(l.full_name)}</h3>
                   <div class="card-sub">${esc(l.title)} · ${esc(firmName(l.firm_slug))}</div>
                   <div class="card-body">${esc(l.short_summary)}</div>
@@ -1671,7 +1887,7 @@ function renderPracticeAreaDetail(slug){
           <div class="card">
             <h4>Need ${esc(p.area_name)} counsel?</h4>
             <p style="font-size:.9rem;color:var(--slate);margin-bottom:16px">Tell us the jurisdiction and scope. We introduce you to a specialist firm confidentially.</p>
-            <a href="#/request-introduction" class="btn btn-primary" style="display:block;text-align:center">Request introduction</a>
+            <a href="/request-introduction" class="btn btn-primary" style="display:block;text-align:center">Request introduction</a>
           </div>
           <div class="card" style="margin-top:16px">
             <h4>Quick facts</h4>
@@ -1745,12 +1961,12 @@ function renderArticleDetail(slug){
   return `
   <div class="article-head">
     <div class="container">
-      <p class="crumbs"><a href="#/">Home</a><span>/</span><a href="#/news">News</a><span>/</span>${esc(a.category)}</p>
+      <p class="crumbs"><a href="/">Home</a><span>/</span><a href="/news">News</a><span>/</span>${esc(a.category)}</p>
       <p class="eyebrow">${esc(a.category)}</p>
       <h1>${esc(a.title)}</h1>
       <p class="lede">${esc(a.excerpt)}</p>
       <div class="article-meta">
-        <div>By ${a.author_slug ? `<a href="#/lawyers/${a.author_slug}">${esc(a.author)}</a>` : esc(a.author)}</div>
+        <div>By ${a.author_slug ? `<a href="/lawyers/${a.author_slug}">${esc(a.author)}</a>` : esc(a.author)}</div>
         <div>${fmtDate(a.publish_date)}</div>
       </div>
     </div>
@@ -1758,8 +1974,8 @@ function renderArticleDetail(slug){
   <article class="article-body">
     <div class="container">
       ${body.map(p=>`<p>${esc(p)}</p>`).join('')}
-      ${a.related_jurisdictions.length ? `<p><strong>Related jurisdictions:</strong> ${a.related_jurisdictions.map(j=>`<a href="#/jurisdictions/${j}">${esc(jurName(j))}</a>`).join(', ')}</p>` : ''}
-      ${a.related_firms.length ? `<p><strong>Related firms:</strong> ${a.related_firms.map(f=>`<a href="#/law-firms/${f}">${esc(firmName(f))}</a>`).join(', ')}</p>` : ''}
+      ${a.related_jurisdictions.length ? `<p><strong>Related jurisdictions:</strong> ${a.related_jurisdictions.map(j=>`<a href="/jurisdictions/${j}">${esc(jurName(j))}</a>`).join(', ')}</p>` : ''}
+      ${a.related_firms.length ? `<p><strong>Related firms:</strong> ${a.related_firms.map(f=>`<a href="/law-firms/${f}">${esc(firmName(f))}</a>`).join(', ')}</p>` : ''}
     </div>
   </article>
   ${related.length ? `
@@ -1768,7 +1984,7 @@ function renderArticleDetail(slug){
       <div class="section-head"><div class="head-text"><p class="eyebrow">More from ${esc(a.category)}</p><h2>Related insights</h2></div></div>
       <div class="grid grid-3">
         ${related.map(r=>`
-          <a href="#/news/${r.slug}" class="card-link">
+          <a href="/news/${r.slug}" class="card-link">
             <div class="card">
               <div class="card-sub">${esc(r.category)} · ${fmtDate(r.publish_date)}</div>
               <h3 style="font-size:1.15rem">${esc(r.title)}</h3>
@@ -1819,7 +2035,29 @@ document.getElementById('year').textContent=new Date().getFullYear();
 document.getElementById('navToggle').addEventListener('click',()=>{
   document.getElementById('mainNav').classList.toggle('open');
 });
-window.addEventListener('hashchange',router);
+/* History-API navigation: intercept same-origin link clicks */
+document.addEventListener('click', e => {
+  const a = e.target.closest && e.target.closest('a');
+  if(!a) return;
+  const href = a.getAttribute('href');
+  if(!href || !href.startsWith('/') || href.startsWith('//')) return;
+  if(a.target && a.target !== '_self') return;
+  if(a.hasAttribute('download')) return;
+  if(e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  e.preventDefault();
+  if(href !== window.location.pathname + window.location.search){
+    history.pushState(null, '', href);
+    router();
+  }
+});
+window.addEventListener('popstate', router);
+
+/* Redirect legacy hash URLs (#/foo) to real paths so bookmarks still work */
+if(window.location.hash.startsWith('#/')){
+  const newPath = window.location.hash.replace(/^#\/?/, '/') || '/';
+  history.replaceState(null, '', newPath);
+}
+
 window.addEventListener('DOMContentLoaded',()=>{
   router();
   setTimeout(()=>document.getElementById('cookieBanner').classList.add('show'),1200);
