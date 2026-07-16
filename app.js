@@ -1,0 +1,1844 @@
+/* ============================================================
+   DATA — derived from seed_csvs (verified law firms from Chambers, Legal 500, IMGL)
+   ============================================================ */
+const DATA = {
+  jurisdictions: [
+    {slug:"malta",country_name:"Malta",region:"Europe",regulator:"Malta Gaming Authority (MGA)",market_status:"Regulated",market_descriptor:"Europe's principal online gambling hub and a long-standing base for operators serving regulated EU markets.",featured:true},
+    {slug:"united-kingdom",country_name:"United Kingdom",region:"Europe",regulator:"Gambling Commission",market_status:"Regulated",market_descriptor:"One of the world's most developed regulated gambling markets, supervised by the Gambling Commission.",featured:true},
+    {slug:"united-states",country_name:"United States",region:"Americas",regulator:"State gaming commissions",market_status:"Regulated",market_descriptor:"A patchwork of state-by-state regimes for commercial casino, sports betting and interactive gaming.",featured:true},
+    {slug:"brazil",country_name:"Brazil",region:"Americas",regulator:"Secretaria de Prêmios e Apostas (SPA)",market_status:"Regulated",market_descriptor:"Latin America's largest regulated gambling market, reshaped by a new federal betting framework.",featured:true},
+    {slug:"germany",country_name:"Germany",region:"Europe",regulator:"Gemeinsame Glücksspielbehörde der Länder (GGL)",market_status:"Regulated",market_descriptor:"A unified federal online gambling regime under the State Treaty, supervised by the GGL.",featured:true},
+    {slug:"netherlands",country_name:"Netherlands",region:"Europe",regulator:"Kansspelautoriteit (KSA)",market_status:"Regulated",market_descriptor:"A regulated online gambling market operating under the Remote Gambling Act (Koa).",featured:true},
+    {slug:"sweden",country_name:"Sweden",region:"Europe",regulator:"Spelinspektionen",market_status:"Regulated",market_descriptor:"A licensed Scandinavian market with a channelisation-focused regulatory approach."},
+    {slug:"austria",country_name:"Austria",region:"Europe",regulator:"Federal Ministry of Finance",market_status:"Partially regulated",market_descriptor:"A market with a long-standing monopoly model and active debate over liberalisation."},
+    {slug:"ireland",country_name:"Ireland",region:"Europe",regulator:"Gambling Regulatory Authority of Ireland",market_status:"Emerging",market_descriptor:"A market transitioning to a new regulator under the Gambling Regulation Act."},
+    {slug:"isle-of-man",country_name:"Isle of Man",region:"Europe",regulator:"Gambling Supervision Commission (GSC)",market_status:"Regulated",market_descriptor:"A long-standing licensing jurisdiction favoured for corporate and B2B gaming structures."},
+    {slug:"gibraltar",country_name:"Gibraltar",region:"Europe",regulator:"Gibraltar Gambling Division",market_status:"Regulated",market_descriptor:"A long-standing gambling licensing centre with deep corporate and tax infrastructure."},
+    {slug:"alderney",country_name:"Alderney",region:"Europe",regulator:"Alderney Gambling Control Commission (AGCC)",market_status:"Regulated",market_descriptor:"A small-jurisdiction licensing regime known for its B2B and platform-provider framework."},
+    {slug:"curacao",country_name:"Curaçao",region:"Americas",regulator:"Curaçao Gaming Control Board",market_status:"Regulated",market_descriptor:"A reformed Caribbean licensing regime operating under the new NOOGH framework."},
+    {slug:"estonia",country_name:"Estonia",region:"Europe",regulator:"Estonian Tax and Customs Board",market_status:"Regulated",market_descriptor:"A licensed European market with a stable framework for remote gambling operators."},
+    {slug:"latvia",country_name:"Latvia",region:"Europe",regulator:"Lotteries and Gambling Supervision Inspection",market_status:"Regulated",market_descriptor:"A licensed Baltic market with remote gambling supervision by a dedicated inspection."},
+    {slug:"lithuania",country_name:"Lithuania",region:"Europe",regulator:"Gaming Control Authority",market_status:"Regulated",market_descriptor:"A licensed Baltic market supervised by the Gaming Control Authority."},
+    {slug:"denmark",country_name:"Denmark",region:"Europe",regulator:"Spillemyndigheden",market_status:"Regulated",market_descriptor:"A licensed Nordic market with a mature online gambling framework."},
+    {slug:"finland",country_name:"Finland",region:"Europe",regulator:"Ministry of the Interior",market_status:"Partially regulated",market_descriptor:"A market operating under a monopoly model with ongoing reform debate."},
+    {slug:"norway",country_name:"Norway",region:"Europe",regulator:"Lotteritilsynet",market_status:"Partially regulated",market_descriptor:"A monopoly-based market supervised by Lotteritilsynet."},
+    {slug:"italy",country_name:"Italy",region:"Europe",regulator:"Agenzia delle Dogane e dei Monopoli (ADM)",market_status:"Regulated",market_descriptor:"A large licensed Southern European market supervised by ADM."},
+    {slug:"spain",country_name:"Spain",region:"Europe",regulator:"Dirección General de Ordenación del Juego (DGOJ)",market_status:"Regulated",market_descriptor:"A licensed Southern European market supervised by the DGOJ."},
+    {slug:"portugal",country_name:"Portugal",region:"Europe",regulator:"Serviço de Regulação e Inspeção de Jogos (SRIJ)",market_status:"Regulated",market_descriptor:"A licensed Iberian market supervised by SRIJ."},
+    {slug:"belgium",country_name:"Belgium",region:"Europe",regulator:"Kansspelcommissie",market_status:"Regulated",market_descriptor:"A regulated market supervised by the Gaming Commission with strict marketing rules."},
+    {slug:"switzerland",country_name:"Switzerland",region:"Europe",regulator:"Interkantonale Geldspielaufsicht (Gespa)",market_status:"Regulated",market_descriptor:"A regulated market where online casino is tied to land-based licensees."},
+    {slug:"canada",country_name:"Canada",region:"Americas",regulator:"Provincial gaming authorities",market_status:"Regulated",market_descriptor:"A provincial framework with Ontario's iGaming Ontario as the principal commercial online market."},
+    {slug:"argentina",country_name:"Argentina",region:"Americas",regulator:"Provincial gaming regulators",market_status:"Regulated",market_descriptor:"A provincial framework, with Buenos Aires Province and City among the principal markets."},
+    {slug:"mexico",country_name:"Mexico",region:"Americas",regulator:"Dirección General de Juegos y Sorteos",market_status:"Partially regulated",market_descriptor:"A federal framework with ongoing debate over online gambling modernisation."},
+    {slug:"colombia",country_name:"Colombia",region:"Americas",regulator:"Coljuegos",market_status:"Regulated",market_descriptor:"One of the earliest Latin American jurisdictions to license online gambling."},
+    {slug:"peru",country_name:"Peru",region:"Americas",regulator:"Ministry of Foreign Trade and Tourism (Mincetur)",market_status:"Regulated",market_descriptor:"A Latin American market with a recent online gambling licensing regime."},
+    {slug:"chile",country_name:"Chile",region:"Americas",regulator:"Superintendencia de Casinos de Juego",market_status:"Emerging",market_descriptor:"A market with ongoing legislative work on an online gambling framework."},
+    {slug:"south-africa",country_name:"South Africa",region:"Africa",regulator:"National Gambling Board",market_status:"Regulated",market_descriptor:"A market with provincial licensing for sports betting and active online debate."},
+    {slug:"india",country_name:"India",region:"Asia-Pacific",regulator:"State-level regulators",market_status:"Partially regulated",market_descriptor:"A patchwork of state-level regimes, with skill-gaming as a defining feature."},
+    {slug:"philippines",country_name:"Philippines",region:"Asia-Pacific",regulator:"PAGCOR",market_status:"Regulated",market_descriptor:"A licensed market with PAGCOR as the principal regulator, including offshore arrangements."},
+    {slug:"australia",country_name:"Australia",region:"Asia-Pacific",regulator:"Australian Communications and Media Authority (ACMA) and state regulators",market_status:"Regulated",market_descriptor:"A federal and state framework covering sports betting, racing and online services."},
+    {slug:"new-zealand",country_name:"New Zealand",region:"Asia-Pacific",regulator:"Department of Internal Affairs",market_status:"Regulated",market_descriptor:"A market with a longstanding framework and ongoing reform of online gambling."}
+  ],
+  practiceAreas: [
+    {slug:"licensing",area_name:"Licensing",short_descriptor:"Specialist counsel on licence applications, renewals, variations and suitability across every regulated gaming jurisdiction."},
+    {slug:"regulatory-compliance",area_name:"Regulatory Compliance",short_descriptor:"Ongoing compliance programmes, supervisory engagement and remediation for licensed gaming operators and suppliers."},
+    {slug:"aml-kyc",area_name:"AML & KYC",short_descriptor:"Anti-money laundering frameworks, customer due diligence and source-of-funds work for regulated gaming operators."},
+    {slug:"corporate-ma",area_name:"Corporate & M&A",short_descriptor:"Transactions, corporate structuring and fundraising for operators, suppliers and investors in the gaming industry."},
+    {slug:"payments-fintech",area_name:"Payments & Fintech",short_descriptor:"Payments strategy, PSP structuring and fintech counsel for licensed gaming operators and the providers that serve them."},
+    {slug:"advertising-promotions",area_name:"Advertising & Promotions",short_descriptor:"Marketing compliance, promotional design and affiliate law for operators in regulated gaming markets."},
+    {slug:"responsible-gaming",area_name:"Responsible Gaming",short_descriptor:"Player-protection frameworks, duty-of-care programmes and responsible-gambling controls for licensed operators."},
+    {slug:"data-protection-gdpr",area_name:"Data Protection & GDPR",short_descriptor:"Privacy, data governance and GDPR advice for licensed gaming operators and their service providers."},
+    {slug:"intellectual-property",area_name:"Intellectual Property",short_descriptor:"Brand, game IP, licensing and enforcement for operators, suppliers and content producers."},
+    {slug:"commercial-contracts",area_name:"Commercial Contracts",short_descriptor:"Drafting and negotiation of the commercial agreements that underpin regulated gaming businesses."},
+    {slug:"litigation-disputes",area_name:"Litigation & Disputes",short_descriptor:"Contentious work for operators, suppliers and investors — commercial, regulatory and cross-border."},
+    {slug:"tax",area_name:"Tax",short_descriptor:"Gaming taxation, remittance, transfer pricing and cross-border tax structuring for the gambling industry."},
+    {slug:"employment",area_name:"Employment",short_descriptor:"Workforce, executive and regulatory-employment matters for licensed gaming operators and suppliers."},
+    {slug:"market-entry-strategy",area_name:"Market Entry Strategy",short_descriptor:"Cross-border strategy and sequencing for operators and suppliers entering new regulated jurisdictions."},
+    {slug:"sweepstakes-social-casino",area_name:"Sweepstakes & Social Casino",short_descriptor:"Regulatory and promotional counsel for sweepstakes, social casino and adjacent products."},
+    {slug:"skill-games-fantasy-sports",area_name:"Skill Games & Fantasy Sports",short_descriptor:"Legal counsel on skill-gaming, daily fantasy sports and adjacent product categories."},
+    {slug:"sports-betting",area_name:"Sports Betting",short_descriptor:"Sports betting licensing, product and commercial counsel across regulated jurisdictions."},
+    {slug:"casino",area_name:"Casino",short_descriptor:"Online and land-based casino counsel across licensing, operations and commercial matters."},
+    {slug:"poker",area_name:"Poker",short_descriptor:"Regulatory and commercial counsel for operators of regulated online and live poker products."},
+    {slug:"affiliate-compliance",area_name:"Affiliate Compliance",short_descriptor:"Affiliate programme structuring, contracting and supervision for licensed gaming operators."}
+  ],
+  firms: [
+    {slug:"ambiel-belfiore-hanna-advogados",firm_name:"Ambiel Belfiore Hanna Advogados",short_description:"Sports and entertainment-focused firm advising gaming operators on regulatory compliance, betting law, and sports-related matters.",founding_year:2008,team_size_label:"11-50",office_locations:["São Paulo, Brazil"],languages:["Portuguese","English"],jurisdictions:["brazil"],practice_areas:["regulatory-compliance","sports-betting","licensing","aml-kyc","responsible-gaming"],website:"https://ambiel.adv.br/en/",sources:["https://chambers.com/law-firm/ambiel-belfiore-e-hanna-advogados-brazil-95:22789239","https://www.lawinsport.com/sports-law-advisors/law-firms/item/ambiel-belfiore-gomes-hanna-advogados","https://ambiel.adv.br/en/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"bichara-e-motta-advogados",firm_name:"Bichara e Motta Advogados",short_description:"Sports and entertainment specialist providing gambling and betting law advice covering licensing, regulatory compliance, and responsible gaming.",founding_year:2001,team_size_label:"51-200",office_locations:["São Paulo, Brazil","Rio de Janeiro, Brazil","Brasília, Brazil","Belo Horizonte, Brazil","Vitória, Brazil"],languages:["Portuguese","English"],jurisdictions:["brazil"],practice_areas:["licensing","regulatory-compliance","sports-betting","aml-kyc","responsible-gaming","advertising-promotions"],website:"https://www.bicharaemotta.com.br/en/",sources:["https://chambers.com/department/bichara-e-motta-advogados-gambling-and-betting-brazil-95:3656:41:1:5547","https://www.bicharaemotta.com.br/en/betting-law-enacted-in-brazil-overview-of-key-rules/","https://www.bicharaemotta.com.br/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"demarest-advogados",firm_name:"Demarest Advogados",short_description:"Large full-service firm advising gambling and betting operators on corporate matters, M&A, tax, and intellectual property.",founding_year:1948,team_size_label:"200+",office_locations:["São Paulo, Brazil","Rio de Janeiro, Brazil","Brasília, Brazil"],languages:["Portuguese","English"],jurisdictions:["brazil"],practice_areas:["licensing","regulatory-compliance","corporate-ma","tax","sports-betting","casino","intellectual-property"],website:"https://www.demarest.com.br/",sources:["https://www.demarest.com.br/en/gambling-regulation-in-brazil/","https://chambers.com/law-firm/demarest-advogados-brazil-95:2342","https://www.demarest.com.br/en/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"finocchio-and-ustra",firm_name:"Finocchio & Ustra",short_description:"Campinas-based full-service firm with experience advising on Brazil's betting and gaming regulatory framework and SPA licensing.",founding_year:null,team_size_label:"51-200",office_locations:["Campinas, Brazil","São Paulo, Brazil","Ribeirão Preto, Brazil","São José dos Campos, Brazil"],languages:["Portuguese","English"],jurisdictions:["brazil"],practice_areas:["licensing","regulatory-compliance","sports-betting","aml-kyc"],website:"https://www.fius.com.br/en/",sources:["https://chambers.com/law-firm/finocchio-ustra-brazil-95:23032926","https://www.legal500.com/firms/236700-finocchio-ustra-sociedade-de-advogados/c-brazil/news-and-developments/brazils-ministry-of-finance-receives-over-100-applications-from-betting-companies-to-operate-in-2025","https://www.fius.com.br/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"lefosse-advogados",firm_name:"Lefosse Advogados",short_description:"Full-service firm with focused gambling and betting practice, advising operators on licensing procedures and regulatory compliance.",founding_year:null,team_size_label:"51-200",office_locations:["São Paulo, Brazil","Rio de Janeiro, Brazil","Brasília, Brazil"],languages:["Portuguese","English"],jurisdictions:["brazil"],practice_areas:["licensing","regulatory-compliance","sports-betting","casino","aml-kyc","advertising-promotions"],website:"https://lefosse.com/en/",sources:["https://chambers.com/department/lefosse-advogados-gambling-and-betting-brazil-95:3656:41:1:3486","https://chambers.com/law-firm/lefosse-advogados-brazil-95:3486","https://lefosse.com/en/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"machado-meyer",firm_name:"Machado Meyer",short_description:"Large full-service firm with dedicated gaming and betting team advising on SPA licensing, compliance, and responsible gaming policies.",founding_year:1972,team_size_label:"200+",office_locations:["São Paulo, Brazil","Rio de Janeiro, Brazil","Brasília, Brazil","Belo Horizonte, Brazil"],languages:["Portuguese","English"],jurisdictions:["brazil"],practice_areas:["licensing","regulatory-compliance","aml-kyc","sports-betting","casino","responsible-gaming","tax"],website:"https://www.machadomeyer.com.br/",sources:["https://www.machadomeyer.com.br/en/practice-areas/industries/gaming-and-betting","https://www.machadomeyer.com.br/en/recent-publications/publications/digital-law/an-overview-of-gambling-betting-gaming-and-wagering-practices","https://chambers.com/law-firm/machado-meyer-brazil-95:3490"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"maia-yoshiyasu-advogados",firm_name:"Maia Yoshiyasu Advogados",short_description:"Leading Brazilian gaming firm specializing in sports betting, online casinos, e-sports, fantasy sports, and responsible gaming.",founding_year:2016,team_size_label:"11-50",office_locations:["São Paulo, Brazil"],languages:["Portuguese","English","Spanish"],jurisdictions:["brazil"],practice_areas:["licensing","regulatory-compliance","sports-betting","casino","aml-kyc","responsible-gaming","market-entry-strategy"],website:"https://mylaw.com.br/en/",sources:["https://mylaw.com.br/en/areas/gaming/","https://iclg.com/firms/maia-yoshiyasu-advogados","https://chambers.com/law-firm/maia-yoshiyasu-advogados-mylaw-brazil-95:23013532"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"mattos-filho",firm_name:"Mattos Filho",short_description:"Full-service firm with experienced gambling and betting team, advising on licensing, regulatory compliance, and entertainment law.",founding_year:1992,team_size_label:"200+",office_locations:["São Paulo, Brazil","Rio de Janeiro, Brazil","Brasília, Brazil","Campinas, Brazil"],languages:["Portuguese","English"],jurisdictions:["brazil"],practice_areas:["licensing","regulatory-compliance","sports-betting","casino","aml-kyc","advertising-promotions","tax"],website:"https://www.mattosfilho.com.br/",sources:["https://chambers.com/department/mattos-filho-gambling-and-betting-brazil-95:3656:41:1:2558","https://chambers.com/law-firm/mattos-filho-brazil-95:2558","https://www.mattosfilho.com.br/"],key_lawyer_slugs:[],verified:true,featured:true},
+    {slug:"pinheiro-neto-advogados",firm_name:"Pinheiro Neto Advogados",short_description:"Market leader in gambling and betting, advising domestic and international operators on regulatory, transactional, and M&A matters.",founding_year:1942,team_size_label:"200+",office_locations:["São Paulo, Brazil","Rio de Janeiro, Brazil","Brasília, Brazil"],languages:["Portuguese","English"],jurisdictions:["brazil"],practice_areas:["licensing","regulatory-compliance","corporate-ma","tax","aml-kyc","sports-betting","casino","litigation-disputes"],website:"https://www.pinheironeto.com.br/",sources:["https://chambers.com/law-firm/pinheiro-neto-advogados-brazil-95:3500","https://chambers.com/department/pinheiro-neto-advogados-gambling-and-betting-brazil-95:3656:41:1:3500","https://latinlawyer.com/rankings/latin-lawyer-250/profile/firm/pinheiro-neto-advogados"],key_lawyer_slugs:[],verified:true,featured:true},
+    {slug:"tozzinifreire-advogados",firm_name:"TozziniFreire Advogados",short_description:"Full-service firm with dedicated gaming and e-sports sector group experienced in betting transactions, licensing, and consumer litigation.",founding_year:1976,team_size_label:"200+",office_locations:["São Paulo, Brazil","Rio de Janeiro, Brazil","Brasília, Brazil","Porto Alegre, Brazil","Campinas, Brazil"],languages:["Portuguese","English"],jurisdictions:["brazil"],practice_areas:["licensing","regulatory-compliance","sports-betting","casino","corporate-ma","litigation-disputes","aml-kyc"],website:"https://tozzinifreire.com.br/",sources:["https://chambers.com/department/tozzinifreire-gambling-and-betting-brazil-95:3656:41:1:2348","https://tozzinifreire.com.br/en/advogados/jun-makuta","https://chambers.com/law-firm/tozzinifreire-advogados-brazil-95:3486"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"veirano-advogados",firm_name:"Veirano Advogados",short_description:"Full-service firm with strong gambling and betting practice, advising international operators on regulatory compliance and market entry.",founding_year:1972,team_size_label:"200+",office_locations:["Rio de Janeiro, Brazil","São Paulo, Brazil","Porto Alegre, Brazil","Brasília, Brazil"],languages:["Portuguese","English"],jurisdictions:["brazil"],practice_areas:["licensing","regulatory-compliance","sports-betting","casino","aml-kyc","market-entry-strategy","corporate-ma"],website:"https://www.veirano.com.br/",sources:["https://chambers.com/law-firm/veirano-advogados-brazil-95:3287","https://chambers.com/department/veirano-advogados-gambling-and-betting-brazil-95:3656:41:1:3287","https://www.veirano.com.br/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"advant-beiten",firm_name:"ADVANT Beiten",short_description:"Top-tier games law firm with 10+ years expertise; Legal 500 gaming practice leader in Germany.",founding_year:1990,team_size_label:"200+",office_locations:["Berlin, Germany","Düsseldorf, Germany","Frankfurt, Germany","Hamburg, Germany","Munich, Germany"],languages:["German","English"],jurisdictions:["germany"],practice_areas:["licensing","regulatory-compliance","advertising-promotions","responsible-gaming"],website:"https://www.advant-beiten.com/en/",sources:["https://www.advant-beiten.com/en/aktuelles/downloads/games-law-germany-z","https://www.legal500.com/firms/10878-advant-beiten/11225-frankfurt-germany/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"bird-and-bird",firm_name:"Bird & Bird",short_description:"International gaming law firm; Tier 1 UK Legal 500 video games; advises on regulatory, contracts, clearance.",founding_year:null,team_size_label:"200+",office_locations:["Berlin, Germany","Düsseldorf, Germany","Frankfurt, Germany","Hamburg, Germany","Munich, Germany"],languages:["German","English"],jurisdictions:["germany"],practice_areas:["licensing","intellectual-property","commercial-contracts"],website:"https://www.twobirds.com/en/reach/western-europe/germany",sources:["https://www.twobirds.com/en/capabilities/sectors/media-entertainment-and-sport/games","https://www.legal500.com/firms/342-bird-bird-llp/233092-berlin-germany/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"cbh-rechtsanw-lte",firm_name:"CBH Rechtsanwälte",short_description:"Specialized Glücksspielrecht practice; advises on advertising compliance, regulatory requirements, injunction relief.",founding_year:1963,team_size_label:"51-200",office_locations:["Berlin, Germany","Cologne, Germany","Brussels, Belgium","Hamburg, Germany","Munich, Germany"],languages:["German","English"],jurisdictions:["germany","belgium"],practice_areas:["licensing","regulatory-compliance","advertising-promotions","litigation-disputes"],website:"https://www.cbh.de/en/",sources:["https://www.cbh.de/en/practice-areas/ip-media-it/gambling-law/","https://www.juve.de/nachrichten/verfahren/2014/06/regulierung-im-online-glucksspiel-cbh-mandantin-westlotto-siegt-vor-eugh"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"cms-germany",firm_name:"CMS Germany",short_description:"35-lawyer sports/gaming group; advises World Esports Association, ESL Gaming, DFL gaming matters.",founding_year:null,team_size_label:"200+",office_locations:["Berlin, Germany","Cologne, Germany","Düsseldorf, Germany","Frankfurt, Germany","Hamburg, Germany","Leipzig, Germany","Munich, Germany","Stuttgart, Germany"],languages:["German","English"],jurisdictions:["germany"],practice_areas:["regulatory-compliance","advertising-promotions","licensing"],website:"https://cms.law/en/deu/",sources:["https://cms.law/en/deu/global-reach/europe/germany/expertise/tmc-technology-media-communications/sports-gaming-and-esports","https://www.legal500.com/firms/557-cms/c-germany/rankings"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"fieldfisher",firm_name:"Fieldfisher",short_description:"International law firm with dedicated Glücksspielrecht practice; advises operators on technology-law alignment.",founding_year:1835,team_size_label:"200+",office_locations:["Berlin, Germany","Düsseldorf, Germany","Frankfurt, Germany","Hamburg, Germany","Munich, Germany"],languages:["German","English"],jurisdictions:["germany"],practice_areas:["regulatory-compliance","licensing"],website:"https://www.fieldfisher.com/en/locations/germany",sources:["https://www.fieldfisher.com/de-de/locations/germany/services/verwaltungsrecht/glucksspielrecht","https://www.fieldfisher.com/en/insights/germany-allows-online-gambling"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"graef-rechtsanw-lte",firm_name:"GRAEF Rechtsanwälte",short_description:"Legal 500 ranked media/gaming law boutique; recognized top gaming law counselors in Germany.",founding_year:2008,team_size_label:"11-50",office_locations:["Berlin, Germany","Hamburg, Germany"],languages:["German","English"],jurisdictions:["germany"],practice_areas:["licensing","intellectual-property","commercial-contracts"],website:"https://graef.law/en/",sources:["https://graef.law/legal-500-germany-2025/","https://www.legal500.com/firms/14430-graef-rechtsanwalte/18792-hamburg-germany/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"greenberg-traurig",firm_name:"Greenberg Traurig",short_description:"International gaming law firm; Berlin/Munich offices advise gaming operators on licensing and compliance.",founding_year:null,team_size_label:"200+",office_locations:["Berlin, Germany","Munich, Germany"],languages:["German","English"],jurisdictions:["germany"],practice_areas:["licensing","regulatory-compliance","corporate-ma","litigation-disputes"],website:"https://www.gtlaw.com/en/locations",sources:["https://www.gtlaw.com/en/capabilities/gaming","https://www.legal500.com/firms/51354-greenberg-traurig-llp/c-germany/about"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"hambach-and-hambach",firm_name:"Hambach & Hambach",short_description:"Boutique gaming law specialist 15+ years; achieved landmark Carmen Media ECJ ruling reshaping German gambling law.",founding_year:null,team_size_label:"1-10",office_locations:["Munich, Germany"],languages:["German","English"],jurisdictions:["germany"],practice_areas:["licensing","regulatory-compliance","skill-games-fantasy-sports","corporate-ma"],website:"https://www.timelaw.de/en/",sources:["https://www.gaminglaw.eu/about/hambach-hambach-law-firm/","https://www.timelaw.de/en/gambling-2/"],key_lawyer_slugs:[],verified:true,featured:true},
+    {slug:"melchers-rechtsanw-lte",firm_name:"MELCHERS Rechtsanwälte",short_description:"30+ years gaming expertise; first German firm licensed online sports betting under Schleswig-Holstein regime.",founding_year:1973,team_size_label:"11-50",office_locations:["Berlin, Germany","Frankfurt, Germany","Heidelberg, Germany","Mannheim, Germany"],languages:["German","English"],jurisdictions:["germany"],practice_areas:["licensing","regulatory-compliance","sports-betting","casino","responsible-gaming"],website:"https://www.melchers-law.com/?lang=en",sources:["https://www.melchers-law.com/praxisgruppe/gaming-betting-law-practice-group/?lang=en","https://www.legal500.com/firms/11418-melchers-rechtsanwalte-partnerschaftsgesellschaft-mbb/12213-heidelberg-germany/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"redeker-sellner-dahs",firm_name:"Redeker Sellner Dahs",short_description:"Leading German gaming law experts with landmark victories in sports betting regulation and EU gaming cases.",founding_year:1929,team_size_label:"51-200",office_locations:["Bonn, Germany","Berlin, Germany","Brussels, Belgium","London, United Kingdom","Munich, Germany"],languages:["German","English"],jurisdictions:["germany","united-kingdom","belgium"],practice_areas:["licensing","regulatory-compliance","sports-betting","litigation-disputes"],website:"https://www.redeker.de/en/",sources:["https://www.redeker.de/en/sectors/gambling-leisure-and-sport","https://www.legal500.com/firms/11671-redeker-sellner-dahs/14182-bonn-germany/"],key_lawyer_slugs:[],verified:true,featured:true},
+    {slug:"skw-schwarz",firm_name:"SKW Schwarz",short_description:"Chambers-ranked games practice; advises on TMT and gaming sector licensing and regulatory matters.",founding_year:1949,team_size_label:"200+",office_locations:["Berlin, Germany","Frankfurt, Germany","Hamburg, Germany","Munich, Germany"],languages:["German","English"],jurisdictions:["germany"],practice_areas:["licensing","regulatory-compliance","intellectual-property"],website:"https://www.skwschwarz.de/en/",sources:["https://www.skwschwarz.de/en/expertise/media-entertainment/games","https://chambers.com/law-firm/skw-schwarz-germany-122:4130"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"taylor-wessing",firm_name:"Taylor Wessing",short_description:"TMT law firm advising gaming developers on German regulatory compliance, youth protection, gaming law updates.",founding_year:null,team_size_label:"200+",office_locations:["Berlin, Germany","Düsseldorf, Germany","Frankfurt, Germany","Hamburg, Germany","Munich, Germany"],languages:["German","English"],jurisdictions:["germany"],practice_areas:["regulatory-compliance","data-protection-gdpr","licensing"],website:"https://www.taylorwessing.com/en/global-reach/countries/germany",sources:["https://www.taylorwessing.com/en/insights-and-events/insights/2022/10/german-gaming-law--update-2021-2022","https://www.legal500.com/rankings/ranking/c-germany/media/entertainment/3259-taylor-wessing-llp"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"ellul-and-co",firm_name:"Ellul & Co",short_description:"Established 1973 Gibraltar law firm offering gaming practice; advises on obtaining gaming licenses and affiliate/white-label agreements with licensed operators.",founding_year:1973,team_size_label:"11-50",office_locations:["Gibraltar, Gibraltar"],languages:["English"],jurisdictions:["gibraltar"],practice_areas:["licensing","corporate-ma","commercial-contracts"],website:"https://ellulco.com",sources:["https://ellulco.com/services/gaming/","https://www.ellulcruz.com/","https://chambers.com/law-firm/ellul-cruz-europe-7:23032232"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"hassans-international-law-firm",firm_name:"Hassans International Law Firm",short_description:"Leading Gibraltar law firm with industry-leading online gaming team since early 1990s; advises on licensing, regulatory compliance, M&A and corporate matters.",founding_year:1939,team_size_label:"200+",office_locations:["Gibraltar, Gibraltar","Sotogrande, Spain"],languages:["English","Spanish"],jurisdictions:["gibraltar","spain"],practice_areas:["licensing","regulatory-compliance","corporate-ma","tax","aml-kyc","commercial-contracts","employment"],website:"https://www.gibraltarlaw.com",sources:["https://www.gibraltarlaw.com/expertise/gaming/","https://chambers.com/law-firm/hassans-global-2:3795","https://www.legal500.com/rankings/ranking/c-gibraltar/gambling-law/10295-hassans"],key_lawyer_slugs:[],verified:true,featured:true},
+    {slug:"isolas-llp",firm_name:"ISOLAS LLP",short_description:"Gibraltar's oldest law firm (1892) with dedicated gaming team; expertise in licensing, regulation, transactions, corporate for remote gaming operators.",founding_year:1892,team_size_label:"51-200",office_locations:["Gibraltar, Gibraltar"],languages:["English","Spanish","French","Italian"],jurisdictions:["gibraltar"],practice_areas:["licensing","regulatory-compliance","corporate-ma","commercial-contracts","aml-kyc","tax","litigation-disputes"],website:"https://gibraltarlawyers.com",sources:["https://gibraltarlawyers.com/practice/gaming-ecommerce/","https://chambers.com/law-firm/isolas-llp-global-2:3434","https://www.legal500.com/firms/10290-isolas-llp/c-gibraltar/about"],key_lawyer_slugs:[],verified:true,featured:true},
+    {slug:"ramparts",firm_name:"Ramparts",short_description:"Specialist fintech and gaming law firm (2012) with English, Irish, and Gibraltar-qualified lawyers; advises operators on cross-border regulatory issues.",founding_year:2012,team_size_label:"11-50",office_locations:["Gibraltar, Gibraltar"],languages:["English"],jurisdictions:["gibraltar"],practice_areas:["licensing","regulatory-compliance","corporate-ma","commercial-contracts","aml-kyc","employment"],website:"https://ramparts.gi",sources:["https://ramparts.gi/betting-gaming/","https://www.legal500.com/c/gibraltar/gambling-law","https://iclg.com/firms/ramparts"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"triay-limited",firm_name:"Triay Limited",short_description:"Gibraltar's longest continuously operating law firm (1905); full-service firm with corporate and commercial expertise; gaming practice not primary focus.",founding_year:1905,team_size_label:"11-50",office_locations:["Gibraltar, Gibraltar","Marbella, Spain"],languages:["English","Spanish"],jurisdictions:["gibraltar","spain"],practice_areas:["corporate-ma","commercial-contracts","litigation-disputes"],website:"https://www.triay.com",sources:["https://www.triay.com/","https://www.triay.com/history/","https://www.triayspain.com/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"tsn-triay-stagnetto-neish-barristers-and-solicitors",firm_name:"TSN (Triay Stagnetto Neish) Barristers & Solicitors",short_description:"Leading Gibraltar law firm (2001) with combined barristers/solicitors advising gaming operators since 1998 on licensing, establishment, and regulatory compliance.",founding_year:2001,team_size_label:"51-200",office_locations:["Gibraltar, Gibraltar"],languages:["English"],jurisdictions:["gibraltar"],practice_areas:["licensing","regulatory-compliance","commercial-contracts","employment"],website:"https://www.tsnlaw.com",sources:["https://www.tsnlaw.com/portfolio/gaming/","https://chambers.com/department/tsn-barristers-solicitors-general-business-law-europe-7:852:94:1:3435","https://www.legal500.com/firms/10357-tsn-barristers-solicitors/c-gibraltar/rankings"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"appleby",firm_name:"Appleby",short_description:"Leading offshore law firm with specialist eGaming and gambling team in Isle of Man office. Tier One Legal 500 ranking.",founding_year:null,team_size_label:"200+",office_locations:["Bermuda","British Virgin Islands","Cayman Islands","Guernsey","Isle of Man","Jersey","Mauritius","Seychelles","Hong Kong","Shanghai"],languages:["English"],jurisdictions:["isle-of-man"],practice_areas:["licensing","regulatory-compliance","corporate-ma","data-protection-gdpr","intellectual-property","commercial-contracts"],website:"https://www.applebyglobal.com/",sources:["https://www.applebyglobal.com/sectors/egaming/","https://www.legal500.com/c/isle-of-man/gambling","https://iclg.com/firms/appleby-isle-of-man-llc"],key_lawyer_slugs:[],verified:true,featured:true},
+    {slug:"cains",firm_name:"Cains",short_description:"Independent law firm established 1899 with eGaming team serving prominent Isle of Man gaming companies. Tier 1 Legal 500.",founding_year:1899,team_size_label:"51-200",office_locations:["Douglas, Isle of Man"],languages:["English"],jurisdictions:["isle-of-man"],practice_areas:["licensing","regulatory-compliance","corporate-ma","intellectual-property","commercial-contracts","employment","data-protection-gdpr"],website:"https://www.cains.com/",sources:["https://www.cains.com/sectors/e-gaming/","https://www.legal500.com/c/isle-of-man/gambling","https://chambers.com/law-firm/cains-uk-1:4528"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"kosnahan-law",firm_name:"Kosnahan Law",short_description:"Boutique legal firm founded 2021 specializing in regulated online gambling and esports. Over 15 years combined sector expertise.",founding_year:2021,team_size_label:"1-10",office_locations:["Isle of Man"],languages:["English"],jurisdictions:["isle-of-man"],practice_areas:["licensing","regulatory-compliance","intellectual-property","data-protection-gdpr","commercial-contracts","skill-games-fantasy-sports"],website:"https://www.kosnahan.com/",sources:["https://www.kosnahan.com/","https://www.kosnahan.com/about/","https://www.legal500.com/c/isle-of-man/gambling"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"m-and-p-legal",firm_name:"M&P Legal",short_description:"Isle of Man's first incorporated legal practice. Specialist in e-commerce including online gaming licensing and regulatory compliance.",founding_year:null,team_size_label:"11-50",office_locations:["Douglas, Isle of Man"],languages:["English"],jurisdictions:["isle-of-man"],practice_areas:["licensing","regulatory-compliance","corporate-ma","commercial-contracts","intellectual-property","employment"],website:"https://www.mplegal.im/",sources:["https://www.mplegal.im/","https://www.mplegal.im/practice-areas/commercial","https://www.legal500.com/c/isle-of-man"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"mannbenham-advocates",firm_name:"MannBenham Advocates",short_description:"Boutique commercial firm with 25+ years eGaming and gambling law expertise. Specializes in licensing, compliance, and gaming operations.",founding_year:1997,team_size_label:"51-200",office_locations:["Douglas, Isle of Man"],languages:["English"],jurisdictions:["isle-of-man"],practice_areas:["licensing","regulatory-compliance","aml-kyc","corporate-ma","payments-fintech","responsible-gaming","commercial-contracts"],website:"https://www.mannbenham.com/",sources:["https://www.mannbenham.com/","https://practiceguides.chambers.com/practice-guides/gaming-law-2024/isle-of-man","https://www.legal500.com/c/isle-of-man/gambling"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"casellato-and-travagli",firm_name:"Casellato & Travagli",short_description:"Rovigo-based boutique with decade+ gaming law experience handling operator licensing, disputes, and regulatory compliance.",founding_year:null,team_size_label:"1-10",office_locations:["Rovigo, Italy"],languages:["Italian"],jurisdictions:["italy"],practice_areas:["licensing","regulatory-compliance","litigation-disputes","commercial-contracts"],website:"https://www.casellatotravagli.it/",sources:["https://www.casellatotravagli.it/","https://lawzana.com/gaming-lawyers/italy"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"cms-italy",firm_name:"CMS Italy",short_description:"Established 1901, multipractice firm with gaming law expertise across online gambling regulation, compliance, and operator matters.",founding_year:1901,team_size_label:"200+",office_locations:["Milan, Italy","Rome, Italy"],languages:["Italian","English"],jurisdictions:["italy"],practice_areas:["licensing","regulatory-compliance","aml-kyc","data-protection-gdpr","commercial-contracts","corporate-ma"],website:"https://cms.law/en/ita/",sources:["https://cms.law/en/int/expert-guides/cms-expert-guide-to-online-gambling-regulation-in-europe/italy","https://cms.law/en/ita/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"de-berti-jacchia-franchini-forlani",firm_name:"De Berti Jacchia Franchini Forlani",short_description:"Founded 1975, two decades of gaming and betting specialization for EU and multinational operators with expertise in competition law.",founding_year:1975,team_size_label:"51-200",office_locations:["Milan, Italy","Rome, Italy","Brussels, Belgium","Moscow, Russia"],languages:["Italian","English"],jurisdictions:["italy","belgium"],practice_areas:["licensing","regulatory-compliance","corporate-ma","litigation-disputes","commercial-contracts"],website:"https://www.dejalex.com/",sources:["https://www.dejalex.com/industries/betting-and-gaming/","https://chambers.com/law-firm/de-berti-jacchia-franchini-forlani-global-2:1669"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"dla-piper-italy",firm_name:"DLA Piper Italy",short_description:"Global Co-Chair Giulio Coraggio leads gaming and gambling practice with expertise in regulatory compliance, disputes, and esports.",founding_year:null,team_size_label:"200+",office_locations:["Milan, Italy","Rome, Italy"],languages:["Italian","English"],jurisdictions:["italy"],practice_areas:["licensing","regulatory-compliance","corporate-ma","litigation-disputes","data-protection-gdpr","commercial-contracts","intellectual-property"],website:"https://www.dlapiper.com/en/locations/italy",sources:["https://www.dlapiper.com/en/people/c/coraggio-giulio","https://www.gamingtechlaw.com/about-giulio-coraggio/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"lca-studio-legale",firm_name:"LCA Studio Legale",short_description:"Founded 2004, multidisciplinary firm with gaming and esports practice supporting video game developers and operators.",founding_year:2004,team_size_label:"200+",office_locations:["Milan, Italy","Rome, Italy","Genoa, Italy","Treviso, Italy","Brussels, Belgium","Dubai, UAE"],languages:["Italian","English"],jurisdictions:["italy","belgium"],practice_areas:["intellectual-property","commercial-contracts","corporate-ma","data-protection-gdpr","regulatory-compliance"],website:"https://www.lcalex.it/en/",sources:["https://www.lcalex.it/en/industry/gaming-esports/","https://www.lcalex.it/en/about-us/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"meplaw-studio-legale-maggesi-macchi-mazza",firm_name:"MEPLAW (Studio Legale Maggesi Macchi Mazza)",short_description:"Founded 2019, pioneer in comprehensive gaming and betting services including licensing, M&A, regulatory compliance, and skill games.",founding_year:2019,team_size_label:"51-200",office_locations:["Rome, Italy","Milan, Italy","Viareggio, Italy","London, United Kingdom","Madrid, Spain"],languages:["Italian","English","Spanish"],jurisdictions:["italy","united-kingdom","spain"],practice_areas:["licensing","regulatory-compliance","corporate-ma","commercial-contracts","skill-games-fantasy-sports","affiliate-compliance","litigation-disputes","tax"],website:"https://www.meplaw.net/en/",sources:["https://www.meplaw.net/en/","https://www.meplaw.net/en/gambling-gaming-and-skill-game/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"norton-rose-fulbright-italy",firm_name:"Norton Rose Fulbright Italy",short_description:"Global gaming practice advising on regulatory, compliance, data protection, and M&A matters for gaming operators and developers.",founding_year:null,team_size_label:"200+",office_locations:["Italy"],languages:["Italian","English"],jurisdictions:["italy"],practice_areas:["regulatory-compliance","intellectual-property","data-protection-gdpr","corporate-ma","commercial-contracts","litigation-disputes"],website:"https://www.nortonrosefulbright.com/en-it/services/3783a3a0/gaming",sources:["https://www.nortonrosefulbright.com/en-it/knowledge/publications/74d1ec24/gaming-and-esports","https://www.nortonrosefulbright.com/en-it/services/3783a3a0/gaming"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"studio-legale-adamo",firm_name:"Studio Legale Adamo",short_description:"Bologna-based firm specializing in gambling and gaming law with expertise in operator licensing, disputes, and regulatory matters.",founding_year:null,team_size_label:"1-10",office_locations:["Bologna, Italy"],languages:["Italian","English"],jurisdictions:["italy"],practice_areas:["licensing","regulatory-compliance","litigation-disputes","commercial-contracts"],website:"https://www.studiolegaleadamo.it/",sources:["https://www.studiolegaleadamo.it/servizi/aree-di-competenza/gambling","https://lawzana.com/gaming-lawyers/italy"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"studio-legale-bridgelaw",firm_name:"Studio Legale Bridgelaw",short_description:"Specialized in gaming and betting law with 20+ years experience advising operators on licensing, compliance, and regulatory matters.",founding_year:null,team_size_label:"11-50",office_locations:["Italy"],languages:["Italian","English"],jurisdictions:["italy"],practice_areas:["licensing","regulatory-compliance","corporate-ma","commercial-contracts"],website:"https://www.bridgelaw.it/en/",sources:["https://www.bridgelaw.it/en/","https://www.mondaq.com/italy/gaming/1697196/the-italian-market-gaming-regulation-podcast"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"studio-legale-rinaldi-e-associati-rass",firm_name:"Studio Legale Rinaldi e Associati (RASS)",short_description:"Founded 1995, provides legal assistance to gaming operators on licensing, concessions, and regulatory compliance.",founding_year:1995,team_size_label:"11-50",office_locations:["Milan, Italy","Rome, Italy","Florence, Italy"],languages:["Italian","English"],jurisdictions:["italy"],practice_areas:["licensing","regulatory-compliance","corporate-ma","commercial-contracts"],website:"https://www.rass.law/en/",sources:["https://www.rass.law/en/areas-of-activity/giochi-e-scommesse/","https://www.legal500.com/firms/14437-lca-studio-legale/18802-milan-italy/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"studio-legale-sbordoni-and-partners",firm_name:"Studio Legale Sbordoni & Partners",short_description:"Specializes in gaming and betting law since 2000 with expertise in ADM licensing, regulatory compliance, and M&A for operators.",founding_year:null,team_size_label:"1-10",office_locations:["Rome, Italy"],languages:["Italian","English"],jurisdictions:["italy"],practice_areas:["licensing","regulatory-compliance","corporate-ma","commercial-contracts","litigation-disputes"],website:"https://studiosbordoni.com/",sources:["https://studiosbordoni.com/?lang=en","https://chambers.com/law-firm/sbordoni-partners-global-2:308585"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"tonucci-and-partners",firm_name:"Tonucci & Partners",short_description:"Founded 1994, leading Italian gaming law firm with Quirino Mancini as global head of gaming practice advising operators on licensing and regulatory matters.",founding_year:1994,team_size_label:"200+",office_locations:["Rome, Italy","Milan, Italy","Florence, Italy","Padua, Italy","Bucharest, Romania"],languages:["Italian","English"],jurisdictions:["italy"],practice_areas:["licensing","regulatory-compliance","corporate-ma","commercial-contracts","market-entry-strategy","sports-betting","casino"],website:"https://tonucci.com/en/",sources:["https://tonucci.com/en/professionisti/quirino-mancini-2/","https://www.imgl.org/user/Quirino.Mancini/"],key_lawyer_slugs:[],verified:true,featured:true},
+    {slug:"be-legal-advocates",firm_name:"be.legal Advocates",short_description:"Multi-disciplinary firm founded 2008 with specialized iGaming practice. Handles MGA applications, license compliance, ongoing regulatory support for operators.",founding_year:2008,team_size_label:"11-50",office_locations:["St. Julian's, Malta"],languages:["English","Maltese"],jurisdictions:["malta"],practice_areas:["licensing","regulatory-compliance","corporate-ma"],website:"https://belegal.com.mt/",sources:["https://belegal.com.mt/malta-law-services/online-and-remote-gaming/","https://belegal.com.mt/about-law-firm/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"camilleri-preziosi",firm_name:"Camilleri Preziosi",short_description:"Leading Valletta-based firm established in 1960s with Band 1 ranking in General Business Law. Advises gaming clients across regulatory compliance and M&A.",founding_year:null,team_size_label:"51-200",office_locations:["Valletta, Malta"],languages:["English","Maltese"],jurisdictions:["malta"],practice_areas:["licensing","regulatory-compliance","corporate-ma","aml-kyc"],website:"https://camilleripreziosi.com/",sources:["https://camilleripreziosi.com/","https://www.legal500.com/firms/10105-camilleri-preziosi/10111-valletta-malta/"],key_lawyer_slugs:[],verified:true,featured:true},
+    {slug:"chetcuti-cauchi-advocates",firm_name:"Chetcuti Cauchi Advocates",short_description:"One of Malta's largest law firms with comprehensive gaming and iGaming practice. Provides end-to-end licensing, compliance, and corporate advisory services to gaming operators and platforms.",founding_year:2004,team_size_label:"51-200",office_locations:["Valletta, Malta","Birkirkara, Malta"],languages:["English","Maltese"],jurisdictions:["malta"],practice_areas:["licensing","regulatory-compliance","corporate-ma","commercial-contracts","tax"],website:"https://www.ccmalta.com/",sources:["https://www.ccmalta.com/practices/igaming-law","https://www.linkedin.com/company/chetcuti-cauchi-advocates"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"df-advocates",firm_name:"DF Advocates",short_description:"Founded 2003, this Sliema-based firm specializes in gaming operations and IT setup. Advises international clients on regulatory compliance and startup requirements in Malta's gaming sector.",founding_year:2003,team_size_label:"11-50",office_locations:["Sliema, Malta"],languages:["English"],jurisdictions:["malta"],practice_areas:["licensing","regulatory-compliance","corporate-ma"],website:"https://dfadvocates.com/",sources:["https://dfadvocates.com/expertice/gaming-and-betting/","https://mt.linkedin.com/company/df-advocates"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"ellul-schranz-e-and-s-group",firm_name:"Ellul Schranz (E&S Group)",short_description:"Specialized firm with 15+ years iGaming experience. Assists operators with MGA licensing process and regulatory compliance in Malta's gaming sector.",founding_year:null,team_size_label:"1-10",office_locations:["Malta"],languages:["English"],jurisdictions:["malta"],practice_areas:["licensing","regulatory-compliance"],website:"https://www.ellulschranz.com/",sources:["https://www.ellulschranz.com/igaming-license-malta-2024/","https://www.ellulschranz.com/about/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"emd-advocates",firm_name:"EMD Advocates",short_description:"Established multidisciplinary firm with niche expertise in Malta gaming law, financial services, and trust law. Provides legal, tax, and advisory services to gaming sector.",founding_year:null,team_size_label:"11-50",office_locations:["Valletta, Malta"],languages:["English","Maltese"],jurisdictions:["malta"],practice_areas:["licensing","regulatory-compliance","tax","corporate-ma"],website:"https://www.emd.com.mt/",sources:["https://www.emd.com.mt/brochures/en/remote_gaming_malta_vb1.html","https://www.legal500.com/firms/10069-emd-advocates/c-malta/about"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"gg-advocates",firm_name:"GG Advocates",short_description:"Valletta-based firm (Grech & Ghaznavi) with e-gaming law expertise among broader multidisciplinary practice. Experienced in gaming regulation and compliance.",founding_year:null,team_size_label:"11-50",office_locations:["Valletta, Malta"],languages:["English","Maltese"],jurisdictions:["malta"],practice_areas:["regulatory-compliance","commercial-contracts"],website:"http://www.ggadvocates.com/",sources:["http://www.ggadvocates.com/service/e-gaming","https://www.zoominfo.com/c/gg-advocates/348828398"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"gonzi-and-associates",firm_name:"Gonzi & Associates",short_description:"Boutique firm specializing in gaming law for both land-based and remote operations. Expert in licensing, gaming approvals, and compliance with 13+ years of sector experience.",founding_year:1976,team_size_label:"1-10",office_locations:["Valletta, Malta"],languages:["English","Maltese"],jurisdictions:["malta"],practice_areas:["licensing","regulatory-compliance","corporate-ma"],website:"https://gonzi.com.mt/",sources:["https://gonzi.com.mt/gaming-it-telecoms/gaming-and-betting-law/","https://gonzi.com.mt/about/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"gtg-legal",firm_name:"GTG Legal",short_description:"Technology-focused firm established in 1997, pioneering in gaming law with dedicated practice advising remote gaming licensees. Expertise in M&A, fintech, and emerging tech in gaming sector.",founding_year:1997,team_size_label:"11-50",office_locations:["Valletta, Malta"],languages:["English","Maltese"],jurisdictions:["malta"],practice_areas:["licensing","regulatory-compliance","corporate-ma","intellectual-property","litigation-disputes"],website:"https://gtg.com.mt/",sources:["https://gtg.com.mt/practice-areas/gaming-and-betting-law/","https://chambers.com/law-firm/gtg-legal-europe-7:3164"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"gvzh-advocates",firm_name:"GVZH Advocates",short_description:"Top-tier Maltese law firm specializing in gaming law with deep expertise in MGA licensing, regulatory compliance, and advising major gaming operators. Among the first to establish Malta as a gaming regulatory hub.",founding_year:null,team_size_label:"51-200",office_locations:["Valletta, Malta"],languages:["English","Maltese"],jurisdictions:["malta"],practice_areas:["licensing","regulatory-compliance","aml-kyc","corporate-ma","litigation-disputes"],website:"https://gvzh.mt/",sources:["https://gvzh.mt/services/practice-areas/igaming/","https://www.legal500.com/firms/11777-gvzh-advocates/c-malta/about"],key_lawyer_slugs:[],verified:true,featured:true},
+    {slug:"iuris-malta",firm_name:"IURIS Malta",short_description:"Gaming and betting law specialists founded 2011. Assists operators with licensing, corporate requirements, and compliance in the remote gaming sector; advocates for responsible gaming.",founding_year:2011,team_size_label:"1-10",office_locations:["Valletta, Malta","Victoria, Gozo"],languages:["English","Maltese"],jurisdictions:["malta"],practice_areas:["licensing","regulatory-compliance","responsible-gaming"],website:"http://iurismalta.com/",sources:["http://iurismalta.com/practice-areas/gaming-betting/","https://mt.linkedin.com/company/iuris-malta"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"mifsud-and-mifsud-advocates",firm_name:"Mifsud & Mifsud Advocates",short_description:"Valletta-based firm founded 2007 offering multidisciplinary practice including gaming law. Advises on gaming legislation, licensing, and commercial matters.",founding_year:2007,team_size_label:"1-10",office_locations:["Valletta, Malta"],languages:["English","Maltese"],jurisdictions:["malta"],practice_areas:["licensing","regulatory-compliance","commercial-contracts"],website:"https://www.mifsudadvocates.com.mt/",sources:["http://www.mifsudadvocates.com.mt/gaming","https://iclg.com/firms/mifsud-and-mifsud"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"vassallo-associates",firm_name:"Vassallo Associates",short_description:"Specialist multidisciplinary firm with strong litigation-led gaming practice. Advises operators on MGA investigations, regulatory compliance, and cross-border dispute resolution.",founding_year:1870,team_size_label:"11-50",office_locations:["Valletta, Malta","United Kingdom"],languages:["English"],jurisdictions:["malta","united-kingdom"],practice_areas:["licensing","regulatory-compliance","litigation-disputes","aml-kyc"],website:"https://www.hvassallo.com/",sources:["https://www.hvassallo.com/practice-areas/igaming-law-malta/","https://mt.linkedin.com/company/vassallo-associates"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"wh-partners",firm_name:"WH Partners",short_description:"Leading gaming and fintech law firm founded 2006 with pan-European expertise. Named CEE Gaming Law Firm of the Year 2026; advises major operators on compliance and M&A across jurisdictions.",founding_year:2006,team_size_label:"11-50",office_locations:["Valletta, Malta","Rome, Italy","Bucharest, Romania","Malta","Italy","Romania","Czech Republic","Poland","UAE"],languages:["English","Italian","Romanian"],jurisdictions:["malta","italy"],practice_areas:["licensing","regulatory-compliance","aml-kyc","corporate-ma","tax","data-protection-gdpr"],website:"https://whpartners.eu/",sources:["https://whpartners.eu/industry/gaming-gambling/","https://www.legal500.com/firms/16324-wh-partners/c-malta/about","https://whpartners.eu/about/","https://chambers.com/law-firm/wh-partners-europe-7:250518"],key_lawyer_slugs:[],verified:true,featured:true},
+    {slug:"akd-benelux-lawyers",firm_name:"AKD Benelux Lawyers",short_description:"Full-service Benelux firm with 500+ lawyers advising on gaming, betting and remote gambling regulations.",founding_year:null,team_size_label:"200+",office_locations:["Amsterdam, Netherlands","Breda, Netherlands","Eindhoven, Netherlands","Rotterdam, Netherlands","Brussels, Belgium","Luxembourg, Luxembourg"],languages:["Dutch","English","French"],jurisdictions:["netherlands","belgium"],practice_areas:["licensing","regulatory-compliance","commercial-contracts","tax"],website:"https://www.akd.eu/",sources:["https://www.akd.eu/industry/gaming-and-betting","https://www.akd.eu/insights/betting-and-gaming-act-in-the-netherlands","https://iclg.com/firms/akd-benelux-lawyers"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"blenheim",firm_name:"Blenheim",short_description:"Medium-sized Amsterdam law firm advising on gaming licensing, KSA compliance, and gambling enforcement.",founding_year:2001,team_size_label:"51-200",office_locations:["Amsterdam, Netherlands"],languages:["Dutch","English"],jurisdictions:["netherlands"],practice_areas:["licensing","regulatory-compliance","commercial-contracts","litigation-disputes","responsible-gaming"],website:"https://www.blenheim.nl/en/",sources:["https://www.blenheim.nl/en/about-us/about-blenheim/","https://www.blenheim.nl/en/practice-areas/administrative-law/gaming-law/","https://chambers.com/law-firm/bureau-brandeis-europe-7:22756486"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"bureau-brandeis",firm_name:"Bureau Brandeis",short_description:"Specialist dispute resolution and regulatory practice advising on KSA enforcement, licensing and gaming litigation.",founding_year:2013,team_size_label:"51-200",office_locations:["Amsterdam, Netherlands","Paris, France"],languages:["Dutch","English","French"],jurisdictions:["netherlands"],practice_areas:["licensing","regulatory-compliance","litigation-disputes","aml-kyc"],website:"https://bureaubrandeis.com/",sources:["https://www.legal500.com/firms/16825-bureau-brandeis/c-netherlands/about","https://chambers.com/law-firm/bureau-brandeis-europe-7:22756486","https://bureaubrandeis.com/?lang=en"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"franssen-tolboom",firm_name:"Franssen Tolboom",short_description:"Boutique gambling law firm specialising in gaming, fintech, sports and media with 25+ years sector experience.",founding_year:2025,team_size_label:"11-50",office_locations:["Amsterdam, Netherlands"],languages:["Dutch","English"],jurisdictions:["netherlands"],practice_areas:["licensing","regulatory-compliance","aml-kyc","corporate-ma","payments-fintech","advertising-promotions","responsible-gaming","data-protection-gdpr","commercial-contracts","litigation-disputes"],website:"https://www.franssentolboom.nl/en/home-english/",sources:["https://www.franssentolboom.nl/en/law-firm-franssen-tolboom-launches-on-january-1-2025/","https://practiceguides.chambers.com/practice-guides/gaming-law-2025/netherlands/trends-and-developments","https://iclg.com/firms/franssen-tolboom"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"gaming-legal-group",firm_name:"Gaming Legal Group",short_description:"Global niche gaming specialist with litigation and compliance practices across Netherlands, Malta, and Curaçao.",founding_year:2011,team_size_label:"11-50",office_locations:["Halfweg, Netherlands","Malta","Curaçao"],languages:["Dutch","English"],jurisdictions:["netherlands","malta","curacao"],practice_areas:["licensing","regulatory-compliance","litigation-disputes","aml-kyc","commercial-contracts"],website:"https://www.gaminglegalgroup.com/",sources:["https://www.gaminglegalgroup.com/","https://iclg.com/firms/gaming-legal-group-glg-litigation","https://www.yelp.com/biz/gaming-legal-group-halfweg-2"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"gofaizen-and-sherle",firm_name:"Gofaizen & Sherle",short_description:"International FinTech and iGaming specialist assisting with Netherlands KSA licensing and compliance.",founding_year:null,team_size_label:"11-50",office_locations:["Tallinn, Estonia","Vilnius, Lithuania"],languages:["English","Swedish"],jurisdictions:["estonia","lithuania"],practice_areas:["licensing","regulatory-compliance","aml-kyc","payments-fintech","market-entry-strategy"],website:"https://gofaizen-sherle.com/",sources:["https://gofaizen-sherle.com/","https://gofaizen-sherle.com/gambling-license/netherlands","https://gofaizen-sherle.com/about","https://gofaizen-sherle.com/gambling-license/sweden","https://gofaizen-sherle.com"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"kalff-katz-and-franssen",firm_name:"Kalff Katz & Franssen",short_description:"Exclusive boutique specialising 25+ years in gaming and gambling law, media and entertainment sectors.",founding_year:2001,team_size_label:"11-50",office_locations:["Amsterdam, Netherlands"],languages:["Dutch","English"],jurisdictions:["netherlands"],practice_areas:["licensing","regulatory-compliance","aml-kyc","corporate-ma","commercial-contracts","advertising-promotions","responsible-gaming"],website:"https://www.kalffkatzfranssen.nl/en/",sources:["https://www.kalffkatzfranssen.nl/en/about-us/","https://iclg.com/firms/kalff-katz-and-franssen-advocaten","https://www.gaminglaw.eu/about/kalff-katz-franssen/"],key_lawyer_slugs:[],verified:true,featured:true},
+    {slug:"law-and-more",firm_name:"Law and More",short_description:"Multidisciplinary Dutch firm advising on gambling licensing, KSA compliance, and regulatory requirements.",founding_year:null,team_size_label:"11-50",office_locations:["Amsterdam, Netherlands","Eindhoven, Netherlands"],languages:["Dutch","English"],jurisdictions:["netherlands"],practice_areas:["licensing","regulatory-compliance","commercial-contracts","corporate-ma"],website:"https://lawandmore.eu/",sources:["https://lawandmore.eu/about-us/","https://lawandmore.eu/blog/the-dutch-gambling-act/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"stibbe",firm_name:"Stibbe",short_description:"International full-service firm with public law expertise advising market leaders on gaming administration law.",founding_year:null,team_size_label:"200+",office_locations:["Amsterdam, Netherlands","Brussels, Belgium","Luxembourg, Luxembourg","London, United Kingdom","New York, United States"],languages:["Dutch","English","French"],jurisdictions:["netherlands","belgium","united-kingdom","united-states"],practice_areas:["regulatory-compliance","litigation-disputes","commercial-contracts"],website:"https://www.stibbe.com/",sources:["https://www.stibbe.com/","https://chambers.com/law-firm/stibbe-europe-7:3874","https://chambers.com/department/stibbe-public-law-europe-7:572:155:1:3874"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"advokatbyr-n-gulliksson",firm_name:"Advokatbyrån Gulliksson",short_description:"Commercial law firm specializing in gaming and betting industry, advising participants and organizations on licensing.",founding_year:1975,team_size_label:"11-50",office_locations:["Malmö, Sweden","Lund, Sweden"],languages:["Swedish","English"],jurisdictions:["sweden"],practice_areas:["licensing","regulatory-compliance","intellectual-property","commercial-contracts","advertising-promotions"],website:"https://www.gulliksson.se",sources:["https://www.gulliksson.se/en/services/gaming-and-betting/","https://www.legal500.com/firms/11090-advokatbyran-gulliksson/11824-malmo-sweden/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"cirio",firm_name:"Cirio",short_description:"Business law firm with specialized gaming sector practice handling M&A, regulatory issues and operator compliance.",founding_year:2019,team_size_label:"51-200",office_locations:["Stockholm, Sweden"],languages:["Swedish","English"],jurisdictions:["sweden"],practice_areas:["licensing","regulatory-compliance","corporate-ma","commercial-contracts","data-protection-gdpr"],website:"https://cirio.se",sources:["https://cirio.se/en/sectors/digital/gaming","https://chambers.com/law-firm/cirio-advokatbyra-ab-europe-7:23110472"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"delorean-advokat",firm_name:"DeLorean Advokat",short_description:"Stockholm-based business law firm advising on gambling litigation, regulatory compliance and dispute resolution.",founding_year:null,team_size_label:"1-10",office_locations:["Stockholm, Sweden"],languages:["Swedish","English"],jurisdictions:["sweden"],practice_areas:["licensing","regulatory-compliance","litigation-disputes","commercial-contracts"],website:"https://www.delorean.law",sources:["https://www.delorean.law/case/swedish-gambling-casinos/","https://www.delorean.law"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"gernandt-and-danielsson",firm_name:"Gernandt & Danielsson",short_description:"Leading business law firm providing gaming law advisory, regulatory analysis and capital markets advice.",founding_year:1992,team_size_label:"51-200",office_locations:["Stockholm, Sweden"],languages:["Swedish","English"],jurisdictions:["sweden"],practice_areas:["licensing","regulatory-compliance","commercial-contracts"],website:"https://gernandt-danielsson.se",sources:["https://www.legal500.com/guides/chapter/sweden-gambling-law/","https://chambers.com/law-firm/gernandt-danielsson-advokatbyra-kb-global-2:4006"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"lawyer-se",firm_name:"Lawyer.se",short_description:"Video game and gaming law specialist firm representing game studios and developers on licensing and IP.",founding_year:2001,team_size_label:"1-10",office_locations:["Åre, Sweden"],languages:["Swedish","English"],jurisdictions:["sweden"],practice_areas:["licensing","intellectual-property","commercial-contracts","skill-games-fantasy-sports"],website:"https://lawyer.se",sources:["https://lawyer.se","https://lawyer.se/video-game-attorney/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"mannheimer-swartling",firm_name:"Mannheimer Swartling",short_description:"Nordic leading law firm with broad expertise in regulatory law and highly regulated sectors including gaming.",founding_year:null,team_size_label:"200+",office_locations:["Stockholm, Sweden","Gothenburg, Sweden","Malmö, Sweden"],languages:["Swedish","English"],jurisdictions:["sweden"],practice_areas:["regulatory-compliance","litigation-disputes","commercial-contracts"],website:"https://www.mannheimerswartling.se",sources:["https://www.mannheimerswartling.se/en/","https://chambers.com/law-firm/mannheimer-swartling-europe-7:4024"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"nur-legal",firm_name:"NUR Legal",short_description:"Fintech and iGaming licensing specialist with multi-jurisdictional expertise including Swedish licensing.",founding_year:null,team_size_label:"11-50",office_locations:["Tallinn, Estonia"],languages:["English","Swedish"],jurisdictions:["estonia"],practice_areas:["licensing","regulatory-compliance","aml-kyc","market-entry-strategy"],website:"https://www.nur-legal.com",sources:["https://www.nur-legal.com/gambling-licenses/swedish-gambling-license","https://www.nur-legal.com/about-us"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"schj-dt",firm_name:"Schjødt",short_description:"Nordic law firm with Swedish office providing gambling law expertise and regulatory analysis.",founding_year:null,team_size_label:"200+",office_locations:["Stockholm, Sweden","Oslo, Norway","Copenhagen, Denmark"],languages:["Swedish","English"],jurisdictions:["sweden","norway","denmark"],practice_areas:["licensing","regulatory-compliance","litigation-disputes"],website:"https://schjodt.com",sources:["https://schjodt.com/news/gambling-new-landmark-ruling-from-the-swedish-supreme-court","https://www.legal500.com/firms/10502-advokatfirmaet-schjodt/c-sweden/about"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"synch",firm_name:"Synch",short_description:"Forward-thinking tech law firm with gaming sector expertise in regulatory, IP and fintech matters.",founding_year:2014,team_size_label:"11-50",office_locations:["Stockholm, Sweden"],languages:["Swedish","English"],jurisdictions:["sweden"],practice_areas:["licensing","regulatory-compliance","intellectual-property","data-protection-gdpr","payments-fintech"],website:"https://www.synch.law",sources:["https://www.synch.law","https://www.legal500.com/rankings/ranking/c-sweden/commercial-corporate-and-ma/17315-synch-law-ab"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"vinge",firm_name:"Vinge",short_description:"Large full-service law firm with extensive expertise in gaming law, licensing agreements and regulatory compliance.",founding_year:null,team_size_label:"200+",office_locations:["Stockholm, Sweden","Gothenburg, Sweden","Malmö, Sweden"],languages:["Swedish","English"],jurisdictions:["sweden"],practice_areas:["licensing","regulatory-compliance","commercial-contracts","intellectual-property","advertising-promotions","sports-betting"],website:"https://www.vinge.se",sources:["https://www.vinge.se/en/expertise/practice-areas/sports-events-gaming-and-media/","https://chambers.com/law-firm/advokatfirman-vinge-kb-europe-7:4035"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"westerberg-and-partners",firm_name:"Westerberg & Partners",short_description:"Boutique IP and dispute resolution firm with specialized gambling law team advising major Swedish operators.",founding_year:2019,team_size_label:"11-50",office_locations:["Stockholm, Sweden"],languages:["Swedish","English"],jurisdictions:["sweden"],practice_areas:["licensing","regulatory-compliance","litigation-disputes","intellectual-property","commercial-contracts"],website:"https://westerberg.com",sources:["https://practiceguides.chambers.com/practice-guides/gaming-law-2025/sweden","https://www.legal500.com/firms/231729-westerberg-partners/231613-stockholm-sweden/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"wiklund-law",firm_name:"Wiklund Law",short_description:"Specialist EU and competition law firm with deep gaming expertise across sports betting, poker, casinos and lotteries.",founding_year:null,team_size_label:"1-10",office_locations:["Sweden"],languages:["Swedish","English"],jurisdictions:["sweden"],practice_areas:["licensing","regulatory-compliance","commercial-contracts","sports-betting","poker","casino"],website:"https://www.wiklaw.eu",sources:["https://practiceguides.chambers.com/practice-guides/gaming-law-2024/sweden","https://www.wiklaw.eu"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"bird-and-bird-llp",firm_name:"Bird & Bird LLP",short_description:"Global firm advising on all aspects of UK gambling regulation, licensing, compliance, and commercial transactions.",founding_year:1846,team_size_label:"200+",office_locations:["London, United Kingdom","Brussels, Belgium","Frankfurt, Germany","Paris, France","Singapore"],languages:["English"],jurisdictions:["united-kingdom","germany","belgium"],practice_areas:["licensing","regulatory-compliance","advertising-promotions","data-protection-gdpr","commercial-contracts","corporate-ma"],website:"https://www.twobirds.com/en/gambling-law",sources:["https://www.legal500.com/rankings/ranking/c-london/crime-fraud-and-licensing/gaming-and-betting/342-bird-bird-llp","https://www.twobirds.com/en/gambling-law"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"bryan-cave-leighton-paisner-bclp",firm_name:"Bryan Cave Leighton Paisner (BCLP)",short_description:"Global firm handling licensing applications, regulatory enforcement, and complex gaming transactions for major operators.",founding_year:2018,team_size_label:"200+",office_locations:["London, United Kingdom","New York, United States","Los Angeles, United States"],languages:["English"],jurisdictions:["united-kingdom","united-states"],practice_areas:["licensing","regulatory-compliance","corporate-ma","commercial-contracts","litigation-disputes"],website:"https://www.bclplaw.com/en-US/practices/regulation-compliance-and-advisory/betting-gaming.html",sources:["https://www.legal500.com/rankings/ranking/c-london/crime-fraud-and-licensing/gaming-and-betting/50162-bryan-cave-leighton-paisner","https://www.bclplaw.com/en-US/practices/regulation-compliance-and-advisory/betting-gaming.html"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"cms",firm_name:"CMS",short_description:"Global firm with substantial gambling practice advising operators on regulatory matters, transactions and enforcement.",founding_year:1999,team_size_label:"200+",office_locations:["London, United Kingdom","Manchester, United Kingdom","Birmingham, United Kingdom","Edinburgh, United Kingdom"],languages:["English"],jurisdictions:["united-kingdom"],practice_areas:["licensing","regulatory-compliance","aml-kyc","corporate-ma","data-protection-gdpr","commercial-contracts","sports-betting","responsible-gaming"],website:"https://cms.law/en/gbr/global-reach/europe/united-kingdom/expertise/tmt-technology-media-telecommunications/gambling",sources:["https://chambers.com/department/cms-gaming-uk-1:2730:11805:1:7489","https://cms.law/en/gbr/global-reach/europe/united-kingdom/expertise/tmt-technology-media-telecommunications/gambling"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"harris-hagan",firm_name:"Harris Hagan",short_description:"City of London specialist gambling firm with 20+ years experience in licensing, regulation and enforcement for all operator types.",founding_year:2004,team_size_label:"1-10",office_locations:["London, United Kingdom"],languages:["English"],jurisdictions:["united-kingdom"],practice_areas:["licensing","regulatory-compliance","aml-kyc","responsible-gaming","corporate-ma"],website:"https://www.harrishagan.com/",sources:["https://chambers.com/law-firm/harris-hagan-uk-1:92969","https://www.harrishagan.com/"],key_lawyer_slugs:[],verified:true,featured:true},
+    {slug:"herbert-smith-freehills-kramer",firm_name:"Herbert Smith Freehills Kramer",short_description:"Global firm advising on UK gambling regulation, licensing, M&A and emerging issues like loot boxes and responsible gaming.",founding_year:1882,team_size_label:"200+",office_locations:["London, United Kingdom","Belfast, United Kingdom","Paris, France","Munich, Germany"],languages:["English"],jurisdictions:["united-kingdom","germany"],practice_areas:["licensing","regulatory-compliance","corporate-ma","data-protection-gdpr","intellectual-property","commercial-contracts"],website:"https://www.hsfkramer.com/capabilities/sectors/media-entertainment-and-sport/gaming-and-gambling",sources:["https://www.legal500.com/c/london/crime-fraud-and-licensing/gaming-and-betting/","https://www.hsfkramer.com/capabilities/sectors/media-entertainment-and-sport/gaming-and-gambling"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"hugh-james",firm_name:"Hugh James",short_description:"Wales-based firm founded 1960 advising international operators on licensing, compliance and contentious gaming matters.",founding_year:1960,team_size_label:"51-200",office_locations:["Cardiff, United Kingdom","London, United Kingdom","Manchester, United Kingdom"],languages:["English","Welsh"],jurisdictions:["united-kingdom"],practice_areas:["licensing","regulatory-compliance","commercial-contracts","litigation-disputes","intellectual-property"],website:"https://www.hughjames.com/services/gaming-gambling-law/",sources:["https://chambers.com/law-firm/hugh-james-uk-1:203","https://www.hughjames.com/services/gaming-gambling-law/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"joelson-llp",firm_name:"Joelson LLP",short_description:"London firm since 1956 advising remote and land-based operators on licensing, compliance, age verification, and AML/KYC.",founding_year:1956,team_size_label:"11-50",office_locations:["London, United Kingdom"],languages:["English"],jurisdictions:["united-kingdom"],practice_areas:["licensing","regulatory-compliance","aml-kyc","advertising-promotions","responsible-gaming"],website:"https://joelsonlaw.com/sectors/gambling-gaming-betting-law-team/",sources:["https://www.legal500.com/firms/1819-joelson/278-london-england/","https://joelsonlaw.com/sectors/gambling-gaming-betting-law-team/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"keystone-law",firm_name:"Keystone Law",short_description:"Top 100 firm providing comprehensive gambling law advice on licensing, regulatory compliance, and contentious gaming matters.",founding_year:2002,team_size_label:"200+",office_locations:["London, United Kingdom","Bristol, United Kingdom","Leeds, United Kingdom","Newcastle, United Kingdom","London","Bristol","Leeds","Manchester","Newcastle","Isle of Man","Adelaide","Brisbane","Canberra","Melbourne","Sydney"],languages:["English"],jurisdictions:["united-kingdom","isle-of-man"],practice_areas:["licensing","regulatory-compliance","corporate-ma","commercial-contracts","litigation-disputes"],website:"https://www.keystonelaw.com/sectors/gambling",sources:["https://chambers.com/department/keystone-law-gaming-uk-1:2730:11805:1:171702","https://www.keystonelaw.com/sectors/gambling","https://keystonelaw.com/international/isle-of-man/","https://www.legal500.com/c/isle-of-man"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"memery-crystal",firm_name:"Memery Crystal",short_description:"London firm established 1978, advising on lottery schemes, gambling law interpretations, product classifications and disputes.",founding_year:1978,team_size_label:"11-50",office_locations:["London, United Kingdom"],languages:["English"],jurisdictions:["united-kingdom"],practice_areas:["licensing","regulatory-compliance","litigation-disputes","intellectual-property"],website:"https://www.lexology.com/firms/2244",sources:["https://chambers.com/department/memery-crystal-gaming-uk-1:2730:11805:1:282","https://www.legal500.com/firms/2322-memery-crystal/r-england/rankings"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"mishcon-de-reya-llp",firm_name:"Mishcon de Reya LLP",short_description:"Tier 1-ranked firm advising operators on licensing, compliance, regulatory investigations, and complex commercial matters.",founding_year:1988,team_size_label:"200+",office_locations:["London, United Kingdom","Cambridge, United Kingdom","Oxford, United Kingdom","Singapore","Dubai"],languages:["English"],jurisdictions:["united-kingdom"],practice_areas:["licensing","regulatory-compliance","aml-kyc","corporate-ma","litigation-disputes","responsible-gaming","skill-games-fantasy-sports"],website:"https://www.mishcon.com/services/betting",sources:["https://chambers.com/department/mishcon-de-reya-llp-gaming-uk-1:2730:11805:1:292","https://www.mishcon.com/services/betting"],key_lawyer_slugs:[],verified:true,featured:true},
+    {slug:"northridge-law-llp",firm_name:"Northridge Law LLP",short_description:"Specialist gaming firm providing regulatory expertise, compliance support, and dispute resolution for online and offline operators.",founding_year:2017,team_size_label:"11-50",office_locations:["London, United Kingdom"],languages:["English"],jurisdictions:["united-kingdom"],practice_areas:["licensing","regulatory-compliance","aml-kyc","commercial-contracts","litigation-disputes"],website:"https://northridgelaw.com/work/betting-gaming/",sources:["https://chambers.com/law-firm/northridge-uk-1:23023873","https://northridgelaw.com/work/betting-gaming/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"pinsent-masons-llp",firm_name:"Pinsent Masons LLP",short_description:"Global firm with gambling practice advising operators on regulatory compliance, licensing and emerging regulatory issues.",founding_year:2003,team_size_label:"200+",office_locations:["London, United Kingdom","Manchester, United Kingdom","Edinburgh, United Kingdom","Glasgow, United Kingdom"],languages:["English"],jurisdictions:["united-kingdom"],practice_areas:["licensing","regulatory-compliance","aml-kyc","corporate-ma","commercial-contracts"],website:"https://www.pinsentmasons.com/out-law/topics/gambling",sources:["https://www.legal500.com/rankings/ranking/c-london/crime-fraud-and-licensing/gaming-and-betting/2251-pinsent-masons-llp","https://www.pinsentmasons.com/out-law/topics/gambling"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"poppleston-allen",firm_name:"Poppleston Allen",short_description:"UK's largest licensing firm specializing in gambling regulation, compliance and licensing for online and land-based operators.",founding_year:1994,team_size_label:"51-200",office_locations:["Nottingham, United Kingdom","London, United Kingdom"],languages:["English"],jurisdictions:["united-kingdom"],practice_areas:["licensing","regulatory-compliance","responsible-gaming"],website:"https://www.popall.co.uk/sectors/gambling-licensing",sources:["https://chambers.com/department/poppleston-allen-gaming-uk-1:2730:11805:1:332","https://www.popall.co.uk/sectors/gambling-licensing"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"wiggin-llp",firm_name:"Wiggin LLP",short_description:"Top-tier gaming firm advising operators on licensing, compliance, IP, M&A and regulatory matters.",founding_year:2004,team_size_label:"51-200",office_locations:["Cheltenham, United Kingdom","London, United Kingdom","Brussels, Belgium"],languages:["English"],jurisdictions:["united-kingdom"],practice_areas:["licensing","regulatory-compliance","corporate-ma","commercial-contracts","litigation-disputes","intellectual-property","responsible-gaming"],website:"https://www.wiggin.co.uk/expertise/betting-and-gaming-law/",sources:["https://chambers.com/department/wiggin-llp-gaming-uk-1:2730:11805:1:1056","https://www.wiggin.co.uk/expertise/betting-and-gaming-law/"],key_lawyer_slugs:[],verified:true,featured:true},
+    {slug:"woods-whur",firm_name:"Woods Whur",short_description:"Specialist gambling firm founded 2011, advising operators on licensing, compliance and regulatory matters for casino and betting sectors.",founding_year:2011,team_size_label:"11-50",office_locations:["London, United Kingdom","Leeds, United Kingdom","Newcastle, United Kingdom"],languages:["English"],jurisdictions:["united-kingdom"],practice_areas:["licensing","regulatory-compliance","responsible-gaming"],website:"https://www.woodswhur.co.uk/",sources:["https://chambers.com/law-firm/woods-whur-uk-1:22566942","https://www.woodswhur.co.uk/"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"akerman-llp",firm_name:"Akerman LLP",short_description:"700-attorney Florida-based firm. Gaming team in Miami and Fort Lauderdale advises on gaming, entertainment, and regulatory matters.",founding_year:1920,team_size_label:"200+",office_locations:["Miami, Florida","Fort Lauderdale, Florida","Tampa, Florida","Orlando, Florida"],languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","sports-betting"],website:"https://www.akerman.com",sources:["https://www.akerman.com/en/work/services/sectors/sports-gaming-and-entertainment/index.html","https://chambers.com/law-firm/akerman-llp-usa-5:65304"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"brownstein-hyatt-farber-schreck-llp",firm_name:"Brownstein Hyatt Farber Schreck LLP",short_description:"Full-service firm with leading gaming practice across Las Vegas, Atlantic City, and Denver. Top-ranked by Chambers USA nationally.",founding_year:1968,team_size_label:"200+",office_locations:["Denver, Colorado","Las Vegas, Nevada","Atlantic City, New Jersey"],languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","corporate-ma","litigation-disputes","commercial-contracts"],website:"https://www.bhfs.com",sources:["https://www.bhfs.com/about/history/","https://chambers.com/law-firm/brownstein-hyatt-farber-schreck-llp-usa-5:65262"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"covington-and-burling-llp",firm_name:"Covington & Burling LLP",short_description:"1,400+ attorney DC-headquartered international firm. Gaming practice handles complex M&A, litigation, and regulatory matters.",founding_year:1919,team_size_label:"200+",office_locations:["Washington, District of Columbia","New York, New York","San Francisco, California","London, United Kingdom"],languages:["English"],jurisdictions:["united-states","united-kingdom"],practice_areas:["licensing","regulatory-compliance","corporate-ma","litigation-disputes","aml-kyc"],website:"https://www.cov.com",sources:["https://www.cov.com/en/practices-and-industries/industries/gaming","https://chambers.com/law-firm/covington-burling-llp-usa-5:3826"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"cozen-oconnor",firm_name:"Cozen O'Connor",short_description:"1,000+ attorney firm with gaming practice spanning casino operations, fantasy sports, and online betting across 33 cities.",founding_year:1970,team_size_label:"200+",office_locations:["Philadelphia, Pennsylvania","Las Vegas, Nevada","New York, New York","Washington, District of Columbia","Chicago, Illinois"],languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","sports-betting","casino","skill-games-fantasy-sports"],website:"https://www.cozen.com",sources:["https://www.cozen.com/industries/gaming","https://law.usnews.com/law-firms/cozen-o-connor-660"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"dickinson-wright-pllc",firm_name:"Dickinson Wright PLLC",short_description:"550+ attorney firm recognized by Chambers USA. Multi-disciplinary gaming team across Las Vegas, Reno, and other major jurisdictions.",founding_year:1878,team_size_label:"200+",office_locations:["Detroit, Michigan","Las Vegas, Nevada","Reno, Nevada","Chicago, Illinois","Miami, Florida"],languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","corporate-ma","litigation-disputes","market-entry-strategy"],website:"https://www.dickinson-wright.com",sources:["https://www.dickinson-wright.com/practice-areas/gaming-law","https://chambers.com/law-firm/dickinson-wright-pllc-usa-5:3837"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"duane-morris-llp",firm_name:"Duane Morris LLP",short_description:"Philadelphia-headquartered firm with 29 offices. Gaming team handles regulatory licensing, sports betting, and iGaming matters.",founding_year:1904,team_size_label:"200+",office_locations:["Philadelphia, Pennsylvania","New York, New York","Washington, District of Columbia","Chicago, Illinois"],languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","sports-betting","casino","affiliate-compliance"],website:"https://www.duanemorris.com",sources:["https://www.duanemorris.com/practices/gaming.html","https://law.usnews.com/law-firms/duane-morris-llp-1347"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"faegre-drinker-biddle-and-reath-llp",firm_name:"Faegre Drinker Biddle & Reath LLP",short_description:"1,300-attorney firm with sports and gaming expertise. Represents major US sports franchises and gaming operators on regulatory matters.",founding_year:1849,team_size_label:"200+",office_locations:["Minneapolis, Minnesota","Philadelphia, Pennsylvania","Chicago, Illinois","Denver, Colorado","New York, New York"],languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","corporate-ma","sports-betting","affiliate-compliance"],website:"https://www.faegredrinker.com",sources:["https://www.faegredrinker.com/en/insights/topics/sports-and-gaming","https://chambers.com/law-firm/faegre-drinker-biddle-reath-llp-usa-5:3587"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"fox-rothschild-llp",firm_name:"Fox Rothschild LLP",short_description:"Multi-office national firm with dedicated gaming team serving casino operators, online gaming companies, and equipment manufacturers.",founding_year:1907,team_size_label:"200+",office_locations:["Philadelphia, Pennsylvania","New York, New York","Washington, District of Columbia","Miami, Florida"],languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","corporate-ma","litigation-disputes","commercial-contracts"],website:"https://www.foxrothschild.com",sources:["https://www.foxrothschild.com/gaming","https://law.usnews.com/law-firms/fox-rothschild-llp-703"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"greenberg-traurig-llp",firm_name:"Greenberg Traurig LLP",short_description:"3,100-attorney international firm providing gaming regulatory and transactional advice across iGaming, tribal gaming, and licensing.",founding_year:1967,team_size_label:"200+",office_locations:["Miami, Florida","Dallas, Texas","Chicago, Illinois","Washington, District of Columbia","New York, New York"],languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","corporate-ma","litigation-disputes","commercial-contracts","sports-betting","casino"],website:"https://www.gtlaw.com",sources:["https://www.gtlaw.com/en/capabilities/gaming","https://chambers.com/law-firm/greenberg-traurig-llp-usa-5:3786"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"holland-and-knight-llp",firm_name:"Holland & Knight LLP",short_description:"2,174-attorney firm with gaming practice across Miami, Tallahassee, and DC. Advises casinos, tribal entities, and operators.",founding_year:1929,team_size_label:"200+",office_locations:["Tampa, Florida","Miami, Florida","Tallahassee, Florida","Washington, District of Columbia"],languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","corporate-ma","litigation-disputes","sports-betting","casino"],website:"https://www.hklaw.com",sources:["https://www.hklaw.com/en/services/practices/litigation-and-dispute-resolution/gaming","https://law.usnews.com/law-firms/holland-knight-llp-1020"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"ifrah-law-pllc",firm_name:"Ifrah Law PLLC",short_description:"Boutique DC firm specializing in iGaming, sports betting, and online gaming regulatory matters. Ranked Band 1 nationally by Chambers USA.",founding_year:2009,team_size_label:"1-10",office_locations:["Washington, District of Columbia"],languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","aml-kyc","sports-betting","casino","affiliate-compliance"],website:"https://www.ifrahlaw.com",sources:["https://www.ifrahlaw.com/","https://chambers.com/law-firm/ifrah-law-usa-5:232884"],key_lawyer_slugs:[],verified:true,featured:true},
+    {slug:"jones-walker-llp",firm_name:"Jones Walker LLP",short_description:"Louisiana-based firm with largest gaming practice in Southeast. Advises casinos, tribes, and gaming manufacturers on all regulatory matters.",founding_year:1937,team_size_label:"200+",office_locations:["New Orleans, Louisiana","Baton Rouge, Louisiana","Lafayette, Louisiana","Lake Charles, Louisiana"],languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","corporate-ma","litigation-disputes","market-entry-strategy"],website:"https://www.joneswalker.com",sources:["https://www.joneswalker.com/en/","https://chambers.com/law-firm/jones-walker-llp-usa-5:65252"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"k-and-l-gates-llp",firm_name:"K&L Gates LLP",short_description:"1,910-attorney global firm with betting and gaming practice. Team monitors US and international gaming regulatory developments.",founding_year:2007,team_size_label:"200+",office_locations:["Washington, District of Columbia","New York, New York","Chicago, Illinois","San Francisco, California","Seattle, Washington"],languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","sports-betting","casino","affiliate-compliance"],website:"https://www.klgates.com",sources:["https://www.klgates.com/betting-gaming","https://chambers.com/law-firm/kl-gates-usa-5:3581"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"mcdonald-carano-llp",firm_name:"McDonald Carano LLP",short_description:"Nevada's most established gaming law firm since 1949. Advises on casino, mobile gaming, and restricted gaming regulatory matters.",founding_year:1949,team_size_label:"51-200",office_locations:["Reno, Nevada","Las Vegas, Nevada","Carson City, Nevada"],languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","casino","corporate-ma","commercial-contracts"],website:"https://www.mcdonaldcarano.com",sources:["https://www.mcdonaldcarano.com/practice-areas/gaming-administrative-law/","https://chambers.com/law-firm/mcdonald-carano-usa-5:65649"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"nelson-mullins-riley-and-scarborough-llp",firm_name:"Nelson Mullins Riley & Scarborough LLP",short_description:"Am Law 100 firm with 1,000+ attorneys. Gaming team advises operators, tribes, and vendors on regulatory and transactional matters.",founding_year:1897,team_size_label:"200+",office_locations:["Columbia, South Carolina","Charleston, South Carolina","Greenville, South Carolina","Atlanta, Georgia"],languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","corporate-ma","sports-betting","casino","affiliate-compliance"],website:"https://www.nelsonmullins.com",sources:["https://www.nelsonmullins.com/services/gaming2","https://chambers.com/law-firm/nelson-mullins-riley-scarborough-llp-usa-5:1768"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"orrick-herrington-and-sutcliffe-llp",firm_name:"Orrick Herrington & Sutcliffe LLP",short_description:"1,370-attorney firm with 30-year track record in iGaming and sports betting. Advises operators on M&A, regulatory, and compliance matters.",founding_year:1863,team_size_label:"200+",office_locations:["San Francisco, California","New York, New York","Los Angeles, California","Washington, District of Columbia"],languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","corporate-ma","sports-betting","casino","aml-kyc"],website:"https://www.orrick.com",sources:["https://www.orrick.com/en/Practices/Gaming-and-Gambling","https://law.usnews.com/law-firms/orrick-herrington-&-sutcliffe-llp-859"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"saiber-llc",firm_name:"Saiber LLC",short_description:"New Jersey gaming pioneer since 1978 Atlantic City legalization. Advises iGaming operators and sports wagering companies nationwide.",founding_year:1950,team_size_label:"51-200",office_locations:["Madison, New Jersey","New York, New York","Philadelphia, Pennsylvania"],languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","corporate-ma","sports-betting","casino","affiliate-compliance"],website:"https://www.saiber.com",sources:["https://www.saiber.com/services/regulatory-compliance/gaming-law","https://www.saiber.com/about/history"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"womble-bond-dickinson-us-llp",firm_name:"Womble Bond Dickinson (US) LLP",short_description:"32+ US offices including Las Vegas. Gaming team advises on regulatory compliance, licensing, and litigation for gaming operators.",founding_year:null,team_size_label:"200+",office_locations:["Winston-Salem, North Carolina","Charlotte, North Carolina","Las Vegas, Nevada","Washington, District of Columbia","Atlanta, Georgia"],languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","litigation-disputes","intellectual-property"],website:"https://www.womblebonddickinson.com/us",sources:["https://www.womblebonddickinson.com/us/sectors/gaming","https://chambers.com/law-firm/womble-bond-dickinson-us-llp-usa-5:2821"],key_lawyer_slugs:[],verified:true,featured:false},
+    {slug:"zwillgen-pllc",firm_name:"ZwillGen PLLC",short_description:"Washington DC-founded firm with 50 attorneys across 4 offices. Ranked Band 3 by Chambers USA for gaming and privacy law.",founding_year:2010,team_size_label:"11-50",office_locations:["Washington, District of Columbia","New York, New York","Chicago, Illinois","San Francisco, California"],languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","data-protection-gdpr","aml-kyc","sports-betting","advertising-promotions"],website:"https://www.zwillgen.com",sources:["https://www.zwillgen.com/","https://chambers.com/law-firm/zwillgen-pllc-usa-5:237870"],key_lawyer_slugs:[],verified:true,featured:false},
+  ],
+  lawyers: [
+    {slug:"olga-finkel",full_name:"Olga Finkel",title:"Co-Founder & Partner",firm_slug:"wh-partners",lawyer_type:"Partner",short_summary:"Globally ranked gambling lawyer with over two decades advising major international iGaming operators on strategic, commercial, and regulatory matters. Co-founded WH Partners and lectures gaming law at the University of Malta.",office_location:"Valletta, Malta",experience_years:25,languages:["English","Russian","Ukrainian","Maltese"],jurisdictions:["malta"],practice_areas:["licensing","regulatory-compliance","corporate-ma","data-protection-gdpr","intellectual-property","commercial-contracts"],verified:true,featured:false},
+    {slug:"joseph-borg",full_name:"Joseph F. Borg",title:"Partner, Head of Gaming & Gambling Advisory",firm_slug:"wh-partners",lawyer_type:"Partner",short_summary:"Former Chief Regulatory Officer and Director of Legal & Enforcement at the Malta Gaming Authority. Heads the Gaming & Gambling and Blockchain practices at WH Partners and is an IMGL member.",office_location:"Valletta, Malta",experience_years:18,languages:["English","Maltese","Italian"],jurisdictions:["malta"],practice_areas:["licensing","regulatory-compliance","aml-kyc","intellectual-property","corporate-ma","data-protection-gdpr"],verified:true,featured:false},
+    {slug:"andrew-j-zammit",full_name:"Andrew J. Zammit",title:"Managing Partner",firm_slug:"gvzh-advocates",lawyer_type:"Partner",short_summary:"Described as one of the best gaming lawyers in Europe. Pioneered licensing of fintech operators in Malta and led corporate acquisitions of significant online gaming operators. IMGL member.",office_location:"Valletta, Malta",experience_years:27,languages:["English","Maltese","Italian","French"],jurisdictions:["malta"],practice_areas:["licensing","regulatory-compliance","corporate-ma","payments-fintech","commercial-contracts","tax","data-protection-gdpr"],verified:true,featured:false},
+    {slug:"ian-gauci",full_name:"Ian Gauci",title:"Managing Partner",firm_slug:"gtg-legal",lawyer_type:"Partner",short_summary:"Over 20 years of legal experience advising the Malta Gaming Authority on regulatory matters. IMGL member and one of Malta's foremost technology, fintech, and blockchain lawyers, ranked by Chambers and Legal 500.",office_location:"Valletta, Malta",experience_years:20,languages:["English","Maltese"],jurisdictions:["malta"],practice_areas:["licensing","regulatory-compliance","data-protection-gdpr","intellectual-property","payments-fintech","advertising-promotions","commercial-contracts"],verified:true,featured:false},
+    {slug:"nicholas-curmi",full_name:"Nicholas Curmi",title:"Partner, Head of Capital Markets",firm_slug:"camilleri-preziosi",lawyer_type:"Partner",short_summary:"Heads the capital markets team at a leading Maltese law firm with extensive iGaming sector experience, having advised on major transactions including the Raketech Group IPO and Nasdaq listing.",office_location:"Valletta, Malta",experience_years:15,languages:["English","Maltese"],jurisdictions:["malta"],practice_areas:["corporate-ma","regulatory-compliance","licensing","commercial-contracts","tax"],verified:true,featured:false},
+    {slug:"john-hagan",full_name:"John Hagan",title:"Managing Partner & Co-Founder",firm_slug:"harris-hagan",lawyer_type:"Partner",short_summary:"Co-founded Harris Hagan in 2004, the only City of London firm dedicated exclusively to gambling law. Past President of IAGA, former Deputy Chairman of GamCare, and continuously ranked Band 1 by Chambers UK.",office_location:"London, United Kingdom",experience_years:25,languages:["English"],jurisdictions:["united-kingdom"],practice_areas:["licensing","regulatory-compliance","aml-kyc","corporate-ma","responsible-gaming","commercial-contracts"],verified:true,featured:false},
+    {slug:"bahar-alaeddini",full_name:"Bahar Alaeddini",title:"Partner",firm_slug:"harris-hagan",lawyer_type:"Partner",short_summary:"Ranked Band 1 by Chambers UK, advises the world's largest gambling businesses on all aspects of online and land-based gambling law. Named among iGamingBusiness top 10 Most Influential Women in iGaming.",office_location:"London, United Kingdom",experience_years:14,languages:["English","Farsi"],jurisdictions:["united-kingdom"],practice_areas:["licensing","regulatory-compliance","aml-kyc","corporate-ma","commercial-contracts","responsible-gaming"],verified:true,featured:false},
+    {slug:"nick-nocton",full_name:"Nick Nocton",title:"Partner, Head of Betting & Gaming",firm_slug:"mishcon-de-reya-llp",lawyer_type:"Partner",short_summary:"Heads Mishcon de Reya's Band 1 Chambers-ranked Betting & Gaming Practice with over 25 years of experience. Legal 500 Hall of Fame member described as a hardcore gambling regulatory lawyer.",office_location:"London, United Kingdom",experience_years:25,languages:["English"],jurisdictions:["united-kingdom"],practice_areas:["licensing","regulatory-compliance","litigation-disputes","corporate-ma","responsible-gaming","sports-betting"],verified:true,featured:false},
+    {slug:"stephen-ketteley",full_name:"Stephen Ketteley",title:"Partner, Head of Betting & Gaming",firm_slug:"wiggin-llp",lawyer_type:"Partner",short_summary:"Described as the doyen of UK gambling lawyers with extensive and incomparable knowledge of gambling regulation. Leads Wiggin's Band 1 Chambers-ranked Betting & Gaming team.",office_location:"London, United Kingdom",experience_years:25,languages:["English"],jurisdictions:["united-kingdom"],practice_areas:["licensing","regulatory-compliance","aml-kyc","corporate-ma","advertising-promotions","responsible-gaming","data-protection-gdpr","commercial-contracts","sports-betting"],verified:true,featured:false},
+    {slug:"melanie-ellis",full_name:"Melanie Ellis",title:"Partner, Head of Gambling Practice",firm_slug:"northridge-law-llp",lawyer_type:"Partner",short_summary:"Gambling regulatory lawyer ranked in both Chambers UK and Legal 500. Advises online and land-based operators on licensing, compliance, advertising, and AML matters.",office_location:"London, United Kingdom",experience_years:13,languages:["English"],jurisdictions:["united-kingdom"],practice_areas:["licensing","regulatory-compliance","aml-kyc","advertising-promotions","responsible-gaming","commercial-contracts","sports-betting"],verified:true,featured:false},
+    {slug:"geraint-lloyd-taylor",full_name:"Geraint Lloyd-Taylor",title:"Partner, Head of Regulatory",firm_slug:"pinsent-masons-llp",lawyer_type:"Partner",short_summary:"Leads gambling regulatory advisory work focusing on gambling advertising regulations, Gambling Commission compliance, and consumer protection. Ranked by both Chambers and Legal 500.",office_location:"London, United Kingdom",experience_years:15,languages:["English"],jurisdictions:["united-kingdom"],practice_areas:["advertising-promotions","regulatory-compliance","data-protection-gdpr","intellectual-property","commercial-contracts","responsible-gaming"],verified:true,featured:false},
+    {slug:"paul-chiappe",full_name:"Paul Chiappe",title:"Managing Partner",firm_slug:"joelson-llp",lawyer_type:"Partner",short_summary:"Managing partner of Joelson, which has specialised in gaming law since the 1960s. Leads the firm's Gambling, Gaming and Betting Law Team. Ranked by Chambers and Legal 500.",office_location:"London, United Kingdom",experience_years:20,languages:["English"],jurisdictions:["united-kingdom"],practice_areas:["corporate-ma","licensing","regulatory-compliance","commercial-contracts","sports-betting"],verified:true,featured:false},
+    {slug:"andrew-montegriffo",full_name:"Andrew Montegriffo",title:"Partner, Corporate & Commercial",firm_slug:"hassans-international-law-firm",lawyer_type:"Partner",short_summary:"Partner specialising in online gaming, fintech, and digital technologies at Gibraltar's leading law firm. Teaches the Gaming Law module at the University of Gibraltar.",office_location:"Gibraltar, Gibraltar",experience_years:15,languages:["English"],jurisdictions:["gibraltar"],practice_areas:["licensing","regulatory-compliance","corporate-ma","commercial-contracts","payments-fintech"],verified:true,featured:false},
+    {slug:"steven-caetano",full_name:"Steven Caetano",title:"Partner, Gaming & e-Commerce",firm_slug:"isolas-llp",lawyer_type:"Partner",short_summary:"Co-heads ISOLAS' gambling law practice, described by clients as top of the game per Legal 500. Has practised in the betting and gaming sector since 2005.",office_location:"Gibraltar, Gibraltar",experience_years:21,languages:["English"],jurisdictions:["gibraltar"],practice_areas:["licensing","regulatory-compliance","corporate-ma","intellectual-property","data-protection-gdpr","commercial-contracts","aml-kyc"],verified:true,featured:false},
+    {slug:"andrew-tait",full_name:"Andrew Tait",title:"Head of Betting & Gaming",firm_slug:"ramparts",lawyer_type:"Partner",short_summary:"UK, Irish, and Gibraltar-qualified lawyer who leads Ramparts' Betting & Gaming department. Former Group General Counsel and Chief Compliance Officer at Mansion Group. IMGL member.",office_location:"Gibraltar, Gibraltar",experience_years:20,languages:["English"],jurisdictions:["gibraltar","united-kingdom"],practice_areas:["licensing","regulatory-compliance","aml-kyc","commercial-contracts","intellectual-property","data-protection-gdpr","sports-betting","advertising-promotions"],verified:true,featured:false},
+    {slug:"justin-franssen",full_name:"Justin Franssen",title:"Co-Founder & Head of Gaming Practice",firm_slug:"kalff-katz-and-franssen",lawyer_type:"Partner",short_summary:"One of Europe's most prominent gambling lawyers with 17 consecutive Band 1 Chambers Global listings. Active in the gaming industry since 1996, former IMGL board member.",office_location:"Amsterdam, Netherlands",experience_years:30,languages:["Dutch","English"],jurisdictions:["netherlands"],practice_areas:["licensing","regulatory-compliance","corporate-ma","litigation-disputes","advertising-promotions","commercial-contracts","tax"],verified:true,featured:false},
+    {slug:"tom-barkhuysen",full_name:"Tom Barkhuysen",title:"Partner, Public Law",firm_slug:"stibbe",lawyer_type:"Partner",short_summary:"Leading Dutch public and administrative law partner with extensive experience advising gaming industry leaders in proceedings against the Kansspelautoriteit. Professor at Leiden University.",office_location:"Amsterdam, Netherlands",experience_years:28,languages:["Dutch","English","German"],jurisdictions:["netherlands"],practice_areas:["licensing","regulatory-compliance","litigation-disputes","data-protection-gdpr"],verified:true,featured:false},
+    {slug:"maria-mcdonald",full_name:"Maria McDonald",title:"Founding Partner",firm_slug:"delorean-advokat",lawyer_type:"Partner",short_summary:"Founding partner of a specialist Nordic gambling advisory practice with 18 years of experience including Head of Legal at Unibet and General Counsel at Lagardere Sports Scandinavia. Author of the Sweden chapter in ICLG Gambling Laws.",office_location:"Stockholm, Sweden",experience_years:18,languages:["Swedish","English","Danish"],jurisdictions:["sweden"],practice_areas:["licensing","regulatory-compliance","data-protection-gdpr","advertising-promotions","litigation-disputes","commercial-contracts","sports-betting"],verified:true,featured:false},
+    {slug:"joerg-hofmann",full_name:"Dr. Joerg Hofmann",title:"Senior Partner, Head of Gaming & Betting Law",firm_slug:"melchers-rechtsanw-lte",lawyer_type:"Partner",short_summary:"Past President of IMGL and Chambers Global Leading Individual for Gaming & Gambling since 2011. Practising gaming law since the mid-1990s and lectures Gaming Law at the University of Heidelberg.",office_location:"Heidelberg, Germany",experience_years:30,languages:["German","English"],jurisdictions:["germany"],practice_areas:["licensing","regulatory-compliance","sports-betting","aml-kyc","advertising-promotions","commercial-contracts"],verified:true,featured:false},
+    {slug:"martin-pagenkopf",full_name:"Dr. Martin Pagenkopf",title:"Of Counsel",firm_slug:"cbh-rechtsanw-lte",lawyer_type:"Of Counsel",short_summary:"Former judge at Germany's Federal Administrative Court from 1989 to 2009 with deep expertise in gambling regulatory law. Advises on licensing, state gaming regulation, and constitutional aspects.",office_location:"Cologne, Germany",experience_years:15,languages:["German","English"],jurisdictions:["germany"],practice_areas:["licensing","regulatory-compliance","litigation-disputes"],verified:true,featured:false},
+    {slug:"thomas-de-meese",full_name:"Thomas De Meese",title:"Co-Managing Partner, Brussels",firm_slug:"fieldfisher",lawyer_type:"Partner",short_summary:"Described by Chambers as a very intelligent and well-prepared lawyer whose practice encompasses gaming, betting, telecoms, and competition. Member of the Brussels bar since 1993.",office_location:"Brussels, Belgium",experience_years:33,languages:["Dutch","English","French"],jurisdictions:["belgium"],practice_areas:["licensing","regulatory-compliance","advertising-promotions","litigation-disputes","commercial-contracts","sports-betting","corporate-ma"],verified:true,featured:false},
+    {slug:"quirino-mancini",full_name:"Quirino Mancini",title:"Partner, Global Head of Gaming & Gambling",firm_slug:"tonucci-and-partners",lawyer_type:"Partner",short_summary:"IMGL President and Chambers Global Band 1 for Gaming & Gambling in Italy for six consecutive years. Co-founder of GamingLaw.eu with over 30 years of experience.",office_location:"Rome, Italy",experience_years:30,languages:["Italian","English"],jurisdictions:["italy"],practice_areas:["licensing","regulatory-compliance","corporate-ma","commercial-contracts","sports-betting","advertising-promotions","litigation-disputes"],verified:true,featured:false},
+    {slug:"vojtech-chloupek",full_name:"Vojtech Chloupek",title:"Partner, Head of IP, Tech & Comms",firm_slug:"bird-and-bird",lawyer_type:"Partner",short_summary:"IMGL member who authored the Czech chapter in Thomson Reuters Gaming: A Global Guide. Heads Bird & Bird's IP, Technology & Communications practice in the Czech Republic and Slovakia.",office_location:"Prague, Czech Republic",experience_years:18,languages:["Czech","English"],jurisdictions:["austria"],practice_areas:["licensing","regulatory-compliance","intellectual-property","data-protection-gdpr","commercial-contracts","advertising-promotions"],verified:true,featured:false},
+    {slug:"pedro-cortes",full_name:"Pedro Cortes",title:"Managing Partner",firm_slug:"gaming-legal-group",lawyer_type:"Partner",short_summary:"Holds an LL.M. in Gaming Law from UNLV and is a member of both IMGL and IAGA. Contributor to Chambers Gaming Law guides for Portugal with over 23 years of cross-jurisdictional gaming experience.",office_location:"Lisbon, Portugal",experience_years:23,languages:["Portuguese","English","Chinese"],jurisdictions:["portugal"],practice_areas:["licensing","regulatory-compliance","corporate-ma","sports-betting","commercial-contracts"],verified:true,featured:false},
+    {slug:"edward-winkofsky",full_name:"Edward R. Winkofsky",title:"Shareholder, Chair of Gaming Practice",firm_slug:"greenberg-traurig-llp",lawyer_type:"Partner",short_summary:"Chair of Greenberg Traurig's Gaming Practice, advising gaming operators, suppliers, sports wagering platforms, and tribal licensees on regulatory compliance and licensure. Ranked in Chambers USA for Gaming & Licensing.",office_location:"Chicago, United States",experience_years:18,languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","sports-betting","casino","corporate-ma","skill-games-fantasy-sports"],verified:true,featured:false},
+    {slug:"donna-more",full_name:"Donna More",title:"Partner, Managing Partner (Chicago)",firm_slug:"fox-rothschild-llp",lawyer_type:"Partner",short_summary:"Former General Counsel of the Illinois Gaming Board and former Assistant U.S. Attorney. Past president of the International Association of Gaming Advisors (IAGA) and IMGL member, ranked in Chambers USA for Gaming & Licensing.",office_location:"Chicago, United States",experience_years:30,languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","casino","responsible-gaming","advertising-promotions"],verified:true,featured:false},
+    {slug:"cj-fisher",full_name:"C.J. Fisher",title:"Partner, Co-Chair of Gaming Department",firm_slug:"fox-rothschild-llp",lawyer_type:"Partner",short_summary:"Co-Chair of Fox Rothschild's Gaming Department at the forefront of US sports betting expansion. Ranked in Chambers USA for Gaming & Licensing and named a Law360 Rising Star.",office_location:"Atlantic City, United States",experience_years:14,languages:["English"],jurisdictions:["united-states"],practice_areas:["sports-betting","regulatory-compliance","licensing","skill-games-fantasy-sports","advertising-promotions"],verified:true,featured:false},
+    {slug:"a-jeff-ifrah",full_name:"A. Jeff Ifrah",title:"Founding Partner",firm_slug:"ifrah-law-pllc",lawyer_type:"Partner",short_summary:"Founder of Ifrah Law and one of the world's foremost online gaming attorneys. Ranked Band 1 in Chambers USA and Global Market Leader in Chambers Global for Gaming & Gambling, with clients including FanDuel, Bet365, and Playtech.",office_location:"Washington D.C., United States",experience_years:25,languages:["English"],jurisdictions:["united-states"],practice_areas:["regulatory-compliance","licensing","sports-betting","payments-fintech","advertising-promotions","litigation-disputes"],verified:true,featured:false},
+    {slug:"gregory-gemignani",full_name:"Gregory R. Gemignani",title:"Member, Chair of Gaming Practice Group",firm_slug:"dickinson-wright-pllc",lawyer_type:"Partner",short_summary:"Chair of Dickinson Wright's Gaming Practice Group and professor of gaming law at UNLV Boyd School of Law. Ranked in Chambers USA and lectures for the International Center for Gaming Regulation across 60+ jurisdictions.",office_location:"Las Vegas, United States",experience_years:22,languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","intellectual-property","sports-betting","skill-games-fantasy-sports"],verified:true,featured:false},
+    {slug:"johnny-elhachem",full_name:"Johnny P. ElHachem",title:"Partner, Co-Leader of Gaming Practice",firm_slug:"holland-and-knight-llp",lawyer_type:"Partner",short_summary:"Co-leads Holland & Knight's national Gaming Practice. Former Deputy Chief Attorney for the Florida Gaming and Horse Racing Commission with extensive experience in casino licensing and regulatory enforcement.",office_location:"Miami, United States",experience_years:16,languages:["English","Arabic","French"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","sports-betting","casino","litigation-disputes"],verified:true,featured:false},
+    {slug:"frank-schreck",full_name:"Frank A. Schreck",title:"Shareholder, Co-Chair of Gaming Law Practice",firm_slug:"brownstein-hyatt-farber-schreck-llp",lawyer_type:"Partner",short_summary:"One of America's most prominent gaming attorneys with over four decades of experience. Former Chairman of the Nevada Gaming Commission, ranked in Chambers USA for Gaming & Licensing.",office_location:"Las Vegas, United States",experience_years:42,languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","corporate-ma","casino","sports-betting"],verified:true,featured:false},
+    {slug:"frank-digiacomo",full_name:"Frank A. DiGiacomo",title:"Partner, Team Lead of Gaming and Sports Industry Group",firm_slug:"duane-morris-llp",lawyer_type:"Partner",short_summary:"Team lead of Duane Morris' Gaming and Sports Industry Group, ranked in Chambers USA for Gaming & Licensing. Represents PENN Entertainment, FanDuel, ESPN/Disney, Wynn Resorts, and Hard Rock Digital.",office_location:"Philadelphia, United States",experience_years:27,languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","sports-betting","regulatory-compliance","corporate-ma","sweepstakes-social-casino","advertising-promotions"],verified:true,featured:false},
+    {slug:"j-kelly-duncan",full_name:"J. Kelly Duncan",title:"Partner, Co-Leader of Gaming Industry Team",firm_slug:"jones-walker-llp",lawyer_type:"Partner",short_summary:"Former President of the International Masters of Gaming Law (IMGL) and co-leader of Jones Walker's Gaming Industry Team. Listed annually in Chambers Global since 2009 for Gaming & Gambling.",office_location:"New Orleans, United States",experience_years:40,languages:["English"],jurisdictions:["united-states"],practice_areas:["regulatory-compliance","licensing","casino","sweepstakes-social-casino","corporate-ma"],verified:true,featured:false},
+    {slug:"marc-dunbar",full_name:"Marc W. Dunbar",title:"Partner",firm_slug:"jones-walker-llp",lawyer_type:"Partner",short_summary:"Key member of Jones Walker's Gaming Industry Team and head of the Tallahassee office. Ranked globally by Chambers for Gaming & Gambling, IMGL member, and adjunct professor at Florida State University College of Law.",office_location:"Tallahassee, United States",experience_years:25,languages:["English"],jurisdictions:["united-states"],practice_areas:["regulatory-compliance","licensing","sports-betting","sweepstakes-social-casino","casino"],verified:true,featured:false},
+    {slug:"ag-burnett",full_name:"A.G. Burnett",title:"Partner",firm_slug:"mcdonald-carano-llp",lawyer_type:"Partner",short_summary:"Former Chairman of the Nevada Gaming Control Board (2012-2017). Recipient of the IMGL 2018 Outstanding Achievement Award and ranked Band 1 in Chambers USA for Gaming & Licensing (Nevada).",office_location:"Las Vegas, United States",experience_years:25,languages:["English"],jurisdictions:["united-states"],practice_areas:["regulatory-compliance","licensing","sports-betting","casino","aml-kyc"],verified:true,featured:false},
+    {slug:"p-gregory-giordano",full_name:"P. Gregory Giordano",title:"Partner, Vice Chairman of Gaming Practice Group",firm_slug:"mcdonald-carano-llp",lawyer_type:"Partner",short_summary:"Vice Chairman of McDonald Carano's Gaming Practice Group and former Chief of the Corporate Securities Division of the Nevada Gaming Control Board. Ranked in Chambers USA for Gaming & Licensing and Best Lawyers in America.",office_location:"Las Vegas, United States",experience_years:37,languages:["English"],jurisdictions:["united-states"],practice_areas:["regulatory-compliance","licensing","corporate-ma","casino","tax"],verified:true,featured:false},
+    {slug:"jeremy-kleiman",full_name:"Jeremy P. Kleiman",title:"Member, Chair of Gaming Law Practice Group",firm_slug:"saiber-llc",lawyer_type:"Partner",short_summary:"Chair of Saiber's Gaming Law Practice Group and IMGL member. Former EVP of Regulatory & Business Affairs for a casino resort developer, specializing in online/mobile gaming and New Jersey gaming regulation.",office_location:"Florham Park, United States",experience_years:22,languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","sports-betting","casino","corporate-ma","sweepstakes-social-casino"],verified:true,featured:false},
+    {slug:"glenn-light",full_name:"Glenn J. Light",title:"Partner, Chair of Gaming Industry Group",firm_slug:"womble-bond-dickinson-us-llp",lawyer_type:"Partner",short_summary:"Chair of Womble Bond Dickinson's Gaming Industry Group and named 'Lawyer of the Year' for Gaming Law by Best Lawyers in America (2022). Teaches gaming regulation at UNLV and conducts multijurisdictional licensing projects globally.",office_location:"Las Vegas, United States",experience_years:27,languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","corporate-ma","casino","commercial-contracts"],verified:true,featured:false},
+    {slug:"nick-jackson",full_name:"Nick Jackson",title:"Senior Counsel",firm_slug:"zwillgen-pllc",lawyer_type:"Counsel",short_summary:"Ranked in Chambers USA (Band 3) for Gaming & Licensing. Represents operators and vendors across sports betting and iGaming, defends gaming class-action lawsuits, and is recognized for technology-focused gaming compliance.",office_location:"Washington D.C., United States",experience_years:15,languages:["English"],jurisdictions:["united-states"],practice_areas:["sports-betting","regulatory-compliance","licensing","data-protection-gdpr","litigation-disputes"],verified:true,featured:false},
+    {slug:"katherine-baker",full_name:"Katherine Baker",title:"Partner, Leader of Gaming Practice",firm_slug:"holland-and-knight-llp",lawyer_type:"Partner",short_summary:"Leads Holland & Knight's national Gaming Practice, previously chair of Nelson Mullins' Gaming Industry Group. Advises casino, iGaming, sports betting, and fantasy sports operators across commercial and tribal gaming landscapes.",office_location:"Boston, United States",experience_years:22,languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","sports-betting","casino","litigation-disputes","payments-fintech"],verified:true,featured:false},
+    {slug:"andre-santa-ritta",full_name:"Andre Santa Ritta",title:"Partner",firm_slug:"pinheiro-neto-advogados",lawyer_type:"Partner",short_summary:"Widely recognized as Brazil's leading gambling and betting lawyer, ranked Band 1 by Chambers for Gambling and Betting (Brazil). Leads Pinheiro Neto's gaming practice and advised the MGM Resorts/Grupo Globo joint venture on regulatory licensing.",office_location:"Sao Paulo, Brazil",experience_years:12,languages:["Portuguese","English"],jurisdictions:["brazil"],practice_areas:["regulatory-compliance","licensing","corporate-ma","sports-betting","advertising-promotions"],verified:true,featured:false},
+    {slug:"caio-de-souza-loureiro",full_name:"Caio de Souza Loureiro",title:"Partner",firm_slug:"tozzinifreire-advogados",lawyer_type:"Partner",short_summary:"Leads TozziniFreire's Gaming & E-sports practice, ranked Band 1 by Chambers for Gambling and Betting (Brazil). IMGL member acclaimed for regulatory work and advocacy services to international operators entering the Brazilian market.",office_location:"Sao Paulo, Brazil",experience_years:18,languages:["Portuguese","English"],jurisdictions:["brazil"],practice_areas:["regulatory-compliance","licensing","skill-games-fantasy-sports","corporate-ma","sweepstakes-social-casino"],verified:true,featured:false},
+    {slug:"luiz-felipe-maia",full_name:"Luiz Felipe Maia",title:"Founding Partner",firm_slug:"maia-yoshiyasu-advogados",lawyer_type:"Partner",short_summary:"One of Brazil's most internationally recognized gaming law specialists. IMGL and IAGA member, author of Brazil chapters for Chambers Gaming Law and ICLG Gambling Laws guides, and named 'Lawyer of the Year' for Gaming in Brazil multiple times.",office_location:"Sao Paulo, Brazil",experience_years:24,languages:["Portuguese","English","Spanish"],jurisdictions:["brazil"],practice_areas:["sports-betting","licensing","regulatory-compliance","sweepstakes-social-casino","skill-games-fantasy-sports","corporate-ma"],verified:true,featured:false},
+    {slug:"udo-seckelmann",full_name:"Udo Seckelmann",title:"Head of Gambling and Crypto Department",firm_slug:"bichara-e-motta-advogados",lawyer_type:"Partner",short_summary:"Created Bichara e Motta's Gambling & Crypto department, now recognized by Chambers and Who's Who Legal for Gaming Law. Advises betting operators, game providers, and affiliates, and serves as professor at CBF Academy.",office_location:"Rio de Janeiro, Brazil",experience_years:12,languages:["Portuguese","English","Spanish"],jurisdictions:["brazil"],practice_areas:["regulatory-compliance","licensing","payments-fintech","sports-betting","advertising-promotions","affiliate-compliance"],verified:true,featured:false},
+    {slug:"roberto-pinatti-casarini",full_name:"Roberto Pinatti Casarini",title:"Partner",firm_slug:"demarest-advogados",lawyer_type:"Partner",short_summary:"Tax law specialist ranked Band 3 by Chambers for Gambling and Betting (Brazil). Led tax structuring on Flutter/Betfair's acquisition of controlling stake in NSX Group (Betnacional), a landmark Brazilian gaming M&A deal.",office_location:"Sao Paulo, Brazil",experience_years:19,languages:["Portuguese","English","Spanish"],jurisdictions:["brazil"],practice_areas:["tax","corporate-ma","regulatory-compliance","licensing"],verified:true,featured:false},
+    {slug:"fabio-ferreira-kujawski",full_name:"Fabio Ferreira Kujawski",title:"Partner",firm_slug:"mattos-filho",lawyer_type:"Partner",short_summary:"Ranked Band 3 by Chambers for Gambling and Betting (Brazil) and recognized by Legal 500 and Who's Who Legal. Applies deep technology and telecommunications law expertise to gambling advertising regulation and M&A compliance in the betting sector.",office_location:"Sao Paulo, Brazil",experience_years:22,languages:["Portuguese","English"],jurisdictions:["brazil"],practice_areas:["advertising-promotions","regulatory-compliance","corporate-ma","data-protection-gdpr","intellectual-property"],verified:true,featured:false},
+    {slug:"pedro-simoes",full_name:"Pedro Simoes",title:"Partner, Coordinator of Gaming and Betting Practice",firm_slug:"veirano-advogados",lawyer_type:"Partner",short_summary:"Coordinates Veirano's Gaming and Betting department, ranked Band 3 by Chambers (Brazil). Advises international operators and payment solutions providers entering the Brazilian betting market, with specialized AML compliance capabilities from his white-collar defense background.",office_location:"Sao Paulo, Brazil",experience_years:12,languages:["Portuguese","English","German"],jurisdictions:["brazil"],practice_areas:["regulatory-compliance","aml-kyc","payments-fintech","licensing","sports-betting"],verified:true,featured:false},
+    {slug:"eduardo-hayden-carvalhaes-neto",full_name:"Eduardo Hayden Carvalhaes Neto",title:"Partner",firm_slug:"lefosse-advogados",lawyer_type:"Partner",short_summary:"Lead partner for Lefosse's Sports Betting practice, ranked in Chambers for Gambling and Betting (Brazil). Expert on sports betting regulation, gambling taxation, and state lottery structuring, having advised on the Espirito Santo state lottery concession.",office_location:"Sao Paulo, Brazil",experience_years:22,languages:["Portuguese","English"],jurisdictions:["brazil"],practice_areas:["sports-betting","sweepstakes-social-casino","tax","regulatory-compliance","licensing"],verified:true,featured:false},
+    {slug:"juliana-abrusio",full_name:"Juliana Abrusio",title:"Partner",firm_slug:"machado-meyer",lawyer_type:"Partner",short_summary:"Partner at Machado Meyer whose practice areas include Gaming and Betting, covering technology, digital law, and data protection aspects of Brazil's evolving gambling regulatory framework.",office_location:"Sao Paulo, Brazil",experience_years:23,languages:["Portuguese","English"],jurisdictions:["brazil"],practice_areas:["regulatory-compliance","data-protection-gdpr","advertising-promotions","intellectual-property","licensing"],verified:true,featured:false},
+    {slug:"stefano-sbordoni",full_name:"Stefano Sbordoni",title:"Founding Partner",firm_slug:"studio-legale-sbordoni-and-partners",lawyer_type:"Partner",short_summary:"Founding partner of Studio Legale Sbordoni specialising in Italian gaming and gambling regulation. IMGL member with extensive experience advising operators on licensing, compliance, and regulatory proceedings before the Italian Customs and Monopolies Agency.",office_location:"Rome, Italy",experience_years:20,languages:["Italian","English"],jurisdictions:["italy"],practice_areas:["licensing","regulatory-compliance","litigation-disputes","commercial-contracts","sports-betting","casino"],verified:true,featured:false},
+    {slug:"marco-casellato",full_name:"Marco Casellato",title:"Managing Partner",firm_slug:"casellato-and-travagli",lawyer_type:"Partner",short_summary:"Criminal law specialist with over a decade of experience defending gaming sector operators in regulatory disputes and sanctions proceedings across Italy.",office_location:"Rovigo, Italy",experience_years:14,languages:["Italian","English"],jurisdictions:["italy"],practice_areas:["litigation-disputes","regulatory-compliance","licensing"],verified:true,featured:false},
+    {slug:"matia-campo",full_name:"Matia Campo",title:"Partner",firm_slug:"cms-italy",lawyer_type:"Partner",short_summary:"TMC Partner at CMS Italy advising national and international companies on online gambling regulation, e-commerce, and advertising compliance in the gaming sector.",office_location:"Rome, Italy",experience_years:15,languages:["Italian","English"],jurisdictions:["italy"],practice_areas:["regulatory-compliance","advertising-promotions","data-protection-gdpr","licensing"],verified:true,featured:false},
+    {slug:"veronica-mazzaferro",full_name:"Veronica Mazzaferro",title:"Counsel",firm_slug:"cms-italy",lawyer_type:"Counsel",short_summary:"Counsel at CMS Italy, co-author of the CMS Expert Guide to Online Gambling Regulation in Europe, advising on technology, media, and gaming regulatory matters.",office_location:"Rome, Italy",experience_years:12,languages:["Italian","English"],jurisdictions:["italy"],practice_areas:["regulatory-compliance","licensing","advertising-promotions","data-protection-gdpr"],verified:true,featured:false},
+    {slug:"roberto-a-jacchia",full_name:"Roberto A. Jacchia",title:"Senior Partner",firm_slug:"de-berti-jacchia-franchini-forlani",lawyer_type:"Partner",short_summary:"Co-founding partner who led the landmark Stanleybet cases before the European Court of Justice, with two decades of specialist betting and gaming litigation experience.",office_location:"Milan, Italy",experience_years:35,languages:["Italian","English","French"],jurisdictions:["italy"],practice_areas:["litigation-disputes","regulatory-compliance","licensing","corporate-ma"],verified:true,featured:false},
+    {slug:"fabio-ferraro",full_name:"Fabio Ferraro",title:"Partner",firm_slug:"de-berti-jacchia-franchini-forlani",lawyer_type:"Partner",short_summary:"Partner and Professor of EU Law at the University of Naples, advising betting and gaming companies on cross-border regulatory matters.",office_location:"Rome, Italy",experience_years:20,languages:["Italian","English","French"],jurisdictions:["italy"],practice_areas:["regulatory-compliance","licensing","litigation-disputes","market-entry-strategy"],verified:true,featured:false},
+    {slug:"antonella-terranova",full_name:"Antonella Terranova",title:"Partner",firm_slug:"de-berti-jacchia-franchini-forlani",lawyer_type:"Partner",short_summary:"Partner and head of De Berti Jacchia's Rome office, Chair of Interlaw's EMEA region, with two decades of experience in betting and gaming regulatory proceedings.",office_location:"Rome, Italy",experience_years:25,languages:["Italian","English","French"],jurisdictions:["italy"],practice_areas:["regulatory-compliance","licensing","litigation-disputes","market-entry-strategy"],verified:true,featured:false},
+    {slug:"giulio-coraggio",full_name:"Giulio Coraggio",title:"Partner",firm_slug:"dla-piper-italy",lawyer_type:"Partner",short_summary:"Global Co-Chair of DLA Piper's Gaming & Gambling group, dual-qualified in Italy and England & Wales with 20+ years advising leading gaming operators.",office_location:"Milan, Italy",experience_years:22,languages:["Italian","English"],jurisdictions:["italy"],practice_areas:["regulatory-compliance","licensing","data-protection-gdpr","advertising-promotions","litigation-disputes","payments-fintech"],verified:true,featured:false},
+    {slug:"federico-venturi-ferriolo",full_name:"Federico Venturi Ferriolo",title:"Partner",firm_slug:"lca-studio-legale",lawyer_type:"Partner",short_summary:"Equity Partner and Head of Sports Law at LCA Studio Legale, advising on gaming, esports, and interactive entertainment regulatory and transactional matters.",office_location:"Milan, Italy",experience_years:15,languages:["Italian","English"],jurisdictions:["italy"],practice_areas:["regulatory-compliance","licensing","commercial-contracts","intellectual-property","sports-betting"],verified:true,featured:false},
+    {slug:"fabio-maggesi",full_name:"Fabio Maggesi",title:"Managing Partner",firm_slug:"meplaw-studio-legale-maggesi-macchi-mazza",lawyer_type:"Partner",short_summary:"Managing Partner and founder of MEPLAW, specialising in betting, skill games, and gambling law for Italian, Maltese, and Spanish operators.",office_location:"Rome, Italy",experience_years:17,languages:["Italian","English","Spanish"],jurisdictions:["italy","malta"],practice_areas:["licensing","regulatory-compliance","market-entry-strategy","skill-games-fantasy-sports","sports-betting"],verified:true,featured:false},
+    {slug:"claudio-di-falco",full_name:"Claudio Di Falco",title:"Partner",firm_slug:"norton-rose-fulbright-italy",lawyer_type:"Partner",short_summary:"Milan-based corporate and M&A partner at Norton Rose Fulbright, dual-qualified in Italy and New York, advising on gaming sector transactions.",office_location:"Milan, Italy",experience_years:22,languages:["Italian","English"],jurisdictions:["italy"],practice_areas:["corporate-ma","regulatory-compliance","licensing","commercial-contracts"],verified:true,featured:false},
+    {slug:"giovanni-adamo",full_name:"Giovanni Adamo",title:"Managing Partner",firm_slug:"studio-legale-adamo",lawyer_type:"Partner",short_summary:"Bologna-based gambling law specialist advising gaming operators on licensing, regulatory compliance, and slot machine administrative proceedings.",office_location:"Bologna, Italy",experience_years:25,languages:["Italian","English"],jurisdictions:["italy"],practice_areas:["licensing","regulatory-compliance","litigation-disputes","casino","commercial-contracts"],verified:true,featured:false},
+    {slug:"gianluca-benedetti",full_name:"Gianluca Benedetti",title:"Founding Partner",firm_slug:"studio-legale-bridgelaw",lawyer_type:"Partner",short_summary:"Founding Partner who advised on the sale of sports betting operator Scommesseitalia to Admiral Gaming Network (Novomatic), with deep gaming M&A expertise.",office_location:"Milan, Italy",experience_years:25,languages:["Italian","English"],jurisdictions:["italy"],practice_areas:["corporate-ma","commercial-contracts","regulatory-compliance","tax","sports-betting"],verified:true,featured:false},
+    {slug:"andrea-lazzaretti",full_name:"Andrea Lazzaretti",title:"Partner",firm_slug:"studio-legale-rinaldi-e-associati-rass",lawyer_type:"Partner",short_summary:"Equity Partner at RASS heading the Rome office, with over 30 years of experience specialising in gaming and betting law for Italian and international operators.",office_location:"Rome, Italy",experience_years:30,languages:["Italian","English"],jurisdictions:["italy"],practice_areas:["licensing","regulatory-compliance","intellectual-property","commercial-contracts","sports-betting","casino"],verified:true,featured:false},
+    {slug:"richard-bernard",full_name:"Richard Bernard",title:"Managing Partner",firm_slug:"be-legal-advocates",lawyer_type:"Partner",short_summary:"Managing Partner of Be. Legal Advocates Malta, responsible for the firm's iGaming, financial services, and corporate law practice since 2008.",office_location:"Valletta, Malta",experience_years:18,languages:["English","Maltese"],jurisdictions:["malta"],practice_areas:["licensing","regulatory-compliance","corporate-ma","commercial-contracts"],verified:true,featured:false},
+    {slug:"jean-philippe-chetcuti",full_name:"Jean Philippe Chetcuti",title:"Managing Partner",firm_slug:"chetcuti-cauchi-advocates",lawyer_type:"Partner",short_summary:"Managing Partner of Chetcuti Cauchi Advocates, providing full-service gaming licence applications, compliance, and corporate structuring since 2004.",office_location:"Valletta, Malta",experience_years:22,languages:["English","Maltese","Italian"],jurisdictions:["malta"],practice_areas:["licensing","regulatory-compliance","corporate-ma","tax","market-entry-strategy","data-protection-gdpr"],verified:true,featured:false},
+    {slug:"marlon-borg",full_name:"Marlon Borg",title:"Partner",firm_slug:"df-advocates",lawyer_type:"Partner",short_summary:"Partner at DF Advocates advising gaming operators and platform providers on licensing, corporate structuring, and MGA regulatory compliance.",office_location:"Valletta, Malta",experience_years:12,languages:["English","Maltese","Italian"],jurisdictions:["malta"],practice_areas:["licensing","regulatory-compliance","corporate-ma","commercial-contracts"],verified:true,featured:false},
+    {slug:"christian-ellul",full_name:"Christian Ellul",title:"Managing Partner",firm_slug:"ellul-schranz-e-and-s-group",lawyer_type:"Partner",short_summary:"Co-founder and Managing Partner of E&S Group with over 15 years securing Malta iGaming licences and advising on gaming regulatory compliance.",office_location:"St. Julian's, Malta",experience_years:18,languages:["English","Maltese","Italian"],jurisdictions:["malta"],practice_areas:["licensing","regulatory-compliance","aml-kyc","advertising-promotions","market-entry-strategy"],verified:true,featured:false},
+    {slug:"tonio-ellul",full_name:"Tonio Ellul",title:"Partner",firm_slug:"emd-advocates",lawyer_type:"Partner",short_summary:"Partner at EMD Advocates since 2003, specialising in corporate law, gaming law, trusts, tax, and employment law with deep iGaming regulatory expertise.",office_location:"Valletta, Malta",experience_years:25,languages:["English","Maltese","Italian"],jurisdictions:["malta"],practice_areas:["licensing","regulatory-compliance","corporate-ma","tax","commercial-contracts","employment"],verified:true,featured:false},
+    {slug:"michael-grech",full_name:"Michael Grech",title:"Partner",firm_slug:"gg-advocates",lawyer_type:"Partner",short_summary:"Co-founding Partner of GG Advocates (Grech & Ghaznavi), advising on IT and remote gaming law, corporate structures, and regulatory matters.",office_location:"Valletta, Malta",experience_years:20,languages:["English","Maltese","Italian","French"],jurisdictions:["malta"],practice_areas:["licensing","regulatory-compliance","corporate-ma","aml-kyc","commercial-contracts"],verified:true,featured:false},
+    {slug:"david-gonzi",full_name:"David Gonzi",title:"Managing Partner",firm_slug:"gonzi-and-associates",lawyer_type:"Partner",short_summary:"Managing Partner of Gonzi & Associates with 13+ years advising on remote and land-based gaming licences, holding an LLM in IT and Telecoms Law from UCL.",office_location:"Valletta, Malta",experience_years:16,languages:["English","Maltese","Italian"],jurisdictions:["malta"],practice_areas:["licensing","regulatory-compliance","corporate-ma","market-entry-strategy","payments-fintech"],verified:true,featured:false},
+    {slug:"peter-fenech",full_name:"Peter Fenech",title:"Managing Partner",firm_slug:"iuris-malta",lawyer_type:"Partner",short_summary:"Co-founding and Managing Partner of IURIS Malta, advising remote gaming operators on licensing, company incorporation, and MGA regulatory negotiations.",office_location:"Valletta, Malta",experience_years:18,languages:["English","Maltese"],jurisdictions:["malta"],practice_areas:["licensing","regulatory-compliance","corporate-ma","commercial-contracts","responsible-gaming"],verified:true,featured:false},
+    {slug:"malcolm-mifsud",full_name:"Malcolm Mifsud",title:"Founding Partner",firm_slug:"mifsud-and-mifsud-advocates",lawyer_type:"Partner",short_summary:"Founding Partner advising gaming operators on regulatory compliance and dispute resolution in Malta's iGaming sector since 2007.",office_location:"Valletta, Malta",experience_years:20,languages:["English","Maltese","Italian"],jurisdictions:["malta"],practice_areas:["regulatory-compliance","litigation-disputes","licensing","corporate-ma"],verified:true,featured:false},
+    {slug:"cedric-mifsud",full_name:"Cedric Mifsud",title:"Partner",firm_slug:"mifsud-and-mifsud-advocates",lawyer_type:"Partner",short_summary:"Co-founding Partner, recognised commentator on Malta's Gaming Act amendments and EU law supremacy principles in the online gambling context.",office_location:"Valletta, Malta",experience_years:18,languages:["English","Maltese","Italian"],jurisdictions:["malta"],practice_areas:["regulatory-compliance","litigation-disputes","licensing","data-protection-gdpr"],verified:true,featured:false},
+    {slug:"john-bugeja",full_name:"John Bugeja",title:"Managing Partner",firm_slug:"vassallo-associates",lawyer_type:"Partner",short_summary:"Managing Partner providing litigation-led legal services to gaming operators facing MGA investigations, enforcement actions, and cross-border disputes.",office_location:"Valletta, Malta",experience_years:22,languages:["English","Maltese","Italian"],jurisdictions:["malta"],practice_areas:["litigation-disputes","regulatory-compliance","corporate-ma","aml-kyc"],verified:true,featured:false},
+    {slug:"marc-x-ellul",full_name:"Marc X. Ellul",title:"Managing Director",firm_slug:"ellul-and-co",lawyer_type:"Partner",short_summary:"Managing Director of Ellul & Co, advising on gaming licence applications, affiliate agreements, and white-label structures in Gibraltar.",office_location:"Gibraltar, Gibraltar",experience_years:18,languages:["English","Spanish"],jurisdictions:["gibraltar"],practice_areas:["licensing","corporate-ma","commercial-contracts","regulatory-compliance"],verified:true,featured:false},
+    {slug:"keith-azopardi",full_name:"Keith Azopardi KC",title:"Partner",firm_slug:"tsn-triay-stagnetto-neish-barristers-and-solicitors",lawyer_type:"Partner",short_summary:"Senior Partner at TSN and former Deputy Chief Minister of Gibraltar, representing clients in gambling disputes and regulatory matters.",office_location:"Gibraltar, Gibraltar",experience_years:30,languages:["English","Spanish"],jurisdictions:["gibraltar"],practice_areas:["litigation-disputes","regulatory-compliance","licensing","corporate-ma"],verified:true,featured:false},
+    {slug:"chris-davis",full_name:"Chris Davis",title:"Partner",firm_slug:"triay-limited",lawyer_type:"Partner",short_summary:"Recognised as a Leading Associate in Gaming by The Legal 500 Gibraltar 2025, advising on licensing and regulatory compliance.",office_location:"Gibraltar, Gibraltar",experience_years:12,languages:["English","Spanish"],jurisdictions:["gibraltar"],practice_areas:["licensing","regulatory-compliance","commercial-contracts","corporate-ma"],verified:true,featured:false},
+    {slug:"claire-milne",full_name:"Claire Milne WS",title:"Partner",firm_slug:"appleby",lawyer_type:"Partner",short_summary:"Former Chair of the Isle of Man Gambling Supervision Commission and Band 1 Chambers-ranked Partner at Appleby, leading the eGaming team.",office_location:"Douglas, Isle of Man",experience_years:28,languages:["English"],jurisdictions:["isle-of-man"],practice_areas:["licensing","regulatory-compliance","data-protection-gdpr","intellectual-property","commercial-contracts"],verified:true,featured:false},
+    {slug:"scott-leonard-morgan",full_name:"Scott Leonard-Morgan",title:"Director",firm_slug:"cains",lawyer_type:"Partner",short_summary:"Director and joint head of Cains' Tier 1-ranked Corporate and Commercial team, with 20+ years in technology and gaming sectors.",office_location:"Douglas, Isle of Man",experience_years:22,languages:["English"],jurisdictions:["isle-of-man"],practice_areas:["corporate-ma","regulatory-compliance","licensing","commercial-contracts","payments-fintech"],verified:true,featured:false},
+    {slug:"tristan-head",full_name:"Tristan Head",title:"Director",firm_slug:"cains",lawyer_type:"Partner",short_summary:"Director at Cains co-chairing the gambling practice, with expertise in local and multi-jurisdictional M&A transactions involving IoM gambling companies.",office_location:"Douglas, Isle of Man",experience_years:18,languages:["English"],jurisdictions:["isle-of-man"],practice_areas:["corporate-ma","regulatory-compliance","licensing","commercial-contracts"],verified:true,featured:false},
+    {slug:"jason-kelly",full_name:"Jason Kelly",title:"Founder & Principal",firm_slug:"kosnahan-law",lawyer_type:"Partner",short_summary:"Founder of Kosnahan Law and former Head of Legal & Compliance at Microgaming, with 15+ years advising regulated online gambling operators.",office_location:"Douglas, Isle of Man",experience_years:18,languages:["English"],jurisdictions:["isle-of-man"],practice_areas:["licensing","regulatory-compliance","commercial-contracts","intellectual-property","data-protection-gdpr","sports-betting"],verified:true,featured:false},
+    {slug:"damian-molyneux",full_name:"Damian Molyneux",title:"Director",firm_slug:"m-and-p-legal",lawyer_type:"Partner",short_summary:"Director at M&P Legal and Legal 500 Leading Partner for Dispute Resolution, advising on commercial disputes and gaming sector litigation.",office_location:"Douglas, Isle of Man",experience_years:20,languages:["English"],jurisdictions:["isle-of-man"],practice_areas:["litigation-disputes","corporate-ma","commercial-contracts","regulatory-compliance"],verified:true,featured:false},
+    {slug:"miles-benham",full_name:"Miles Benham",title:"Managing Director",firm_slug:"mannbenham-advocates",lawyer_type:"Partner",short_summary:"Co-founder and Managing Director of MannBenham, fundamental in the evolution of the Isle of Man gaming industry for over 25 years.",office_location:"Douglas, Isle of Man",experience_years:30,languages:["English"],jurisdictions:["isle-of-man"],practice_areas:["licensing","regulatory-compliance","corporate-ma","commercial-contracts"],verified:true,featured:false},
+    {slug:"carly-stratton",full_name:"Carly Stratton",title:"Director & Head of Business & eGaming",firm_slug:"mannbenham-advocates",lawyer_type:"Partner",short_summary:"Director and Head of Business & eGaming at MannBenham, specialising in corporate, regulatory, and compliance matters for gambling operators.",office_location:"Douglas, Isle of Man",experience_years:15,languages:["English"],jurisdictions:["isle-of-man"],practice_areas:["licensing","regulatory-compliance","corporate-ma","commercial-contracts","aml-kyc"],verified:true,featured:false},
+    {slug:"dr-manfred-hecker",full_name:"Dr. Manfred Hecker",title:"Partner",firm_slug:"cbh-rechtsanw-lte",lawyer_type:"Partner",short_summary:"Co-editor of the Zeitschrift fur Wett- und Glucksspielrecht (ZfWG), Germany's leading gambling law journal, and co-author of the Beck commentary on gambling law.",office_location:"Cologne, Germany",experience_years:35,languages:["German","English"],jurisdictions:["germany"],practice_areas:["regulatory-compliance","litigation-disputes","licensing","intellectual-property","advertising-promotions"],verified:true,featured:false},
+    {slug:"dr-wulf-hambach",full_name:"Dr. Wulf Hambach",title:"Founding Partner",firm_slug:"hambach-and-hambach",lawyer_type:"Partner",short_summary:"Founding partner and one of the world's foremost gambling lawyers. Named Most Highly Regarded Individual by Who's Who Legal, consistently ranked by Chambers Global since 2008.",office_location:"Munich, Germany",experience_years:25,languages:["German","English"],jurisdictions:["germany"],practice_areas:["licensing","regulatory-compliance","corporate-ma","market-entry-strategy","sports-betting","casino","advertising-promotions"],verified:true,featured:false},
+    {slug:"claus-hambach",full_name:"Claus Hambach",title:"Managing Partner",firm_slug:"hambach-and-hambach",lawyer_type:"Partner",short_summary:"Co-founder with specialist expertise in gambling taxation, AML compliance, and payment services in the gaming sector.",office_location:"Munich, Germany",experience_years:22,languages:["German","English"],jurisdictions:["germany"],practice_areas:["tax","aml-kyc","payments-fintech","regulatory-compliance","licensing","sports-betting"],verified:true,featured:false},
+    {slug:"dr-stefan-bolay",full_name:"Dr. Stefan Bolay",title:"Partner",firm_slug:"hambach-and-hambach",lawyer_type:"Partner",short_summary:"Partner specialising in gambling administrative law, media and entertainment law, and sweepstakes regulation. Authored his doctorate on competitions and sweepstakes.",office_location:"Munich, Germany",experience_years:22,languages:["German","English","Swedish"],jurisdictions:["germany"],practice_areas:["regulatory-compliance","licensing","sweepstakes-social-casino","advertising-promotions","data-protection-gdpr","intellectual-property"],verified:true,featured:false},
+    {slug:"maximilian-kienzerle",full_name:"Maximilian Kienzerle",title:"Partner",firm_slug:"hambach-and-hambach",lawyer_type:"Partner",short_summary:"Partner advising on online sports betting, poker, and non-profit lottery regulation. Specialises in EU gambling law and administrative compliance.",office_location:"Munich, Germany",experience_years:9,languages:["German","English","French"],jurisdictions:["germany"],practice_areas:["sports-betting","poker","licensing","regulatory-compliance","aml-kyc","tax","data-protection-gdpr"],verified:true,featured:false},
+    {slug:"dr-matthias-spitz",full_name:"Dr. Matthias Spitz",title:"Senior Partner",firm_slug:"melchers-rechtsanw-lte",lawyer_type:"Partner",short_summary:"Senior Partner specialising in European gambling law, AML compliance, and advertising regulation. IMGL member ranked by Chambers Global and Who's Who Legal.",office_location:"Heidelberg, Germany",experience_years:20,languages:["German","English"],jurisdictions:["germany"],practice_areas:["regulatory-compliance","aml-kyc","advertising-promotions","licensing","market-entry-strategy","sports-betting"],verified:true,featured:false},
+    {slug:"michelle-hembury",full_name:"Michelle Hembury",title:"Partner",firm_slug:"melchers-rechtsanw-lte",lawyer_type:"Partner",short_summary:"Partner focusing on advertising compliance, AML, data protection, and licensing for sports betting and online casino operators. Co-author of Chambers Global Practice Guide on Gaming Law.",office_location:"Heidelberg, Germany",experience_years:8,languages:["German","English"],jurisdictions:["germany"],practice_areas:["advertising-promotions","aml-kyc","data-protection-gdpr","licensing","regulatory-compliance","sports-betting","casino"],verified:true,featured:false},
+    {slug:"frank-tolboom",full_name:"Frank Tolboom",title:"Partner",firm_slug:"kalff-katz-and-franssen",lawyer_type:"Partner",short_summary:"Partner specialising in Dutch gambling regulation, licensing, compliance, and sanction proceedings before the Kansspelautoriteit (KSA).",office_location:"Amsterdam, Netherlands",experience_years:16,languages:["Dutch","English"],jurisdictions:["netherlands"],practice_areas:["licensing","regulatory-compliance","payments-fintech","litigation-disputes","sports-betting","market-entry-strategy"],verified:true,featured:false},
+    {slug:"dr-alan-littler",full_name:"Dr. Alan Littler",title:"Legal Director",firm_slug:"kalff-katz-and-franssen",lawyer_type:"Counsel",short_summary:"Leading academic-practitioner in European gambling law. Holds a PhD on gambling regulation from Tilburg University and teaches on the Queen Mary University LLM.",office_location:"Amsterdam, Netherlands",experience_years:14,languages:["English","Dutch"],jurisdictions:["netherlands"],practice_areas:["regulatory-compliance","licensing","data-protection-gdpr","responsible-gaming","casino","sweepstakes-social-casino","skill-games-fantasy-sports"],verified:true,featured:false},
+    {slug:"chris-adriaansz",full_name:"Chris Adriaansz",title:"Associate",firm_slug:"kalff-katz-and-franssen",lawyer_type:"Associate",short_summary:"Associate specialising in administrative enforcement law for gambling clients, licensing proceedings before the KSA, and AML compliance.",office_location:"Amsterdam, Netherlands",experience_years:6,languages:["Dutch","English"],jurisdictions:["netherlands"],practice_areas:["aml-kyc","licensing","regulatory-compliance","payments-fintech"],verified:true,featured:false},
+    {slug:"david-whyte",full_name:"David Whyte",title:"Partner",firm_slug:"harris-hagan",lawyer_type:"Partner",short_summary:"Former UK Gambling Commission enforcement lawyer with nine years of regulatory experience. Ranked Band 2 by Chambers UK 2026 and named Next Generation Partner by Legal 500.",office_location:"London, United Kingdom",experience_years:10,languages:["English"],jurisdictions:["united-kingdom"],practice_areas:["licensing","regulatory-compliance","aml-kyc","data-protection-gdpr","advertising-promotions","responsible-gaming","litigation-disputes"],verified:true,featured:false},
+    {slug:"chris-elliott",full_name:"Chris Elliott",title:"Partner",firm_slug:"wiggin-llp",lawyer_type:"Partner",short_summary:"Ranked by Chambers Global Market Leaders, specialising in online gambling regulation, esports betting, blockchain in gambling, and advertising compliance.",office_location:"London, United Kingdom",experience_years:15,languages:["English"],jurisdictions:["united-kingdom"],practice_areas:["regulatory-compliance","licensing","advertising-promotions","sports-betting","skill-games-fantasy-sports","data-protection-gdpr","commercial-contracts"],verified:true,featured:false},
+    {slug:"david-mcleish",full_name:"David McLeish",title:"Partner",firm_slug:"wiggin-llp",lawyer_type:"Partner",short_summary:"Ranked Band 1 by Chambers Global Market Leaders. Former General Counsel at Playtech plc, leading on M&A, technology transactions, and commercial deals in gaming.",office_location:"London, United Kingdom",experience_years:25,languages:["English"],jurisdictions:["united-kingdom"],practice_areas:["corporate-ma","commercial-contracts","regulatory-compliance","licensing","payments-fintech","intellectual-property"],verified:true,featured:false},
+    {slug:"susan-breen",full_name:"Susan Breen",title:"Partner",firm_slug:"mishcon-de-reya-llp",lawyer_type:"Partner",short_summary:"Co-leader of Mishcon's Betting & Gaming Group, ranked Band 1 by Chambers UK. Advises on corporate transactions, market entry, and regulatory due diligence worldwide. IMGL Executive Committee member.",office_location:"London, United Kingdom",experience_years:20,languages:["English"],jurisdictions:["united-kingdom"],practice_areas:["corporate-ma","regulatory-compliance","licensing","market-entry-strategy","aml-kyc","responsible-gaming"],verified:true,featured:false},
+    {slug:"niki-stephens",full_name:"Niki Stephens",title:"Partner",firm_slug:"mishcon-de-reya-llp",lawyer_type:"Partner",short_summary:"Partner with over 14 years specialising in gambling regulatory matters. Advises on Gambling Commission compliance assessments, enforcement actions, and M&A regulatory aspects.",office_location:"London, United Kingdom",experience_years:14,languages:["English"],jurisdictions:["united-kingdom"],practice_areas:["regulatory-compliance","aml-kyc","corporate-ma","licensing","responsible-gaming","advertising-promotions","litigation-disputes"],verified:true,featured:false},
+    {slug:"stuart-mcmaster",full_name:"Stuart McMaster",title:"Partner",firm_slug:"mishcon-de-reya-llp",lawyer_type:"Partner",short_summary:"Corporate finance partner ranked Band 2 by Chambers UK for Gaming. Specialises in M&A and data protection within the gambling sector, having advised on the PartyGaming/bwin merger.",office_location:"London, United Kingdom",experience_years:22,languages:["English"],jurisdictions:["united-kingdom"],practice_areas:["corporate-ma","data-protection-gdpr","regulatory-compliance","licensing","commercial-contracts"],verified:true,featured:false},
+    {slug:"phil-hails-smith",full_name:"Phil Hails-Smith",title:"Partner",firm_slug:"joelson-llp",lawyer_type:"Partner",short_summary:"Partner co-leading the gambling, gaming and betting law practice. Advises online and land-based gambling operators on corporate transactions and commercial partnerships.",office_location:"London, United Kingdom",experience_years:27,languages:["English"],jurisdictions:["united-kingdom"],practice_areas:["corporate-ma","commercial-contracts","licensing","regulatory-compliance","market-entry-strategy"],verified:true,featured:false},
+    {slug:"tom-edmonds",full_name:"Tom Edmonds",title:"Managing Associate",firm_slug:"northridge-law-llp",lawyer_type:"Associate",short_summary:"Ranked as a Leading Associate by Legal 500. Former in-house experience at Betgenius, advising B2C and B2B operators on Gambling Commission licensing and AML.",office_location:"London, United Kingdom",experience_years:12,languages:["English"],jurisdictions:["united-kingdom"],practice_areas:["licensing","regulatory-compliance","aml-kyc","sports-betting","advertising-promotions","commercial-contracts","responsible-gaming"],verified:true,featured:false},
+    {slug:"pontus-sorlin",full_name:"Pontus Sorlin",title:"Founding Partner",firm_slug:"delorean-advokat",lawyer_type:"Partner",short_summary:"Founder of DeLorean Advokat specializing in Swedish gambling law including licence applications, renewals, and transfers under the Swedish Gambling Act.",office_location:"Stockholm, Sweden",experience_years:8,languages:["Swedish","English"],jurisdictions:["sweden"],practice_areas:["licensing","regulatory-compliance","litigation-disputes","commercial-contracts","corporate-ma"],verified:true,featured:false},
+    {slug:"oscar-anderson",full_name:"Oscar Anderson",title:"Partner",firm_slug:"gernandt-and-danielsson",lawyer_type:"Partner",short_summary:"Co-author of the Swedish chapters of Lexology In-Depth: Gambling Law and Legal 500 Gambling Law Comparative Guide. Advised Betsson AB on numerous gambling M&A deals.",office_location:"Stockholm, Sweden",experience_years:12,languages:["Swedish","English"],jurisdictions:["sweden"],practice_areas:["corporate-ma","regulatory-compliance","licensing","commercial-contracts"],verified:true,featured:false},
+    {slug:"siri-telmen",full_name:"Siri Telmen",title:"Associate",firm_slug:"gernandt-and-danielsson",lawyer_type:"Associate",short_summary:"Co-author of Swedish chapters of Lexology In-Depth: Gambling Law. Member of the deal team advising Evolution AB on its share buyback programme.",office_location:"Stockholm, Sweden",experience_years:3,languages:["Swedish","English"],jurisdictions:["sweden"],practice_areas:["corporate-ma","regulatory-compliance","licensing","commercial-contracts"],verified:true,featured:false},
+    {slug:"oscar-bjorkman-possne",full_name:"Oscar Bjorkman Possne",title:"Partner",firm_slug:"mannheimer-swartling",lawyer_type:"Partner",short_summary:"Head contact for Mannheimer Swartling's Media and Entertainment sector covering betting, gaming, and e-sport. Advised on the Scientific Games acquisition of ELK Studios.",office_location:"Stockholm, Sweden",experience_years:15,languages:["Swedish","English"],jurisdictions:["sweden"],practice_areas:["intellectual-property","commercial-contracts","corporate-ma","regulatory-compliance"],verified:true,featured:false},
+    {slug:"gilbert-brooks",full_name:"Gilbert L. Brooks",title:"Partner",firm_slug:"duane-morris-llp",lawyer_type:"Partner",short_summary:"Seasoned gaming law practitioner advising major gaming and entertainment companies. Named Best Lawyers Gaming Lawyer of the Year.",office_location:"Cherry Hill, United States",experience_years:41,languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","litigation-disputes","employment","casino"],verified:true,featured:false},
+    {slug:"miko-hernandez",full_name:"Miko E. Hernandez",title:"Partner",firm_slug:"faegre-drinker-biddle-and-reath-llp",lawyer_type:"Partner",short_summary:"Advises on commercial financing transactions for Native American tribal gaming operations, representing both tribes and financial institutions. Ranked in Chambers USA.",office_location:"Minneapolis, United States",experience_years:21,languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","corporate-ma","payments-fintech","casino"],verified:true,featured:false},
+    {slug:"josh-peterson",full_name:"Josh Peterson",title:"Partner",firm_slug:"faegre-drinker-biddle-and-reath-llp",lawyer_type:"Partner",short_summary:"Federal Indian law specialist representing Native American tribes in gaming disputes, land-rights claims, and matters under the Indian Gaming Regulatory Act.",office_location:"Minneapolis, United States",experience_years:10,languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","litigation-disputes","casino"],verified:true,featured:false},
+    {slug:"marie-jones",full_name:"Marie Jiacopello Jones",title:"Partner, Co-Chair of Gaming Department",firm_slug:"fox-rothschild-llp",lawyer_type:"Partner",short_summary:"Co-Chair of Fox Rothschild's Gaming Department. Led Amaya's $4.9 billion acquisition of PokerStars/Full Tilt Poker. Ranked in Chambers Global and IMGL member.",office_location:"Atlantic City, United States",experience_years:32,languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","corporate-ma","market-entry-strategy","casino","poker"],verified:true,featured:false},
+    {slug:"thomas-mccormick",full_name:"Thomas McCormick",title:"Member",firm_slug:"saiber-llc",lawyer_type:"Partner",short_summary:"Over 30 years of gaming industry experience, including 20 years as general counsel for a NJ gaming equipment manufacturer with 150+ gaming licenses.",office_location:"Florham Park, United States",experience_years:30,languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","commercial-contracts","intellectual-property","casino","sports-betting"],verified:true,featured:false},
+    {slug:"karl-rutledge",full_name:"Karl F. Rutledge",title:"Partner, Managing Partner (Nevada)",firm_slug:"womble-bond-dickinson-us-llp",lawyer_type:"Partner",short_summary:"Former Chair of the Commercial Gaming Group and current Managing Partner of Nevada offices. Adjunct professor at UNLV and past chair of the ABA Gaming Law Committee.",office_location:"Las Vegas, United States",experience_years:18,languages:["English"],jurisdictions:["united-states"],practice_areas:["licensing","regulatory-compliance","sports-betting","sweepstakes-social-casino","skill-games-fantasy-sports","advertising-promotions","market-entry-strategy","casino"],verified:true,featured:false},
+    {slug:"jacob-sommer",full_name:"Jacob Sommer",title:"Shareholder",firm_slug:"zwillgen-pllc",lawyer_type:"Partner",short_summary:"Focuses on legal issues related to internet-based services, including federal and state laws governing internet gambling and privacy law compliance.",office_location:"Washington, D.C., United States",experience_years:23,languages:["English"],jurisdictions:["united-states"],practice_areas:["regulatory-compliance","data-protection-gdpr","litigation-disputes","sweepstakes-social-casino","advertising-promotions"],verified:true,featured:false}
+
+  ],
+  articles: [
+    {slug:"brazil-spa-first-year-supervisory-priorities",title:"Brazil's SPA hits the one-year mark — what licensees should watch in 2026",category:"Regulatory",excerpt:"Twelve months into Brazil's federal fixed-odds betting regime, the Secretariat for Prizes and Bets has moved from authorisation processing into its supervisory phase. We examine the enforcement priorities taking shape and what holders of the federal authorisation need to prepare for during the rest of 2026.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-03-18",related_jurisdictions:["brazil"],related_firms:["pinheiro-neto-advogados","mattos-filho"],related_lawyers:[]},
+    {slug:"uk-gambling-commission-lccp-enforcement-2026",title:"UK Gambling Commission tightens LCCP oversight as white-paper reforms bed in",category:"Compliance",excerpt:"Two years after the 2024 White Paper reforms completed their rolling implementation, the UK Gambling Commission has signalled a more assertive supervisory posture on affordability, marketing and customer interaction obligations under the LCCP. We set out the enforcement themes licensees are seeing on the ground.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-02-24",related_jurisdictions:["united-kingdom"],related_firms:["wiggin-llp","harris-hagan","mishcon-de-reya-llp"],related_lawyers:[]},
+    {slug:"sweden-spelinspektionen-duty-of-care-2026",title:"Sweden's Spelinspektionen sharpens duty-of-care expectations for licensees",category:"Compliance",excerpt:"The Swedish gambling authority's 2026 supervisory plan places customer protection and duty of care at the centre of its enforcement agenda. Licensees operating under a Swedish B2C licence should expect closer review of their affordability frameworks, interaction logs and marketing controls.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-03-30",related_jurisdictions:["sweden"],related_firms:["mannheimer-swartling","cirio"],related_lawyers:[]},
+    {slug:"germany-ggl-enforcement-unauthorised-advertising-payments",title:"Germany's GGL widens enforcement net to affiliates and payment partners",category:"Enforcement",excerpt:"The Gemeinsame Glücksspielbehörde has moved beyond direct operator enforcement to target the affiliate marketing networks and payment partners that support unauthorised gambling aimed at the German market. Recent administrative actions show a regulator increasingly willing to follow the money.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-02-06",related_jurisdictions:["germany"],related_firms:["hambach-and-hambach","redeker-sellner-dahs"],related_lawyers:[]},
+    {slug:"malta-mga-b2b-supervisory-trends-2026",title:"Malta MGA recalibrates B2B supplier oversight as European rules evolve",category:"Licensing",excerpt:"The Malta Gaming Authority has published revised supervisory expectations for its B2B licensee population, reflecting the growing compliance burden placed on game suppliers, platform providers and critical gaming supply businesses by other European regulators. We examine what B2B holders of a Maltese Critical Gaming Supply Licence should be doing now.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-03-12",related_jurisdictions:["malta"],related_firms:["camilleri-preziosi","wh-partners","gvzh-advocates"],related_lawyers:[]}
+  ]
+};
+
+/* ============================================================
+   ROUTER
+   ============================================================ */
+
+function renderPrivacyPolicy(){
+  return `<div class="page-head"><div class="container">
+    <p class="crumbs"><a href="/">Home</a><span>/</span>Privacy Policy</p>
+    <h1>Privacy policy</h1>
+  </div></div>
+  <section class="section"><div class="container" style="max-width:800px">
+    <p>GamblingLawyers.com respects your privacy. This policy explains how we handle information when you use our website.</p>
+    <h2>Cookies</h2>
+    <p>We use essential cookies only to make this site work. We do not use tracking cookies, advertising cookies, or analytics that identify individual users.</p>
+    <h2>Information we collect</h2>
+    <p>If you submit a form on this site (such as the Request Introduction or Contact forms), we collect the information you provide (name, email, message content) to respond to your enquiry. We do not sell, rent, or share this information with third parties except as needed to facilitate the introduction you have requested.</p>
+    <h2>Third-party services</h2>
+    <p>This site uses Google Fonts for typography. No other third-party tracking or analytics services are used.</p>
+    <h2>Data retention</h2>
+    <p>Form submissions are retained only as long as necessary to fulfil the purpose for which they were collected.</p>
+    <h2>Contact</h2>
+    <p>For any questions about this policy or your data, contact <a href="mailto:info@gamblinglawyers.com">info@gamblinglawyers.com</a>.</p>
+    <p style="margin-top:48px;color:var(--slate)"><em>Last updated: July 2026</em></p>
+  </div></section>`;
+}
+
+function renderTerms(){
+  return `<div class="page-head"><div class="container">
+    <p class="crumbs"><a href="/">Home</a><span>/</span>Terms of Use</p>
+    <h1>Terms of use</h1>
+  </div></div>
+  <section class="section"><div class="container" style="max-width:800px">
+    <p>By using GamblingLawyers.com you agree to the following terms.</p>
+    <h2>Nature of the service</h2>
+    <p>GamblingLawyers.com is an independent directory and intelligence portal. It provides information about specialist gambling law firms and lawyers. Nothing on this site constitutes legal advice, and no solicitor-client relationship is formed by your use of the site or by any introduction we facilitate.</p>
+    <h2>Introductions</h2>
+    <p>When you request an introduction, our editorial team will use reasonable efforts to connect you with appropriate counsel. We do not guarantee the availability, suitability, or quality of any firm or lawyer listed on the directory. All engagement terms are between you and the firm.</p>
+    <h2>Accuracy</h2>
+    <p>We make reasonable efforts to keep listings accurate and up to date, but we do not warrant the completeness or accuracy of any information on the site. Firms and lawyers are responsible for the information they provide to us.</p>
+    <h2>Intellectual property</h2>
+    <p>All content on this site — including text, design, logos, and editorial analysis — is the property of GamblingLawyers.com and may not be reproduced without permission.</p>
+    <h2>Limitation of liability</h2>
+    <p>To the fullest extent permitted by law, GamblingLawyers.com and its operators shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of this site or any introduction facilitated through it.</p>
+    <h2>Changes</h2>
+    <p>We may update these terms from time to time. Continued use of the site constitutes acceptance of the updated terms.</p>
+    <p style="margin-top:48px;color:var(--slate)"><em>Last updated: July 2026</em></p>
+  </div></section>`;
+}
+
+const routes = {
+  '': renderHome,
+  'lawyers': renderLawyers,
+  'law-firms': renderFirms,
+  'jurisdictions': renderJurisdictionsIndex,
+  'practice-areas': renderPracticeAreasIndex,
+  'news': renderNewsIndex,
+  'about': renderAbout,
+  'contact': renderContact,
+  'request-introduction': renderRequestIntro,
+  'get-listed': renderGetListed,
+  'privacy-policy': renderPrivacyPolicy,
+  'terms': renderTerms
+};
+
+/* ============================================================
+   SEO METADATA + STRUCTURED DATA
+   ============================================================ */
+const SITE_URL = 'https://www.gamblinglawyers.com';
+const SITE_NAME = 'GamblingLawyers.com';
+const DEFAULT_DESC = 'Global directory and intelligence portal for specialist gambling and iGaming counsel. Find licensing, regulatory and transactional lawyers in every regulated market.';
+const OG_IMAGE = SITE_URL + '/og-card.png';
+
+function setMeta(name, content, attr){
+  attr = attr || 'name';
+  let el = document.querySelector('meta[' + attr + '="' + name + '"]');
+  if(!el){ el = document.createElement('meta'); el.setAttribute(attr, name); document.head.appendChild(el); }
+  el.setAttribute('content', content);
+}
+function setLink(rel, href){
+  let el = document.querySelector('link[rel="' + rel + '"]');
+  if(!el){ el = document.createElement('link'); el.setAttribute('rel', rel); document.head.appendChild(el); }
+  el.setAttribute('href', href);
+}
+function truncateDesc(s, max){
+  max = max || 160;
+  if(!s) return DEFAULT_DESC;
+  return s.length > max ? s.slice(0, max - 3).trim() + '...' : s;
+}
+
+function getPageMeta(parts){
+  const path = parts.length ? '/' + parts.join('/') : '/';
+  let title, description;
+  if(parts.length === 0){
+    title = 'Gambling Lawyers — iGaming Counsel Directory';
+    description = 'GamblingLawyers.com is the global directory and intelligence portal for specialist gambling law. 115 verified firms across 17+ regulated markets.';
+  } else if(parts.length === 1){
+    const section = parts[0];
+    const titles = {
+      'law-firms': 'Gambling Law Firms | GamblingLawyers.com',
+      'lawyers': 'Gambling Lawyers Directory | GamblingLawyers.com',
+      'jurisdictions': 'Gambling Law Jurisdictions | GamblingLawyers.com',
+      'practice-areas': 'Gambling Law Practice Areas | GamblingLawyers.com',
+      'news': 'Gambling Law News & Analysis | GamblingLawyers.com',
+      'about': 'About | GamblingLawyers.com',
+      'contact': 'Contact | GamblingLawyers.com',
+      'request-introduction': 'Request an Introduction | GamblingLawyers.com',
+      'get-listed': 'Get Listed | GamblingLawyers.com',
+      'privacy-policy': 'Privacy Policy | GamblingLawyers.com',
+      'terms': 'Terms of Use | GamblingLawyers.com'
+    };
+    const descs = {
+      'law-firms': '115 verified specialist gambling law firms across the major regulated markets. Filter by jurisdiction, practice area and language.',
+      'lawyers': 'Directory of specialist gambling lawyers across the regulated markets we cover. Filter by jurisdiction, practice area and language.',
+      'jurisdictions': 'Gambling law market guides for 35 jurisdictions. Licensing, regulators, statutory frameworks and specialist counsel.',
+      'practice-areas': '20 specialist gambling law practice areas from licensing and compliance to M&A and disputes. Find counsel with the specific expertise you need.',
+      'news': 'Editorial analysis of licensing, regulatory and transactional developments in gambling law. Written for operators, suppliers and investors.',
+      'about': 'Independent directory and intelligence portal for specialist gambling counsel. Editorial criteria, our model, and how to contact us.',
+      'contact': 'Editorial and partnership enquiries. Email info@gamblinglawyers.com or use the contact form.',
+      'request-introduction': 'Confidential introductions to specialist gambling counsel in any market we cover. No fees for clients.',
+      'get-listed': 'Verification criteria and listing process for specialist gambling law firms. Chambers, Legal 500 and IMGL-ranked firms welcome.',
+      'privacy-policy': 'Privacy policy for GamblingLawyers.com. We use essential cookies only and do not track visitors.',
+      'terms': 'Terms of use for GamblingLawyers.com. Information only, not legal advice.'
+    };
+    title = titles[section] || section + ' | ' + SITE_NAME;
+    description = descs[section] || DEFAULT_DESC;
+  } else if(parts.length === 2){
+    const section = parts[0], slug = parts[1];
+    if(section === 'law-firms'){
+      const f = findFirm(slug);
+      if(f){ title = (() => { let t = f.firm_name + ' | ' + SITE_NAME; return t.length > 60 ? f.firm_name + ' | Gambling Law' : t; })(); description = truncateDesc(f.short_description); }
+    } else if(section === 'lawyers'){
+      const l = findLawyer(slug);
+      if(l){ title = (() => { let t = l.full_name + ' — ' + l.title + ' | Gambling Lawyer'; return t.length > 60 ? l.full_name + ' | Gambling Lawyer' : t; })(); description = truncateDesc(l.short_summary); }
+    } else if(section === 'jurisdictions'){
+      const j = findJur(slug);
+      if(j){ title = j.country_name + ' Gambling Lawyers | ' + SITE_NAME; description = truncateDesc('Specialist gambling lawyers in ' + j.country_name + '. ' + j.market_descriptor); }
+    } else if(section === 'practice-areas'){
+      const p = findPA(slug);
+      if(p){ title = p.area_name + ' Lawyers | ' + SITE_NAME; description = truncateDesc(p.short_descriptor); }
+    } else if(section === 'news'){
+      const a = findArticle(slug);
+      if(a){ title = a.title + ' | ' + SITE_NAME; description = truncateDesc(a.excerpt); }
+    }
+    if(!title){ title = 'Page Not Found | ' + SITE_NAME; description = DEFAULT_DESC; }
+  } else {
+    title = 'Page Not Found | ' + SITE_NAME; description = DEFAULT_DESC;
+  }
+  return { title: title, description: description, path: path, canonical: SITE_URL + path };
+}
+
+function updatePageMeta(parts){
+  const m = getPageMeta(parts);
+  document.title = m.title;
+  setMeta('description', m.description);
+  setLink('canonical', m.canonical);
+  setMeta('og:title', m.title, 'property');
+  setMeta('og:description', m.description, 'property');
+  setMeta('og:url', m.canonical, 'property');
+  setMeta('og:image', OG_IMAGE, 'property');
+  setMeta('twitter:title', m.title);
+  setMeta('twitter:description', m.description);
+  setMeta('twitter:image', OG_IMAGE);
+  updateJsonLd(parts);
+}
+
+function orgSchema(){
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': SITE_URL + '/#org',
+    'name': SITE_NAME,
+    'url': SITE_URL,
+    'logo': SITE_URL + '/android-chrome-512x512.png',
+    'description': DEFAULT_DESC,
+    'contactPoint': { '@type':'ContactPoint', 'contactType':'editorial', 'email':'info@gamblinglawyers.com' }
+  };
+}
+
+function updateJsonLd(parts){
+  const out = [ orgSchema() ];
+  if(parts.length === 0){
+    out.push({ '@context':'https://schema.org', '@type':'WebSite', 'name':SITE_NAME, 'url':SITE_URL, 'publisher':{ '@id':SITE_URL + '/#org' } });
+  } else if(parts.length === 2){
+    const section = parts[0], slug = parts[1];
+    const sectionLabels = { 'law-firms':'Law Firms','lawyers':'Lawyers','jurisdictions':'Jurisdictions','practice-areas':'Practice Areas','news':'News' };
+    let itemName = slug;
+    if(section === 'law-firms'){ const f = findFirm(slug); if(f) itemName = f.firm_name; }
+    else if(section === 'lawyers'){ const l = findLawyer(slug); if(l) itemName = l.full_name; }
+    else if(section === 'jurisdictions'){ const j = findJur(slug); if(j) itemName = j.country_name; }
+    else if(section === 'practice-areas'){ const p = findPA(slug); if(p) itemName = p.area_name; }
+    else if(section === 'news'){ const a = findArticle(slug); if(a) itemName = a.title; }
+    out.push({
+      '@context':'https://schema.org', '@type':'BreadcrumbList',
+      'itemListElement':[
+        { '@type':'ListItem','position':1,'name':'Home','item':SITE_URL + '/' },
+        { '@type':'ListItem','position':2,'name':sectionLabels[section]||section,'item':SITE_URL + '/' + section },
+        { '@type':'ListItem','position':3,'name':itemName,'item':SITE_URL + '/' + section + '/' + slug }
+      ]
+    });
+    if(section === 'law-firms'){
+      const f = findFirm(slug);
+      if(f){
+        const ls = { '@context':'https://schema.org', '@type':'LegalService',
+          'name':f.firm_name, 'url':SITE_URL + '/law-firms/' + f.slug,
+          'description':f.short_description,
+          'areaServed':f.jurisdictions.map(j=>({ '@type':'Country','name':jurName(j) })),
+          'serviceType':f.practice_areas.map(pa=>{ const p = findPA(pa); return p ? p.area_name : pa; })
+        };
+        if(f.website) ls.sameAs = f.website;
+        if(f.office_locations && f.office_locations[0]) ls.address = { '@type':'PostalAddress','addressLocality':f.office_locations[0] };
+        if(f.founding_year) ls.foundingDate = String(f.founding_year);
+        out.push(ls);
+      }
+    } else if(section === 'lawyers'){
+      const l = findLawyer(slug);
+      if(l){
+        const f = findFirm(l.firm_slug);
+        const p = { '@context':'https://schema.org', '@type':'Person',
+          'name':l.full_name, 'jobTitle':l.title, 'description':l.short_summary,
+          'knowsLanguage':l.languages, 'url':SITE_URL + '/lawyers/' + l.slug,
+          'knowsAbout':l.practice_areas.map(pa=>{ const pp = findPA(pa); return pp ? pp.area_name : pa; })
+        };
+        if(f) p.worksFor = { '@type':'LegalService','name':f.firm_name,'url':SITE_URL + '/law-firms/' + f.slug };
+        out.push(p);
+      }
+    } else if(section === 'jurisdictions'){
+      const det = JURISDICTION_DETAILS[slug];
+      if(det && det.faq && det.faq.length){
+        out.push({ '@context':'https://schema.org','@type':'FAQPage',
+          'mainEntity': det.faq.map(q=>({ '@type':'Question','name':q.q,'acceptedAnswer':{ '@type':'Answer','text':q.a } })) });
+      }
+    } else if(section === 'news'){
+      const a = findArticle(slug);
+      if(a){
+        out.push({ '@context':'https://schema.org','@type':'Article',
+          'headline':a.title, 'description':a.excerpt,
+          'datePublished':a.publish_date, 'dateModified':a.publish_date,
+          'author': a.author_slug ? { '@type':'Person','name':a.author } : { '@type':'Organization','name':a.author,'@id':SITE_URL + '/#org' },
+          'publisher':{ '@id':SITE_URL + '/#org','name':SITE_NAME,'logo':{ '@type':'ImageObject','url':SITE_URL + '/android-chrome-512x512.png' } },
+          'mainEntityOfPage':{ '@type':'WebPage','@id':SITE_URL + '/news/' + a.slug },
+          'articleSection':a.category });
+      }
+    }
+  }
+  document.querySelectorAll('script[data-ld]').forEach(s=>s.remove());
+  out.forEach((schema, i) => {
+    const s = document.createElement('script');
+    s.type = 'application/ld+json';
+    s.setAttribute('data-ld','p' + i);
+    s.textContent = JSON.stringify(schema);
+    document.head.appendChild(s);
+  });
+}
+
+function router(){
+  const path = window.location.pathname.replace(/^\/+|\/+$/g, '');
+  const parts = path ? path.split('/').filter(Boolean) : [];
+  const app = document.getElementById('app');
+  app.innerHTML = '';
+  let html = '';
+  if(parts.length === 0){
+    html = renderHome();
+  } else if(parts.length === 1){
+    const fn = routes[parts[0]];
+    html = fn ? fn() : render404();
+  } else if(parts.length === 2){
+    const [section, slug] = parts;
+    if(section === 'lawyers') html = renderLawyerDetail(slug);
+    else if(section === 'law-firms') html = renderFirmDetail(slug);
+    else if(section === 'jurisdictions') html = renderJurisdictionDetail(slug);
+    else if(section === 'practice-areas') html = renderPracticeAreaDetail(slug);
+    else if(section === 'news') html = renderArticleDetail(slug);
+    else html = render404();
+  } else {
+    html = render404();
+  }
+  app.innerHTML = html;
+  window.scrollTo(0,0);
+  highlightNav(parts[0] || '');
+  attachPageHandlers();
+  updatePageMeta(parts);
+}
+
+function highlightNav(section){
+  const target = section ? '/' + section : '/';
+  document.querySelectorAll('.main-nav a').forEach(a=>{
+    a.classList.toggle('active', a.getAttribute('href') === target);
+  });
+}
+
+function render404(){
+  return `<section class="section" style="text-align:center;padding:120px 24px">
+    <p class="eyebrow">404</p>
+    <h1>Page not found</h1>
+    <p class="lede" style="margin:0 auto 32px">The page you were looking for is not here. It may have moved, or never existed.</p>
+    <a href="/" class="btn btn-primary">Return home</a>
+  </section>`;
+}
+
+function attachPageHandlers(){
+  const f = document.getElementById('introForm');
+  if(f) f.addEventListener('submit', handleIntroSubmit);
+  const c = document.getElementById('contactForm');
+  if(c) c.addEventListener('submit', handleContactSubmit);
+  const g = document.getElementById('getListedForm');
+  if(g) g.addEventListener('submit', handleGetListedSubmit);
+  document.querySelectorAll('[data-filter]').forEach(el=>{
+    el.addEventListener('input', applyFilters);
+    el.addEventListener('change', applyFilters);
+  });
+  const reset = document.getElementById('filterReset');
+  if(reset) reset.addEventListener('click', resetFilters);
+}
+
+/* ============================================================
+   HELPERS
+   ============================================================ */
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);}
+function findJur(slug){return DATA.jurisdictions.find(j=>j.slug===slug);}
+function findPA(slug){return DATA.practiceAreas.find(p=>p.slug===slug);}
+function findFirm(slug){return DATA.firms.find(f=>f.slug===slug);}
+function findLawyer(slug){return DATA.lawyers.find(l=>l.slug===slug);}
+function findArticle(slug){return DATA.articles.find(a=>a.slug===slug);}
+function jurName(slug){const j=findJur(slug);return j?j.country_name:slug;}
+function paName(slug){const p=findPA(slug);return p?p.area_name:slug;}
+function firmName(slug){const f=findFirm(slug);return f?f.firm_name:slug;}
+function lawyerName(slug){const l=findLawyer(slug);return l?l.full_name:slug;}
+function fmtDate(s){if(!s)return'';const d=new Date(s);return d.toLocaleDateString('en-GB',{year:'numeric',month:'long',day:'numeric'});}
+
+/* ============================================================
+   PAGE RENDERERS (stubs — populated in subsequent edits)
+   ============================================================ */
+function renderHome(){
+  const featuredJur = DATA.jurisdictions.filter(j=>j.featured);
+  const featuredFirms = DATA.firms.slice(0,6);
+  const featuredLawyers = DATA.lawyers.slice(0,8);
+  const latestArticles = DATA.articles.slice(0,3);
+  const pa = DATA.practiceAreas.slice(0,8);
+  return `
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <p class="eyebrow">The global directory for gambling law</p>
+        <h1>Specialist gambling lawyers <em>in every regulated market.</em></h1>
+        <p class="lede">A curated directory of licensing, regulatory and transactional counsel for operators, suppliers and investors in the gambling industry. Independent, confidential, and global.</p>
+        <div class="btn-row">
+          <a href="/request-introduction" class="btn btn-primary">Request an introduction</a>
+          <a href="/lawyers" class="btn btn-ghost-light">Browse the directory</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="positioning">
+    <div class="container">
+      <div class="grid grid-4">
+        <div class="stat"><div class="n">35</div><div class="l">Jurisdictions</div></div>
+        <div class="stat"><div class="n">20</div><div class="l">Practice areas</div></div>
+        <div class="stat"><div class="n">115</div><div class="l">Verified law firms</div></div>
+        <div class="stat"><div class="n">113</div><div class="l">Specialist lawyers</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-bone">
+    <div class="container">
+      <div class="section-head">
+        <div class="head-text">
+          <p class="eyebrow">By jurisdiction</p>
+          <h2>Counsel in every regulated market</h2>
+          <p class="lede">From the MGA and the Gambling Commission to the SPA and the GGL — browse lawyers and firms by the market you operate in.</p>
+        </div>
+        <a href="/jurisdictions" class="btn-link">View all 35 jurisdictions</a>
+      </div>
+      <div class="juris-grid">
+        ${featuredJur.map(j=>`<a href="/jurisdictions/${j.slug}">${esc(j.country_name)}<span class="rg">${esc(j.regulator)}</span></a>`).join('')}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="head-text">
+          <p class="eyebrow">By practice area</p>
+          <h2>From licensing to M&amp;A, payments to disputes</h2>
+          <p class="lede">Specialist counsel on the full range of legal work that regulated gaming operators and suppliers need.</p>
+        </div>
+        <a href="/practice-areas" class="btn-link">View all 20 practice areas</a>
+      </div>
+      <div class="prac-grid">
+        ${pa.map(p=>`<a href="/practice-areas/${p.slug}"><h4>${esc(p.area_name)}</h4><p>${esc(p.short_descriptor)}</p></a>`).join('')}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-bone">
+    <div class="container">
+      <div class="section-head">
+        <div class="head-text">
+          <p class="eyebrow">Featured law firms</p>
+          <h2>Verified gambling law practices worldwide</h2>
+          <p class="lede">A curated selection of specialist firms advising the regulated gambling industry.</p>
+        </div>
+        <a href="/law-firms" class="btn-link">Browse all firms</a>
+      </div>
+      <div class="grid grid-3">
+        ${featuredFirms.map(f=>`
+          <a href="/law-firms/${f.slug}" class="card-link">
+            <div class="card">
+              <h3>${esc(f.firm_name)}</h3>
+              <div class="card-sub">${esc(f.office_locations[0])}${f.office_locations.length>1?' +'+(f.office_locations.length-1):''}</div>
+              <div class="card-body">${esc(f.short_description)}</div>
+              <div class="tag-row">${f.practice_areas.slice(0,3).map(pas=>`<span class="tag">${esc(paName(pas))}</span>`).join('')}</div>
+              <div class="card-foot">${f.jurisdictions.slice(0,4).map(js=>esc(jurName(js))).join(' · ')}</div>
+            </div>
+          </a>`).join('')}
+      </div>
+    </div>
+  </section>
+
+${featuredLawyers.length === 0 ? '' : `  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="head-text">
+          <p class="eyebrow">Featured lawyers</p>
+          <h2>Specialist counsel, on the record</h2>
+          <p class="lede">Lawyers featured on GamblingLawyers.com are verified practitioners in regulated gaming work.</p>
+        </div>
+        <a href="/lawyers" class="btn-link">Browse all lawyers</a>
+      </div>
+      <div class="grid grid-4">
+        ${featuredLawyers.map(l=>`
+          <a href="/lawyers/${l.slug}" class="card-link">
+            <div class="card">
+              <h3>${esc(l.full_name)}</h3>
+              <div class="card-sub">${esc(l.title)} · ${esc(firmName(l.firm_slug))}</div>
+              <div class="card-body">${esc(l.short_summary)}</div>
+              <div class="card-foot">${esc(l.office_location)} · ${l.experience_years} yrs</div>
+            </div>
+          </a>`).join('')}
+      </div>
+    </div>
+  </section>`}
+
+${latestArticles.length === 0 ? '' : `  <section class="section section-bone">
+    <div class="container">
+      <div class="section-head">
+        <div class="head-text">
+          <p class="eyebrow">Latest insights</p>
+          <h2>Intelligence for gambling industry counsel</h2>
+          <p class="lede">Analysis of licensing, regulatory and transactional developments across the markets we cover.</p>
+        </div>
+        <a href="/news" class="btn-link">Read all insights</a>
+      </div>
+      <div class="grid grid-3">
+        ${latestArticles.map(a=>`
+          <a href="/news/${a.slug}" class="card-link">
+            <div class="card">
+              <div class="card-sub">${esc(a.category)} · ${fmtDate(a.publish_date)}</div>
+              <h3 style="font-size:1.15rem">${esc(a.title)}</h3>
+              <div class="card-body">${esc(a.excerpt)}</div>
+              <div class="card-foot">By ${esc(a.author)}</div>
+            </div>
+          </a>`).join('')}
+      </div>
+    </div>
+  </section>`}
+
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-head">
+        <div class="head-text">
+          <p class="eyebrow">Why GamblingLawyers.com</p>
+          <h2>A curated network, not an open directory</h2>
+        </div>
+      </div>
+      <div class="grid grid-3">
+        <div>
+          <hr class="rule">
+          <h3>Independent</h3>
+          <p class="lede">Editorially curated. Law firms apply for inclusion and are assessed against verification criteria before listing.</p>
+        </div>
+        <div>
+          <hr class="rule">
+          <h3>Specialist</h3>
+          <p class="lede">Every firm and lawyer on the site is focused on regulated gambling work. No generalists, no noise.</p>
+        </div>
+        <div>
+          <hr class="rule">
+          <h3>Confidential</h3>
+          <p class="lede">All introductions are handled by our team. Your enquiry is never published, shared or sold.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="head-text">
+          <p class="eyebrow">How it works</p>
+          <h2>From enquiry to introduction, in three steps</h2>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="step-num">01</div><div><h4>Tell us what you need</h4><p>Use the Request Introduction form. Describe the jurisdiction, the work type and any commercial context. We read every submission.</p></div></div>
+        <div class="step"><div class="step-num">02</div><div><h4>We match you with specialist counsel</h4><p>Our editorial team identifies one or more firms on the directory best placed to handle the work, based on jurisdiction, practice area and profile.</p></div></div>
+        <div class="step"><div class="step-num">03</div><div><h4>The introduction is made</h4><p>We introduce you directly by email. The conversation — and the engagement — is between you and the firm. We stay out of the engagement itself.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="conv">
+    <div class="container">
+      <h2>Need specialist gambling counsel?</h2>
+      <p>Tell us what you need. We will introduce you to the right firm, confidentially, at no cost to you.</p>
+      <div class="btn-row" style="justify-content:center">
+        <a href="/request-introduction" class="btn btn-primary">Request an introduction</a>
+        <a href="/get-listed" class="btn btn-ghost-light">Are you a law firm? Get listed</a>
+      </div>
+    </div>
+  </section>
+  `;
+}
+function renderLawyers(){
+  const jurOpts = DATA.jurisdictions.map(j=>`<option value="${j.slug}">${esc(j.country_name)}</option>`).join('');
+  const paOpts = DATA.practiceAreas.map(p=>`<option value="${p.slug}">${esc(p.area_name)}</option>`).join('');
+  const html = `
+  <div class="page-head">
+    <div class="container">
+      <p class="crumbs"><a href="/">Home</a><span>/</span>Lawyers</p>
+      <p class="eyebrow">Directory</p>
+      <h1>Specialist gambling lawyers</h1>
+      <p class="lede">Browse verified lawyers with focused gambling industry practices. Filter by jurisdiction and practice area.</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="container">
+      <div class="filter-bar">
+        <div><label>Jurisdiction</label><select data-filter id="fLawyerJur"><option value="">All jurisdictions</option>${jurOpts}</select></div>
+        <div><label>Practice area</label><select data-filter id="fLawyerPA"><option value="">All practice areas</option>${paOpts}</select></div>
+        <div><label>Search</label><input type="search" data-filter id="fLawyerQ" placeholder="Name, firm or city"></div>
+        <button id="filterReset">Reset</button>
+      </div>
+      <div id="lawyersList" class="grid grid-3"></div>
+    </div>
+  </section>`;
+  setTimeout(()=>{
+    window.__currentFilterFn = renderLawyersList;
+    renderLawyersList();
+  },0);
+  return html;
+}
+
+function renderLawyersList(){
+  const jur=document.getElementById('fLawyerJur').value;
+  const pa=document.getElementById('fLawyerPA').value;
+  const q=document.getElementById('fLawyerQ').value.toLowerCase().trim();
+  let list = DATA.lawyers.slice();
+  if(jur) list = list.filter(l=>l.jurisdictions.includes(jur));
+  if(pa) list = list.filter(l=>l.practice_areas.includes(pa));
+  if(q) list = list.filter(l=>{
+    const firm = firmName(l.firm_slug).toLowerCase();
+    return l.full_name.toLowerCase().includes(q) || firm.includes(q) || l.office_location.toLowerCase().includes(q);
+  });
+  const el=document.getElementById('lawyersList');
+  if(!list.length){
+    const hasFilters = jur || pa || q;
+    el.innerHTML = hasFilters
+      ? '<div class="empty">No lawyers match these filters. Try widening your search.</div>'
+      : '<div class="empty" style="grid-column:1/-1;text-align:center;padding:80px 24px;background:var(--bone);border-radius:4px;"><p style="font-family:\'Playfair Display\',serif;font-size:1.4rem;color:var(--ink);margin-bottom:12px">Lawyer directory launching soon</p><p style="color:var(--slate)">We are finalising verified profiles of specialist gambling lawyers at the firms listed in our directory. In the meantime, <a href="/law-firms" style="color:var(--gilt-2)">browse firms</a> or <a href="/request-introduction" style="color:var(--gilt-2)">request an introduction</a>.</p></div>';
+    return;
+  }
+  el.innerHTML = list.map(l=>`
+    <a href="/lawyers/${l.slug}" class="card-link">
+      <div class="card">
+        <h3>${esc(l.full_name)}</h3>
+        <div class="card-sub">${esc(l.title)} · ${esc(firmName(l.firm_slug))}</div>
+        <div class="card-body">${esc(l.short_summary)}</div>
+        <div class="tag-row">${l.practice_areas.slice(0,3).map(p=>`<span class="tag">${esc(paName(p))}</span>`).join('')}</div>
+        <div class="card-foot">${esc(l.office_location)} · ${l.experience_years} yrs</div>
+      </div>
+    </a>`).join('');
+}
+
+function renderFirms(){
+  const jurOpts = DATA.jurisdictions.map(j=>`<option value="${j.slug}">${esc(j.country_name)}</option>`).join('');
+  const paOpts = DATA.practiceAreas.map(p=>`<option value="${p.slug}">${esc(p.area_name)}</option>`).join('');
+  const html = `
+  <div class="page-head">
+    <div class="container">
+      <p class="crumbs"><a href="/">Home</a><span>/</span>Law Firms</p>
+      <p class="eyebrow">Directory</p>
+      <h1>Gambling law firms worldwide</h1>
+      <p class="lede">A curated selection of specialist firms advising the regulated gambling industry across every major jurisdiction.</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="container">
+      <div class="filter-bar">
+        <div><label>Jurisdiction</label><select data-filter id="fFirmJur"><option value="">All jurisdictions</option>${jurOpts}</select></div>
+        <div><label>Practice area</label><select data-filter id="fFirmPA"><option value="">All practice areas</option>${paOpts}</select></div>
+        <div><label>Search</label><input type="search" data-filter id="fFirmQ" placeholder="Firm name or city"></div>
+        <button id="filterReset">Reset</button>
+      </div>
+      <div id="firmsList" class="grid grid-2"></div>
+    </div>
+  </section>`;
+  setTimeout(()=>{
+    window.__currentFilterFn = renderFirmsList;
+    renderFirmsList();
+  },0);
+  return html;
+}
+
+function renderFirmsList(){
+  const jur=document.getElementById('fFirmJur').value;
+  const pa=document.getElementById('fFirmPA').value;
+  const q=document.getElementById('fFirmQ').value.toLowerCase().trim();
+  let list = DATA.firms.slice();
+  if(jur) list = list.filter(f=>f.jurisdictions.includes(jur));
+  if(pa) list = list.filter(f=>f.practice_areas.includes(pa));
+  if(q) list = list.filter(f=>f.firm_name.toLowerCase().includes(q) || f.office_locations.join(' ').toLowerCase().includes(q));
+  const el=document.getElementById('firmsList');
+  if(!list.length){el.innerHTML='<div class="empty">No firms match these filters. Try widening your search.</div>';return;}
+  el.innerHTML = list.map(f=>`
+    <a href="/law-firms/${f.slug}" class="card-link">
+      <div class="card">
+        <h3>${esc(f.firm_name)}</h3>
+        <div class="card-sub">${esc(f.office_locations.join(' · '))}</div>
+        <div class="card-body">${esc(f.short_description)}</div>
+        <div class="tag-row">${f.practice_areas.slice(0,4).map(p=>`<span class="tag">${esc(paName(p))}</span>`).join('')}</div>
+        <div class="card-foot">Founded ${f.founding_year} · Team ${esc(f.team_size_label)} · ${f.jurisdictions.length} jurisdictions</div>
+      </div>
+    </a>`).join('');
+}
+function renderJurisdictionsIndex(){
+  const regions = ['Europe','Americas','Asia-Pacific','Africa'];
+  return `
+  <div class="page-head">
+    <div class="container">
+      <p class="crumbs"><a href="/">Home</a><span>/</span>Jurisdictions</p>
+      <p class="eyebrow">By market</p>
+      <h1>Gambling jurisdictions worldwide</h1>
+      <p class="lede">Specialist counsel in every regulated gambling market. Browse the 35 jurisdictions we cover, from the MGA and the UK Gambling Commission to the SPA and the GGL.</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="container">
+      ${regions.map(r=>{
+        const list = DATA.jurisdictions.filter(j=>j.region===r);
+        if(!list.length) return '';
+        return `
+        <div style="margin-bottom:56px">
+          <div class="section-head" style="margin-bottom:24px">
+            <div class="head-text"><p class="eyebrow">${esc(r)}</p><h2>${esc(r)}</h2></div>
+          </div>
+          <div class="juris-grid">
+            ${list.map(j=>`<a href="/jurisdictions/${j.slug}">${esc(j.country_name)}<span class="rg">${esc(j.regulator)}</span></a>`).join('')}
+          </div>
+        </div>`;
+      }).join('')}
+    </div>
+  </section>`;
+}
+
+function renderPracticeAreasIndex(){
+  return `
+  <div class="page-head">
+    <div class="container">
+      <p class="crumbs"><a href="/">Home</a><span>/</span>Practice Areas</p>
+      <p class="eyebrow">By specialism</p>
+      <h1>Gambling law practice areas</h1>
+      <p class="lede">The 20 practice areas that define the regulated gambling legal market — from licensing and regulatory compliance to payments, M&amp;A and responsible gaming.</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="container">
+      <div class="prac-grid">
+        ${DATA.practiceAreas.map(p=>`<a href="/practice-areas/${p.slug}"><h4>${esc(p.area_name)}</h4><p>${esc(p.short_descriptor)}</p></a>`).join('')}
+      </div>
+    </div>
+  </section>`;
+}
+function renderNewsIndex(){
+  const articles = DATA.articles.slice();
+  return `
+  <div class="page-head">
+    <div class="container">
+      <p class="crumbs"><a href="/">Home</a><span>/</span>News &amp; Insights</p>
+      <p class="eyebrow">Intelligence</p>
+      <h1>News &amp; insights for gambling counsel</h1>
+      <p class="lede">Analysis of licensing, regulatory and transactional developments across the markets we cover. Written by specialist gambling lawyers.</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="container">
+      ${articles.length ? `<div class="grid grid-3">
+        ${articles.map(a=>`
+          <a href="/news/${a.slug}" class="card-link">
+            <div class="card">
+              <div class="card-sub">${esc(a.category)} · ${fmtDate(a.publish_date)}</div>
+              <h3 style="font-size:1.2rem">${esc(a.title)}</h3>
+              <div class="card-body">${esc(a.excerpt)}</div>
+              <div class="card-foot">By ${esc(a.author)}</div>
+            </div>
+          </a>`).join('')}
+      </div>` : `<div class="empty" style="text-align:center;padding:80px 24px;background:var(--bone);border-radius:4px;"><p style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--ink);margin-bottom:12px">Editorial launching soon</p><p style="color:var(--slate)">Our editorial team is commissioning analysis from specialist gambling counsel across the markets we cover. Check back shortly, or <a href="/contact" style="color:var(--gilt-2)">contact us</a> to contribute.</p></div>`}
+    </div>
+  </section>`;
+}
+function renderAbout(){
+  return `
+  <div class="page-head">
+    <div class="container">
+      <p class="crumbs"><a href="/">Home</a><span>/</span>About</p>
+      <p class="eyebrow">About us</p>
+      <h1>Independent. Curated. Global.</h1>
+      <p class="lede">GamblingLawyers.com is the global directory and intelligence portal for gambling law. We exist to connect the operators, suppliers and investors of the regulated gambling industry with specialist counsel in every market they need.</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="container" style="max-width:780px">
+      <h2>What we do</h2>
+      <p>GamblingLawyers.com maintains a curated, verified directory of specialist gambling lawyers and law firms. We also publish editorial intelligence on the licensing, regulatory and transactional developments that matter most to the industry. The directory is free to browse. Introductions are handled confidentially by our editorial team.</p>
+      <h2>How we are different</h2>
+      <p>We are not an open directory. Every firm and every lawyer on the site is assessed against verification criteria before listing, and every listing is focused on regulated gambling work. Our clients use us because they want specialists, not generalists, and because they want a single point of entry to high-quality counsel in every market where they operate.</p>
+      <h2>Our model</h2>
+      <p>We make our money from membership and sponsored placements on the firm side of the business. We do not charge clients who request introductions, we do not take a share of any engagement we introduce, and we do not sell or share enquiry data. This keeps the directory editorially independent and aligned with the needs of the industry we serve.</p>
+      <h2>What we are not</h2>
+      <p>GamblingLawyers.com is not a law firm. We do not provide legal advice. We do not engage with clients on matters. Every engagement is between the client and the firm we introduce, on the firm's standard terms. The directory is provided on an as-is basis and the inclusion of a firm on the directory is not a recommendation or endorsement of its work in any specific matter.</p>
+      <h2>Contact</h2>
+      <p>All enquiries go to <a href="mailto:info@gamblinglawyers.com">info@gamblinglawyers.com</a>. The fastest route to speak to a specialist firm is via the <a href="/request-introduction">Request Introduction</a> form.</p>
+    </div>
+  </section>`;
+}
+
+function renderContact(){
+  return `
+  <div class="page-head">
+    <div class="container">
+      <p class="crumbs"><a href="/">Home</a><span>/</span>Contact</p>
+      <p class="eyebrow">Contact</p>
+      <h1>Get in touch</h1>
+      <p class="lede">For editorial, partnership or general enquiries, email <a href="mailto:info@gamblinglawyers.com">info@gamblinglawyers.com</a> or use the form below. If you need a lawyer, use the <a href="/request-introduction">Request Introduction</a> form instead.</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="container">
+      <div class="form-wrap">
+        <div id="contactSuccess" class="success-banner" style="display:none">
+          <div><strong>Thank you — message received</strong>We have received your message and will respond from info@gamblinglawyers.com within one business day.</div>
+        </div>
+        <form id="contactForm">
+          <div class="form-group"><label>Your name <span class="req">*</span></label><input type="text" required></div>
+          <div class="form-group"><label>Company or firm</label><input type="text"></div>
+          <div class="form-group"><label>Email address <span class="req">*</span></label><input type="email" required></div>
+          <div class="form-group">
+            <label>Type of enquiry <span class="req">*</span></label>
+            <select required>
+              <option value="">Select one…</option>
+              <option>Editorial / insights</option>
+              <option>Law firm membership</option>
+              <option>Media and press</option>
+              <option>Partnerships</option>
+              <option>Technical or website issue</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Message <span class="req">*</span></label><textarea required placeholder="Tell us what you need. Please do not include confidential case details."></textarea><div class="hint">We aim to respond within one business day.</div></div>
+          <button type="submit" class="btn btn-primary">Send message</button>
+        </form>
+      </div>
+    </div>
+  </section>`;
+}
+
+function renderRequestIntro(){
+  const jurOpts = DATA.jurisdictions.map(j=>`<option>${esc(j.country_name)}</option>`).join('');
+  const paOpts = DATA.practiceAreas.map(p=>`<option>${esc(p.area_name)}</option>`).join('');
+  return `
+  <div class="page-head">
+    <div class="container">
+      <p class="crumbs"><a href="/">Home</a><span>/</span>Request Introduction</p>
+      <p class="eyebrow">For clients</p>
+      <h1>Request an introduction</h1>
+      <p class="lede">Tell us what you need. Our editorial team will match you with a specialist firm on the directory and introduce you confidentially. There is no charge to you, and your enquiry is never published, shared or sold.</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="container">
+      <div class="form-wrap">
+        <div id="introSuccess" class="success-banner" style="display:none">
+          <div><strong>Thank you — we have received your request</strong>Our editorial team will review your enquiry and respond from info@gamblinglawyers.com within one business day. We will not share your details with any firm until you confirm you would like us to proceed.</div>
+        </div>
+        <form id="introForm">
+          <div class="form-group"><label>Your name <span class="req">*</span></label><input type="text" required></div>
+          <div class="form-group"><label>Company or organisation <span class="req">*</span></label><input type="text" required></div>
+          <div class="form-group"><label>Role / title</label><input type="text" placeholder="e.g. Head of Legal"></div>
+          <div class="form-group"><label>Email address <span class="req">*</span></label><input type="email" required></div>
+          <div class="form-group"><label>Phone number (optional)</label><input type="tel"></div>
+          <div class="form-group">
+            <label>Jurisdiction of interest <span class="req">*</span></label>
+            <select required><option value="">Select a jurisdiction…</option>${jurOpts}<option>Multiple / cross-border</option><option>Not sure yet</option></select>
+          </div>
+          <div class="form-group">
+            <label>Type of work <span class="req">*</span></label>
+            <select required><option value="">Select a practice area…</option>${paOpts}<option>Other / multiple</option></select>
+          </div>
+          <div class="form-group">
+            <label>Nature of the enquiry <span class="req">*</span></label>
+            <textarea required placeholder="Please describe what you need counsel for — e.g. 'new licence application in Malta', 'change of control filing in the UK', 'payments restructuring for a Latin American launch'. Do not include any confidential matter details at this stage."></textarea>
+          </div>
+          <div class="form-group">
+            <label>Timeline</label>
+            <select><option>Urgent (within 1 week)</option><option>Short-term (within 1 month)</option><option>Medium-term (1–3 months)</option><option>Exploratory / no firm deadline</option></select>
+          </div>
+          <div class="form-group">
+            <label>Budget (optional)</label>
+            <select><option>Prefer not to say</option><option>Under USD 25,000</option><option>USD 25,000–100,000</option><option>USD 100,000–500,000</option><option>USD 500,000+</option></select>
+          </div>
+          <div class="form-check"><input type="checkbox" id="chk1" required><label for="chk1">I confirm I am contacting GamblingLawyers.com in a professional capacity in connection with a commercial matter, and that I understand no lawyer-client relationship is formed by submitting this form.</label></div>
+          <div class="form-check"><input type="checkbox" id="chk2" required><label for="chk2">I understand GamblingLawyers.com is not a law firm and does not provide legal advice.</label></div>
+          <button type="submit" class="btn btn-primary">Submit request</button>
+          <p class="hint" style="margin-top:12px">All enquiries are handled by info@gamblinglawyers.com. Your details will not be shared with any firm without your confirmation.</p>
+        </form>
+      </div>
+    </div>
+  </section>`;
+}
+
+function renderGetListed(){
+  return `
+  <div class="page-head">
+    <div class="container">
+      <p class="crumbs"><a href="/">Home</a><span>/</span>Get Listed</p>
+      <p class="eyebrow">For law firms</p>
+      <h1>Get listed on GamblingLawyers.com</h1>
+      <p class="lede">GamblingLawyers.com is a curated directory. We list specialist firms and lawyers working in regulated gambling law. If you believe your firm is a fit, we would like to hear from you.</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="container" style="max-width:780px">
+      <h2>How listings work</h2>
+      <p>Every listing on the directory is reviewed by our editorial team before it goes live. We look for focused gambling practices with a real track record, not firms that simply mention gaming among their practice areas. Our aim is to keep the directory small enough to be useful and large enough to cover every major market.</p>
+      <h2>What is included</h2>
+      <p>A firm listing on GamblingLawyers.com includes a detailed firm profile, individual lawyer profiles for your specialist team, coverage across the relevant jurisdiction and practice area pages, and inclusion in the relevant directory filters. Listed firms can also contribute editorial insights to the news portal.</p>
+      <h2>How enquiries are handled</h2>
+      <p>All client enquiries go to info@gamblinglawyers.com. Our editorial team reviews each request and makes an introduction to the most appropriate firm based on jurisdiction, practice area and profile. We do not take a share of any engagement, and we do not sell or share enquiry data.</p>
+      <h2>Apply</h2>
+      <div class="form-wrap" style="margin-top:24px">
+        <div id="getListedSuccess" class="success-banner" style="display:none">
+          <div><strong>Thank you — application received</strong>Our editorial team will review your firm's application and respond from info@gamblinglawyers.com within five business days.</div>
+        </div>
+        <form id="getListedForm">
+          <div class="form-group"><label>Firm name <span class="req">*</span></label><input type="text" required></div>
+          <div class="form-group"><label>Your name <span class="req">*</span></label><input type="text" required></div>
+          <div class="form-group"><label>Your role <span class="req">*</span></label><input type="text" required placeholder="e.g. Managing Partner"></div>
+          <div class="form-group"><label>Email address <span class="req">*</span></label><input type="email" required></div>
+          <div class="form-group"><label>Firm website</label><input type="url" placeholder="https://"></div>
+          <div class="form-group"><label>Primary office location <span class="req">*</span></label><input type="text" required></div>
+          <div class="form-group"><label>Jurisdictions where you practise <span class="req">*</span></label><input type="text" required placeholder="e.g. Malta, United Kingdom, Gibraltar"></div>
+          <div class="form-group"><label>Gambling-specific practice areas <span class="req">*</span></label><input type="text" required placeholder="e.g. Licensing, M&A, AML"></div>
+          <div class="form-group"><label>About your gambling practice <span class="req">*</span></label><textarea required placeholder="Please describe your gambling law practice — team size, years of focused gambling work, typical client profile and representative engagement types."></textarea></div>
+          <div class="form-check"><input type="checkbox" id="glk1" required><label for="glk1">I confirm the information above is accurate and that I have authority to apply on behalf of my firm.</label></div>
+          <button type="submit" class="btn btn-primary">Submit application</button>
+          <p class="hint" style="margin-top:12px">Applications are reviewed within five business days. A member of our editorial team will respond from info@gamblinglawyers.com.</p>
+        </form>
+      </div>
+    </div>
+  </section>`;
+}
+const LAWYER_BIOS = {};
+
+const FIRM_DETAILS = {};
+
+function renderLawyerDetail(slug){
+  const l = findLawyer(slug);
+  if(!l) return render404();
+  const firm = findFirm(l.firm_slug);
+  const bio = LAWYER_BIOS[slug] || [
+    `${l.full_name} is ${l.title === 'Managing Partner' || l.title.startsWith('Founding') ? 'the' : 'a'} ${l.title} at ${firm ? firm.firm_name : l.firm_slug}, based in ${l.office_location}. ${l.short_summary}`,
+    `For a detailed biography — including notable matters, speaking and publishing activity, and professional background — please contact the firm directly or use the introduction request form below.`
+  ];
+  const articlesBy = DATA.articles.filter(a=>a.author_slug===slug);
+  return `
+  <div class="profile-head">
+    <div class="container">
+      <p class="crumbs" style="color:rgba(245,241,232,0.6)"><a href="/" style="color:inherit">Home</a><span>/</span><a href="/lawyers" style="color:inherit">Lawyers</a><span>/</span>${esc(l.full_name)}</p>
+      <p class="eyebrow">Lawyer profile</p>
+      <h1>${esc(l.full_name)}</h1>
+      <div class="role">${esc(l.title)}</div>
+      <div class="firm">${firm ? `<a href="/law-firms/${firm.slug}" style="color:var(--gilt-2)">${esc(firm.firm_name)}</a>` : esc(l.firm_slug)} · ${esc(l.office_location)}</div>
+      <div class="meta">
+        <div><strong>Experience</strong>${l.experience_years} years</div>
+        <div><strong>Languages</strong>${l.languages.join(', ')}</div>
+        <div><strong>Type</strong>${esc(l.lawyer_type)}</div>
+        ${l.verified?'<div><strong>Status</strong>Verified</div>':''}
+      </div>
+    </div>
+  </div>
+  <section class="profile-body">
+    <div class="container">
+      <div class="profile-grid">
+        <div class="profile-main">
+          <h2>About</h2>
+          ${bio.map(p=>`<p>${esc(p)}</p>`).join('')}
+          <h2>Jurisdictions</h2>
+          <p>${l.jurisdictions.map(j=>`<a href="/jurisdictions/${j}">${esc(jurName(j))}</a>`).join(' · ')}</p>
+          <h2>Practice areas</h2>
+          <div class="tag-row">${l.practice_areas.map(p=>`<a href="/practice-areas/${p}" class="tag">${esc(paName(p))}</a>`).join('')}</div>
+          ${articlesBy.length ? `
+            <h2 style="margin-top:48px">Insights by ${esc(l.full_name)}</h2>
+            <div class="grid grid-2">
+              ${articlesBy.map(a=>`
+                <a href="/news/${a.slug}" class="card-link"><div class="card">
+                  <div class="card-sub">${esc(a.category)} · ${fmtDate(a.publish_date)}</div>
+                  <h3 style="font-size:1.1rem">${esc(a.title)}</h3>
+                  <div class="card-body">${esc(a.excerpt)}</div>
+                </div></a>`).join('')}
+            </div>` : ''}
+        </div>
+        <aside class="profile-aside">
+          <div class="card">
+            <h4>Request an introduction</h4>
+            <p style="font-size:.9rem;color:var(--slate);margin-bottom:16px">All enquiries to ${esc(l.full_name)} are handled confidentially by our editorial team.</p>
+            <a href="/request-introduction" class="btn btn-primary" style="display:block;text-align:center">Request introduction</a>
+          </div>
+          ${firm ? `<div class="card" style="margin-top:16px">
+            <h4>Firm</h4>
+            <p style="margin:0 0 8px;font-weight:600;color:var(--ink)">${esc(firm.firm_name)}</p>
+            <p style="margin:0 0 12px;font-size:.88rem;color:var(--slate)">${esc(firm.short_description)}</p>
+            <a href="/law-firms/${firm.slug}" class="btn-link">View firm profile</a>
+          </div>` : ''}
+        </aside>
+      </div>
+    </div>
+  </section>`;
+}
+
+function renderFirmDetail(slug){
+  const f = findFirm(slug);
+  if(!f) return render404();
+  const details = FIRM_DETAILS[slug];
+  const about = details ? details.about : [
+    `${f.firm_name} — ${f.short_description}`,
+    `The firm advises clients across ${f.jurisdictions.map(jurName).join(', ')}${f.office_locations.length ? ', with offices in ' + f.office_locations.join('; ') : ''}. Full profile and contact details are available via the firm's website${f.website ? ' at ' + f.website : ''}.`
+  ];
+  const practice = details ? details.practice : `The firm's core work covers ${f.practice_areas.map(paName).slice(0,4).join(', ')} across ${f.jurisdictions.map(jurName).slice(0,4).join(', ')}.`;
+  const lawyersAtFirm = DATA.lawyers.filter(l=>l.firm_slug===slug);
+  const articlesByFirm = DATA.articles.filter(a=>a.related_firms.includes(slug));
+  return `
+  <div class="profile-head">
+    <div class="container">
+      <p class="crumbs" style="color:rgba(245,241,232,0.6)"><a href="/" style="color:inherit">Home</a><span>/</span><a href="/law-firms" style="color:inherit">Law Firms</a><span>/</span>${esc(f.firm_name)}</p>
+      <p class="eyebrow">Law firm profile</p>
+      <h1>${esc(f.firm_name)}</h1>
+      <div class="firm">${esc(f.short_description)}</div>
+      <div class="meta">
+        <div><strong>Founded</strong>${f.founding_year}</div>
+        <div><strong>Team size</strong>${esc(f.team_size_label)}</div>
+        <div><strong>Offices</strong>${f.office_locations.length}</div>
+        <div><strong>Languages</strong>${f.languages.join(', ')}</div>
+        ${f.verified?'<div><strong>Status</strong>Verified</div>':''}
+      </div>
+    </div>
+  </div>
+  <section class="profile-body">
+    <div class="container">
+      <div class="profile-grid">
+        <div class="profile-main">
+          <h2>About the firm</h2>
+          ${about.map(p=>`<p>${esc(p)}</p>`).join('')}
+          <h2>Practice</h2>
+          <p>${esc(practice)}</p>
+          <h2>Offices</h2>
+          <p>${f.office_locations.map(esc).join(' · ')}</p>
+          <h2>Jurisdictions</h2>
+          <p>${f.jurisdictions.map(j=>`<a href="/jurisdictions/${j}">${esc(jurName(j))}</a>`).join(' · ')}</p>
+          <h2>Practice areas</h2>
+          <div class="tag-row">${f.practice_areas.map(p=>`<a href="/practice-areas/${p}" class="tag">${esc(paName(p))}</a>`).join('')}</div>
+          ${lawyersAtFirm.length ? `
+            <h2 style="margin-top:48px">Lawyers at this firm</h2>
+            <div class="grid grid-2">
+              ${lawyersAtFirm.map(l=>`
+                <a href="/lawyers/${l.slug}" class="card-link"><div class="card">
+                  <h3>${esc(l.full_name)}</h3>
+                  <div class="card-sub">${esc(l.title)} · ${esc(l.office_location)}</div>
+                  <div class="card-body">${esc(l.short_summary)}</div>
+                </div></a>`).join('')}
+            </div>` : ''}
+          ${articlesByFirm.length ? `
+            <h2 style="margin-top:48px">Insights</h2>
+            <div class="grid grid-2">
+              ${articlesByFirm.map(a=>`
+                <a href="/news/${a.slug}" class="card-link"><div class="card">
+                  <div class="card-sub">${esc(a.category)} · ${fmtDate(a.publish_date)}</div>
+                  <h3 style="font-size:1.1rem">${esc(a.title)}</h3>
+                  <div class="card-body">${esc(a.excerpt)}</div>
+                </div></a>`).join('')}
+            </div>` : ''}
+        </div>
+        <aside class="profile-aside">
+          <div class="card">
+            <h4>Request an introduction</h4>
+            <p style="font-size:.9rem;color:var(--slate);margin-bottom:16px">All enquiries to ${esc(f.firm_name)} are handled confidentially by our editorial team.</p>
+            <a href="/request-introduction" class="btn btn-primary" style="display:block;text-align:center">Request introduction</a>
+          </div>
+          <div class="card" style="margin-top:16px">
+            <h4>At a glance</h4>
+            <ul>
+              <li><strong style="color:var(--ink)">Founded:</strong> ${f.founding_year}</li>
+              <li><strong style="color:var(--ink)">Team:</strong> ${esc(f.team_size_label)}</li>
+              <li><strong style="color:var(--ink)">Offices:</strong> ${f.office_locations.length}</li>
+              <li><strong style="color:var(--ink)">Jurisdictions:</strong> ${f.jurisdictions.length}</li>
+              <li><strong style="color:var(--ink)">Lawyers listed:</strong> ${lawyersAtFirm.length}</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>`;
+}
+const JURISDICTION_DETAILS = {
+  'malta': {
+    overview: "Malta has been the principal online gambling hub in the European Union for more than two decades. The Malta Gaming Authority (MGA) licenses operators across Types 1 to 4, covering online casino, betting, peer-to-peer and platform supply. A large share of Europe's licensed operators hold an MGA licence as part of a multi-jurisdictional structure.",
+    framework: "Gaming in Malta is governed by the Gaming Act and its subsidiary regulations, including the Gaming Authorisations and Compliance Directive. The MGA issues B2C and B2B licences, supervises ongoing compliance, and engages actively on AML, responsible gaming and player-protection matters. Operators must maintain a substantive presence on the island and appoint key function holders.",
+    issues: [
+      "New and renewal licence applications across Type 1 to Type 4",
+      "Key function holder appointments and personal probity",
+      "Supervisory correspondence, inspections and remediation",
+      "Ongoing AML compliance and FIAU engagement",
+      "Corporate restructurings and shareholder approvals"
+    ],
+    audience: "Operators holding or seeking an MGA licence, B2B platform and content suppliers, payment institutions serving MGA licensees, and investors acquiring MGA-licensed businesses.",
+    faq: [
+      {q:"What are the main MGA licence types?",a:"The MGA issues B2C licences (Types 1 to 4) covering casino, online slots, betting and P2P, and B2B licences for platform and critical service suppliers."},
+      {q:"Do I need a physical presence in Malta?",a:"Yes. MGA licensees are expected to maintain real substance on the island, including key function holders and certain core operations."},
+      {q:"How long does an MGA application take?",a:"Timelines vary with the applicant's structure and readiness. Most applicants should plan on several months from filing to authorisation."},
+      {q:"Can an MGA licence be used to offer services in other EU markets?",a:"No. Operators need licences in each market where they intend to offer regulated services. The MGA licence is a Maltese authorisation."},
+      {q:"What ongoing compliance work do MGA licensees face?",a:"Ongoing obligations include AML reporting, responsible gaming, technical certification, financial reporting and regulator engagement."}
+    ]
+  },
+  'united-kingdom': {
+    overview: "The United Kingdom runs one of the world's most developed regulated gambling markets. The Gambling Commission supervises operators under the Gambling Act 2005 and the Licence Conditions and Codes of Practice (LCCP). Compliance expectations are high, supervisory activity is active, and the market has a long operator history and sophisticated consumer-protection framework.",
+    framework: "Licensed activity in Great Britain requires an operating licence from the Gambling Commission, plus personal management licences for senior individuals. The LCCP sets out the core compliance framework, including safer gambling, AML and advertising rules. A significant programme of reform is reshaping requirements around affordability, direct marketing and product design.",
+    issues: [
+      "Operating licence applications, variations and changes of control",
+      "Personal Management Licence (PML) applications and conduct matters",
+      "Safer gambling, affordability and single-customer-view work",
+      "Advertising, marketing and sponsorship compliance under the LCCP",
+      "Regulatory investigations, settlements and enforcement defence"
+    ],
+    audience: "Operators holding or seeking a Gambling Commission licence, senior executives requiring PMLs, and investors considering transactions involving UK-licensed businesses.",
+    faq: [
+      {q:"Who needs a Gambling Commission licence?",a:"Any operator providing facilities for gambling to consumers in Great Britain generally needs an operating licence, regardless of where the operator is based."},
+      {q:"What is a Personal Management Licence?",a:"A PML is a personal authorisation issued to individuals in specified management roles at licensed operators. It runs alongside the operating licence."},
+      {q:"Are there separate rules for advertising?",a:"Yes. Operators must comply with the LCCP, CAP and BCAP codes, and the rules and decisions of the Gambling Commission and ASA."},
+      {q:"Is the Gambling Commission reforming the regime?",a:"A significant reform programme is underway following the 2023 White Paper and the Commission's subsequent consultations, reshaping affordability, marketing and product rules."},
+      {q:"Does a UK licence cover Northern Ireland?",a:"No. The Gambling Commission licences activity in Great Britain. Northern Ireland has its own legal framework."}
+    ]
+  },
+  'united-states': {
+    overview: "Gambling in the United States is regulated at state level, producing a patchwork of licensing regimes for commercial casino, retail and online sports betting, online casino and interactive poker. Each state sets its own rules on operator licensing, suitability, vendor registration, product approval and taxation. For operators and suppliers, every new state is effectively a separate legal project.",
+    framework: "Most regulated states run their own gaming commission or division with authority over applications, investigations and enforcement. Federal statutes such as the Wire Act, UIGEA and IGRA set limits on the broader framework. New states continue to enter the market; suitability, disclosure and vendor workflow work dominate operator legal spend.",
+    issues: [
+      "State-by-state operator and vendor licensing",
+      "Suitability, personal disclosure and investigation response",
+      "Product and technical approvals",
+      "Advertising, responsible gaming and sweepstakes issues",
+      "Commercial agreements with market-access partners and platforms"
+    ],
+    audience: "Online and retail sports betting operators, online casino operators, platform and technology providers, sports organisations involved in wagering data or rights, and investors in US gaming businesses.",
+    faq: [
+      {q:"Is online sports betting legal across the United States?",a:"No. Online sports betting is available only in states that have legalised and regulated it. Each state sets its own rules and tax rates."},
+      {q:"Is online casino legal across the United States?",a:"Online casino is regulated in a smaller number of states. The list of iGaming jurisdictions continues to evolve through state legislation."},
+      {q:"What is a vendor licence?",a:"States require suppliers of goods and services to licensed operators to register or license as vendors. Categories and thresholds vary by state."},
+      {q:"How does suitability work in US gaming?",a:"Regulators conduct detailed investigations into licensed entities and key individuals, covering financial, commercial and personal history."},
+      {q:"Do I need US counsel in every state where I operate?",a:"Most operators rely on US gaming counsel with multi-state experience, often alongside local counsel in individual states for specialist issues."}
+    ]
+  },
+  'brazil': {
+    overview: "Brazil is Latin America's largest regulated gambling market. Under Law 14.790/2023 and the associated regulations, the federal government — through the Secretaria de Prêmios e Apostas (SPA) — authorises operators to offer fixed-odds sports betting and online gaming. The regime reshaped the market from an informal grey zone into a licensed framework with significant compliance and tax obligations.",
+    framework: "Authorisation is granted at federal level for a multi-year term, subject to suitability, financial and technical requirements, plus the appointment of responsible function holders. Ongoing obligations cover AML, responsible gaming, payments, player-funds segregation, advertising rules and tax remittance. States retain some competence in regulating lotteries.",
+    issues: [
+      "Federal authorisation applications and renewals",
+      "Responsible function holder appointments and personal suitability",
+      "Payments and PSP structuring",
+      "Advertising and sponsorship compliance",
+      "Tax planning and remittance",
+      "AML and reporting to the FIU"
+    ],
+    audience: "International operators entering Brazil, suppliers serving authorised Brazilian operators, payment institutions and media partners working with the sector.",
+    faq: [
+      {q:"What does the Brazilian federal licence cover?",a:"The federal authorisation covers fixed-odds sports betting and online gaming, subject to the conditions in the primary law and the SPA regulations."},
+      {q:"Is state licensing still relevant?",a:"Some states operate lottery and betting frameworks at local level. Federal authorisation is the relevant framework for online sports betting and online gaming."},
+      {q:"How long is the authorisation valid for?",a:"Federal authorisation is granted for a multi-year term, subject to ongoing compliance and the conditions set out in the regulations."},
+      {q:"What are the main ongoing obligations?",a:"Ongoing obligations cover responsible gaming, AML, advertising, payments, player-protection and tax — all supervised by the SPA and other authorities."},
+      {q:"Can international operators enter Brazil directly?",a:"International operators can apply, subject to meeting the local incorporation, suitability and financial requirements in the regulations."}
+    ]
+  },
+  'germany': {
+    overview: "Germany operates a unified federal online gambling regime under the State Treaty on Gambling (GlüStV 2021). The Gemeinsame Glücksspielbehörde der Länder (GGL) supervises the market from Halle and has taken a progressively tougher stance on unauthorised advertising, affiliate activity and operator compliance.",
+    framework: "The State Treaty sets out the licensing framework for sports betting, online poker and virtual slots. Operators must meet a wide range of technical, compliance and advertising requirements and are subject to ongoing GGL supervision. Activity from unlicensed sites attracts enforcement action, including against payment providers, affiliates and advertisers.",
+    issues: [
+      "Licence applications and renewals under the GlüStV",
+      "Advertising, sponsorship and affiliate compliance",
+      "Player-protection and deposit-limit measures",
+      "GGL supervisory engagement and enforcement response",
+      "Payment and marketing partner work"
+    ],
+    audience: "Operators holding or seeking a German licence, suppliers and platform providers serving licensed operators, and affiliate and marketing partners operating in the German market.",
+    faq: [
+      {q:"Which products are covered by the State Treaty?",a:"The federal framework licenses sports betting, online poker and virtual slots, subject to the conditions in the GlüStV and GGL guidance."},
+      {q:"Who supervises the German market?",a:"The GGL supervises the unified federal gambling regime from Halle, in coordination with the Länder."},
+      {q:"How is advertising regulated?",a:"Advertising is subject to restrictions under the State Treaty and GGL guidance, and unauthorised advertising has been a focus of recent enforcement."},
+      {q:"Can offshore operators serve the German market?",a:"Only licensed operators may serve the German market. Offshore activity attracts GGL and related enforcement action."},
+      {q:"Are there deposit or stake limits in Germany?",a:"Yes. The State Treaty and GGL guidance set out player-protection measures, including deposit limits and other controls."}
+    ]
+  },
+  'netherlands': {
+    overview: "The Netherlands runs a regulated online gambling market under the Remote Gambling Act (Kansspelen op afstand, Koa). The Kansspelautoriteit (KSA) issues licences and supervises the market with a strong focus on player protection, duty of care and advertising compliance.",
+    framework: "Koa licences cover online casino, sports betting and other defined products. Operators must meet KSA conditions on player protection, AML, advertising and responsible gaming. The KSA has taken a progressively strict stance on advertising, affordability and duty-of-care programmes, backed by significant fines where expectations are not met.",
+    issues: [
+      "Koa licence applications and renewals",
+      "Duty-of-care and affordability programme design",
+      "Advertising and sponsorship compliance",
+      "KSA supervisory engagement and remediation",
+      "AML and player-protection work"
+    ],
+    audience: "Operators holding or seeking a Koa licence, suppliers and platform providers serving licensed Dutch operators, and marketing and affiliate partners operating in the market.",
+    faq: [
+      {q:"Who may offer online gambling in the Netherlands?",a:"Only KSA-licensed operators may offer online gambling to consumers in the Netherlands under the Koa framework."},
+      {q:"How strict is advertising regulation?",a:"The Netherlands has taken a progressively strict approach to advertising, including limits on untargeted and high-risk marketing."},
+      {q:"What does duty of care mean in practice?",a:"Duty of care requires operators to monitor player behaviour, intervene where risk markers appear, and act proactively to prevent harm."},
+      {q:"Does Koa apply to B2B suppliers?",a:"The Koa framework principally licences operators. B2B suppliers can face regulatory requirements depending on their role."},
+      {q:"How does the KSA enforce Koa?",a:"The KSA supervises licensees, investigates unlicensed activity and issues fines or binding decisions where expectations are not met."}
+    ]
+  }
+};
+
+const PRACTICE_AREA_DETAILS = {
+  'licensing': {
+    overview: "Licensing is the foundational specialism in gambling law. Every regulated gaming operator and most suppliers need a licence to offer services, and every new market means a new application, a new regulator and a new body of rules. Licensing lawyers manage applications, suitability, key function appointments, variations, renewals and changes of control across the jurisdictions where their clients operate.",
+    useCases: [
+      "New market entry and operator authorisation",
+      "B2B and B2C licensing in established European regimes",
+      "US state licensing and vendor registration",
+      "Change-of-control, shareholder and key-person approvals",
+      "Responses to regulator questions during the application process"
+    ],
+    scope: "The typical licensing engagement covers project planning, document preparation, personal disclosure support, regulator dialogue, responses to information requests, and coordination with corporate, tax and compliance workstreams. In larger projects, licensing counsel acts as the central point of contact across multiple advisers."
+  },
+  'regulatory-compliance': {
+    overview: "Regulatory compliance work is ongoing, not one-off. Once an operator is licensed, its legal team is in continuous dialogue with regulators on supervisory matters, programme design, risk assessment, reporting and remediation. Regulatory compliance lawyers work alongside compliance officers to keep licensed businesses inside the lines that regulators set — and to defend them when the regulator has questions.",
+    useCases: [
+      "Designing and updating compliance programmes",
+      "Responding to supervisory inspections and information requests",
+      "Handling material incidents and self-reports",
+      "Managing remediation plans after supervisory findings",
+      "Preparing for regulatory reform and implementing new rules"
+    ],
+    scope: "A compliance engagement can range from a short advice note on a new rule to multi-month remediation work following a regulator review. Effective counsel combines technical knowledge of the rules with a practical sense of how a given regulator operates."
+  },
+  'aml-kyc': {
+    overview: "AML and KYC counsel is central to licensed gaming work. Regulators expect operators to run sophisticated anti-money laundering programmes covering customer due diligence, source-of-funds, transaction monitoring, sanctions screening and reporting to financial intelligence units. The legal work covers both programme design and enforcement defence.",
+    useCases: [
+      "Designing risk-based AML programmes for multi-jurisdictional operators",
+      "Source-of-funds workflows and enhanced due diligence",
+      "Sanctions screening and adverse media processes",
+      "Responding to FIU requests and supervisory AML reviews",
+      "Defending operators in AML enforcement matters"
+    ],
+    scope: "AML engagements typically combine policy and procedure drafting, risk-assessment work, training support, incident handling and regulatory engagement. Counsel often coordinates with in-house compliance and external MLROs."
+  },
+  'corporate-ma': {
+    overview: "Corporate and M&A work for the gambling industry sits at the intersection of transactional practice and regulatory reality. Every deal involving a licensed operator or supplier is shaped by suitability, change-of-control approvals, and the willingness of regulators to clear the transaction. Specialist gaming M&A counsel knows how to run a deal timetable that regulators will accept.",
+    useCases: [
+      "Acquisitions, disposals and joint ventures involving licensed operators",
+      "Private equity and strategic investment into gaming groups",
+      "Change-of-control filings and regulator clearances",
+      "Corporate restructurings, carve-outs and group reorganisations",
+      "Fundraising and listing work for gaming issuers"
+    ],
+    scope: "A typical gaming M&A engagement spans due diligence, transaction documents, regulatory filings, conditions-precedent management and post-closing integration. Regulatory approvals frequently determine the deal timeline."
+  },
+  'payments-fintech': {
+    overview: "Payments is one of the most sensitive operational pillars of a regulated gambling business. PSPs, acquirers and card schemes each impose their own risk, reporting and compliance requirements on gaming merchants, and regulators take a close interest in how operators structure their payment flows and segregate player funds. Payments counsel helps operators stay compliant with both sets of rules.",
+    useCases: [
+      "Selecting and structuring PSP and acquirer relationships",
+      "Player funds protection and segregation",
+      "Card scheme compliance and merchant-category questions",
+      "Payment-related AML and sanctions workflows",
+      "Disputes with payment providers and card schemes"
+    ],
+    scope: "Payments engagements range from transaction-level advice (a single PSP contract, a single flow review) to multi-market strategy work for large operators. Specialist counsel knows both the gaming regulatory frame and the payment-industry rulebook."
+  },
+  'advertising-promotions': {
+    overview: "Advertising and promotions are among the most heavily scrutinised areas of operator activity. Every regulated gaming market places restrictions on messaging, targeting, promotional design, affiliate activity and sponsorship. Specialist counsel helps operators run compliant campaigns and defend them when regulators or consumer-protection bodies take a different view.",
+    useCases: [
+      "Reviewing marketing creative and landing pages",
+      "Structuring promotions, bonuses and free-bet offers",
+      "Affiliate programme contracting and supervision",
+      "Sponsorship, broadcast and ambassador arrangements",
+      "Responding to regulator or ASA complaints"
+    ],
+    scope: "Advertising engagements can be short (a single promotion review) or ongoing (programme-level advisory). In every case, effective counsel combines the regulatory rules with a pragmatic understanding of how marketing teams work."
+  }
+};
+
+function renderJurisdictionDetail(slug){
+  const j = findJur(slug);
+  if(!j) return render404();
+  const details = JURISDICTION_DETAILS[slug];
+  const firmsHere = DATA.firms.filter(f=>f.jurisdictions.includes(slug));
+  const lawyersHere = DATA.lawyers.filter(l=>l.jurisdictions.includes(slug));
+  const articlesHere = DATA.articles.filter(a=>a.related_jurisdictions.includes(slug));
+  return `
+  <div class="profile-head">
+    <div class="container">
+      <p class="crumbs" style="color:rgba(245,241,232,0.6)"><a href="/" style="color:inherit">Home</a><span>/</span><a href="/jurisdictions" style="color:inherit">Jurisdictions</a><span>/</span>${esc(j.country_name)}</p>
+      <p class="eyebrow">${esc(j.region)} · ${esc(j.market_status)}</p>
+      <h1>${esc(j.country_name)} gambling lawyers</h1>
+      <p class="lede" style="color:rgba(245,241,232,0.85)">${esc(j.market_descriptor)}</p>
+      <div class="meta">
+        <div><strong>Regulator</strong>${esc(j.regulator)}</div>
+        <div><strong>Region</strong>${esc(j.region)}</div>
+        <div><strong>Market status</strong>${esc(j.market_status)}</div>
+      </div>
+    </div>
+  </div>
+  <section class="profile-body">
+    <div class="container">
+      <div class="profile-grid">
+        <div class="profile-main">
+          ${details ? `
+            <h2>Market overview</h2>
+            <p>${esc(details.overview)}</p>
+            <h2>Regulatory framework</h2>
+            <p>${esc(details.framework)}</p>
+            <h2>Common legal issues</h2>
+            <ul>${details.issues.map(i=>`<li>${esc(i)}</li>`).join('')}</ul>
+            <h2>Who uses ${esc(j.country_name)} counsel</h2>
+            <p>${esc(details.audience)}</p>
+            <h2>Frequently asked questions</h2>
+            <div>${details.faq.map(f=>`<div class="faq-item"><h4>${esc(f.q)}</h4><p>${esc(f.a)}</p></div>`).join('')}</div>
+          ` : `
+            <h2>Market overview</h2>
+            <p>${esc(j.market_descriptor)} The ${esc(j.country_name)} market is supervised by ${esc(j.regulator)}. Licensed activity is subject to the legal framework applicable in the jurisdiction, and the specialist counsel listed on GamblingLawyers.com advise on the full range of licensing, compliance and transactional work relevant to this market.</p>
+            <h2>Legal work in this market</h2>
+            <p>Lawyers and law firms featured for ${esc(j.country_name)} handle licensing and authorisation, ongoing regulatory compliance, corporate and transactional work, advertising and marketing compliance, AML and player-protection matters, and supervisory engagement with the regulator.</p>
+            <h2>Need counsel in ${esc(j.country_name)}?</h2>
+            <p>Use the Request Introduction form to tell us what you need. Our editorial team will introduce you to a specialist firm on the directory.</p>
+          `}
+          ${firmsHere.length ? `
+            <h2 style="margin-top:48px">Law firms in ${esc(j.country_name)}</h2>
+            <div class="grid grid-2">
+              ${firmsHere.map(f=>`
+                <a href="/law-firms/${f.slug}" class="card-link"><div class="card">
+                  <h3>${esc(f.firm_name)}</h3>
+                  <div class="card-sub">${esc(f.office_locations[0])}</div>
+                  <div class="card-body">${esc(f.short_description)}</div>
+                </div></a>`).join('')}
+            </div>` : ''}
+          ${lawyersHere.length ? `
+            <h2 style="margin-top:48px">Lawyers in ${esc(j.country_name)}</h2>
+            <div class="grid grid-2">
+              ${lawyersHere.map(l=>`
+                <a href="/lawyers/${l.slug}" class="card-link"><div class="card">
+                  <h3>${esc(l.full_name)}</h3>
+                  <div class="card-sub">${esc(l.title)} · ${esc(firmName(l.firm_slug))}</div>
+                  <div class="card-body">${esc(l.short_summary)}</div>
+                </div></a>`).join('')}
+            </div>` : ''}
+          ${articlesHere.length ? `
+            <h2 style="margin-top:48px">Insights on ${esc(j.country_name)}</h2>
+            <div class="grid grid-2">
+              ${articlesHere.map(a=>`
+                <a href="/news/${a.slug}" class="card-link"><div class="card">
+                  <div class="card-sub">${esc(a.category)} · ${fmtDate(a.publish_date)}</div>
+                  <h3 style="font-size:1.1rem">${esc(a.title)}</h3>
+                  <div class="card-body">${esc(a.excerpt)}</div>
+                </div></a>`).join('')}
+            </div>` : ''}
+        </div>
+        <aside class="profile-aside">
+          <div class="card">
+            <h4>Request an introduction</h4>
+            <p style="font-size:.9rem;color:var(--slate);margin-bottom:16px">Tell us what you need in ${esc(j.country_name)}. We will introduce you to a specialist firm, confidentially.</p>
+            <a href="/request-introduction" class="btn btn-primary" style="display:block;text-align:center">Request introduction</a>
+          </div>
+          <div class="card" style="margin-top:16px">
+            <h4>At a glance</h4>
+            <ul>
+              <li><strong style="color:var(--ink)">Region:</strong> ${esc(j.region)}</li>
+              <li><strong style="color:var(--ink)">Regulator:</strong> ${esc(j.regulator)}</li>
+              <li><strong style="color:var(--ink)">Status:</strong> ${esc(j.market_status)}</li>
+              <li><strong style="color:var(--ink)">Firms:</strong> ${firmsHere.length}</li>
+              <li><strong style="color:var(--ink)">Lawyers:</strong> ${lawyersHere.length}</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>`;
+}
+
+function renderPracticeAreaDetail(slug){
+  const p = findPA(slug);
+  if(!p) return render404();
+  const details = PRACTICE_AREA_DETAILS[slug];
+  const firmsHere = DATA.firms.filter(f=>f.practice_areas.includes(slug));
+  const lawyersHere = DATA.lawyers.filter(l=>l.practice_areas.includes(slug));
+  return `
+  <div class="profile-head">
+    <div class="container">
+      <p class="crumbs" style="color:rgba(245,241,232,0.6)"><a href="/" style="color:inherit">Home</a><span>/</span><a href="/practice-areas" style="color:inherit">Practice Areas</a><span>/</span>${esc(p.area_name)}</p>
+      <p class="eyebrow">Practice area</p>
+      <h1>${esc(p.area_name)} lawyers</h1>
+      <p class="lede" style="color:rgba(245,241,232,0.85)">${esc(p.short_descriptor)}</p>
+    </div>
+  </div>
+  <section class="profile-body">
+    <div class="container">
+      <div class="profile-grid">
+        <div class="profile-main">
+          ${details ? `
+            <h2>Overview</h2>
+            <p>${esc(details.overview)}</p>
+            <h2>Typical use cases</h2>
+            <ul>${details.useCases.map(u=>`<li>${esc(u)}</li>`).join('')}</ul>
+            <h2>Scope of work</h2>
+            <p>${esc(details.scope)}</p>
+          ` : `
+            <h2>Overview</h2>
+            <p>${esc(p.short_descriptor)} Specialist lawyers in this area work with licensed gaming operators and suppliers across the markets we cover.</p>
+            <h2>How we help</h2>
+            <p>Use the Request Introduction form to tell us what you need. We will match you with a specialist firm on the directory with the right ${esc(p.area_name).toLowerCase()} experience.</p>
+          `}
+          ${firmsHere.length ? `
+            <h2 style="margin-top:48px">Law firms with ${esc(p.area_name)} practices</h2>
+            <div class="grid grid-2">
+              ${firmsHere.map(f=>`
+                <a href="/law-firms/${f.slug}" class="card-link"><div class="card">
+                  <h3>${esc(f.firm_name)}</h3>
+                  <div class="card-sub">${esc(f.office_locations[0])}</div>
+                  <div class="card-body">${esc(f.short_description)}</div>
+                </div></a>`).join('')}
+            </div>` : ''}
+          ${lawyersHere.length ? `
+            <h2 style="margin-top:48px">${esc(p.area_name)} lawyers</h2>
+            <div class="grid grid-2">
+              ${lawyersHere.map(l=>`
+                <a href="/lawyers/${l.slug}" class="card-link"><div class="card">
+                  <h3>${esc(l.full_name)}</h3>
+                  <div class="card-sub">${esc(l.title)} · ${esc(firmName(l.firm_slug))}</div>
+                  <div class="card-body">${esc(l.short_summary)}</div>
+                </div></a>`).join('')}
+            </div>` : ''}
+        </div>
+        <aside class="profile-aside">
+          <div class="card">
+            <h4>Need ${esc(p.area_name)} counsel?</h4>
+            <p style="font-size:.9rem;color:var(--slate);margin-bottom:16px">Tell us the jurisdiction and scope. We introduce you to a specialist firm confidentially.</p>
+            <a href="/request-introduction" class="btn btn-primary" style="display:block;text-align:center">Request introduction</a>
+          </div>
+          <div class="card" style="margin-top:16px">
+            <h4>Quick facts</h4>
+            <ul>
+              <li><strong style="color:var(--ink)">Firms:</strong> ${firmsHere.length}</li>
+              <li><strong style="color:var(--ink)">Lawyers:</strong> ${lawyersHere.length}</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>`;
+}
+const ARTICLE_BODIES = {
+  "brazil-spa-first-year-supervisory-priorities": [
+    "When Brazil's federal fixed-odds betting regime came into force at the start of 2025, it completed one of the longest legislative journeys in the modern history of gambling regulation. More than a decade after the authorising statute, and roughly eighteen months after the supplementary law that unlocked implementation, the Secretariat for Prizes and Bets of the Ministry of Finance — universally known by its Portuguese acronym, the SPA — finally opened the federal authorisation window. A year in, the conversation in the market has shifted decisively from how to get licensed to how to stay compliant.",
+    "The first phase of the regime was dominated by processing. Operators raced to assemble the documentation required for the federal authorisation, legal teams worked through the interpretation of novel corporate, technical and probity requirements, and the SPA itself built out the infrastructure needed to receive, assess and monitor applications. That work is now substantially complete. The operators who secured authorisation are live in the market, and the regulator's attention has shifted to oversight.",
+    "Three supervisory themes are emerging with unusual clarity. The first is advertising. Brazil's law and its implementing ordinances contain detailed provisions on promotional conduct, and the SPA has already opened lines of communication with the main self-regulatory bodies to co-ordinate action against non-compliant marketing. Operators that relied on aggressive sign-up promotions, celebrity endorsements skewed toward younger audiences, or advertising that did not clearly identify the odds of winning are finding that the regulator is willing to act. Licensees should expect advertising compliance audits to become a routine feature of supervisory work in 2026.",
+    "The second theme is responsible gambling. The Brazilian framework places real substantive obligations on licensees, including mandatory self-exclusion infrastructure, affordability-style interventions, and the publication of responsible gambling information at specific points in the player journey. The SPA is visibly comparing the written policies that operators submitted during the authorisation process with the behaviour that regulated licensees are actually delivering in the market. Where there is daylight between the two, counsel advising Brazilian licensees expect administrative proceedings rather than warning letters.",
+    "The third theme is payments and anti-money laundering. The federal framework integrates the SPA with COAF, the Brazilian financial intelligence unit, and with the payments ecosystem through the Central Bank of Brazil. In practice this means that the regulator has visibility into operator payment flows in a way that is unusual by international standards. Counsel should expect supervisory requests focused on player-funds segregation, transaction monitoring thresholds, and the identification of politically exposed persons to intensify through the year.",
+    "Holders of the federal authorisation should use the first quarter of the supervisory phase to revisit three things in particular. The first is the alignment between the compliance programme they filed with the SPA and the programme they are actually operating — any gap is an enforcement risk. The second is their relationship with marketing affiliates, which under Brazilian law remains the direct responsibility of the licensee rather than a downstream compliance problem. The third is data on actual responsible gambling interventions, including self-exclusion uptake, deposit-limit usage and interaction logs, which the SPA has signalled will be the principal evidence base for future enforcement.",
+    "The political economy of Brazilian gambling regulation is also a factor that foreign operators sometimes underestimate. The federal regime does not displace state-level lotteries, and the relationship between federal and state authorities is still being worked out in practice and in the courts. Counsel advising Brazilian licensees should continue to track the state-level case law closely, particularly where it intersects with advertising rights and the ability of federal licensees to market across state borders.",
+    "Brazil is now, on any reasonable measure, the largest single regulated fixed-odds market to come online this decade. The operators that have taken the federal authorisation seriously — both in terms of the application and the day-to-day compliance culture that followed — are well positioned. For those still treating the SPA as an authorisation body rather than a supervisor, 2026 is likely to be an expensive reminder that the Brazilian regime has entered its second phase."
+  ],
+  "uk-gambling-commission-lccp-enforcement-2026": [
+    "The UK Gambling Commission's supervisory posture has shifted perceptibly over the past twelve months. Two years into the implementation of the 2023 White Paper reforms, and with the updated customer interaction and affordability framework fully embedded in the LCCP, the regulator has moved from a period of guidance-heavy engagement into one characterised by pointed enforcement. For operators holding a combined operating licence, the practical question is no longer what the new rules require but how the Commission intends to evidence and enforce them.",
+    "The most visible shift is in the use of formal supervisory correspondence. The Commission has always relied heavily on written enquiries as the first stage of any concern, but the tempo and specificity of that correspondence has increased. Licensees report requests that are sharply focused on individual customer journeys, with the Commission expecting operators to produce interaction logs, affordability documentation and the underlying policy frameworks that justified the decisions taken at each touchpoint. The discretion afforded to licensees on the design of their frameworks has not narrowed, but the scrutiny applied to how those frameworks are actually run has.",
+    "Affordability remains the hardest single compliance topic in the UK market. The Commission's settled position is that licensees must take account of a customer's financial vulnerability without imposing a hard affordability cap, and the regulator has been careful to avoid specifying the precise data sources or thresholds that an operator should use. In practice this leaves licensees balancing commercial imperative against supervisory risk, and the Commission's enforcement pattern suggests it will be most assertive where an operator has accepted substantial losses from a single customer without evidencing a coherent review of the customer's wider circumstances. Counsel advising licensees should expect the Commission to look for evidence that a framework was followed, not merely that it existed on paper.",
+    "Marketing compliance has also returned to the supervisory agenda. The CAP and BCAP rules on gambling advertising content and audience composition have tightened over the past three years, and the Commission has made clear that LCCP paragraph 5.1 requires licensees to ensure that all marketing — including by affiliates — is compliant with the relevant industry codes. The consequence is that an affiliate's non-compliance is an operator's problem. Licensees who have not revisited their affiliate supervision arrangements in light of the post-white-paper framework are exposed, and enforcement practice in 2025 and 2026 has confirmed that the Commission will pursue the operator for affiliate failures rather than attempt to regulate affiliates directly.",
+    "Customer interaction obligations are the other area where enforcement is visibly hardening. The revised LCCP provisions expect licensees to act on a broader range of vulnerability indicators than the previous framework and to evidence those actions in a form that is auditable after the fact. The Commission has been consistent in saying that the quality of interaction records — not the quantity — is what matters in a settlement discussion. Operators that cannot produce clear records of the triggers that led to an interaction, the action taken and the outcome observed are at a serious disadvantage in any subsequent regulatory engagement.",
+    "Operators should also watch how the Commission is using its personal management licence (PML) powers. A measurable number of recent settlements have involved specific findings against named individuals as well as the corporate licensee, and the Commission has been willing to pursue those individual findings even where the relevant senior manager has since left the business. The reputational consequences for the individual are significant, and the signalling effect within operator compliance functions has been correspondingly strong. Counsel advising senior managers of UK licensees should ensure that board and committee papers, risk registers and decision logs capture the basis for significant compliance decisions in enough detail to stand up to retrospective review.",
+    "The most practical step that counsel can take for UK licensees in 2026 is a targeted walkthrough of a small number of actual customer journeys against the licensee's own framework. The Commission's recent supervisory correspondence suggests that the regulator forms a view on a licensee's culture from the quality of the evidence that can be produced when pressed. Licensees that can demonstrate that their frameworks operate as designed — and, critically, that senior managers have visibility of where they do not — are significantly better placed than those relying on policy documentation alone.",
+    "The White Paper reforms have, on balance, narrowed the range of acceptable operator conduct in the UK market. The Commission has used the intervening years to rebuild supervisory capacity, and the 2026 enforcement cycle is beginning to reflect that. Operators and their counsel should treat the year as a supervisory stress test rather than a period of continuing implementation."
+  ],
+  "sweden-spelinspektionen-duty-of-care-2026": [
+    "Sweden re-regulated its gambling market in 2019 on a licensing model that set out to combine competitive commercial opportunity with a strong duty of care toward players. Seven years in, and with channelisation rates that are still the subject of live political debate, the Swedish gambling authority — the Spelinspektionen — has used its 2026 supervisory plan to put customer protection back at the top of its enforcement agenda. The practical effect for B2C licensees is that the supervisory framing around duty of care has become measurably more demanding.",
+    "The Swedish duty of care obligation is expressed at a principles level in the Gambling Act and given content through the Spelinspektionen's regulations and guidance. Licensees are expected to act to counteract excessive gambling, which in supervisory practice has translated into a layered framework of deposit limits, reality checks, self-exclusion, marketing controls and affordability-style interventions for players who show signs of harm. The Spelinspektionen has been consistent in saying that it does not prescribe a single methodology, but it has been equally consistent in saying that licensees must be able to demonstrate that whatever methodology they adopt works in practice.",
+    "What is new in 2026 is the regulator's willingness to use supervisory levers to shift licensee behaviour in advance of any single enforcement case. The Spelinspektionen has been more visible with thematic reviews, pointed supervisory letters, and written communication to licensees as a population rather than individually. Counsel advising Swedish licensees report that the regulator is pressing on three fronts in particular: the quality of interaction decisioning for players whose behaviour suggests possible harm, the adequacy of marketing controls for affiliate and cross-channel activity, and the operation of the Spelpaus national self-exclusion register as a hard backstop.",
+    "On player interaction decisioning, the supervisory focus is on whether the licensee's interaction policy operates as a genuine feedback loop. The Spelinspektionen expects to see evidence that when a player triggers a risk indicator the licensee actually observes, documents and, where appropriate, intervenes — and that the outcome of the intervention is captured and fed back into the model. Licensees who rely on a policy document, without evidence that the interaction framework produces observable changes in behaviour, are exposed.",
+    "On marketing, the Spelinspektionen has been co-ordinating more closely with the Swedish Consumer Agency (Konsumentverket), which is responsible for enforcing the consumer-law elements of the Gambling Act. The two authorities have signalled a sharpened line on aggressive promotional conduct, on the identification of gambling advertising under the moderation requirements introduced in recent years, and on the responsibility of licensees for marketing conducted by their affiliates. Operators that treat affiliate compliance as an arms-length matter should revisit that posture.",
+    "On Spelpaus, the Spelinspektionen has made clear that it views any weakness in the operation of the national self-exclusion register as a serious matter. Licensees are expected not only to check the register at account creation but to maintain ongoing integration such that self-exclusion operates as a reliable barrier for players who invoke it. The regulator's communications also imply that marketing directed at individuals enrolled on Spelpaus, whether through direct channels or indirect audience targeting, is likely to attract disproportionate supervisory attention.",
+    "The political context matters. Channelisation — the share of Swedish player activity that takes place with licensed operators — has been a standing topic in industry discussion since before re-regulation, and the 2026 supervisory plan explicitly acknowledges that supervisory choices interact with channelisation. The Spelinspektionen's position is that a stronger duty-of-care framework is a precondition for sustainable channelisation, not an obstacle to it. Licensees arguing that tighter supervision drives players to unlicensed operators should expect the regulator to be unmoved by the argument as a defence to enforcement.",
+    "Practically, counsel advising Swedish licensees in 2026 should prioritise three things. The first is an evidenced walkthrough of a small number of real player journeys against the interaction policy, in a format that could be produced on short notice. The second is a revisit of affiliate marketing arrangements, including the contractual allocation of risk and the monitoring function that sits behind it. The third is a full technical test of the Spelpaus integration, ideally run as part of a wider internal audit rather than as a standalone exercise. Licensees that can produce this evidence will find supervisory engagement materially less painful than those that cannot."
+  ],
+  "germany-ggl-enforcement-unauthorised-advertising-payments": [
+    "When Germany's State Treaty on Gambling came into force in 2021 and the Gemeinsame Glücksspielbehörde — the GGL — took over federal supervisory responsibility, much of the initial enforcement debate focused on whether the new authority could make direct action against unlicensed operators work in practice. The answer, four years in, is complicated. Direct enforcement against offshore operators has delivered mixed results. What has worked is a progressive shift toward indirect enforcement, and in particular toward the affiliates and payment partners that make the offshore market commercially viable.",
+    "The German framework allows the GGL to address a wide range of facilitating conduct, not just direct operation. The regulator has always been able, in principle, to act against advertising that promotes unauthorised gambling to a German audience and against payment service providers whose infrastructure is used to settle unauthorised stakes. What has changed is the regulator's appetite for using those powers at scale. The GGL has been visibly more active in corresponding with affiliate networks, in issuing formal notices to payment institutions, and in co-ordinating with the Bundesanstalt für Finanzdienstleistungsaufsicht (BaFin) where payments enforcement intersects with financial services supervision.",
+    "For affiliates, the practical consequence is that the risk calculus of promoting any operator targeting the German market has changed. Affiliate networks that historically treated the identity of the operators they listed as a commercial rather than a regulatory question are now receiving direct supervisory communications. The GGL has taken the position that an affiliate whose output is accessible in Germany and that promotes a product which is not lawfully available to German players is engaged in conduct that the regulator can address. Counsel advising affiliate networks with any German-market exposure should be treating the regulator's correspondence as a prompt to review their operator onboarding framework.",
+    "For payment institutions, the shift has been similarly pronounced. The GGL has co-ordinated with BaFin to make clear that the processing of payments to and from unauthorised gambling operators raises both gambling-law and financial-services supervisory questions. Payment institutions have responded, in many cases, by tightening their merchant-acceptance policies for gambling-adjacent activity. The commercial consequence — a narrowing of the set of payment rails that are usable by offshore operators targeting Germany — is precisely the outcome that the GGL was working toward.",
+    "Licensed operators have a distinct set of concerns. The compression of the offshore market increases the commercial opportunity for holders of a German licence under the Glücksspielstaatsvertrag, but it also raises the supervisory stakes on the licensees' own conduct. The GGL has been consistent in saying that the appropriate response to the offshore market is to enforce against the offshore market, not to relax expectations of licensed operators. Counsel advising licensed operators should expect no supervisory forbearance on advertising, deposit limits or the KYC/AML framework, and should be prepared for the regulator to act where licensee conduct drifts toward the more aggressive practices associated with unlicensed competitors.",
+    "The cross-border dimension is particularly important. German players routinely encounter advertising that originates outside Germany and payment solutions routed through foreign financial institutions. The GGL's indirect enforcement strategy depends on its ability to reach those foreign actors, and the regulator has been strategic about the jurisdictions in which it chooses to engage. Counsel advising non-German participants in the value chain — including affiliates, content platforms and payment service providers — should not assume that being established outside Germany is a complete defence to supervisory exposure.",
+    "Looking forward, the main risk for affiliate networks and payment partners is that the supervisory position now crystallising in Germany will be picked up in other European markets that face similar channelisation challenges. The regulatory theory underlying the German approach — that attacking the supporting infrastructure is a more effective use of limited enforcement resources than litigating against offshore operators one case at a time — is attractive to other regulators. The practical implication is that the compliance work required to de-risk affiliate and payment-partner exposure in Germany is likely to be reusable across the continent. Counsel should be framing their advice accordingly."
+  ],
+  "malta-mga-b2b-supervisory-trends-2026": [
+    "The Maltese B2B gambling supply sector has always been one of the most commercially significant elements of the island's gaming economy. Game suppliers, platform providers and other critical gaming supply businesses located in Malta power a disproportionate share of the world's regulated online gambling markets, and the Critical Gaming Supply Licence issued by the Malta Gaming Authority remains, for many of them, the central regulatory asset of the business. In 2026, the MGA's supervisory expectations for that B2B population are evolving in ways that counsel advising Maltese suppliers need to understand.",
+    "The direction of travel is set by the supervisory conduct of regulators outside Malta. Over the past five years, authorities in the United Kingdom, Germany, the Netherlands, Sweden and Denmark have each placed a growing compliance burden on the upstream side of the value chain. Where the historical supervisory expectation was that a B2C operator was responsible for its own compliance and a supplier was responsible for the integrity of its game, the current expectation — consistent across multiple European regulators — is that a supplier's products form part of the compliance stack of every operator that uses them. Suppliers that cannot demonstrate compliance, to the satisfaction of the regulator in every market they serve, are exposed.",
+    "The MGA's response has been to recalibrate its own supervisory engagement with its B2B licensee population so that it reflects the standards those licensees are being held to elsewhere. The Authority has been clearer in supervisory correspondence about its expectations on game certification, return-to-player controls, random number generator integrity, and the maintenance of technical evidence. It has also been more assertive on governance, expecting the boards of Maltese B2B licensees to be able to demonstrate direct oversight of compliance matters rather than delegating them to a technical function.",
+    "AML and sanctions are a specific area of focus. The MGA operates within a wider Maltese framework in which the Financial Intelligence Analysis Unit (FIAU) is actively engaged with the gambling sector, and Malta's post-grey-list experience has reinforced the expectation that gambling licensees, including B2B licensees, will maintain a credible AML posture. For suppliers, the practical question is whether and how their risk-based obligations bite in a business model in which the end user is a player of a downstream operator rather than a direct customer of the supplier. The MGA's current position is that the absence of a direct customer relationship does not relieve the supplier of reasonable diligence on the operators it contracts with.",
+    "Contracting practice is quietly adjusting to reflect the new supervisory reality. Counsel advising Maltese B2B suppliers are spending more time on warranty and termination clauses that give the supplier the ability to respond to a downstream operator's regulatory difficulty, and more time on information-sharing provisions that allow the supplier to demonstrate to its own regulator what the operator is doing with the games. The older market practice of lean, operator-friendly B2B contracts is giving way to a denser framework in which regulatory risk is actively priced and allocated.",
+    "Malta's unique position as a passporting hub for B2B gambling supply is also being re-examined. The Maltese Critical Gaming Supply Licence has long been treated by operators in other European markets as a trusted mark of quality — a position that has historically allowed Maltese suppliers to list quickly on new operator sites without separate in-market certification. That trust is still broadly intact, but counsel should not assume it is unlimited. Supervisors in some markets are moving toward a position in which they will only rely on the Maltese licence where the supplier can demonstrate that its Maltese governance function has visibility of the product as it is deployed in the local market.",
+    "For general counsel of Maltese B2B licensees, the priorities for 2026 are relatively clear. The first is a refresh of the compliance programme in light of the expectations set by the MGA in its recent supervisory correspondence. The second is an audit of operator contracts against the current standard of warranty, termination and information-sharing provisions. The third is a disciplined review of the technical evidence file that sits behind game certification, RNG and RTP attestations, which remains the material most likely to be requested in any multi-market supervisory engagement.",
+    "Malta remains, on any sensible view, the single most important jurisdiction for regulated online gambling supply. The MGA's move to align its supervisory expectations with those of the downstream markets its licensees serve is a rational response to the commercial and political environment in which the Maltese industry now operates. Suppliers that treat the recalibration as an opportunity to strengthen their compliance narrative, rather than as an administrative burden, will find it a net positive for their commercial position."
+  ]
+};
+
+function renderArticleDetail(slug){
+  const a = findArticle(slug);
+  if(!a) return render404();
+  const body = ARTICLE_BODIES[slug] || [a.excerpt];
+  const related = DATA.articles.filter(x=>x.slug!==slug && x.category===a.category).slice(0,3);
+  return `
+  <div class="article-head">
+    <div class="container">
+      <p class="crumbs"><a href="/">Home</a><span>/</span><a href="/news">News</a><span>/</span>${esc(a.category)}</p>
+      <p class="eyebrow">${esc(a.category)}</p>
+      <h1>${esc(a.title)}</h1>
+      <p class="lede">${esc(a.excerpt)}</p>
+      <div class="article-meta">
+        <div>By ${a.author_slug ? `<a href="/lawyers/${a.author_slug}">${esc(a.author)}</a>` : esc(a.author)}</div>
+        <div>${fmtDate(a.publish_date)}</div>
+      </div>
+    </div>
+  </div>
+  <article class="article-body">
+    <div class="container">
+      ${body.map(p=>`<p>${esc(p)}</p>`).join('')}
+      ${a.related_jurisdictions.length ? `<p><strong>Related jurisdictions:</strong> ${a.related_jurisdictions.map(j=>`<a href="/jurisdictions/${j}">${esc(jurName(j))}</a>`).join(', ')}</p>` : ''}
+      ${a.related_firms.length ? `<p><strong>Related firms:</strong> ${a.related_firms.map(f=>`<a href="/law-firms/${f}">${esc(firmName(f))}</a>`).join(', ')}</p>` : ''}
+    </div>
+  </article>
+  ${related.length ? `
+  <section class="section section-bone">
+    <div class="container">
+      <div class="section-head"><div class="head-text"><p class="eyebrow">More from ${esc(a.category)}</p><h2>Related insights</h2></div></div>
+      <div class="grid grid-3">
+        ${related.map(r=>`
+          <a href="/news/${r.slug}" class="card-link">
+            <div class="card">
+              <div class="card-sub">${esc(r.category)} · ${fmtDate(r.publish_date)}</div>
+              <h3 style="font-size:1.15rem">${esc(r.title)}</h3>
+              <div class="card-body">${esc(r.excerpt)}</div>
+            </div>
+          </a>`).join('')}
+      </div>
+    </div>
+  </section>` : ''}`;
+}
+
+/* ============================================================
+   FILTERS & FORMS
+   ============================================================ */
+function applyFilters(){const f=window.__currentFilterFn;if(f)f();}
+function resetFilters(){document.querySelectorAll('[data-filter]').forEach(el=>{if(el.tagName==='SELECT')el.selectedIndex=0;else el.value='';});applyFilters();}
+
+function handleIntroSubmit(e){
+  e.preventDefault();
+  document.getElementById('introForm').style.display='none';
+  document.getElementById('introSuccess').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function handleContactSubmit(e){
+  e.preventDefault();
+  document.getElementById('contactForm').style.display='none';
+  document.getElementById('contactSuccess').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function handleGetListedSubmit(e){
+  e.preventDefault();
+  document.getElementById('getListedForm').style.display='none';
+  document.getElementById('getListedSuccess').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function subscribeNL(){
+  const v=document.getElementById('nlEmail').value;
+  if(!v)return;
+  document.getElementById('nlEmail').value='';
+  alert('Thank you. You will receive the briefing at '+v);
+}
+function acceptCookies(){document.getElementById('cookieBanner').classList.remove('show');}
+
+/* ============================================================
+   INIT
+   ============================================================ */
+document.getElementById('year').textContent=new Date().getFullYear();
+document.getElementById('navToggle').addEventListener('click',()=>{
+  document.getElementById('mainNav').classList.toggle('open');
+});
+/* History-API navigation: intercept same-origin link clicks */
+document.addEventListener('click', e => {
+  const a = e.target.closest && e.target.closest('a');
+  if(!a) return;
+  const href = a.getAttribute('href');
+  if(!href || !href.startsWith('/') || href.startsWith('//')) return;
+  if(a.target && a.target !== '_self') return;
+  if(a.hasAttribute('download')) return;
+  if(e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  e.preventDefault();
+  if(href !== window.location.pathname + window.location.search){
+    history.pushState(null, '', href);
+    router();
+  }
+});
+window.addEventListener('popstate', router);
+
+/* Redirect legacy hash URLs (#/foo) to real paths so bookmarks still work */
+if(window.location.hash.startsWith('#/')){
+  const newPath = window.location.hash.replace(/^#\/?/, '/') || '/';
+  history.replaceState(null, '', newPath);
+}
+
+window.addEventListener('DOMContentLoaded',()=>{
+  router();
+  setTimeout(()=>document.getElementById('cookieBanner').classList.add('show'),1200);
+});
