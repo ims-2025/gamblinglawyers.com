@@ -658,7 +658,7 @@ function renderHome(){
   const featuredJur = DATA.jurisdictions.filter(j=>j.featured);
   const featuredFirms = DATA.firms.slice(0,6);
   const featuredLawyers = DATA.lawyers.slice(0,8);
-  const latestArticles = DATA.articles.slice(0,3);
+  const latestArticles = DATA.articles.slice().sort((a,b)=>b.publish_date.localeCompare(a.publish_date)).slice(0,3);
   const pa = DATA.practiceAreas.slice(0,8);
   return `
   <section class="hero">
@@ -1008,7 +1008,7 @@ function renderPracticeAreasIndex(){
   </section>`;
 }
 function renderNewsIndex(){
-  const articles = DATA.articles.slice();
+  const articles = DATA.articles.slice().sort((a,b)=>b.publish_date.localeCompare(a.publish_date));
   return `
   <div class="page-head">
     <div class="container">
