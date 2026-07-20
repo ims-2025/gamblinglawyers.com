@@ -392,6 +392,7 @@ const routes = {
   'contact': renderContact,
   'request-introduction': renderRequestIntro,
   'get-listed': renderGetListed,
+  'advertising': renderAdvertising,
   'privacy-policy': renderPrivacyPolicy,
   'terms': renderTerms
 };
@@ -439,6 +440,7 @@ function getPageMeta(parts){
       'contact': 'Contact | GamblingLawyers.com',
       'request-introduction': 'Request an Introduction | GamblingLawyers.com',
       'get-listed': 'Get Listed | GamblingLawyers.com',
+      'advertising': 'Advertise & Get Listed — Partner Programme | GamblingLawyers.com',
       'privacy-policy': 'Privacy Policy | GamblingLawyers.com',
       'terms': 'Terms of Use | GamblingLawyers.com'
     };
@@ -452,6 +454,7 @@ function getPageMeta(parts){
       'contact': 'Editorial and partnership enquiries. Email info@gamblinglawyers.com or use the contact form.',
       'request-introduction': 'Confidential introductions to specialist gambling counsel in any market we cover. No fees for clients.',
       'get-listed': 'Verification criteria and listing process for specialist gambling law firms. Chambers, Legal 500 and IMGL-ranked firms welcome.',
+      'advertising': 'Join the GamblingLawyers.com partner programme. A curated listing for a flat €299 a year, plus €299 per introduction that becomes a paying client. No commission, no win no fee.',
       'privacy-policy': 'Privacy policy for GamblingLawyers.com. We use essential cookies only and do not track visitors.',
       'terms': 'Terms of use for GamblingLawyers.com. Information only, not legal advice.'
     };
@@ -638,6 +641,8 @@ function attachPageHandlers(){
   if(c) c.addEventListener('submit', handleContactSubmit);
   const g = document.getElementById('getListedForm');
   if(g) g.addEventListener('submit', handleGetListedSubmit);
+  const ap = document.getElementById('applyForm');
+  if(ap) ap.addEventListener('submit', handleApplySubmit);
   document.querySelectorAll('[data-filter]').forEach(el=>{
     el.addEventListener('input', applyFilters);
     el.addEventListener('change', applyFilters);
@@ -1164,6 +1169,149 @@ function renderRequestIntro(){
   </section>`;
 }
 
+function renderAdvertising(){
+  return `
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <p class="eyebrow">Partner programme · For law firms</p>
+        <h1>Reach the clients who need you — <em>pay only when it works.</em></h1>
+        <p class="lede">GamblingLawyers.com is the global directory and intelligence portal for gambling and iGaming law. Operators, investors and founders across every regulated market come here to find specialist counsel. Join as a partner firm for a flat annual fee, and pay for a qualified introduction only when it becomes a paying client — no commission on your fees, no percentage of the matter, no win no fee.</p>
+        <div class="btn-row">
+          <a href="/advertising#apply" class="btn btn-primary">Apply to be listed</a>
+          <a href="/advertising#pricing" class="btn btn-ghost-light">€299 / year + €299 per new client</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="positioning">
+    <div class="container">
+      <div class="grid grid-4">
+        <div class="stat"><div class="n">35</div><div class="l">Jurisdictions</div></div>
+        <div class="stat"><div class="n">20</div><div class="l">Practice areas</div></div>
+        <div class="stat"><div class="n">115</div><div class="l">Verified firms</div></div>
+        <div class="stat"><div class="n">113</div><div class="l">Specialist lawyers</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><div class="head-text">
+        <p class="eyebrow">Where your firm appears</p>
+        <h2>Visible in the context that converts</h2>
+        <p class="lede">Your profile is discoverable everywhere a prospective client is already looking — organised by the markets and practice areas you serve.</p>
+      </div></div>
+      <div class="grid grid-3">
+        <div class="card"><h3>Law Firms directory</h3><div class="card-body">A full firm profile in the searchable directory, filterable by jurisdiction, practice area and language.</div></div>
+        <div class="card"><h3>Jurisdiction pages</h3><div class="card-body">Listed on the market pages you serve — Malta, the United Kingdom, the United States, Brazil, Germany and more.</div></div>
+        <div class="card"><h3>Practice-area pages</h3><div class="card-body">Surfaced under Licensing, M&amp;A, AML, Payments, Disputes and every area you cover.</div></div>
+        <div class="card"><h3>Global search</h3><div class="card-body">Discoverable across the platform's unified search for firms, lawyers and markets.</div></div>
+        <div class="card"><h3>Featured placement</h3><div class="card-body">Eligible for featured slots on the homepage and relevant jurisdiction spotlights.</div></div>
+        <div class="card"><h3>Editorial visibility</h3><div class="card-body">Eligible to contribute commentary and interviews through our editorial desk.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-bone">
+    <div class="container">
+      <div class="section-head"><div class="head-text">
+        <p class="eyebrow">What's included</p>
+        <h2>Your annual partner listing</h2>
+      </div></div>
+      <div class="steps">
+        <div class="step"><div class="step-num">01</div><div><h4>A complete firm profile</h4><p>Biography, jurisdictions, practice areas, languages, experience and representative work — plus individual profiles for your specialist team.</p></div></div>
+        <div class="step"><div class="step-num">02</div><div><h4>Placement across the directory</h4><p>Jurisdiction pages, practice-area pages and global search, in every market you serve.</p></div></div>
+        <div class="step"><div class="step-num">03</div><div><h4>Qualified inbound introductions</h4><p>Every enquiry is reviewed by our desk and matched to jurisdiction and practice area before it reaches you — fewer, better briefs.</p></div></div>
+        <div class="step"><div class="step-num">04</div><div><h4>Editorial participation</h4><p>Eligibility for featured placement, jurisdiction spotlights, commentary and interviews through our newsroom.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-oxford" id="pricing">
+    <div class="container">
+      <div class="section-head"><div class="head-text">
+        <p class="eyebrow" style="color:var(--gilt-2)">Simple, transparent pricing</p>
+        <h2>Two fees. Both fixed. One only charged on success.</h2>
+        <p class="lede">You keep 100% of your fees. The introduction charge is a flat €299 per new client, never a commission on the value of the matter.</p>
+      </div></div>
+      <div class="grid grid-2">
+        <div class="card" style="background:rgba(245,241,232,0.04);border-color:var(--line-dark)">
+          <div class="card-sub" style="color:var(--gilt-2)">Annual membership</div>
+          <h3 style="color:var(--bone);font-size:2.25rem">€299 <span style="font-size:1rem;color:rgba(245,241,232,0.6);font-family:var(--sans);font-weight:500">/ year</span></h3>
+          <div class="card-body" style="color:rgba(245,241,232,0.82)">Your full listing across the directory, jurisdiction and practice-area pages for twelve months. Billed annually.</div>
+        </div>
+        <div class="card" style="background:rgba(245,241,232,0.04);border-color:var(--line-dark)">
+          <div class="card-sub" style="color:var(--gilt-2)">Per successful introduction</div>
+          <h3 style="color:var(--bone);font-size:2.25rem">€299 <span style="font-size:1rem;color:rgba(245,241,232,0.6);font-family:var(--sans);font-weight:500">/ new client</span></h3>
+          <div class="card-body" style="color:rgba(245,241,232,0.82)">Charged <strong style="color:var(--gilt-2)">only when</strong> an introduction we make through Request an Introduction converts into an instructed, paying client. No new client, no fee.</div>
+        </div>
+      </div>
+      <p style="margin-top:24px;color:rgba(245,241,232,0.72);font-size:.92rem;border-top:1px solid var(--line-dark);padding-top:20px"><strong style="color:var(--bone)">A flat fee, never a commission.</strong> No exclusivity, no lock-in, and you approve every introduction before it reaches you. Figures exclude VAT where applicable.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><div class="head-text">
+        <p class="eyebrow">How introductions work</p>
+        <h2>From enquiry to instruction</h2>
+      </div></div>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div><h4>Client enquires</h4><p>An operator, investor or founder submits a brief through Request an Introduction.</p></div></div>
+        <div class="step"><div class="step-num">2</div><div><h4>We review &amp; match</h4><p>Our desk vets the enquiry and matches it to your jurisdiction and practice area.</p></div></div>
+        <div class="step"><div class="step-num">3</div><div><h4>Introduction made</h4><p>We introduce you personally, in confidence. You choose whether to take it on.</p></div></div>
+        <div class="step"><div class="step-num">4</div><div><h4>Pay only on success</h4><p>The €299 introduction fee applies solely if that client instructs and pays your firm.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-bone">
+    <div class="container" style="max-width:820px">
+      <div class="section-head"><div class="head-text">
+        <p class="eyebrow">Questions</p>
+        <h2>What partner firms ask</h2>
+      </div></div>
+      <div class="faq-item"><h4>Is the €299 introduction fee a commission?</h4><p>No. It is a fixed €299 per new client, regardless of the size of the engagement. You keep 100% of your fees and we never take a percentage of the matter.</p></div>
+      <div class="faq-item"><h4>When exactly is the introduction fee charged?</h4><p>Only when an introduction we make converts into an instructed, paying client. If an introduction does not become a client, there is no fee.</p></div>
+      <div class="faq-item"><h4>Do we have to accept every introduction?</h4><p>No. Every enquiry is reviewed by our desk and offered to you first. You decide whether to take it on, and there is no exclusivity or lock-in.</p></div>
+      <div class="faq-item"><h4>Who can be listed?</h4><p>The directory is specialist-only. We list firms with a genuine, demonstrable gambling and iGaming practice, reviewed against our editorial standards before going live.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="apply">
+    <div class="container" style="max-width:780px">
+      <p class="eyebrow">Apply</p>
+      <h2>Apply to become a partner firm</h2>
+      <p class="lede" style="margin-bottom:28px">Complete the short application below. Our editorial team reviews every application against our standards and responds from info@gamblinglawyers.com, typically within five business days.</p>
+      <div class="form-wrap" style="margin:0">
+        <div id="applySuccess" class="success-banner" style="display:none">
+          <div><strong>Thank you — your application has reached our desk.</strong>We review each application against our editorial standards and will come back to you from info@gamblinglawyers.com, typically within five business days.</div>
+        </div>
+        <div id="applyError" style="display:none;background:#FDECEA;border:1px solid #E7A9A2;color:#7A241B;padding:16px 20px;border-radius:4px;margin-bottom:20px;gap:12px;align-items:flex-start">
+          <div><strong>We couldn't submit your application just now.</strong> Please try again, or email your details directly to <a href="mailto:info@gamblinglawyers.com" style="color:#7A241B;text-decoration:underline">info@gamblinglawyers.com</a>.</div>
+        </div>
+        <form id="applyForm">
+          <div class="form-group"><label>Firm name <span class="req">*</span></label><input type="text" name="Firm name" required></div>
+          <div class="form-group"><label>Your name <span class="req">*</span></label><input type="text" name="Contact name" required></div>
+          <div class="form-group"><label>Your role <span class="req">*</span></label><input type="text" name="Role" required placeholder="e.g. Managing Partner"></div>
+          <div class="form-group"><label>Work email <span class="req">*</span></label><input type="email" name="Work email" required></div>
+          <div class="form-group"><label>Firm website</label><input type="url" name="Website" placeholder="https://"></div>
+          <div class="form-group"><label>Primary office location <span class="req">*</span></label><input type="text" name="Primary office" required></div>
+          <div class="form-group"><label>Jurisdictions where you practise <span class="req">*</span></label><input type="text" name="Jurisdictions" required placeholder="e.g. Malta, United Kingdom, Gibraltar"></div>
+          <div class="form-group"><label>Gambling-specific practice areas <span class="req">*</span></label><input type="text" name="Practice areas" required placeholder="e.g. Licensing, M&amp;A, AML"></div>
+          <div class="form-group"><label>About your gambling practice <span class="req">*</span></label><textarea name="About the practice" required placeholder="Team size, years of focused gambling work, typical client profile and representative engagement types."></textarea></div>
+          <div class="form-check"><input type="checkbox" id="advk1" required><label for="advk1">I confirm the information above is accurate and that I have authority to apply on behalf of my firm.</label></div>
+          <div class="form-check"><input type="checkbox" id="advk2" required><label for="advk2">I have read and accept that GamblingLawyers.com is an independent directory and does not provide legal advice, and I accept the annual membership and per-introduction fees described above.</label></div>
+          <button type="submit" class="btn btn-primary">Submit application</button>
+          <p class="hint" style="margin-top:12px">Applications are reviewed within five business days. A member of our editorial team will respond from info@gamblinglawyers.com.</p>
+        </form>
+      </div>
+    </div>
+  </section>`;
+}
+
 function renderGetListed(){
   return `
   <div class="page-head">
@@ -1181,7 +1329,7 @@ function renderGetListed(){
       <h2>What is included</h2>
       <p>A firm listing on GamblingLawyers.com includes a detailed firm profile, individual lawyer profiles for your specialist team, coverage across the relevant jurisdiction and practice area pages, and inclusion in the relevant directory filters. Listed firms can also contribute editorial insights to the news portal.</p>
       <h2>How enquiries are handled</h2>
-      <p>All client enquiries go to info@gamblinglawyers.com. Our editorial team reviews each request and makes an introduction to the most appropriate firm based on jurisdiction, practice area and profile. We do not take a share of any engagement, and we do not sell or share enquiry data.</p>
+      <p>All client enquiries go to info@gamblinglawyers.com. Our editorial team reviews each request and makes an introduction to the most appropriate firm based on jurisdiction, practice area and profile. We never take a percentage of your fees or sell enquiry data. Partner firms join for a flat annual membership of €299, plus a fixed €299 per introduction that becomes a paying client — full details are on our <a href="/advertising">partner programme</a> page.</p>
       <h2>Apply</h2>
       <div class="form-wrap" style="margin-top:24px">
         <div id="getListedSuccess" class="success-banner" style="display:none">
@@ -2097,29 +2245,95 @@ function renderArticleDetail(slug){
 function applyFilters(){const f=window.__currentFilterFn;if(f)f();}
 function resetFilters(){document.querySelectorAll('[data-filter]').forEach(el=>{if(el.tagName==='SELECT')el.selectedIndex=0;else el.value='';});applyFilters();}
 
+/* ---- Form delivery via FormSubmit.co ----------------------------------
+   All enquiry forms POST to info@gamblinglawyers.com through the FormSubmit
+   AJAX endpoint. The very first submission triggers a one-time activation
+   email to that inbox; click the link in it to switch delivery on. No
+   account, API key or backend required. */
+const DESK_ENDPOINT = 'https://formsubmit.co/ajax/info@gamblinglawyers.com';
+
+function collectFields(form){
+  const data = {};
+  form.querySelectorAll('.form-group').forEach(g=>{
+    const label = g.querySelector('label');
+    const field = g.querySelector('input, select, textarea');
+    if(label && field){
+      const key = label.textContent.replace(/\*/g,'').trim();
+      if(key) data[key] = field.value;
+    }
+  });
+  return data;
+}
+function sendToDesk(payload, subject){
+  payload._subject = subject;
+  payload._template = 'table';
+  payload._captcha = 'false';
+  return fetch(DESK_ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(payload)
+  }).then(r=>{ if(!r.ok) throw new Error('bad status'); return r.json(); });
+}
+function submittingState(btn){
+  const orig = btn.textContent;
+  btn.disabled = true; btn.dataset.orig = orig; btn.textContent = 'Submitting…';
+}
+function restoreButton(btn){
+  btn.disabled = false; if(btn.dataset.orig) btn.textContent = btn.dataset.orig;
+}
+function showSuccess(form, successId){
+  form.style.display = 'none';
+  const s = document.getElementById(successId);
+  if(s) s.style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 function handleIntroSubmit(e){
   e.preventDefault();
-  document.getElementById('introForm').style.display='none';
-  document.getElementById('introSuccess').style.display='block';
-  window.scrollTo({top:0,behavior:'smooth'});
+  const form = document.getElementById('introForm');
+  const btn = form.querySelector('button[type="submit"]');
+  submittingState(btn);
+  sendToDesk(collectFields(form), 'New introduction request — GamblingLawyers.com')
+    .then(()=> showSuccess(form, 'introSuccess'))
+    .catch(()=>{ restoreButton(btn); alert('Sorry — something went wrong sending your request. Please email info@gamblinglawyers.com and we will respond promptly.'); });
 }
 function handleContactSubmit(e){
   e.preventDefault();
-  document.getElementById('contactForm').style.display='none';
-  document.getElementById('contactSuccess').style.display='block';
-  window.scrollTo({top:0,behavior:'smooth'});
+  const form = document.getElementById('contactForm');
+  const btn = form.querySelector('button[type="submit"]');
+  submittingState(btn);
+  sendToDesk(collectFields(form), 'New contact enquiry — GamblingLawyers.com')
+    .then(()=> showSuccess(form, 'contactSuccess'))
+    .catch(()=>{ restoreButton(btn); alert('Sorry — something went wrong sending your message. Please email info@gamblinglawyers.com directly.'); });
 }
 function handleGetListedSubmit(e){
   e.preventDefault();
-  document.getElementById('getListedForm').style.display='none';
-  document.getElementById('getListedSuccess').style.display='block';
-  window.scrollTo({top:0,behavior:'smooth'});
+  const form = document.getElementById('getListedForm');
+  const btn = form.querySelector('button[type="submit"]');
+  submittingState(btn);
+  sendToDesk(collectFields(form), 'New listing application — GamblingLawyers.com')
+    .then(()=> showSuccess(form, 'getListedSuccess'))
+    .catch(()=>{ restoreButton(btn); alert('Sorry — something went wrong sending your application. Please email info@gamblinglawyers.com directly.'); });
+}
+function handleApplySubmit(e){
+  e.preventDefault();
+  const form = document.getElementById('applyForm');
+  const err = document.getElementById('applyError');
+  if(err) err.style.display = 'none';
+  const btn = form.querySelector('button[type="submit"]');
+  submittingState(btn);
+  sendToDesk(collectFields(form), 'New partner listing application — GamblingLawyers.com')
+    .then(()=> showSuccess(form, 'applySuccess'))
+    .catch(()=>{ restoreButton(btn); if(err) err.style.display = 'flex'; });
 }
 function subscribeNL(){
-  const v=document.getElementById('nlEmail').value;
-  if(!v)return;
-  document.getElementById('nlEmail').value='';
-  alert('Thank you. You will receive the briefing at '+v);
+  const el = document.getElementById('nlEmail');
+  if(!el) return;
+  const v = el.value.trim();
+  if(!v) return;
+  sendToDesk({ 'Email': v, 'Signup': 'Weekly briefing' }, 'Newsletter signup — GamblingLawyers.com').catch(()=>{});
+  el.value='';
+  alert('Thank you. You will receive the briefing at ' + v);
 }
 function acceptCookies(){document.getElementById('cookieBanner').classList.remove('show');}
 

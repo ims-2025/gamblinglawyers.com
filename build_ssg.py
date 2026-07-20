@@ -118,6 +118,7 @@ SHELL = '''<!doctype html>
       <a href="/practice-areas">Practice Areas</a>
       <a href="/news">News</a>
       <a href="/about">About</a>
+      <a href="/advertising">Advertising</a>
       <a href="/request-introduction" class="cta">Request Introduction</a>
     </nav>
   </div>
@@ -161,6 +162,7 @@ SHELL = '''<!doctype html>
           <li><a href="/news">News &amp; Insights</a></li>
           <li><a href="/contact">Contact</a></li>
           <li><a href="/get-listed">Get Listed</a></li>
+          <li><a href="/advertising">Advertising</a></li>
         </ul>
       </div>
       <div>
