@@ -17,7 +17,7 @@ Usage:  python3 build_ssg.py
 
 import re, os, html, glob, datetime
 
-BASE = "/sessions/nice-intelligent-meitner/mnt/GamblingLawyers.com"
+BASE = os.path.dirname(os.path.abspath(__file__))
 DOMAIN = "https://www.gamblinglawyers.com"
 TODAY = datetime.date.today().isoformat()
 
