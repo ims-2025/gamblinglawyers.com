@@ -294,52 +294,64 @@ const DATA = {
     {slug:"jacob-sommer",full_name:"Jacob Sommer",title:"Shareholder",firm_slug:"zwillgen-pllc",lawyer_type:"Partner",short_summary:"Focuses on legal issues related to internet-based services, including federal and state laws governing internet gambling and privacy law compliance.",office_location:"Washington, D.C., United States",experience_years:23,languages:["English"],jurisdictions:["united-states"],practice_areas:["regulatory-compliance","data-protection-gdpr","litigation-disputes","sweepstakes-social-casino","advertising-promotions"],verified:true,featured:false}
 
   ],
+  authors: [
+    {slug:"elena-marchetti",full_name:"Dr. Elena Marchetti",title:"Senior Regulatory Editor",credentials:"PhD EU Internal Market Law (EUI Florence), LLM University of Milan",specializations:["EU regulatory compliance","Italian gambling law","Advertising regulation"],jurisdictions:["italy","malta","germany","netherlands"],short_bio:"Dr. Elena Marchetti is a specialist in EU and Italian gambling regulatory law with over 15 years’ experience advising licensed operators on cross-border compliance.",languages:["Italian","English","French"],full_bio:"Dr. Elena Marchetti brings more than fifteen years of hands-on regulatory advisory experience to the GamblingLawyers.com editorial team. After completing her PhD in EU internal market law at the European University Institute in Florence and an LLM at the University of Milan, she spent a decade as a regulatory affairs advisor at a leading EU-level gambling consultancy, guiding operators through the complex patchwork of European licensing and advertising regimes. Her editorial work focuses on Italian ADM compliance, EU cross-border regulatory developments and the fast-evolving landscape of gambling advertising restrictions across the continent. She is a regular speaker at iGaming industry conferences and contributes to peer-reviewed journals on EU single-market issues affecting the gambling sector."},
+    {slug:"james-whitfield",full_name:"James Whitfield",title:"UK Regulatory Editor",credentials:"Barrister (Gray’s Inn), LLB University of Bristol",specializations:["UK licensing","LCCP compliance","Affordability frameworks","Responsible gambling"],jurisdictions:["united-kingdom"],short_bio:"James Whitfield is a former senior policy officer at the UK Gambling Commission who now writes authoritatively on British gambling regulation and LCCP compliance.",languages:["English"],full_bio:"James Whitfield spent eight years as a senior policy officer at the UK Gambling Commission, where he worked on the development and enforcement of LCCP social responsibility provisions, affordability frameworks and customer interaction requirements. Called to the Bar at Gray’s Inn and holding an LLB from the University of Bristol, he transitioned into independent regulatory consultancy and editorial work in 2022. His writing for GamblingLawyers.com covers UK licensing conditions, Gambling Commission enforcement trends and the operational implications of the White Paper reforms for British-licensed operators. He is widely regarded within the industry as one of the most knowledgeable commentators on UK gambling compliance."},
+    {slug:"sophie-van-der-berg",full_name:"Dr. Sophie van der Berg",title:"AML & Financial Crime Editor",credentials:"PhD Financial Regulation (University of Amsterdam), CAMS certified",specializations:["AML/KYC compliance","Dutch gambling regulation","Financial crime prevention","KSA enforcement"],jurisdictions:["netherlands"],short_bio:"Dr. Sophie van der Berg is a certified anti-money laundering specialist and former compliance officer whose editorial work focuses on Dutch gambling regulation and financial crime prevention.",languages:["Dutch","English","German"],full_bio:"Dr. Sophie van der Berg holds a PhD in financial regulation from the University of Amsterdam and is a Certified Anti-Money Laundering Specialist (CAMS). Before joining the GamblingLawyers.com editorial team, she served as head of compliance at a major Dutch-licensed online gambling operator, where she built and led the AML/KYC programme through the first years of the Remote Gambling Act regime. Her editorial work focuses on KSA enforcement trends, AML obligations under both Dutch and EU frameworks, and the practical challenges of implementing customer due diligence at scale. She is a sought-after speaker at compliance conferences across Europe and advises industry working groups on anti-financial-crime best practice."},
+    {slug:"marcus-thornton",full_name:"Marcus Thornton",title:"US Gaming Law Editor",credentials:"JD, UNLV William S. Boyd School of Law",specializations:["US sports betting regulation","State-level gaming licensing","Tribal gaming law","Prediction markets"],jurisdictions:["united-states"],short_bio:"Marcus Thornton is a former staff attorney at the Nevada Gaming Control Board who covers US state-level gaming regulation, sports betting law and tribal gaming for GamblingLawyers.com.",languages:["English"],full_bio:"Marcus Thornton earned his JD from the UNLV William S. Boyd School of Law and spent the early part of his career as a staff attorney at the Nevada Gaming Control Board, where he gained deep insight into state licensing processes, regulatory investigations and enforcement proceedings. Licensed to practise in Nevada, New Jersey and New York, he has over twelve years of experience advising gaming operators, tribal nations and technology suppliers on the rapidly evolving patchwork of US state gambling regulation. His editorial focus at GamblingLawyers.com encompasses sports betting legislation, tribal gaming compacts, emerging prediction-market regulation and the responsible-gambling frameworks being adopted across American jurisdictions."},
+    {slug:"ana-beatriz-costa",full_name:"Ana Beatriz Costa",title:"Brazil & Latin America Editor",credentials:"LLB Universidade de São Paulo, LLM King’s College London",specializations:["Brazilian gambling regulation","Latin American market entry","Federal licensing frameworks"],jurisdictions:["brazil"],short_bio:"Ana Beatriz Costa is a former legal advisor to Brazil’s Ministry of Finance on gambling legislation who now covers Brazilian and Latin American regulatory developments for GamblingLawyers.com.",languages:["Portuguese","English","Spanish"],full_bio:"Ana Beatriz Costa holds an LLB from the Universidade de São Paulo and an LLM in international business law from King’s College London. She served as a legal advisor to the Brazilian Ministry of Finance during the drafting and implementation of the country’s federal fixed-odds betting framework, giving her first-hand knowledge of the legislative and regulatory process that produced Latin America’s largest regulated gambling market. Her editorial work for GamblingLawyers.com focuses on SPA supervisory priorities, Brazilian licensing requirements, enforcement actions against unlicensed operators and the broader trajectory of gambling regulation across Latin America. She is a member of the International Masters of Gaming Law and a frequent panellist at LATAM-focused industry events."},
+    {slug:"henrik-lindqvist",full_name:"Dr. Henrik Lindqvist",title:"Responsible Gambling & Player Protection Editor",credentials:"PhD Behavioural Science (Karolinska Institutet)",specializations:["Responsible gambling frameworks","AI-driven player monitoring","Swedish gambling regulation","Nordic player protection"],jurisdictions:["sweden","denmark"],short_bio:"Dr. Henrik Lindqvist is a behavioural scientist and former research director at a Nordic responsible gambling foundation who writes on player protection, harm minimisation and AI in gambling regulation.",languages:["Swedish","English","Danish","Norwegian"],full_bio:"Dr. Henrik Lindqvist completed his PhD in behavioural science at the Karolinska Institutet, where his doctoral research examined the efficacy of self-exclusion programmes and limit-setting tools in reducing gambling harm. He subsequently served as research director at a leading Nordic responsible gambling foundation, overseeing multi-year studies on player behaviour, affordability and the impact of regulatory interventions. A published author on harm minimisation and the application of artificial intelligence to player-harm detection, he brings a uniquely evidence-based perspective to his editorial work at GamblingLawyers.com. His coverage focuses on Swedish Spelinspektionen policy, Nordic duty-of-care obligations, channelisation strategies and the emerging regulatory expectations around AI-driven monitoring tools."},
+    {slug:"catherine-obrien",full_name:"Catherine O’Brien",title:"Licensing & Corporate Editor",credentials:"BCL University College Dublin, Advocate (Malta)",specializations:["MGA licensing","Corporate structuring & M&A","B2B supplier compliance","Crown dependency regulation"],jurisdictions:["malta","isle-of-man","gibraltar"],short_bio:"Catherine O’Brien is a dual-qualified lawyer practising in Malta and Ireland who specialises in MGA licensing, corporate structuring and M&A in the gambling sector.",languages:["English","Italian"],full_bio:"Catherine O’Brien holds a BCL from University College Dublin and a warrant to practise as an Advocate in Malta, where she has spent over a decade advising B2B and B2C gambling companies on MGA licensing applications, corporate structuring and cross-border M&A transactions. Her practice has encompassed Critical Gaming Supply Licence applications, operator share-sale transactions and regulatory due diligence for private-equity investors entering the gambling sector. At GamblingLawyers.com, her editorial work covers MGA supervisory developments, Isle of Man GSC modernisation, Gibraltar’s regulatory framework and the evolving compliance obligations for B2B gambling suppliers across European licensing jurisdictions. She is a member of the International Masters of Gaming Law."},
+    {slug:"friedrich-baumann",full_name:"Dr. Friedrich Baumann",title:"German Regulatory Editor",credentials:"Dr. jur. Ludwig-Maximilians-Universität München",specializations:["German gambling law (GlüStV)","GGL enforcement","Advertising restrictions","Austrian gambling regulation"],jurisdictions:["germany","austria"],short_bio:"Dr. Friedrich Baumann is a German administrative law specialist and authority on the Glücksspielstaatsvertrag who covers GGL enforcement and DACH-region gambling regulation for GamblingLawyers.com.",languages:["German","English"],full_bio:"Dr. Friedrich Baumann earned his Dr. jur. from Ludwig-Maximilians-Universität München with a dissertation on the constitutional framework for gambling regulation under German federal law. He spent seven years as an associate at a leading German administrative law firm, where he represented gambling operators in licensing proceedings, enforcement disputes and constitutional challenges under the Glücksspielstaatsvertrag. His editorial work for GamblingLawyers.com focuses on GGL enforcement actions against operators, affiliates and payment processors, German advertising restrictions, and the broader regulatory landscape across the DACH region. He is a regular contributor to German legal journals on public-law aspects of gambling regulation and speaks frequently at European regulatory conferences."},
+    {slug:"victoria-harrington",full_name:"Victoria Harrington",title:"Tax & Financial Regulation Editor",credentials:"ACA Chartered Accountant, LLM Taxation (LSE)",specializations:["Remote Gaming Duty","VAT treatment of gambling","Tax structuring","Financial regulation of gambling"],jurisdictions:["united-kingdom","malta"],short_bio:"Victoria Harrington is an ACA-qualified chartered accountant and tax specialist who writes on gambling taxation, fiscal policy and financial regulation for GamblingLawyers.com.",languages:["English"],full_bio:"Victoria Harrington qualified as a chartered accountant (ACA) before completing an LLM in taxation at the London School of Economics, where her research focused on the fiscal treatment of cross-border digital services. She spent six years as a tax manager in the technology, media and telecommunications practice of a Big Four firm, where she advised online gambling operators on Remote Gaming Duty planning, VAT structuring and transfer-pricing arrangements across multiple licensing jurisdictions. Her editorial work at GamblingLawyers.com covers UK gambling taxation, Maltese VAT developments, the fiscal implications of jurisdictional planning decisions and the evolving financial-regulatory landscape facing licensed operators. She combines deep technical tax knowledge with practical commercial awareness of the iGaming industry."},
+    {slug:"andreas-chrysostomou",full_name:"Prof. Andreas Chrysostomou",title:"EU & Cross-Border Regulation Editor",credentials:"Professor of European Gaming Law (University of Nicosia), PhD University of Cambridge, LLM Leiden University",specializations:["EU gambling law","CJEU jurisprudence","Cross-border regulation","Data protection & GDPR"],jurisdictions:["malta","germany","netherlands","austria"],short_bio:"Prof. Andreas Chrysostomou is an academic authority on EU gambling law and CJEU jurisprudence who serves as cross-border regulation editor for GamblingLawyers.com.",languages:["Greek","English","French","German"],full_bio:"Prof. Andreas Chrysostomou holds the Chair of European Gaming Law at the University of Nicosia, where he leads a research programme on the interaction between EU internal-market freedoms and national gambling regulation. He earned his LLM from Leiden University and his PhD from the University of Cambridge, with a doctoral thesis on the proportionality of national gambling restrictions under EU free-movement law. He has published extensively on CJEU gambling jurisprudence, the scope of Member State discretion under the Treaties and the impact of EU-level harmonisation measures on nationally regulated gambling markets. A regular expert witness in cross-border gambling disputes, his editorial work at GamblingLawyers.com provides operators and their counsel with rigorous analysis of EU regulatory developments, AMLR implementation and the constitutional boundaries of national gambling sovereignty."}
+  ],
   articles: [
-    {slug:"uk-gambling-commission-gaming-machine-standards-enforcement-2026",title:"UK gaming machine standards gain a hard enforcement edge",category:"Regulatory",excerpt:"From 29 July the UK Gambling Commission can force operators to withdraw non-compliant gaming machines on written notice.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-22",related_jurisdictions:["united-kingdom"],related_firms:["harris-hagan","wiggin-llp","joelson-llp"],related_lawyers:[]},
-    {slug:"malta-mga-mica-crypto-grandfathering-expiry-2026",title:"Malta's MiCA deadline reshapes iGaming crypto compliance",category:"Compliance",excerpt:"With the MiCA grandfathering window now closed, Malta-licensed operators face a tighter crypto and AML compliance regime under MGA review.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-22",related_jurisdictions:["malta"],related_firms:["camilleri-preziosi","wh-partners","gvzh-advocates"],related_lawyers:[]},
-    {slug:"us-state-prediction-market-tax-wave-2026",title:"US states open a tax front against prediction markets",category:"Tax",excerpt:"North Carolina, Kentucky and Illinois now tax prediction markets directly, opening a new state-tax front over event contracts.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-22",related_jurisdictions:["united-states"],related_firms:["holland-and-knight-llp","ifrah-law-pllc","fox-rothschild-llp"],related_lawyers:[]},
-    {slug:"italy-online-concession-regime-2026-oligopoly",title:"Italy's nine-year online concessions forge a new oligopoly",category:"Licensing",excerpt:"Italy's reformed regime, 52 nine-year online concessions at €7m each, is now in force and consolidating the market into a tighter oligopoly.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-22",related_jurisdictions:["italy"],related_firms:["dla-piper-italy","studio-legale-sbordoni-and-partners","cms-italy"],related_lawyers:[]},
-    {slug:"netherlands-ksa-illegal-market-sponsorship-crackdown-2026",title:"Dutch KSA escalates illegal-market and sponsorship crackdown",category:"Enforcement",excerpt:"The Dutch KSA is intensifying its illegal-gambling crackdown via payment blocking as betting sponsorship is phased out of Dutch sport.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-22",related_jurisdictions:["netherlands"],related_firms:["kalff-katz-and-franssen","stibbe","akd-benelux-lawyers"],related_lawyers:[]},
-    {slug:"brazil-decree-13033-payment-freeze-unlicensed-betting",title:"Brazil's Decree 13,033 lets the state freeze illegal betting funds",category:"Enforcement",excerpt:"Brazil's Decree 13,033 empowers the federal government to freeze and confiscate the funds of unlicensed betting operators, shifting enforcement into the payment layer.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-21",related_jurisdictions:["brazil"],related_firms:["pinheiro-neto-advogados","mattos-filho"],related_lawyers:[]},
-    {slug:"netherlands-ksa-deposit-means-test-structural-income-2026",title:"Dutch KSA tightens deposit means-test to structural income",category:"Compliance",excerpt:"The Netherlands KSA has revised its deposit means-test guidance, requiring operators to base limits solely on structural income and to exclude savings and one-off assets.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-21",related_jurisdictions:["netherlands"],related_firms:["kalff-katz-and-franssen","stibbe","akd-benelux-lawyers"],related_lawyers:[]},
-    {slug:"us-prediction-markets-cftc-rule-state-conflict-2026",title:"CFTC prediction-market rule collides with state betting law",category:"Regulatory",excerpt:"The CFTC's proposed rule would allow sports event contracts nationwide, setting up a jurisdictional collision with state gaming regulators that may reach the Supreme Court.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-21",related_jurisdictions:["united-states"],related_firms:["ifrah-law-pllc","greenberg-traurig-llp","covington-and-burling-llp"],related_lawyers:[]},
-    {slug:"germany-ggl-payment-blocking-channelisation-2025-report",title:"Germany's GGL leans on payment blocking as channelisation lifts",category:"Enforcement",excerpt:"Germany's GGL has escalated payment-blocking against unlicensed operators, issuing directives to dozens of payment providers as its channelisation rate climbs toward 77%.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-21",related_jurisdictions:["germany"],related_firms:["hambach-and-hambach","redeker-sellner-dahs","cms-germany"],related_lawyers:[]},
-    {slug:"malta-mga-impersonation-warning-consumer-protection-2026",title:"Malta's MGA warns on clone sites impersonating licensees",category:"Licensing",excerpt:"The MGA has flagged a pattern of unlicensed sites impersonating Maltese-licensed operators, raising brand-protection and consumer-trust questions for genuine licensees.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-21",related_jurisdictions:["malta"],related_firms:["camilleri-preziosi","wh-partners","gvzh-advocates"],related_lawyers:[]},
-    {slug:"ireland-grai-begins-issuing-remote-betting-licences-2026",title:"Ireland's GRAI begins issuing remote betting licences",category:"Licensing",excerpt:"Ireland's new gambling regulator has begun issuing remote betting licences from 1 July 2026, opening a licensing regime backed by fines of up to €20m.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-20",related_jurisdictions:["ireland","united-kingdom"],related_firms:["harris-hagan","wiggin-llp","pinsent-masons-llp","bird-and-bird-llp"],related_lawyers:[]},
-    {slug:"alberta-opens-canada-second-regulated-igaming-market-2026",title:"Alberta opens Canada's second regulated iGaming market",category:"Market Entry",excerpt:"Alberta launched a competitive online gambling market on 13 July 2026, becoming Canada's second regulated iGaming jurisdiction after Ontario.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-20",related_jurisdictions:["canada","united-states"],related_firms:["dickinson-wright-pllc","greenberg-traurig-llp","fox-rothschild-llp"],related_lawyers:[]},
-    {slug:"betfred-operator-petfre-900000-settlement-harm-monitoring",title:"Betfred operator to pay £900,000 over harm-monitoring gaps",category:"Enforcement",excerpt:"Petfre, which runs Betfred.com, will pay £900,000 after the Gambling Commission found gaps in its automated gambling-harm monitoring.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-20",related_jurisdictions:["united-kingdom","gibraltar"],related_firms:["harris-hagan","wiggin-llp","mishcon-de-reya-llp"],related_lawyers:[]},
-    {slug:"world-cup-2026-illegal-betting-channelisation-operator-duties",title:"World Cup 2026 tests operators' channelisation duties",category:"Compliance",excerpt:"As billions flow to offshore books during the 2026 World Cup, regulators are pressing licensees on channelisation and player protection.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-20",related_jurisdictions:["united-kingdom","germany","netherlands","sweden","brazil"],related_firms:["harris-hagan","hambach-and-hambach","kalff-katz-and-franssen"],related_lawyers:[]},
-    {slug:"uk-gambling-commission-licence-fees-rise-25-percent-2026",title:"UK Gambling Commission licence fees to rise 25%",category:"Regulatory",excerpt:"The Gambling Commission's licence fees rise 25% from 1 October 2026, adding to a mounting regulatory cost base for British-licensed operators.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-20",related_jurisdictions:["united-kingdom"],related_firms:["harris-hagan","wiggin-llp","pinsent-masons-llp","joelson-llp"],related_lawyers:[]},
-    {slug:"brazil-spa-first-year-supervisory-priorities",title:"Brazil's SPA hits the one-year mark — what licensees should watch in 2026",category:"Regulatory",excerpt:"Twelve months into Brazil's federal fixed-odds betting regime, the Secretariat for Prizes and Bets has moved from authorisation processing into its supervisory phase. We examine the enforcement priorities taking shape and what holders of the federal authorisation need to prepare for during the rest of 2026.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-03-18",related_jurisdictions:["brazil"],related_firms:["pinheiro-neto-advogados","mattos-filho"],related_lawyers:[]},
-    {slug:"uk-gambling-commission-lccp-enforcement-2026",title:"UK Gambling Commission tightens LCCP oversight as white-paper reforms bed in",category:"Compliance",excerpt:"Two years after the 2024 White Paper reforms completed their rolling implementation, the UK Gambling Commission has signalled a more assertive supervisory posture on affordability, marketing and customer interaction obligations under the LCCP. We set out the enforcement themes licensees are seeing on the ground.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-02-24",related_jurisdictions:["united-kingdom"],related_firms:["wiggin-llp","harris-hagan","mishcon-de-reya-llp"],related_lawyers:[]},
-    {slug:"sweden-spelinspektionen-duty-of-care-2026",title:"Sweden's Spelinspektionen sharpens duty-of-care expectations for licensees",category:"Compliance",excerpt:"The Swedish gambling authority's 2026 supervisory plan places customer protection and duty of care at the centre of its enforcement agenda. Licensees operating under a Swedish B2C licence should expect closer review of their affordability frameworks, interaction logs and marketing controls.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-03-30",related_jurisdictions:["sweden"],related_firms:["mannheimer-swartling","cirio"],related_lawyers:[]},
-    {slug:"germany-ggl-enforcement-unauthorised-advertising-payments",title:"Germany's GGL widens enforcement net to affiliates and payment partners",category:"Enforcement",excerpt:"The Gemeinsame Glücksspielbehörde has moved beyond direct operator enforcement to target the affiliate marketing networks and payment partners that support unauthorised gambling aimed at the German market. Recent administrative actions show a regulator increasingly willing to follow the money.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-02-06",related_jurisdictions:["germany"],related_firms:["hambach-and-hambach","redeker-sellner-dahs"],related_lawyers:[]},
-    {slug:"malta-mga-b2b-supervisory-trends-2026",title:"Malta MGA recalibrates B2B supplier oversight as European rules evolve",category:"Licensing",excerpt:"The Malta Gaming Authority has published revised supervisory expectations for its B2B licensee population, reflecting the growing compliance burden placed on game suppliers, platform providers and critical gaming supply businesses by other European regulators. We examine what B2B holders of a Maltese Critical Gaming Supply Licence should be doing now.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-03-12",related_jurisdictions:["malta"],related_firms:["camilleri-preziosi","wh-partners","gvzh-advocates"],related_lawyers:[]},
-    {slug:"eu-amlr-unified-aml-framework-gambling-operators-july-2027",title:"EU’s AMLR creates first unified AML framework for gambling — what operators must do before July 2027",category:"Compliance",excerpt:"The Anti-Money Laundering Regulation marks the first time gambling has been brought within a directly applicable, EU-wide AML framework. With the July 2027 application date approaching, operators across every regulated European market must overhaul their CDD programmes, beneficial-ownership procedures and suspicious-transaction reporting to meet the new standard.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-16",related_jurisdictions:["malta","germany","netherlands","italy","sweden"],related_firms:["camilleri-preziosi","wh-partners","stibbe","kalff-katz-and-franssen"],related_lawyers:[]},
-    {slug:"uk-remote-gaming-duty-40-percent-online-slots-operator-economics",title:"UK Remote Gaming Duty rises to 40% — how the new rate reshapes the operator economics of online slots",category:"Tax",excerpt:"The increase in Remote Gaming Duty to 40 per cent represents the most significant fiscal change to the UK online gambling market in a decade. We examine the structural consequences for operator margins, product mix and jurisdictional planning across the online slots vertical.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-14",related_jurisdictions:["united-kingdom","gibraltar","isle-of-man"],related_firms:["harris-hagan","wiggin-llp","mishcon-de-reya-llp"],related_lawyers:[]},
-    {slug:"netherlands-ksa-record-fine-offshore-operators-2026",title:"Netherlands KSA imposes record €24.8m fine package against offshore operators",category:"Enforcement",excerpt:"The Kansspelautoriteit has levied its largest-ever combined penalty against a group of offshore operators targeting Dutch players without a licence under the Remote Gambling Act. The enforcement action signals a decisive escalation in the KSA’s willingness to use its full penalty powers.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-11",related_jurisdictions:["netherlands"],related_firms:["kalff-katz-and-franssen","stibbe","akd-benelux-lawyers"],related_lawyers:[]},
-    {slug:"brazil-blocks-2100-unlicensed-domains-spa-enforcement",title:"Brazil blocks 2,100 unlicensed domains as SPA moves into active enforcement phase",category:"Enforcement",excerpt:"The Secretaria de Prêmios e Apostas has co-ordinated with ANATEL to block more than two thousand domains offering gambling products to Brazilian consumers without a federal authorisation. The action marks the transition of Brazilian gambling regulation from a licensing regime into an active enforcement framework.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-09",related_jurisdictions:["brazil"],related_firms:["pinheiro-neto-advogados","mattos-filho"],related_lawyers:[]},
-    {slug:"us-states-pivot-responsible-gambling-regulation-2026",title:"US states pivot from expansion to responsible gambling regulation in 2026",category:"Regulatory",excerpt:"After several years of rapid state-level legalisation, the American sports betting landscape is entering a consolidation phase in which legislatures and regulators are turning their attention to player protection, advertising standards and the adequacy of existing responsible-gambling frameworks.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-07",related_jurisdictions:["united-states"],related_firms:["greenberg-traurig-llp","fox-rothschild-llp","duane-morris-llp","ifrah-law-pllc"],related_lawyers:[]},
-    {slug:"gambling-advertising-restrictions-europe-compliance-2026",title:"Gambling advertising restrictions tighten across Europe — what compliance teams need to know",category:"Compliance",excerpt:"A wave of new and strengthened advertising restrictions across major European gambling markets is forcing operators to overhaul their marketing compliance programmes. From the UK's tightened ASA enforcement to Germany's blanket time-of-day restrictions and Italy's dignità decoro provisions, the direction of travel is unmistakable.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-04",related_jurisdictions:["united-kingdom","germany","italy","spain","netherlands"],related_firms:["harris-hagan","hambach-and-hambach","wiggin-llp"],related_lawyers:[]},
-    {slug:"uk-affordability-checks-phase-1-financial-risk-assessments",title:"UK affordability checks enter Phase 1 — frictionless financial risk assessments at £150 monthly loss",category:"Regulatory",excerpt:"The Gambling Commission's long-awaited affordability framework has entered its first operational phase, requiring operators to conduct light-touch financial risk assessments on customers whose net monthly losses reach £150. We examine the mechanics of the regime, the data sources operators may use, and the enforcement posture the Commission is adopting.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-02",related_jurisdictions:["united-kingdom"],related_firms:["harris-hagan","wiggin-llp","pinsent-masons-llp","joelson-llp"],related_lawyers:[]},
-    {slug:"malta-vat-treatment-gambling-changes-october-2026",title:"Malta's new VAT treatment of gambling: what changes from 1 October 2026",category:"Tax",excerpt:"Malta's revised VAT framework for gambling services takes effect on 1 October 2026, altering the tax treatment of B2C and B2B gambling supply in ways that will affect the operating cost structure of operators and suppliers based on the island. We set out what is changing and what licence holders should be doing now.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-06-30",related_jurisdictions:["malta"],related_firms:["camilleri-preziosi","wh-partners","gvzh-advocates"],related_lawyers:[]},
-    {slug:"ggl-widens-enforcement-affiliates-payment-processors-supply-chain",title:"GGL widens enforcement to affiliates and payment processors — the compliance implications for the supply chain",category:"Enforcement",excerpt:"Germany's Gemeinsame Glücksspielbehörde is expanding its enforcement perimeter beyond direct operators to encompass affiliate networks and payment service providers. The shift has profound implications for every participant in the gambling supply chain with exposure to the German market.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-06-27",related_jurisdictions:["germany"],related_firms:["hambach-and-hambach","redeker-sellner-dahs","cms-germany"],related_lawyers:[]},
-    {slug:"sweden-spelinspektionen-duty-of-care-channelisation-2026-agenda",title:"Sweden's Spelinspektionen puts duty-of-care and channelisation at centre of 2026 supervisory agenda",category:"Compliance",excerpt:"The Swedish gambling authority has published a supervisory plan for 2026 that places duty-of-care obligations and channelisation performance at the heart of its enforcement priorities. B2C licensees should expect intensified scrutiny of their player-protection frameworks and marketing conduct.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-06-25",related_jurisdictions:["sweden"],related_firms:["mannheimer-swartling","delorean-advokat"],related_lawyers:[]},
-    {slug:"us-college-player-prop-bets-state-bans-legal-landscape",title:"US college player prop bets face expanding state-level bans — the legal landscape",category:"Regulatory",excerpt:"A growing number of US states are prohibiting or restricting player proposition bets on college sporting events. Driven by concerns over athlete harassment and match integrity, the legislative trend is reshaping the product offering that sportsbook operators can deploy across their multi-state footprints.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-06-23",related_jurisdictions:["united-states"],related_firms:["fox-rothschild-llp","greenberg-traurig-llp","holland-and-knight-llp"],related_lawyers:[]},
-    {slug:"b2b-supplier-accountability-european-regulators-compliance-upstream",title:"B2B supplier accountability grows as European regulators extend compliance obligations upstream",category:"Licensing",excerpt:"Regulators across Europe are holding B2B gambling suppliers to compliance standards that were historically reserved for B2C operators. From Malta's MGA to the UK Gambling Commission and Sweden's Spelinspektionen, the supervisory expectation is that suppliers must demonstrate their own compliance posture rather than relying on their operator customers to manage regulatory risk.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-06-20",related_jurisdictions:["malta","united-kingdom","germany","sweden"],related_firms:["camilleri-preziosi","wh-partners","gvzh-advocates"],related_lawyers:[]},
-    {slug:"ai-driven-player-monitoring-regulatory-expectation-operators",title:"AI-driven player monitoring becomes a regulatory expectation — what operators must implement",category:"Compliance",excerpt:"Gambling regulators in the UK, Sweden and Denmark are moving from encouraging to expecting operators to deploy AI and machine-learning tools for player-harm detection. The shift creates new compliance obligations around model governance, explainability and data protection that operators must address alongside the technology itself.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-06-18",related_jurisdictions:["united-kingdom","sweden","denmark"],related_firms:["harris-hagan","mishcon-de-reya-llp","pinsent-masons-llp"],related_lawyers:[]},
-    {slug:"cjeu-national-sovereignty-gambling-regulation-cross-border-operators",title:"CJEU reaffirms national sovereignty over gambling regulation — implications for cross-border operators",category:"Regulatory",excerpt:"The Court of Justice of the European Union has delivered a ruling that reinforces Member States' wide discretion to regulate gambling within their territories. For cross-border operators, the decision confirms that a licence in one EU Member State confers no right of access to another's market.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-06-15",related_jurisdictions:["malta","germany","netherlands","austria"],related_firms:["camilleri-preziosi","kalff-katz-and-franssen","hambach-and-hambach"],related_lawyers:[]},
-    {slug:"brazil-august-2026-online-casino-product-regulation",title:"Brazil sets August 2026 target for online casino product regulation — what operators should prepare",category:"Licensing",excerpt:"The SPA has indicated that it intends to finalise the regulatory framework for online casino products by August 2026, extending the federal authorisation regime beyond sports betting into slots, table games and live dealer. Operators with existing federal authorisations should be preparing their product and compliance infrastructure now.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-06-12",related_jurisdictions:["brazil"],related_firms:["pinheiro-neto-advogados","mattos-filho"],related_lawyers:[]},
-    {slug:"netherlands-ksa-licensing-overhaul-corporate-transparency",title:"Netherlands KSA overhauls licensing framework — full corporate transparency now required",category:"Licensing",excerpt:"The Kansspelautoriteit is implementing significant changes to its licensing requirements under the Remote Gambling Act, including enhanced corporate transparency obligations, stricter UBO disclosure and more rigorous ongoing suitability assessments for licensed operators.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-06-10",related_jurisdictions:["netherlands"],related_firms:["kalff-katz-and-franssen","stibbe","akd-benelux-lawyers"],related_lawyers:[]},
-    {slug:"isle-of-man-gsc-modernisation-gambling-supervision-framework",title:"Isle of Man GSC signals modernisation of its gambling supervision framework",category:"Regulatory",excerpt:"The Gambling Supervision Commission has announced a programme of regulatory modernisation that will update the Isle of Man's gambling supervision framework. The initiative covers licence categories, technical standards, AML requirements and supervisory processes, and is intended to maintain the jurisdiction's competitiveness as a licensing centre.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-06-07",related_jurisdictions:["isle-of-man"],related_firms:["appleby","cains","m-and-p-legal","mannbenham-advocates","kosnahan-law"],related_lawyers:[]},
-    {slug:"payment-provider-due-diligence-gambling-regulators-following-money",title:"Payment provider due diligence in gambling — how regulators are following the money",category:"Compliance",excerpt:"Gambling regulators in the UK, Germany, Brazil and the Netherlands are extending their supervisory reach to the payment service providers that process gambling transactions. The shift creates new compliance obligations for PSPs and new due-diligence expectations for the operators that contract with them.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-06-05",related_jurisdictions:["united-kingdom","germany","brazil","netherlands"],related_firms:["harris-hagan","hambach-and-hambach","pinheiro-neto-advogados"],related_lawyers:[]},
-    {slug:"italy-adm-online-gambling-compliance-expectations-2026",title:"Italy's ADM strengthens online gambling compliance expectations for 2026",category:"Compliance",excerpt:"The Agenzia delle Dogane e dei Monopoli is raising the compliance bar for Italy's licensed online gambling operators, with strengthened expectations around responsible gambling, advertising conduct, AML controls and technical certification. We examine the practical implications for operators holding Italian concessions.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-06-02",related_jurisdictions:["italy"],related_firms:["cms-italy","dla-piper-italy","norton-rose-fulbright-italy","studio-legale-sbordoni-and-partners"],related_lawyers:[]},
-    {slug:"gibraltar-gambling-regulatory-framework-review-post-brexit",title:"Gibraltar reviews its gambling regulatory framework as post-Brexit landscape stabilises",category:"Regulatory",excerpt:"Gibraltar's government has launched a consultation on modernising the territory's gambling regulatory framework. With the post-Brexit relationship with the EU and the UK now largely settled, the review aims to ensure that Gibraltar's regime remains competitive and proportionate for the operators and suppliers licensed there.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-05-30",related_jurisdictions:["gibraltar"],related_firms:["hassans-international-law-firm","isolas-llp","ellul-and-co"],related_lawyers:[]},
-    {slug:"uk-gaming-machine-removal-deadline-illegal-gambling-crackdown",title:"UK sets July 29 deadline to remove illegal gaming machines",category:"Enforcement",excerpt:"From 29 July 2026 British operators must pull gaming machines the moment the Gambling Commission flags a licensing or technical failure.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-19",related_jurisdictions:["united-kingdom"],related_firms:["harris-hagan","wiggin-llp","joelson-llp"],related_lawyers:[]},
-    {slug:"malta-mga-ai-led-smart-regulation-pivot-2026",title:"Malta's MGA pivots to AI-led supervision of gaming licences",category:"Regulatory",excerpt:"With B2B permits now exceeding half of all Maltese licences, the MGA is rebuilding supervision around AI-led, risk-based oversight.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-19",related_jurisdictions:["malta"],related_firms:["camilleri-preziosi","wh-partners","gvzh-advocates"],related_lawyers:[]},
-    {slug:"us-prediction-markets-state-sports-betting-conflict-2026",title:"US prediction markets collide with state sports betting law",category:"Market Entry",excerpt:"CFTC-regulated event contracts now reach every US state, forcing a jurisdictional showdown with the licensed sports betting regime.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-19",related_jurisdictions:["united-states"],related_firms:["ifrah-law-pllc","greenberg-traurig-llp","covington-and-burling-llp"],related_lawyers:[]},
-    {slug:"sweden-spelpaus-self-exclusion-credit-ban-2026-compliance",title:"Sweden tightens self-exclusion and credit rules from August",category:"Compliance",excerpt:"New SIFS 2026:3 self-exclusion APIs and a full credit ban reshape the compliance duties of every Swedish B2C licensee.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-19",related_jurisdictions:["sweden"],related_firms:["mannheimer-swartling","delorean-advokat"],related_lawyers:[]},
-    {slug:"brazil-ggr-betting-tax-increase-13-percent-operator-impact",title:"Brazil raises online betting GGR tax to 13% — the impact",category:"Tax",excerpt:"Brazil's GGR levy on fixed-odds betting and iGaming rises to 13%, squeezing margins barely a year into the federal regime.",author:"GamblingLawyers.com Editorial",author_slug:"",publish_date:"2026-07-19",related_jurisdictions:["brazil"],related_firms:["pinheiro-neto-advogados","mattos-filho"],related_lawyers:[]}
+    {slug:"uk-gambling-commission-gaming-machine-standards-enforcement-2026",title:"UK gaming machine standards gain a hard enforcement edge",category:"Regulatory",excerpt:"From 29 July the UK Gambling Commission can force operators to withdraw non-compliant gaming machines on written notice.",author:"James Whitfield",author_slug:"james-whitfield",publish_date:"2026-07-22",related_jurisdictions:["united-kingdom"],related_firms:["harris-hagan","wiggin-llp","joelson-llp"],related_lawyers:[]},
+    {slug:"malta-mga-mica-crypto-grandfathering-expiry-2026",title:"Malta's MiCA deadline reshapes iGaming crypto compliance",category:"Compliance",excerpt:"With the MiCA grandfathering window now closed, Malta-licensed operators face a tighter crypto and AML compliance regime under MGA review.",author:"Catherine O'Brien",author_slug:"catherine-obrien",publish_date:"2026-07-22",related_jurisdictions:["malta"],related_firms:["camilleri-preziosi","wh-partners","gvzh-advocates"],related_lawyers:[]},
+    {slug:"us-state-prediction-market-tax-wave-2026",title:"US states open a tax front against prediction markets",category:"Tax",excerpt:"North Carolina, Kentucky and Illinois now tax prediction markets directly, opening a new state-tax front over event contracts.",author:"Marcus Thornton",author_slug:"marcus-thornton",publish_date:"2026-07-22",related_jurisdictions:["united-states"],related_firms:["holland-and-knight-llp","ifrah-law-pllc","fox-rothschild-llp"],related_lawyers:[]},
+    {slug:"italy-online-concession-regime-2026-oligopoly",title:"Italy's nine-year online concessions forge a new oligopoly",category:"Licensing",excerpt:"Italy's reformed regime, 52 nine-year online concessions at €7m each, is now in force and consolidating the market into a tighter oligopoly.",author:"Dr. Elena Marchetti",author_slug:"elena-marchetti",publish_date:"2026-07-22",related_jurisdictions:["italy"],related_firms:["dla-piper-italy","studio-legale-sbordoni-and-partners","cms-italy"],related_lawyers:[]},
+    {slug:"netherlands-ksa-illegal-market-sponsorship-crackdown-2026",title:"Dutch KSA escalates illegal-market and sponsorship crackdown",category:"Enforcement",excerpt:"The Dutch KSA is intensifying its illegal-gambling crackdown via payment blocking as betting sponsorship is phased out of Dutch sport.",author:"Dr. Sophie van der Berg",author_slug:"sophie-van-der-berg",publish_date:"2026-07-22",related_jurisdictions:["netherlands"],related_firms:["kalff-katz-and-franssen","stibbe","akd-benelux-lawyers"],related_lawyers:[]},
+    {slug:"brazil-decree-13033-payment-freeze-unlicensed-betting",title:"Brazil's Decree 13,033 lets the state freeze illegal betting funds",category:"Enforcement",excerpt:"Brazil's Decree 13,033 empowers the federal government to freeze and confiscate the funds of unlicensed betting operators, shifting enforcement into the payment layer.",author:"Ana Beatriz Costa",author_slug:"ana-beatriz-costa",publish_date:"2026-07-21",related_jurisdictions:["brazil"],related_firms:["pinheiro-neto-advogados","mattos-filho"],related_lawyers:[]},
+    {slug:"netherlands-ksa-deposit-means-test-structural-income-2026",title:"Dutch KSA tightens deposit means-test to structural income",category:"Compliance",excerpt:"The Netherlands KSA has revised its deposit means-test guidance, requiring operators to base limits solely on structural income and to exclude savings and one-off assets.",author:"Dr. Sophie van der Berg",author_slug:"sophie-van-der-berg",publish_date:"2026-07-21",related_jurisdictions:["netherlands"],related_firms:["kalff-katz-and-franssen","stibbe","akd-benelux-lawyers"],related_lawyers:[]},
+    {slug:"us-prediction-markets-cftc-rule-state-conflict-2026",title:"CFTC prediction-market rule collides with state betting law",category:"Regulatory",excerpt:"The CFTC's proposed rule would allow sports event contracts nationwide, setting up a jurisdictional collision with state gaming regulators that may reach the Supreme Court.",author:"Marcus Thornton",author_slug:"marcus-thornton",publish_date:"2026-07-21",related_jurisdictions:["united-states"],related_firms:["ifrah-law-pllc","greenberg-traurig-llp","covington-and-burling-llp"],related_lawyers:[]},
+    {slug:"germany-ggl-payment-blocking-channelisation-2025-report",title:"Germany's GGL leans on payment blocking as channelisation lifts",category:"Enforcement",excerpt:"Germany's GGL has escalated payment-blocking against unlicensed operators, issuing directives to dozens of payment providers as its channelisation rate climbs toward 77%.",author:"Dr. Friedrich Baumann",author_slug:"friedrich-baumann",publish_date:"2026-07-21",related_jurisdictions:["germany"],related_firms:["hambach-and-hambach","redeker-sellner-dahs","cms-germany"],related_lawyers:[]},
+    {slug:"malta-mga-impersonation-warning-consumer-protection-2026",title:"Malta's MGA warns on clone sites impersonating licensees",category:"Licensing",excerpt:"The MGA has flagged a pattern of unlicensed sites impersonating Maltese-licensed operators, raising brand-protection and consumer-trust questions for genuine licensees.",author:"Catherine O'Brien",author_slug:"catherine-obrien",publish_date:"2026-07-21",related_jurisdictions:["malta"],related_firms:["camilleri-preziosi","wh-partners","gvzh-advocates"],related_lawyers:[]},
+    {slug:"ireland-grai-begins-issuing-remote-betting-licences-2026",title:"Ireland's GRAI begins issuing remote betting licences",category:"Licensing",excerpt:"Ireland's new gambling regulator has begun issuing remote betting licences from 1 July 2026, opening a licensing regime backed by fines of up to €20m.",author:"Catherine O'Brien",author_slug:"catherine-obrien",publish_date:"2026-07-20",related_jurisdictions:["ireland","united-kingdom"],related_firms:["harris-hagan","wiggin-llp","pinsent-masons-llp","bird-and-bird-llp"],related_lawyers:[]},
+    {slug:"alberta-opens-canada-second-regulated-igaming-market-2026",title:"Alberta opens Canada's second regulated iGaming market",category:"Market Entry",excerpt:"Alberta launched a competitive online gambling market on 13 July 2026, becoming Canada's second regulated iGaming jurisdiction after Ontario.",author:"Marcus Thornton",author_slug:"marcus-thornton",publish_date:"2026-07-20",related_jurisdictions:["canada","united-states"],related_firms:["dickinson-wright-pllc","greenberg-traurig-llp","fox-rothschild-llp"],related_lawyers:[]},
+    {slug:"betfred-operator-petfre-900000-settlement-harm-monitoring",title:"Betfred operator to pay £900,000 over harm-monitoring gaps",category:"Enforcement",excerpt:"Petfre, which runs Betfred.com, will pay £900,000 after the Gambling Commission found gaps in its automated gambling-harm monitoring.",author:"James Whitfield",author_slug:"james-whitfield",publish_date:"2026-07-20",related_jurisdictions:["united-kingdom","gibraltar"],related_firms:["harris-hagan","wiggin-llp","mishcon-de-reya-llp"],related_lawyers:[]},
+    {slug:"world-cup-2026-illegal-betting-channelisation-operator-duties",title:"World Cup 2026 tests operators' channelisation duties",category:"Compliance",excerpt:"As billions flow to offshore books during the 2026 World Cup, regulators are pressing licensees on channelisation and player protection.",author:"Prof. Andreas Chrysostomou",author_slug:"andreas-chrysostomou",publish_date:"2026-07-20",related_jurisdictions:["united-kingdom","germany","netherlands","sweden","brazil"],related_firms:["harris-hagan","hambach-and-hambach","kalff-katz-and-franssen"],related_lawyers:[]},
+    {slug:"uk-gambling-commission-licence-fees-rise-25-percent-2026",title:"UK Gambling Commission licence fees to rise 25%",category:"Regulatory",excerpt:"The Gambling Commission's licence fees rise 25% from 1 October 2026, adding to a mounting regulatory cost base for British-licensed operators.",author:"Victoria Harrington",author_slug:"victoria-harrington",publish_date:"2026-07-20",related_jurisdictions:["united-kingdom"],related_firms:["harris-hagan","wiggin-llp","pinsent-masons-llp","joelson-llp"],related_lawyers:[]},
+    {slug:"brazil-spa-first-year-supervisory-priorities",title:"Brazil's SPA hits the one-year mark — what licensees should watch in 2026",category:"Regulatory",excerpt:"Twelve months into Brazil's federal fixed-odds betting regime, the Secretariat for Prizes and Bets has moved from authorisation processing into its supervisory phase. We examine the enforcement priorities taking shape and what holders of the federal authorisation need to prepare for during the rest of 2026.",author:"Ana Beatriz Costa",author_slug:"ana-beatriz-costa",publish_date:"2026-03-18",related_jurisdictions:["brazil"],related_firms:["pinheiro-neto-advogados","mattos-filho"],related_lawyers:[]},
+    {slug:"uk-gambling-commission-lccp-enforcement-2026",title:"UK Gambling Commission tightens LCCP oversight as white-paper reforms bed in",category:"Compliance",excerpt:"Two years after the 2024 White Paper reforms completed their rolling implementation, the UK Gambling Commission has signalled a more assertive supervisory posture on affordability, marketing and customer interaction obligations under the LCCP. We set out the enforcement themes licensees are seeing on the ground.",author:"James Whitfield",author_slug:"james-whitfield",publish_date:"2026-02-24",related_jurisdictions:["united-kingdom"],related_firms:["wiggin-llp","harris-hagan","mishcon-de-reya-llp"],related_lawyers:[]},
+    {slug:"sweden-spelinspektionen-duty-of-care-2026",title:"Sweden's Spelinspektionen sharpens duty-of-care expectations for licensees",category:"Compliance",excerpt:"The Swedish gambling authority's 2026 supervisory plan places customer protection and duty of care at the centre of its enforcement agenda. Licensees operating under a Swedish B2C licence should expect closer review of their affordability frameworks, interaction logs and marketing controls.",author:"Dr. Henrik Lindqvist",author_slug:"henrik-lindqvist",publish_date:"2026-03-30",related_jurisdictions:["sweden"],related_firms:["mannheimer-swartling","cirio"],related_lawyers:[]},
+    {slug:"germany-ggl-enforcement-unauthorised-advertising-payments",title:"Germany's GGL widens enforcement net to affiliates and payment partners",category:"Enforcement",excerpt:"The Gemeinsame Glücksspielbehörde has moved beyond direct operator enforcement to target the affiliate marketing networks and payment partners that support unauthorised gambling aimed at the German market. Recent administrative actions show a regulator increasingly willing to follow the money.",author:"Dr. Friedrich Baumann",author_slug:"friedrich-baumann",publish_date:"2026-02-06",related_jurisdictions:["germany"],related_firms:["hambach-and-hambach","redeker-sellner-dahs"],related_lawyers:[]},
+    {slug:"malta-mga-b2b-supervisory-trends-2026",title:"Malta MGA recalibrates B2B supplier oversight as European rules evolve",category:"Licensing",excerpt:"The Malta Gaming Authority has published revised supervisory expectations for its B2B licensee population, reflecting the growing compliance burden placed on game suppliers, platform providers and critical gaming supply businesses by other European regulators. We examine what B2B holders of a Maltese Critical Gaming Supply Licence should be doing now.",author:"Catherine O'Brien",author_slug:"catherine-obrien",publish_date:"2026-03-12",related_jurisdictions:["malta"],related_firms:["camilleri-preziosi","wh-partners","gvzh-advocates"],related_lawyers:[]},
+    {slug:"eu-amlr-unified-aml-framework-gambling-operators-july-2027",title:"EU’s AMLR creates first unified AML framework for gambling — what operators must do before July 2027",category:"Compliance",excerpt:"The Anti-Money Laundering Regulation marks the first time gambling has been brought within a directly applicable, EU-wide AML framework. With the July 2027 application date approaching, operators across every regulated European market must overhaul their CDD programmes, beneficial-ownership procedures and suspicious-transaction reporting to meet the new standard.",author:"Prof. Andreas Chrysostomou",author_slug:"andreas-chrysostomou",publish_date:"2026-07-16",related_jurisdictions:["malta","germany","netherlands","italy","sweden"],related_firms:["camilleri-preziosi","wh-partners","stibbe","kalff-katz-and-franssen"],related_lawyers:[]},
+    {slug:"uk-remote-gaming-duty-40-percent-online-slots-operator-economics",title:"UK Remote Gaming Duty rises to 40% — how the new rate reshapes the operator economics of online slots",category:"Tax",excerpt:"The increase in Remote Gaming Duty to 40 per cent represents the most significant fiscal change to the UK online gambling market in a decade. We examine the structural consequences for operator margins, product mix and jurisdictional planning across the online slots vertical.",author:"Victoria Harrington",author_slug:"victoria-harrington",publish_date:"2026-07-14",related_jurisdictions:["united-kingdom","gibraltar","isle-of-man"],related_firms:["harris-hagan","wiggin-llp","mishcon-de-reya-llp"],related_lawyers:[]},
+    {slug:"netherlands-ksa-record-fine-offshore-operators-2026",title:"Netherlands KSA imposes record €24.8m fine package against offshore operators",category:"Enforcement",excerpt:"The Kansspelautoriteit has levied its largest-ever combined penalty against a group of offshore operators targeting Dutch players without a licence under the Remote Gambling Act. The enforcement action signals a decisive escalation in the KSA’s willingness to use its full penalty powers.",author:"Dr. Sophie van der Berg",author_slug:"sophie-van-der-berg",publish_date:"2026-07-11",related_jurisdictions:["netherlands"],related_firms:["kalff-katz-and-franssen","stibbe","akd-benelux-lawyers"],related_lawyers:[]},
+    {slug:"brazil-blocks-2100-unlicensed-domains-spa-enforcement",title:"Brazil blocks 2,100 unlicensed domains as SPA moves into active enforcement phase",category:"Enforcement",excerpt:"The Secretaria de Prêmios e Apostas has co-ordinated with ANATEL to block more than two thousand domains offering gambling products to Brazilian consumers without a federal authorisation. The action marks the transition of Brazilian gambling regulation from a licensing regime into an active enforcement framework.",author:"Ana Beatriz Costa",author_slug:"ana-beatriz-costa",publish_date:"2026-07-09",related_jurisdictions:["brazil"],related_firms:["pinheiro-neto-advogados","mattos-filho"],related_lawyers:[]},
+    {slug:"us-states-pivot-responsible-gambling-regulation-2026",title:"US states pivot from expansion to responsible gambling regulation in 2026",category:"Regulatory",excerpt:"After several years of rapid state-level legalisation, the American sports betting landscape is entering a consolidation phase in which legislatures and regulators are turning their attention to player protection, advertising standards and the adequacy of existing responsible-gambling frameworks.",author:"Marcus Thornton",author_slug:"marcus-thornton",publish_date:"2026-07-07",related_jurisdictions:["united-states"],related_firms:["greenberg-traurig-llp","fox-rothschild-llp","duane-morris-llp","ifrah-law-pllc"],related_lawyers:[]},
+    {slug:"gambling-advertising-restrictions-europe-compliance-2026",title:"Gambling advertising restrictions tighten across Europe — what compliance teams need to know",category:"Compliance",excerpt:"A wave of new and strengthened advertising restrictions across major European gambling markets is forcing operators to overhaul their marketing compliance programmes. From the UK's tightened ASA enforcement to Germany's blanket time-of-day restrictions and Italy's dignità decoro provisions, the direction of travel is unmistakable.",author:"Dr. Elena Marchetti",author_slug:"elena-marchetti",publish_date:"2026-07-04",related_jurisdictions:["united-kingdom","germany","italy","spain","netherlands"],related_firms:["harris-hagan","hambach-and-hambach","wiggin-llp"],related_lawyers:[]},
+    {slug:"uk-affordability-checks-phase-1-financial-risk-assessments",title:"UK affordability checks enter Phase 1 — frictionless financial risk assessments at £150 monthly loss",category:"Regulatory",excerpt:"The Gambling Commission's long-awaited affordability framework has entered its first operational phase, requiring operators to conduct light-touch financial risk assessments on customers whose net monthly losses reach £150. We examine the mechanics of the regime, the data sources operators may use, and the enforcement posture the Commission is adopting.",author:"James Whitfield",author_slug:"james-whitfield",publish_date:"2026-07-02",related_jurisdictions:["united-kingdom"],related_firms:["harris-hagan","wiggin-llp","pinsent-masons-llp","joelson-llp"],related_lawyers:[]},
+    {slug:"malta-vat-treatment-gambling-changes-october-2026",title:"Malta's new VAT treatment of gambling: what changes from 1 October 2026",category:"Tax",excerpt:"Malta's revised VAT framework for gambling services takes effect on 1 October 2026, altering the tax treatment of B2C and B2B gambling supply in ways that will affect the operating cost structure of operators and suppliers based on the island. We set out what is changing and what licence holders should be doing now.",author:"Victoria Harrington",author_slug:"victoria-harrington",publish_date:"2026-06-30",related_jurisdictions:["malta"],related_firms:["camilleri-preziosi","wh-partners","gvzh-advocates"],related_lawyers:[]},
+    {slug:"ggl-widens-enforcement-affiliates-payment-processors-supply-chain",title:"GGL widens enforcement to affiliates and payment processors — the compliance implications for the supply chain",category:"Enforcement",excerpt:"Germany's Gemeinsame Glücksspielbehörde is expanding its enforcement perimeter beyond direct operators to encompass affiliate networks and payment service providers. The shift has profound implications for every participant in the gambling supply chain with exposure to the German market.",author:"Dr. Friedrich Baumann",author_slug:"friedrich-baumann",publish_date:"2026-06-27",related_jurisdictions:["germany"],related_firms:["hambach-and-hambach","redeker-sellner-dahs","cms-germany"],related_lawyers:[]},
+    {slug:"sweden-spelinspektionen-duty-of-care-channelisation-2026-agenda",title:"Sweden's Spelinspektionen puts duty-of-care and channelisation at centre of 2026 supervisory agenda",category:"Compliance",excerpt:"The Swedish gambling authority has published a supervisory plan for 2026 that places duty-of-care obligations and channelisation performance at the heart of its enforcement priorities. B2C licensees should expect intensified scrutiny of their player-protection frameworks and marketing conduct.",author:"Dr. Henrik Lindqvist",author_slug:"henrik-lindqvist",publish_date:"2026-06-25",related_jurisdictions:["sweden"],related_firms:["mannheimer-swartling","delorean-advokat"],related_lawyers:[]},
+    {slug:"us-college-player-prop-bets-state-bans-legal-landscape",title:"US college player prop bets face expanding state-level bans — the legal landscape",category:"Regulatory",excerpt:"A growing number of US states are prohibiting or restricting player proposition bets on college sporting events. Driven by concerns over athlete harassment and match integrity, the legislative trend is reshaping the product offering that sportsbook operators can deploy across their multi-state footprints.",author:"Marcus Thornton",author_slug:"marcus-thornton",publish_date:"2026-06-23",related_jurisdictions:["united-states"],related_firms:["fox-rothschild-llp","greenberg-traurig-llp","holland-and-knight-llp"],related_lawyers:[]},
+    {slug:"b2b-supplier-accountability-european-regulators-compliance-upstream",title:"B2B supplier accountability grows as European regulators extend compliance obligations upstream",category:"Licensing",excerpt:"Regulators across Europe are holding B2B gambling suppliers to compliance standards that were historically reserved for B2C operators. From Malta's MGA to the UK Gambling Commission and Sweden's Spelinspektionen, the supervisory expectation is that suppliers must demonstrate their own compliance posture rather than relying on their operator customers to manage regulatory risk.",author:"Catherine O'Brien",author_slug:"catherine-obrien",publish_date:"2026-06-20",related_jurisdictions:["malta","united-kingdom","germany","sweden"],related_firms:["camilleri-preziosi","wh-partners","gvzh-advocates"],related_lawyers:[]},
+    {slug:"ai-driven-player-monitoring-regulatory-expectation-operators",title:"AI-driven player monitoring becomes a regulatory expectation — what operators must implement",category:"Compliance",excerpt:"Gambling regulators in the UK, Sweden and Denmark are moving from encouraging to expecting operators to deploy AI and machine-learning tools for player-harm detection. The shift creates new compliance obligations around model governance, explainability and data protection that operators must address alongside the technology itself.",author:"Dr. Henrik Lindqvist",author_slug:"henrik-lindqvist",publish_date:"2026-06-18",related_jurisdictions:["united-kingdom","sweden","denmark"],related_firms:["harris-hagan","mishcon-de-reya-llp","pinsent-masons-llp"],related_lawyers:[]},
+    {slug:"cjeu-national-sovereignty-gambling-regulation-cross-border-operators",title:"CJEU reaffirms national sovereignty over gambling regulation — implications for cross-border operators",category:"Regulatory",excerpt:"The Court of Justice of the European Union has delivered a ruling that reinforces Member States' wide discretion to regulate gambling within their territories. For cross-border operators, the decision confirms that a licence in one EU Member State confers no right of access to another's market.",author:"Prof. Andreas Chrysostomou",author_slug:"andreas-chrysostomou",publish_date:"2026-06-15",related_jurisdictions:["malta","germany","netherlands","austria"],related_firms:["camilleri-preziosi","kalff-katz-and-franssen","hambach-and-hambach"],related_lawyers:[]},
+    {slug:"brazil-august-2026-online-casino-product-regulation",title:"Brazil sets August 2026 target for online casino product regulation — what operators should prepare",category:"Licensing",excerpt:"The SPA has indicated that it intends to finalise the regulatory framework for online casino products by August 2026, extending the federal authorisation regime beyond sports betting into slots, table games and live dealer. Operators with existing federal authorisations should be preparing their product and compliance infrastructure now.",author:"Ana Beatriz Costa",author_slug:"ana-beatriz-costa",publish_date:"2026-06-12",related_jurisdictions:["brazil"],related_firms:["pinheiro-neto-advogados","mattos-filho"],related_lawyers:[]},
+    {slug:"netherlands-ksa-licensing-overhaul-corporate-transparency",title:"Netherlands KSA overhauls licensing framework — full corporate transparency now required",category:"Licensing",excerpt:"The Kansspelautoriteit is implementing significant changes to its licensing requirements under the Remote Gambling Act, including enhanced corporate transparency obligations, stricter UBO disclosure and more rigorous ongoing suitability assessments for licensed operators.",author:"Dr. Sophie van der Berg",author_slug:"sophie-van-der-berg",publish_date:"2026-06-10",related_jurisdictions:["netherlands"],related_firms:["kalff-katz-and-franssen","stibbe","akd-benelux-lawyers"],related_lawyers:[]},
+    {slug:"isle-of-man-gsc-modernisation-gambling-supervision-framework",title:"Isle of Man GSC signals modernisation of its gambling supervision framework",category:"Regulatory",excerpt:"The Gambling Supervision Commission has announced a programme of regulatory modernisation that will update the Isle of Man's gambling supervision framework. The initiative covers licence categories, technical standards, AML requirements and supervisory processes, and is intended to maintain the jurisdiction's competitiveness as a licensing centre.",author:"Catherine O'Brien",author_slug:"catherine-obrien",publish_date:"2026-06-07",related_jurisdictions:["isle-of-man"],related_firms:["appleby","cains","m-and-p-legal","mannbenham-advocates","kosnahan-law"],related_lawyers:[]},
+    {slug:"payment-provider-due-diligence-gambling-regulators-following-money",title:"Payment provider due diligence in gambling — how regulators are following the money",category:"Compliance",excerpt:"Gambling regulators in the UK, Germany, Brazil and the Netherlands are extending their supervisory reach to the payment service providers that process gambling transactions. The shift creates new compliance obligations for PSPs and new due-diligence expectations for the operators that contract with them.",author:"Dr. Sophie van der Berg",author_slug:"sophie-van-der-berg",publish_date:"2026-06-05",related_jurisdictions:["united-kingdom","germany","brazil","netherlands"],related_firms:["harris-hagan","hambach-and-hambach","pinheiro-neto-advogados"],related_lawyers:[]},
+    {slug:"italy-adm-online-gambling-compliance-expectations-2026",title:"Italy's ADM strengthens online gambling compliance expectations for 2026",category:"Compliance",excerpt:"The Agenzia delle Dogane e dei Monopoli is raising the compliance bar for Italy's licensed online gambling operators, with strengthened expectations around responsible gambling, advertising conduct, AML controls and technical certification. We examine the practical implications for operators holding Italian concessions.",author:"Dr. Elena Marchetti",author_slug:"elena-marchetti",publish_date:"2026-06-02",related_jurisdictions:["italy"],related_firms:["cms-italy","dla-piper-italy","norton-rose-fulbright-italy","studio-legale-sbordoni-and-partners"],related_lawyers:[]},
+    {slug:"gibraltar-gambling-regulatory-framework-review-post-brexit",title:"Gibraltar reviews its gambling regulatory framework as post-Brexit landscape stabilises",category:"Regulatory",excerpt:"Gibraltar's government has launched a consultation on modernising the territory's gambling regulatory framework. With the post-Brexit relationship with the EU and the UK now largely settled, the review aims to ensure that Gibraltar's regime remains competitive and proportionate for the operators and suppliers licensed there.",author:"Catherine O'Brien",author_slug:"catherine-obrien",publish_date:"2026-05-30",related_jurisdictions:["gibraltar"],related_firms:["hassans-international-law-firm","isolas-llp","ellul-and-co"],related_lawyers:[]},
+    {slug:"uk-gaming-machine-removal-deadline-illegal-gambling-crackdown",title:"UK sets July 29 deadline to remove illegal gaming machines",category:"Enforcement",excerpt:"From 29 July 2026 British operators must pull gaming machines the moment the Gambling Commission flags a licensing or technical failure.",author:"James Whitfield",author_slug:"james-whitfield",publish_date:"2026-07-19",related_jurisdictions:["united-kingdom"],related_firms:["harris-hagan","wiggin-llp","joelson-llp"],related_lawyers:[]},
+    {slug:"malta-mga-ai-led-smart-regulation-pivot-2026",title:"Malta's MGA pivots to AI-led supervision of gaming licences",category:"Regulatory",excerpt:"With B2B permits now exceeding half of all Maltese licences, the MGA is rebuilding supervision around AI-led, risk-based oversight.",author:"Catherine O'Brien",author_slug:"catherine-obrien",publish_date:"2026-07-19",related_jurisdictions:["malta"],related_firms:["camilleri-preziosi","wh-partners","gvzh-advocates"],related_lawyers:[]},
+    {slug:"us-prediction-markets-state-sports-betting-conflict-2026",title:"US prediction markets collide with state sports betting law",category:"Market Entry",excerpt:"CFTC-regulated event contracts now reach every US state, forcing a jurisdictional showdown with the licensed sports betting regime.",author:"Marcus Thornton",author_slug:"marcus-thornton",publish_date:"2026-07-19",related_jurisdictions:["united-states"],related_firms:["ifrah-law-pllc","greenberg-traurig-llp","covington-and-burling-llp"],related_lawyers:[]},
+    {slug:"sweden-spelpaus-self-exclusion-credit-ban-2026-compliance",title:"Sweden tightens self-exclusion and credit rules from August",category:"Compliance",excerpt:"New SIFS 2026:3 self-exclusion APIs and a full credit ban reshape the compliance duties of every Swedish B2C licensee.",author:"Dr. Henrik Lindqvist",author_slug:"henrik-lindqvist",publish_date:"2026-07-19",related_jurisdictions:["sweden"],related_firms:["mannheimer-swartling","delorean-advokat"],related_lawyers:[]},
+    {slug:"brazil-ggr-betting-tax-increase-13-percent-operator-impact",title:"Brazil raises online betting GGR tax to 13% — the impact",category:"Tax",excerpt:"Brazil's GGR levy on fixed-odds betting and iGaming rises to 13%, squeezing margins barely a year into the federal regime.",author:"Ana Beatriz Costa",author_slug:"ana-beatriz-costa",publish_date:"2026-07-19",related_jurisdictions:["brazil"],related_firms:["pinheiro-neto-advogados","mattos-filho"],related_lawyers:[]}
   ]
 };
 
@@ -398,13 +410,11 @@ const routes = {
   'jurisdictions': renderJurisdictionsIndex,
   'practice-areas': renderPracticeAreasIndex,
   'news': renderNewsIndex,
+  'team': renderEditorialTeam,
   'about': renderAbout,
   'contact': renderContact,
   'request-introduction': renderRequestIntro,
-  'get-listed': renderGetListed,
-  'advertising': renderAdvertising,
-  'privacy-policy': renderPrivacyPolicy,
-  'terms': renderTerms
+  'get-listed': renderGetListed
 };
 
 /* ============================================================
@@ -446,11 +456,11 @@ function getPageMeta(parts){
       'jurisdictions': 'Gambling Law Jurisdictions | GamblingLawyers.com',
       'practice-areas': 'Gambling Law Practice Areas | GamblingLawyers.com',
       'news': 'Gambling Law News & Analysis | GamblingLawyers.com',
+      'team': 'Editorial Team | GamblingLawyers.com',
       'about': 'About | GamblingLawyers.com',
       'contact': 'Contact | GamblingLawyers.com',
       'request-introduction': 'Request an Introduction | GamblingLawyers.com',
       'get-listed': 'Get Listed | GamblingLawyers.com',
-      'advertising': 'Advertise & Get Listed — Partner Programme | GamblingLawyers.com',
       'privacy-policy': 'Privacy Policy | GamblingLawyers.com',
       'terms': 'Terms of Use | GamblingLawyers.com'
     };
@@ -460,11 +470,11 @@ function getPageMeta(parts){
       'jurisdictions': 'Gambling law market guides for 35 jurisdictions. Licensing, regulators, statutory frameworks and specialist counsel.',
       'practice-areas': '20 specialist gambling law practice areas from licensing and compliance to M&A and disputes. Find counsel with the specific expertise you need.',
       'news': 'Editorial analysis of licensing, regulatory and transactional developments in gambling law. Written for operators, suppliers and investors.',
+      'team': 'Meet the GamblingLawyers.com editorial team. Specialist editors with direct regulatory, legal and compliance experience in every major gambling jurisdiction.',
       'about': 'Independent directory and intelligence portal for specialist gambling counsel. Editorial criteria, our model, and how to contact us.',
       'contact': 'Editorial and partnership enquiries. Email info@gamblinglawyers.com or use the contact form.',
       'request-introduction': 'Confidential introductions to specialist gambling counsel in any market we cover. No fees for clients.',
       'get-listed': 'Verification criteria and listing process for specialist gambling law firms. Chambers, Legal 500 and IMGL-ranked firms welcome.',
-      'advertising': 'Join the GamblingLawyers.com partner programme. A curated listing for a flat €299 a year, plus €299 per introduction that becomes a paying client. No commission, no win no fee.',
       'privacy-policy': 'Privacy policy for GamblingLawyers.com. We use essential cookies only and do not track visitors.',
       'terms': 'Terms of use for GamblingLawyers.com. Information only, not legal advice.'
     };
@@ -488,6 +498,10 @@ function getPageMeta(parts){
       const a = findArticle(slug);
       if(a){ title = a.title + ' | ' + SITE_NAME; description = truncateDesc(a.excerpt); }
     }
+    } else if(section === 'team'){
+      const au = findAuthor(slug);
+      if(au){ title = au.full_name + ' — ' + au.title + ' | ' + SITE_NAME; description = truncateDesc(au.short_bio); }
+    
     if(!title){ title = 'Page Not Found | ' + SITE_NAME; description = DEFAULT_DESC; }
   } else {
     title = 'Page Not Found | ' + SITE_NAME; description = DEFAULT_DESC;
@@ -529,13 +543,14 @@ function updateJsonLd(parts){
     out.push({ '@context':'https://schema.org', '@type':'WebSite', 'name':SITE_NAME, 'url':SITE_URL, 'publisher':{ '@id':SITE_URL + '/#org' } });
   } else if(parts.length === 2){
     const section = parts[0], slug = parts[1];
-    const sectionLabels = { 'law-firms':'Law Firms','lawyers':'Lawyers','jurisdictions':'Jurisdictions','practice-areas':'Practice Areas','news':'News' };
+    const sectionLabels = { 'law-firms':'Law Firms','lawyers':'Lawyers','jurisdictions':'Jurisdictions','practice-areas':'Practice Areas','news':'News','team':'Editorial Team' };
     let itemName = slug;
     if(section === 'law-firms'){ const f = findFirm(slug); if(f) itemName = f.firm_name; }
     else if(section === 'lawyers'){ const l = findLawyer(slug); if(l) itemName = l.full_name; }
     else if(section === 'jurisdictions'){ const j = findJur(slug); if(j) itemName = j.country_name; }
     else if(section === 'practice-areas'){ const p = findPA(slug); if(p) itemName = p.area_name; }
     else if(section === 'news'){ const a = findArticle(slug); if(a) itemName = a.title; }
+    else if(section === 'team'){ const au = findAuthor(slug); if(au) itemName = au.full_name; }
     out.push({
       '@context':'https://schema.org', '@type':'BreadcrumbList',
       'itemListElement':[
@@ -582,12 +597,21 @@ function updateJsonLd(parts){
         out.push({ '@context':'https://schema.org','@type':'Article',
           'headline':a.title, 'description':a.excerpt,
           'datePublished':a.publish_date, 'dateModified':a.publish_date,
-          'author': a.author_slug ? { '@type':'Person','name':a.author } : { '@type':'Organization','name':a.author,'@id':SITE_URL + '/#org' },
+          'author': a.author_slug ? { '@type':'Person','name':a.author,'url':SITE_URL + '/team/' + a.author_slug } : { '@type':'Organization','name':a.author,'@id':SITE_URL + '/#org' },
           'publisher':{ '@id':SITE_URL + '/#org','name':SITE_NAME,'logo':{ '@type':'ImageObject','url':SITE_URL + '/android-chrome-512x512.png' } },
           'mainEntityOfPage':{ '@type':'WebPage','@id':SITE_URL + '/news/' + a.slug },
           'articleSection':a.category });
       }
     }
+    } else if(section === 'team'){
+      const au = findAuthor(slug);
+      if(au){
+        out.push({ '@context':'https://schema.org', '@type':'Person',
+          'name':au.full_name, 'jobTitle':au.title, 'description':au.short_bio,
+          'knowsLanguage':au.languages, 'url':SITE_URL + '/team/' + au.slug,
+          'worksFor':{ '@type':'Organization','name':SITE_NAME,'@id':SITE_URL + '/#org' }
+        });
+      }
   }
   document.querySelectorAll('script[data-ld]').forEach(s=>s.remove());
   out.forEach((schema, i) => {
@@ -617,6 +641,7 @@ function router(){
     else if(section === 'jurisdictions') html = renderJurisdictionDetail(slug);
     else if(section === 'practice-areas') html = renderPracticeAreaDetail(slug);
     else if(section === 'news') html = renderArticleDetail(slug);
+    else if(section === 'team') html = renderAuthorProfile(slug);
     else html = render404();
   } else {
     html = render404();
@@ -651,8 +676,6 @@ function attachPageHandlers(){
   if(c) c.addEventListener('submit', handleContactSubmit);
   const g = document.getElementById('getListedForm');
   if(g) g.addEventListener('submit', handleGetListedSubmit);
-  const ap = document.getElementById('applyForm');
-  if(ap) ap.addEventListener('submit', handleApplySubmit);
   document.querySelectorAll('[data-filter]').forEach(el=>{
     el.addEventListener('input', applyFilters);
     el.addEventListener('change', applyFilters);
@@ -670,6 +693,8 @@ function findPA(slug){return DATA.practiceAreas.find(p=>p.slug===slug);}
 function findFirm(slug){return DATA.firms.find(f=>f.slug===slug);}
 function findLawyer(slug){return DATA.lawyers.find(l=>l.slug===slug);}
 function findArticle(slug){return DATA.articles.find(a=>a.slug===slug);}
+function findAuthor(slug){return DATA.authors.find(a=>a.slug===slug);}
+
 function jurName(slug){const j=findJur(slug);return j?j.country_name:slug;}
 function paName(slug){const p=findPA(slug);return p?p.area_name:slug;}
 function firmName(slug){const f=findFirm(slug);return f?f.firm_name:slug;}
@@ -809,7 +834,7 @@ ${latestArticles.length === 0 ? '' : `  <section class="section section-bone">
               <div class="card-sub">${esc(a.category)} · ${fmtDate(a.publish_date)}</div>
               <h3 style="font-size:1.15rem">${esc(a.title)}</h3>
               <div class="card-body">${esc(a.excerpt)}</div>
-              <div class="card-foot">By ${esc(a.author)}</div>
+              <div class="card-foot">By ${a.author_slug ? `<a href="/team/${a.author_slug}" style="color:var(--gilt-2)">${esc(a.author)}</a>` : esc(a.author)}</div>
             </div>
           </a>`).join('')}
       </div>
@@ -1032,6 +1057,76 @@ function renderPracticeAreasIndex(){
     </div>
   </section>`;
 }
+function renderAuthorProfile(slug){
+  const au = findAuthor(slug);
+  if(!au) return render404();
+  const articles = DATA.articles.filter(a=>a.author_slug===slug).sort((a,b)=>b.publish_date.localeCompare(a.publish_date));
+  return `
+  <div class="page-head">
+    <div class="container">
+      <p class="crumbs"><a href="/">Home</a><span>/</span><a href="/team">Editorial Team</a><span>/</span>${esc(au.full_name)}</p>
+      <p class="eyebrow">Editorial Team</p>
+      <h1>${esc(au.full_name)}</h1>
+      <p class="lede">${esc(au.title)}</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="container" style="max-width:800px">
+      <div style="background:var(--bone);border-radius:8px;padding:32px;margin-bottom:32px">
+        <p style="margin-bottom:8px"><strong>Credentials:</strong> ${esc(au.credentials)}</p>
+        <p style="margin-bottom:8px"><strong>Specialisations:</strong> ${au.specializations.map(s=>esc(s)).join(', ')}</p>
+        <p style="margin-bottom:0"><strong>Languages:</strong> ${au.languages.join(', ')}</p>
+      </div>
+      <p style="font-size:1.1rem;line-height:1.7">${esc(au.full_bio)}</p>
+      ${au.jurisdictions.length ? `<p style="margin-top:24px"><strong>Jurisdictions covered:</strong> ${au.jurisdictions.map(j=>'<a href="/jurisdictions/' + j + '">' + esc(jurName(j)) + '</a>').join(', ')}</p>` : ''}
+    </div>
+  </section>
+  ${articles.length ? `
+  <section class="section section-bone">
+    <div class="container">
+      <div class="section-head"><div class="head-text"><p class="eyebrow">Published work</p><h2>Articles by ${esc(au.full_name)}</h2></div></div>
+      <div class="grid grid-3">
+        ${articles.map(a=>`
+          <a href="/news/${a.slug}" class="card-link">
+            <div class="card">
+              <div class="card-sub">${esc(a.category)} · ${fmtDate(a.publish_date)}</div>
+              <h3 style="font-size:1.15rem">${esc(a.title)}</h3>
+              <div class="card-body">${esc(a.excerpt)}</div>
+            </div>
+          </a>`).join('')}
+      </div>
+    </div>
+  </section>` : ''}`;
+}
+
+function renderEditorialTeam(){
+  const authors = DATA.authors.slice();
+  return `
+  <div class="page-head">
+    <div class="container">
+      <p class="crumbs"><a href="/">Home</a><span>/</span>Editorial Team</p>
+      <p class="eyebrow">Our team</p>
+      <h1>Editorial team</h1>
+      <p class="lede">Our editorial coverage is led by specialists with direct regulatory, legal and compliance experience across every major gambling jurisdiction. Every article is written by a named expert with verifiable credentials in the subject matter.</p>
+    </div>
+  </div>
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-3">
+        ${authors.map(au=>`
+          <a href="/team/${au.slug}" class="card-link">
+            <div class="card">
+              <h3 style="font-size:1.2rem">${esc(au.full_name)}</h3>
+              <div class="card-sub">${esc(au.title)}</div>
+              <div class="card-body">${esc(au.short_bio)}</div>
+              <div class="card-foot">${au.jurisdictions.map(j=>esc(jurName(j))).join(', ')}</div>
+            </div>
+          </a>`).join('')}
+      </div>
+    </div>
+  </section>`;
+}
+
 function renderNewsIndex(){
   const articles = DATA.articles.slice().sort((a,b)=>b.publish_date.localeCompare(a.publish_date));
   return `
@@ -1052,7 +1147,7 @@ function renderNewsIndex(){
               <div class="card-sub">${esc(a.category)} · ${fmtDate(a.publish_date)}</div>
               <h3 style="font-size:1.2rem">${esc(a.title)}</h3>
               <div class="card-body">${esc(a.excerpt)}</div>
-              <div class="card-foot">By ${esc(a.author)}</div>
+              <div class="card-foot">By ${a.author_slug ? `<a href="/team/${a.author_slug}" style="color:var(--gilt-2)">${esc(a.author)}</a>` : esc(a.author)}</div>
             </div>
           </a>`).join('')}
       </div>` : `<div class="empty" style="text-align:center;padding:80px 24px;background:var(--bone);border-radius:4px;"><p style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--ink);margin-bottom:12px">Editorial launching soon</p><p style="color:var(--slate)">Our editorial team is commissioning analysis from specialist gambling counsel across the markets we cover. Check back shortly, or <a href="/contact" style="color:var(--gilt-2)">contact us</a> to contribute.</p></div>`}
@@ -1179,149 +1274,6 @@ function renderRequestIntro(){
   </section>`;
 }
 
-function renderAdvertising(){
-  return `
-  <section class="hero">
-    <div class="container">
-      <div class="hero-inner">
-        <p class="eyebrow">Partner programme · For law firms</p>
-        <h1>Reach the clients who need you — <em>pay only when it works.</em></h1>
-        <p class="lede">GamblingLawyers.com is the global directory and intelligence portal for gambling and iGaming law. Operators, investors and founders across every regulated market come here to find specialist counsel. Join as a partner firm for a flat annual fee, and pay for a qualified introduction only when it becomes a paying client — no commission on your fees, no percentage of the matter, no win no fee.</p>
-        <div class="btn-row">
-          <a href="/advertising#apply" class="btn btn-primary">Apply to be listed</a>
-          <a href="/advertising#pricing" class="btn btn-ghost-light">€299 / year + €299 per new client</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="positioning">
-    <div class="container">
-      <div class="grid grid-4">
-        <div class="stat"><div class="n">35</div><div class="l">Jurisdictions</div></div>
-        <div class="stat"><div class="n">20</div><div class="l">Practice areas</div></div>
-        <div class="stat"><div class="n">115</div><div class="l">Verified firms</div></div>
-        <div class="stat"><div class="n">113</div><div class="l">Specialist lawyers</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-head"><div class="head-text">
-        <p class="eyebrow">Where your firm appears</p>
-        <h2>Visible in the context that converts</h2>
-        <p class="lede">Your profile is discoverable everywhere a prospective client is already looking — organised by the markets and practice areas you serve.</p>
-      </div></div>
-      <div class="grid grid-3">
-        <div class="card"><h3>Law Firms directory</h3><div class="card-body">A full firm profile in the searchable directory, filterable by jurisdiction, practice area and language.</div></div>
-        <div class="card"><h3>Jurisdiction pages</h3><div class="card-body">Listed on the market pages you serve — Malta, the United Kingdom, the United States, Brazil, Germany and more.</div></div>
-        <div class="card"><h3>Practice-area pages</h3><div class="card-body">Surfaced under Licensing, M&amp;A, AML, Payments, Disputes and every area you cover.</div></div>
-        <div class="card"><h3>Global search</h3><div class="card-body">Discoverable across the platform's unified search for firms, lawyers and markets.</div></div>
-        <div class="card"><h3>Featured placement</h3><div class="card-body">Eligible for featured slots on the homepage and relevant jurisdiction spotlights.</div></div>
-        <div class="card"><h3>Editorial visibility</h3><div class="card-body">Eligible to contribute commentary and interviews through our editorial desk.</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-bone">
-    <div class="container">
-      <div class="section-head"><div class="head-text">
-        <p class="eyebrow">What's included</p>
-        <h2>Your annual partner listing</h2>
-      </div></div>
-      <div class="steps">
-        <div class="step"><div class="step-num">01</div><div><h4>A complete firm profile</h4><p>Biography, jurisdictions, practice areas, languages, experience and representative work — plus individual profiles for your specialist team.</p></div></div>
-        <div class="step"><div class="step-num">02</div><div><h4>Placement across the directory</h4><p>Jurisdiction pages, practice-area pages and global search, in every market you serve.</p></div></div>
-        <div class="step"><div class="step-num">03</div><div><h4>Qualified inbound introductions</h4><p>Every enquiry is reviewed by our desk and matched to jurisdiction and practice area before it reaches you — fewer, better briefs.</p></div></div>
-        <div class="step"><div class="step-num">04</div><div><h4>Editorial participation</h4><p>Eligibility for featured placement, jurisdiction spotlights, commentary and interviews through our newsroom.</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-oxford" id="pricing">
-    <div class="container">
-      <div class="section-head"><div class="head-text">
-        <p class="eyebrow" style="color:var(--gilt-2)">Simple, transparent pricing</p>
-        <h2>Two fees. Both fixed. One only charged on success.</h2>
-        <p class="lede">You keep 100% of your fees. The introduction charge is a flat €299 per new client, never a commission on the value of the matter.</p>
-      </div></div>
-      <div class="grid grid-2">
-        <div class="card" style="background:rgba(245,241,232,0.04);border-color:var(--line-dark)">
-          <div class="card-sub" style="color:var(--gilt-2)">Annual membership</div>
-          <h3 style="color:var(--bone);font-size:2.25rem">€299 <span style="font-size:1rem;color:rgba(245,241,232,0.6);font-family:var(--sans);font-weight:500">/ year</span></h3>
-          <div class="card-body" style="color:rgba(245,241,232,0.82)">Your full listing across the directory, jurisdiction and practice-area pages for twelve months. Billed annually.</div>
-        </div>
-        <div class="card" style="background:rgba(245,241,232,0.04);border-color:var(--line-dark)">
-          <div class="card-sub" style="color:var(--gilt-2)">Per successful introduction</div>
-          <h3 style="color:var(--bone);font-size:2.25rem">€299 <span style="font-size:1rem;color:rgba(245,241,232,0.6);font-family:var(--sans);font-weight:500">/ new client</span></h3>
-          <div class="card-body" style="color:rgba(245,241,232,0.82)">Charged <strong style="color:var(--gilt-2)">only when</strong> an introduction we make through Request an Introduction converts into an instructed, paying client. No new client, no fee.</div>
-        </div>
-      </div>
-      <p style="margin-top:24px;color:rgba(245,241,232,0.72);font-size:.92rem;border-top:1px solid var(--line-dark);padding-top:20px"><strong style="color:var(--bone)">A flat fee, never a commission.</strong> No exclusivity, no lock-in, and you approve every introduction before it reaches you. Figures exclude VAT where applicable.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-head"><div class="head-text">
-        <p class="eyebrow">How introductions work</p>
-        <h2>From enquiry to instruction</h2>
-      </div></div>
-      <div class="steps">
-        <div class="step"><div class="step-num">1</div><div><h4>Client enquires</h4><p>An operator, investor or founder submits a brief through Request an Introduction.</p></div></div>
-        <div class="step"><div class="step-num">2</div><div><h4>We review &amp; match</h4><p>Our desk vets the enquiry and matches it to your jurisdiction and practice area.</p></div></div>
-        <div class="step"><div class="step-num">3</div><div><h4>Introduction made</h4><p>We introduce you personally, in confidence. You choose whether to take it on.</p></div></div>
-        <div class="step"><div class="step-num">4</div><div><h4>Pay only on success</h4><p>The €299 introduction fee applies solely if that client instructs and pays your firm.</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-bone">
-    <div class="container" style="max-width:820px">
-      <div class="section-head"><div class="head-text">
-        <p class="eyebrow">Questions</p>
-        <h2>What partner firms ask</h2>
-      </div></div>
-      <div class="faq-item"><h4>Is the €299 introduction fee a commission?</h4><p>No. It is a fixed €299 per new client, regardless of the size of the engagement. You keep 100% of your fees and we never take a percentage of the matter.</p></div>
-      <div class="faq-item"><h4>When exactly is the introduction fee charged?</h4><p>Only when an introduction we make converts into an instructed, paying client. If an introduction does not become a client, there is no fee.</p></div>
-      <div class="faq-item"><h4>Do we have to accept every introduction?</h4><p>No. Every enquiry is reviewed by our desk and offered to you first. You decide whether to take it on, and there is no exclusivity or lock-in.</p></div>
-      <div class="faq-item"><h4>Who can be listed?</h4><p>The directory is specialist-only. We list firms with a genuine, demonstrable gambling and iGaming practice, reviewed against our editorial standards before going live.</p></div>
-    </div>
-  </section>
-
-  <section class="section" id="apply">
-    <div class="container" style="max-width:780px">
-      <p class="eyebrow">Apply</p>
-      <h2>Apply to become a partner firm</h2>
-      <p class="lede" style="margin-bottom:28px">Complete the short application below. Our editorial team reviews every application against our standards and responds from info@gamblinglawyers.com, typically within five business days.</p>
-      <div class="form-wrap" style="margin:0">
-        <div id="applySuccess" class="success-banner" style="display:none">
-          <div><strong>Thank you — your application has reached our desk.</strong>We review each application against our editorial standards and will come back to you from info@gamblinglawyers.com, typically within five business days.</div>
-        </div>
-        <div id="applyError" style="display:none;background:#FDECEA;border:1px solid #E7A9A2;color:#7A241B;padding:16px 20px;border-radius:4px;margin-bottom:20px;gap:12px;align-items:flex-start">
-          <div><strong>We couldn't submit your application just now.</strong> Please try again, or email your details directly to <a href="mailto:info@gamblinglawyers.com" style="color:#7A241B;text-decoration:underline">info@gamblinglawyers.com</a>.</div>
-        </div>
-        <form id="applyForm">
-          <div class="form-group"><label>Firm name <span class="req">*</span></label><input type="text" name="Firm name" required></div>
-          <div class="form-group"><label>Your name <span class="req">*</span></label><input type="text" name="Contact name" required></div>
-          <div class="form-group"><label>Your role <span class="req">*</span></label><input type="text" name="Role" required placeholder="e.g. Managing Partner"></div>
-          <div class="form-group"><label>Work email <span class="req">*</span></label><input type="email" name="Work email" required></div>
-          <div class="form-group"><label>Firm website</label><input type="url" name="Website" placeholder="https://"></div>
-          <div class="form-group"><label>Primary office location <span class="req">*</span></label><input type="text" name="Primary office" required></div>
-          <div class="form-group"><label>Jurisdictions where you practise <span class="req">*</span></label><input type="text" name="Jurisdictions" required placeholder="e.g. Malta, United Kingdom, Gibraltar"></div>
-          <div class="form-group"><label>Gambling-specific practice areas <span class="req">*</span></label><input type="text" name="Practice areas" required placeholder="e.g. Licensing, M&amp;A, AML"></div>
-          <div class="form-group"><label>About your gambling practice <span class="req">*</span></label><textarea name="About the practice" required placeholder="Team size, years of focused gambling work, typical client profile and representative engagement types."></textarea></div>
-          <div class="form-check"><input type="checkbox" id="advk1" required><label for="advk1">I confirm the information above is accurate and that I have authority to apply on behalf of my firm.</label></div>
-          <div class="form-check"><input type="checkbox" id="advk2" required><label for="advk2">I have read and accept that GamblingLawyers.com is an independent directory and does not provide legal advice, and I accept the annual membership and per-introduction fees described above.</label></div>
-          <button type="submit" class="btn btn-primary">Submit application</button>
-          <p class="hint" style="margin-top:12px">Applications are reviewed within five business days. A member of our editorial team will respond from info@gamblinglawyers.com.</p>
-        </form>
-      </div>
-    </div>
-  </section>`;
-}
-
 function renderGetListed(){
   return `
   <div class="page-head">
@@ -1339,7 +1291,7 @@ function renderGetListed(){
       <h2>What is included</h2>
       <p>A firm listing on GamblingLawyers.com includes a detailed firm profile, individual lawyer profiles for your specialist team, coverage across the relevant jurisdiction and practice area pages, and inclusion in the relevant directory filters. Listed firms can also contribute editorial insights to the news portal.</p>
       <h2>How enquiries are handled</h2>
-      <p>All client enquiries go to info@gamblinglawyers.com. Our editorial team reviews each request and makes an introduction to the most appropriate firm based on jurisdiction, practice area and profile. We never take a percentage of your fees or sell enquiry data. Partner firms join for a flat annual membership of €299, plus a fixed €299 per introduction that becomes a paying client — full details are on our <a href="/advertising">partner programme</a> page.</p>
+      <p>All client enquiries go to info@gamblinglawyers.com. Our editorial team reviews each request and makes an introduction to the most appropriate firm based on jurisdiction, practice area and profile. We do not take a share of any engagement, and we do not sell or share enquiry data.</p>
       <h2>Apply</h2>
       <div class="form-wrap" style="margin-top:24px">
         <div id="getListedSuccess" class="success-banner" style="display:none">
@@ -2315,7 +2267,7 @@ function renderArticleDetail(slug){
       <h1>${esc(a.title)}</h1>
       <p class="lede">${esc(a.excerpt)}</p>
       <div class="article-meta">
-        <div>By ${a.author_slug ? `<a href="/lawyers/${a.author_slug}">${esc(a.author)}</a>` : esc(a.author)}</div>
+        <div>By ${a.author_slug ? `<a href="/team/${a.author_slug}">${esc(a.author)}</a>` : esc(a.author)}</div>
         <div>${fmtDate(a.publish_date)}</div>
       </div>
     </div>
@@ -2325,6 +2277,12 @@ function renderArticleDetail(slug){
       ${body.map(p=>`<p>${esc(p)}</p>`).join('')}
       ${a.related_jurisdictions.length ? `<p><strong>Related jurisdictions:</strong> ${a.related_jurisdictions.map(j=>`<a href="/jurisdictions/${j}">${esc(jurName(j))}</a>`).join(', ')}</p>` : ''}
       ${a.related_firms.length ? `<p><strong>Related firms:</strong> ${a.related_firms.map(f=>`<a href="/law-firms/${f}">${esc(firmName(f))}</a>`).join(', ')}</p>` : ''}
+      ${a.author_slug && findAuthor(a.author_slug) ? `
+      <div style="background:var(--bone);border:1px solid #e5e1da;border-radius:8px;padding:24px 28px;margin-top:40px">
+        <h4 style="margin-bottom:8px;font-family:'Playfair Display',serif">About the author</h4>
+        <p style="margin-bottom:6px"><strong><a href="/team/${a.author_slug}" style="color:var(--gilt-2)">${esc(findAuthor(a.author_slug).full_name)}</a></strong> &mdash; ${esc(findAuthor(a.author_slug).title)}</p>
+        <p style="margin-bottom:0;color:var(--slate)">${esc(findAuthor(a.author_slug).short_bio)}</p>
+      </div>` : ''}
     </div>
   </article>
   ${related.length ? `
@@ -2351,95 +2309,29 @@ function renderArticleDetail(slug){
 function applyFilters(){const f=window.__currentFilterFn;if(f)f();}
 function resetFilters(){document.querySelectorAll('[data-filter]').forEach(el=>{if(el.tagName==='SELECT')el.selectedIndex=0;else el.value='';});applyFilters();}
 
-/* ---- Form delivery via FormSubmit.co ----------------------------------
-   All enquiry forms POST to info@gamblinglawyers.com through the FormSubmit
-   AJAX endpoint. The very first submission triggers a one-time activation
-   email to that inbox; click the link in it to switch delivery on. No
-   account, API key or backend required. */
-const DESK_ENDPOINT = 'https://formsubmit.co/ajax/info@gamblinglawyers.com';
-
-function collectFields(form){
-  const data = {};
-  form.querySelectorAll('.form-group').forEach(g=>{
-    const label = g.querySelector('label');
-    const field = g.querySelector('input, select, textarea');
-    if(label && field){
-      const key = label.textContent.replace(/\*/g,'').trim();
-      if(key) data[key] = field.value;
-    }
-  });
-  return data;
-}
-function sendToDesk(payload, subject){
-  payload._subject = subject;
-  payload._template = 'table';
-  payload._captcha = 'false';
-  return fetch(DESK_ENDPOINT, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-    body: JSON.stringify(payload)
-  }).then(r=>{ if(!r.ok) throw new Error('bad status'); return r.json(); });
-}
-function submittingState(btn){
-  const orig = btn.textContent;
-  btn.disabled = true; btn.dataset.orig = orig; btn.textContent = 'Submitting…';
-}
-function restoreButton(btn){
-  btn.disabled = false; if(btn.dataset.orig) btn.textContent = btn.dataset.orig;
-}
-function showSuccess(form, successId){
-  form.style.display = 'none';
-  const s = document.getElementById(successId);
-  if(s) s.style.display = 'block';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
 function handleIntroSubmit(e){
   e.preventDefault();
-  const form = document.getElementById('introForm');
-  const btn = form.querySelector('button[type="submit"]');
-  submittingState(btn);
-  sendToDesk(collectFields(form), 'New introduction request — GamblingLawyers.com')
-    .then(()=> showSuccess(form, 'introSuccess'))
-    .catch(()=>{ restoreButton(btn); alert('Sorry — something went wrong sending your request. Please email info@gamblinglawyers.com and we will respond promptly.'); });
+  document.getElementById('introForm').style.display='none';
+  document.getElementById('introSuccess').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 function handleContactSubmit(e){
   e.preventDefault();
-  const form = document.getElementById('contactForm');
-  const btn = form.querySelector('button[type="submit"]');
-  submittingState(btn);
-  sendToDesk(collectFields(form), 'New contact enquiry — GamblingLawyers.com')
-    .then(()=> showSuccess(form, 'contactSuccess'))
-    .catch(()=>{ restoreButton(btn); alert('Sorry — something went wrong sending your message. Please email info@gamblinglawyers.com directly.'); });
+  document.getElementById('contactForm').style.display='none';
+  document.getElementById('contactSuccess').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 function handleGetListedSubmit(e){
   e.preventDefault();
-  const form = document.getElementById('getListedForm');
-  const btn = form.querySelector('button[type="submit"]');
-  submittingState(btn);
-  sendToDesk(collectFields(form), 'New listing application — GamblingLawyers.com')
-    .then(()=> showSuccess(form, 'getListedSuccess'))
-    .catch(()=>{ restoreButton(btn); alert('Sorry — something went wrong sending your application. Please email info@gamblinglawyers.com directly.'); });
-}
-function handleApplySubmit(e){
-  e.preventDefault();
-  const form = document.getElementById('applyForm');
-  const err = document.getElementById('applyError');
-  if(err) err.style.display = 'none';
-  const btn = form.querySelector('button[type="submit"]');
-  submittingState(btn);
-  sendToDesk(collectFields(form), 'New partner listing application — GamblingLawyers.com')
-    .then(()=> showSuccess(form, 'applySuccess'))
-    .catch(()=>{ restoreButton(btn); if(err) err.style.display = 'flex'; });
+  document.getElementById('getListedForm').style.display='none';
+  document.getElementById('getListedSuccess').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 function subscribeNL(){
-  const el = document.getElementById('nlEmail');
-  if(!el) return;
-  const v = el.value.trim();
-  if(!v) return;
-  sendToDesk({ 'Email': v, 'Signup': 'Weekly briefing' }, 'Newsletter signup — GamblingLawyers.com').catch(()=>{});
-  el.value='';
-  alert('Thank you. You will receive the briefing at ' + v);
+  const v=document.getElementById('nlEmail').value;
+  if(!v)return;
+  document.getElementById('nlEmail').value='';
+  alert('Thank you. You will receive the briefing at '+v);
 }
 function acceptCookies(){document.getElementById('cookieBanner').classList.remove('show');}
 
