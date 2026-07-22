@@ -14,3 +14,6 @@ CONTENT_STRATEGY.md
 # Internal tooling
 verify.js
 *.py
+
+# Backup files created during editorial automation
+*.bak

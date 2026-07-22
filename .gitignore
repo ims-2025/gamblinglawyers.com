@@ -30,3 +30,6 @@ npm-debug.log*
 __pycache__/
 *.pyc
 *.pyo
+
+# Backup files
+*.bak
