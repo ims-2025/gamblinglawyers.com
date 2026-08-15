@@ -39,6 +39,19 @@ def esc(s):
     return html.escape(s, quote=True)
 
 
+_MONTHS = ["January", "February", "March", "April", "May", "June",
+           "July", "August", "September", "October", "November", "December"]
+
+
+def pretty_date(pd):
+    """'2026-08-15T13:15:00Z' or '2026-08-15' -> '15 August 2026'."""
+    try:
+        y, m, d = pd[:10].split("-")
+        return "%d %s %s" % (int(d), _MONTHS[int(m) - 1], y)
+    except Exception:
+        return pd
+
+
 # --- parse DATA.articles out of _source.html ---------------------------------
 
 def parse_articles(source_html):
@@ -216,23 +229,28 @@ def rebuild_news_listing(articles):
     items = []
     for a in ordered:
         items.append(
-            f'<div><a href="/news/{a["slug"]}"><strong>{esc(a["title"])}</strong></a> '
-            f'— {esc(a["category"])} · {a["publish_date"]} · By {esc(a["author"])}</div>'
+            f'      <a href="/news/{a["slug"]}" class="card-link">\n'
+            f'        <div class="card">\n'
+            f'          <div class="card-sub">{esc(a["category"])} · {pretty_date(a["publish_date"])}</div>\n'
+            f'          <h3 style="font-size:1.2rem">{esc(a["title"])}</h3>\n'
+            f'          <div class="card-body">{esc(a["excerpt"])}</div>\n'
+            f'          <div class="card-foot">By {esc(a["author"])}</div>\n'
+            f'        </div>\n'
+            f'      </a>'
         )
     block = "\n".join(items)
-    # replace the last <section>...</section> before </main>
-    new_section = (
-        '<section class="section"><div class="container">\n'
-        + block +
-        '\n</div></section>'
-    )
-    content = re.sub(
-        r'<section class="section"><div class="container">\n<div><a href="/news/.*?</div></section>',
-        new_section,
+    new_grid = '<div class="grid grid-3">\n' + block + '\n</div>'
+    content, n_sub = re.subn(
+        r'<div class="grid grid-3">\n.*?\n</div>\n</div></section>\n</main>',
+        new_grid + '\n</div></section>\n</main>',
         content,
         count=1,
         flags=re.DOTALL,
     )
+    if n_sub != 1:
+        raise RuntimeError(
+            "news.html listing grid not found - markup changed, listing NOT rebuilt"
+        )
     open(path, "w", encoding="utf-8").write(content)
     return len(items)
 
