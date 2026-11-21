@@ -1,0 +1,139 @@
+{
+ "A": [
+  {
+   "slug": "cjeu-spielerschutz-sigma-bill-55-malta-article-56a-inadmissible",
+   "title": "CJEU Dodges Malta Bill 55: What Operators Should Know",
+   "category": "Licensing",
+   "excerpt": "The CJEU has ruled the Spielerschutz Sigma referral inadmissible, leaving Malta's Bill 55 untested as player refund litigation continues.",
+   "juris": [
+    "malta",
+    "austria",
+    "germany",
+    "netherlands"
+   ],
+   "firms": [
+    "camilleri-preziosi",
+    "wh-partners",
+    "gvzh-advocates",
+    "ellul-and-co"
+   ],
+   "time": "2026-11-20T07:30:00Z",
+   "body": [
+    "On 19 November 2026, the Court of Justice of the European Union handed down its judgment in the Spielerschutz Sigma case, the first reference to reach a decision that was widely expected to test whether Malta's Bill 55 is compatible with EU law. Bill 55, introduced in 2023 as Article 56A of the Maltese Gaming Act, bars legal actions against Malta-licensed operators over lawful licensed activity and directs Maltese courts to refuse recognition and enforcement of foreign judgments arising from such claims. The Court did not rule on that question. It declared the reference inadmissible.",
+    "The procedural background explains the outcome. Spielerschutz Sigma, an Austrian litigation funder that has pursued refund claims for players against MGA-licensed operators lacking an Austrian licence, sued its own legal adviser before the Commercial Court in Vienna for fees and damages. The adviser had taken the view that Article 56A would not prevent enforcement in Malta because it was manifestly incompatible with EU law; a Maltese court later refused to give effect to an Austrian judgment. The Vienna court asked Luxembourg to rule on the compatibility point. The CJEU held that the lawfulness and proper performance of the parties' reciprocal obligations did not depend on the answer, so an interpretation of EU law was not needed to resolve the dispute. Under Austrian law, the question is whether the advice was reasonably defensible on the information available when it was given.",
+    "The result is consistent with the April 2026 opinion of Advocate General Nicholas Emiliou, who advised that the reference was inadmissible. But the Advocate General also indicated that, had the merits been reached, Bill 55 would be incompatible with EU law. That observation has no binding force, yet it will be cited by claimant firms across Austria, Germany and the Netherlands and by the European Commission, which opened infringement proceedings against Malta on the same issue in June 2025. A Court spokesperson confirmed that the judgment did not address compatibility and noted that other pending cases may eventually do so.",
+    "The most important of those is TSG Interactive Gaming Europe Ltd v Gerhard Posch, in which a Maltese appeal court referred seven questions to the CJEU in October 2026. Because that reference comes from a Maltese court that must actually decide whether to enforce a foreign judgment, it is far harder to dismiss as hypothetical. Operators should treat the Spielerschutz Sigma judgment as a reprieve on procedural grounds rather than a validation of Article 56A. A merits ruling in TSG v Posch, or an adverse outcome in the Commission's infringement case, could change the enforcement position in Malta quickly.",
+    "For MGA licensees, the practical exposure has not changed. Judgments obtained in Austria and Germany remain valid in those countries, and claimants can still pursue enforcement against assets, bank accounts and receivables located outside Malta, including through the Brussels I Recast Regulation in other member states. Groups with payment flows, marketing entities or B2B revenues in claimant-friendly jurisdictions should map where their assets sit and whether those assets are realistically reachable.",
+    "There are also balance-sheet and disclosure points. Auditors, lenders and acquirers will want to know how operators are provisioning for outstanding player claims, and the absence of a CJEU ruling does not justify releasing provisions. Transaction documentation for M&A involving Malta-licensed groups with historic grey-market exposure in Austria, Germany or the Netherlands should continue to carry specific indemnities, escrows or price adjustments for refund litigation.",
+    "For litigation funders and claimant firms, the judgment is a reminder that a reference must arise from a dispute in which the EU-law answer is genuinely decisive. Expect future challenges to be framed through enforcement proceedings or direct claims in which Article 56A is squarely in issue, rather than through collateral disputes. Malta-based counsel experienced in gaming licensing and cross-border enforcement can help operators assess the TSG v Posch timetable, prepare submissions if the Commission's case advances, and plan for the scenario in which Bill 55 no longer shields Maltese assets."
+   ]
+  },
+  {
+   "slug": "cftc-doj-sue-arkansas-louisiana-prediction-markets-preemption",
+   "title": "CFTC and DOJ Sue Arkansas and Louisiana Over Kalshi",
+   "category": "Enforcement",
+   "excerpt": "Federal agencies have sued Arkansas and Louisiana to block state gambling actions against CFTC-regulated prediction markets.",
+   "juris": [
+    "united-states"
+   ],
+   "firms": [
+    "covington-and-burling-llp",
+    "ifrah-law-pllc",
+    "greenberg-traurig-llp",
+    "fox-rothschild-llp"
+   ],
+   "time": "2026-11-20T08:45:00Z",
+   "body": [
+    "The dispute over whether sports event contracts are swaps or wagers has entered a new phase, with the federal government acting as plaintiff rather than bystander. On 12 November 2026, the Department of Justice and the Commodity Futures Trading Commission filed suit in the US District Court for the Eastern District of Arkansas against Attorney General Tim Griffin. The complaint seeks preliminary and permanent injunctions preventing Arkansas from applying its gambling laws to Kalshi and to other CFTC-regulated prediction markets. It follows a similar federal action against Utah in October.",
+    "The Arkansas suit responds to the state's own action against Kalshi, filed on 4 November, which alleges that the exchange operates an illegal gambling platform offering wagers on almost any outcome. The federal position is that the Commodity Exchange Act gives the CFTC exclusive jurisdiction over swaps traded on registered platforms, that the event contracts at issue are swaps, and that conflicting state law is therefore pre-empted. The request for relief covering future state actions is notable: the agencies are asking the court to protect the whole category of federally regulated prediction markets, not just one exchange.",
+    "Louisiana has moved in the opposite direction at the same time. On the day the Arkansas complaint was filed, Attorney General Liz Murrill sued Kalshi, Polymarket, Robinhood and Coinbase, seeking an immediate restraining order and an injunction, and publicly accused the platforms of violating state law with impunity. Reports indicate that Louisiana obtained a temporary restraining order and that the CFTC has filed its own suit against the state and its Attorney General. Louisiana therefore presents the sharpest version of the conflict: a state court order in force against federally registered exchanges while a federal pre-emption challenge proceeds.",
+    "The litigation is unfolding against a split in the appellate courts. On 17 November, a divided Fourth Circuit panel upheld Maryland's refusal of an injunction to Kalshi, while other courts have been more receptive to the pre-emption argument. The CFTC is also trying to settle the question by rulemaking. Its October 2026 proposals would expressly bring event contracts within the swap definition while excluding casino-style gambling products through an interim final rule; comments closed on 18 November. CFTC Chairman Michael Selig has said the agency will work with the Department of Justice to defend its jurisdiction whenever states sue.",
+    "For state regulators and attorneys general, the federal suits raise the cost of enforcement. Defending against the United States is a different proposition from litigating against a single private exchange, and the injunctions sought could constrain several states at once if granted on broad terms. Some states may prefer to wait for an appellate ruling with national reach, while others, like Louisiana, appear determined to force the issue now.",
+    "For licensed sportsbooks and casino operators, the stakes are commercial as well as legal. If federal pre-emption prevails, CFTC-registered exchanges could offer sports contracts in states with no licensing fees, gaming taxes or state responsible-gambling requirements. State-licensed operators should monitor the Arkansas and Louisiana dockets closely, consider amicus participation through trade associations, and review whether their own licence conditions restrict partnerships with prediction-market platforms.",
+    "For prediction-market operators, brokers and their partners, the immediate task is jurisdiction-by-jurisdiction risk management. A temporary restraining order in a state court is enforceable whatever the eventual outcome of the federal case. Platforms should maintain geolocation controls capable of rapid adjustment, document their compliance with any state orders, and plan for divergent outcomes across circuits. With a Supreme Court resolution increasingly likely, specialist US gaming and derivatives counsel can help market participants navigate the period in which state and federal regimes remain in direct conflict."
+   ]
+  },
+  {
+   "slug": "brazil-bill-5502-2026-bettor-refund-law-online-betting-losses",
+   "title": "Brazil Bill 5,502/2026: Full Refunds for Betting Losses?",
+   "category": "Regulatory",
+   "excerpt": "A Brazilian bill would force betting operators to refund players' losses after the MP 1,394 suspension. We assess the legal risk.",
+   "juris": [
+    "brazil"
+   ],
+   "firms": [
+    "pinheiro-neto-advogados",
+    "mattos-filho",
+    "bichara-e-motta-advogados",
+    "machado-meyer"
+   ],
+   "time": "2026-11-20T10:00:00Z",
+   "body": [
+    "Brazil's suspended fixed-odds betting market faces a further legislative threat. Federal deputy Ricardo Abrão (PSDB-RJ) has filed Bill No. 5,502/2026, described as the Full Restitution and Compensation for Bettors Law, which would require online betting operators to reimburse customers for losses incurred under the regime now suspended by Provisional Measure No. 1,394/2026. The bill was forwarded on 12 November to the Chamber of Deputies' Consumer Protection Committee and its Constitution, Justice and Citizenship Committee.",
+    "The bill is broad. Operators would be required to provide bettors, free of charge, with detailed transaction statements within ten working days of a request. It then sets out ten circumstances in which refunds would be owed, including recorded net losses, balances not released, winnings not paid, cancelled bets, unauthorised transactions, duplicate charges and unjustified withholding of withdrawals or prizes. Bets accepted from people who were blocked or self-excluded are also covered, as are losses caused by fraud, technical failures and outages. The sponsor argues that operators and their controlling shareholders, rather than public funds, should bear the cost.",
+    "Some of these categories reflect obligations that already exist. Unpaid winnings, unauthorised debits and failures to honour self-exclusion are breaches of the Law 14,790/2023 framework and of the Secretariat of Prizes and Bets' ordinances, and bettors have consumer-law remedies for them. The novel and controversial element is the refund of recorded net losses on bets that were lawfully placed with licensed operators. A rule unwinding concluded, lawful contracts after the fact raises serious questions under the constitutional protections for vested rights and perfect legal acts, as well as legal certainty and proportionality. Udo Seckelmann of Bichara e Motta Advogados has called the bill a legal aberration that would certainly be challenged in court if approved in its current form.",
+    "The bill should be read alongside the wider political context. MP 1,394/2026 suspended betting operations, and Congress must decide whether to convert the suspension into law while the Supreme Federal Court considers its constitutionality. The Secretariat's Normative Instruction 32/2026 has already addressed the release of operators' financial reserves to refund bettors' balances. A statutory loss-refund obligation would go much further, potentially exceeding those reserves and reaching shareholders' assets.",
+    "The enforcement climate adds pressure. On 18 November, Federal Police, the Federal Revenue Service and the Federal Prosecutor's Office carried out Operation Cash Out, in which a federal court ordered more than R$2.3 billion in assets to be blocked in an investigation involving Esportes da Sorte and its founder. Investigators are examining suspected illegal gambling, money laundering and tax offences, mostly relating to the period before regulation, as well as whether undeclared funds were used to obtain a licence. Operations of this kind make operators an easy political target and strengthen support for punitive measures.",
+    "Bills filed by individual deputies often stall, and Bill 5,502/2026 faces committee scrutiny and likely constitutional objections. But operators should not dismiss it. Elements such as statement rights, refunds for self-excluded players and liability for unpaid balances could be attached to other legislation or to the bill that converts MP 1,394/2026. Licensed operators should preserve complete transaction records, reconcile player balances, document self-exclusion and blocking controls, and prepare for a rise in consumer claims whatever happens to the bill.",
+    "Shareholders and investors should also assess their exposure. The bill's attempt to extend liability to controlling shareholders, and the asset-blocking powers used in Operation Cash Out, mean that corporate separation cannot be assumed to protect group assets. Brazilian gaming and litigation counsel can help operators engage with the committees, prepare constitutional arguments, and manage refund and claims risk while the future of the market remains undecided."
+   ]
+  },
+  {
+   "slug": "osr-review-gambling-survey-great-britain-ukgc-prevalence-statistics",
+   "title": "OSR Review of UKGC Gambling Survey: Compliance Impact",
+   "category": "Compliance",
+   "excerpt": "The statistics regulator says the UKGC must do more to explain uncertainty in its Gambling Survey for Great Britain. Here is why it matters.",
+   "juris": [
+    "united-kingdom"
+   ],
+   "firms": [
+    "harris-hagan",
+    "wiggin-llp",
+    "mishcon-de-reya-llp",
+    "joelson-llp"
+   ],
+   "time": "2026-11-20T11:20:00Z",
+   "body": [
+    "The Office for Statistics Regulation has published a follow-up review of the Gambling Commission's Gambling Survey for Great Britain, the official dataset that has become central to policy debate on gambling harm. In a 32-page report released on 19 November 2026, the OSR concluded that the Commission has sufficiently addressed six of the nine recommendations made in its earlier review, but that there is more to do on three of them. It also added a tenth recommendation.",
+    "The outstanding recommendations concern how the Commission communicates potential biases in the statistical release, how the survey relates to other data sources, and the Commission's openness to challenge. The OSR considered that the caveat about possible overestimation of gambling participation and harm is too weak in the main release, where most users will see it. The new recommendation asks the Commission to explain its response to the review of the survey's methodology by Professor Patrick Sturgis of the London School of Economics, and the OSR considered the Commission's wording on that research too definitive.",
+    "The OSR also addressed discrepancies between the survey's findings and operators' administrative data, which some users have said show gaps of up to 694% on certain measures. The OSR said these differences warranted investigation, and it criticised the Commission for declining to discuss unpublished research before peer review. But it was careful not to endorse industry figures, stating that its review does not establish that those data are more accurate. The Commission's Sarah Fox, executive director for National Lottery, research and statistics policy, said the survey continues to provide a robust and authoritative source of evidence and that the Commission would carefully consider how to strengthen clarity.",
+    "This matters to licensees because the survey's figures do not stay in research reports. They inform impact assessments for new licence conditions, the design of the statutory levy, ministerial statements and parliamentary debate, and they are increasingly cited in consultations on areas such as financial risk checks, stake limits and product design. A finding that uncertainty has been understated gives operators and trade bodies a legitimate basis on which to challenge the weight placed on survey estimates in regulatory decisions.",
+    "Operators should use that opportunity carefully. Consultation responses that rely on the OSR's findings will carry more weight if they engage with the methodology and acknowledge the limits of administrative data, rather than presenting industry figures as definitive. Where a proposal depends on a particular harm estimate, respondents can ask the Commission to explain the range of uncertainty, the sensitivity of its conclusions to alternative estimates, and how it has taken account of the OSR's recommendations.",
+    "There is also a public law dimension. Regulators must take account of relevant considerations and act on a rational evidential basis. If the Commission or the government were to rely on survey figures in a way that ignored the OSR's published concerns, that could form part of a challenge to a decision, although the courts give regulators considerable latitude on evaluating evidence. The more immediate value lies in shaping proposals before they are finalised.",
+    "The review comes as the Gambling Policy Commission's review of whether Great Britain needs a new Gambling Act gathers evidence, and as debate continues over the black market and the effect of tax increases. The reliability of prevalence data will be a recurring theme in all of these processes. Licensees should monitor the Commission's response to the OSR, factor the findings into their policy engagement, and take advice from UK gambling regulatory counsel on how to use the evidence base in consultations and, where necessary, in challenges to regulatory decisions."
+   ]
+  },
+  {
+   "slug": "colombia-coljuegos-president-resignation-demand-online-betting-vat-bill",
+   "title": "Colombia's Coljuegos Leadership Crisis and 19% VAT Bill",
+   "category": "Tax",
+   "excerpt": "Colombia's president has demanded the Coljuegos chief resign as a bill proposing 19% VAT on online betting reaches Congress.",
+   "juris": [
+    "colombia"
+   ],
+   "firms": [
+    "holland-and-knight-llp",
+    "greenberg-traurig-llp",
+    "cms",
+    "bird-and-bird"
+   ],
+   "time": "2026-11-20T12:40:00Z",
+   "body": [
+    "Colombia's online gambling sector, one of the longest-established regulated markets in Latin America, is facing uncertainty at the top of its regulator. On 15 November 2026, President Abelardo de la Espriella, who took office in August, posted on X that Jaime Vives Pinedo has to leave the leadership of Coljuegos, the state body that licenses and supervises gambling, adding that nobody is untouchable in his government. Vives was appointed president of Coljuegos in October.",
+    "The demand followed press reports questioning Vives's eligibility. According to La Silla Vacía, candidates for the post were required to hold a postgraduate qualification, which Vives did not have when the selection process began. He reportedly enrolled in a senior management specialisation at the University of Magdalena on 9 July, received the qualification on 8 September and was appointed in October, although the programme normally takes about a year. The university said on 14 November that Vives was credited with 23 of 26 credits for prior experience and completed the rest in late August, in line with its academic regulations. The president also accused Vives of being out of touch with government directives. No formal removal decision had been reported at the time of writing.",
+    "The episode coincides with a significant tax proposal. Last month the government introduced a bill in Congress proposing 19% VAT on online betting. Colombia already applied VAT to online gambling deposits under emergency decree measures in 2025, a step that operators argued pushed players toward unlicensed sites. Turning a temporary measure into a permanent statutory charge, layered on top of the existing royalty payable to Coljuegos on gross gaming revenue, would materially change the economics of the licensed market.",
+    "Fecoljuegos, the industry association, has said the sector is very concerned and that the uncertainty comes at a critical moment. That concern is understandable. A regulator without settled leadership is less able to engage with the Ministry of Finance and Congress on the design of the tax, to defend the licensed channel's competitiveness against offshore operators, and to pursue the blocking and payment-disruption programmes on which channelisation depends.",
+    "For licensed operators, the legal questions are practical. Contracts with Coljuegos are concession-style agreements governed by Law 643 of 2001 and Coljuegos's regulations, and changes in leadership do not alter their terms. But decisions on renewals, new games, technical approvals and sanctions may slow during a transition, and any act signed by an official whose appointment is later found to be defective could face challenge. Operators with pending applications or disputes should keep a careful record of decisions and their dates.",
+    "On tax, operators should model the effect of a 19% VAT charge on deposits or bets, depending on how the final text defines the taxable base, and consider how it would interact with the royalty and with corporate income tax. Engagement with congressional committees during the passage of the bill will be more effective if it is supported by data on channelisation and on the experience of the 2025 emergency measures.",
+    "International operators considering entry into Colombia, or into neighbouring markets such as Ecuador, which has received its first sports betting licence applications, should factor in this combination of governance risk and fiscal pressure. Specialist counsel with Latin American gaming experience can help operators monitor the Coljuegos succession, prepare submissions on the VAT bill and review contractual protections against sudden changes in the tax burden."
+   ]
+  }
+ ],
+ "entries": [
+  "    {slug:\"cjeu-spielerschutz-sigma-bill-55-malta-article-56a-inadmissible\",title:\"CJEU Dodges Malta Bill 55: What Operators Should Know\",category:\"Licensing\",excerpt:\"The CJEU has ruled the Spielerschutz Sigma referral inadmissible, leaving Malta's Bill 55 untested as player refund litigation continues.\",author:\"GamblingLawyers.com Editorial Team\",author_slug:\"\",publish_date:\"2026-11-20T07:30:00Z\",related_jurisdictions:[\"malta\", \"austria\", \"germany\", \"netherlands\"],related_firms:[\"camilleri-preziosi\", \"wh-partners\", \"gvzh-advocates\", \"ellul-and-co\"],related_lawyers:[]}",
+  "    {slug:\"cftc-doj-sue-arkansas-louisiana-prediction-markets-preemption\",title:\"CFTC and DOJ Sue Arkansas and Louisiana Over Kalshi\",category:\"Enforcement\",excerpt:\"Federal agencies have sued Arkansas and Louisiana to block state gambling actions against CFTC-regulated prediction markets.\",author:\"GamblingLawyers.com Editorial Team\",author_slug:\"\",publish_date:\"2026-11-20T08:45:00Z\",related_jurisdictions:[\"united-states\"],related_firms:[\"covington-and-burling-llp\", \"ifrah-law-pllc\", \"greenberg-traurig-llp\", \"fox-rothschild-llp\"],related_lawyers:[]}",
+  "    {slug:\"brazil-bill-5502-2026-bettor-refund-law-online-betting-losses\",title:\"Brazil Bill 5,502/2026: Full Refunds for Betting Losses?\",category:\"Regulatory\",excerpt:\"A Brazilian bill would force betting operators to refund players' losses after the MP 1,394 suspension. We assess the legal risk.\",author:\"GamblingLawyers.com Editorial Team\",author_slug:\"\",publish_date:\"2026-11-20T10:00:00Z\",related_jurisdictions:[\"brazil\"],related_firms:[\"pinheiro-neto-advogados\", \"mattos-filho\", \"bichara-e-motta-advogados\", \"machado-meyer\"],related_lawyers:[]}",
+  "    {slug:\"osr-review-gambling-survey-great-britain-ukgc-prevalence-statistics\",title:\"OSR Review of UKGC Gambling Survey: Compliance Impact\",category:\"Compliance\",excerpt:\"The statistics regulator says the UKGC must do more to explain uncertainty in its Gambling Survey for Great Britain. Here is why it matters.\",author:\"GamblingLawyers.com Editorial Team\",author_slug:\"\",publish_date:\"2026-11-20T11:20:00Z\",related_jurisdictions:[\"united-kingdom\"],related_firms:[\"harris-hagan\", \"wiggin-llp\", \"mishcon-de-reya-llp\", \"joelson-llp\"],related_lawyers:[]}",
+  "    {slug:\"colombia-coljuegos-president-resignation-demand-online-betting-vat-bill\",title:\"Colombia's Coljuegos Leadership Crisis and 19% VAT Bill\",category:\"Tax\",excerpt:\"Colombia's president has demanded the Coljuegos chief resign as a bill proposing 19% VAT on online betting reaches Congress.\",author:\"GamblingLawyers.com Editorial Team\",author_slug:\"\",publish_date:\"2026-11-20T12:40:00Z\",related_jurisdictions:[\"colombia\"],related_firms:[\"holland-and-knight-llp\", \"greenberg-traurig-llp\", \"cms\", \"bird-and-bird\"],related_lawyers:[]}"
+ ]
+}
