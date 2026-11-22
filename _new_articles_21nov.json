@@ -1,0 +1,137 @@
+{
+ "A": [
+  {
+   "slug": "uk-government-response-lords-gambling-ad-ban-section-333-online-advertising-powers",
+   "title": "UK Rejects Gambling Ad Ban but Targets Online Ad Powers",
+   "category": "Regulatory",
+   "excerpt": "The government has rejected a near-total gambling ad ban but will seek to close the section 333(6) gap limiting ministers' online ad powers.",
+   "juris": [
+    "united-kingdom"
+   ],
+   "firms": [
+    "harris-hagan",
+    "wiggin-llp",
+    "mishcon-de-reya-llp",
+    "joelson-llp",
+    "northridge-law-llp"
+   ],
+   "time": "2026-11-21T07:30:00Z",
+   "body": [
+    "The UK government has published its response to the House of Lords Liaison Committee's follow-up report, Gambling Harm: Time for Action, and has rejected the committee's central recommendation. The committee, chaired by Lord Ponsonby of Shulbrede, called in September for a near-total ban on gambling advertising and for gambling to be tolerated but not promoted. The government's answer is that a widespread ban would not be targeted at those most vulnerable to harm and may even increase risk by making licensed operators harder to distinguish from illegal ones.",
+    "The more significant legal development lies elsewhere in the response. The government has accepted that there is a gap in the Gambling Act 2005 that limits ministers' ability to regulate online advertising. Section 328 allows the Secretary of State to make regulations controlling the form, content, timing and location of gambling advertising, but section 333(6) restricts how those powers apply to online advertising. The government says it is actively exploring ways to rectify that legislative deficiency. Because the fix requires primary legislation, and no timetable has been given, the change will not happen quickly, but its direction is clear.",
+    "For operators and affiliates, closing that gap matters more than the headline rejection of a ban. At present, online gambling marketing in Great Britain is governed mainly by the Gambling Commission's Licence Conditions and Codes of Practice, the CAP and BCAP codes administered by the Advertising Standards Authority, and the industry's own code. Statutory regulations under section 328, if extended fully to online channels, would give ministers a direct route to impose binding rules on digital placement, content and targeting without the need for consultation through the Commission's licensing framework.",
+    "The government also rejected a long list of other proposals: a single statutory advertising regulator, bans on inducements, direct marketing and content marketing, a licensing regime for affiliates, limits on serving advertisements to under-25s, and sponsorship bans for clubs below the Premier League, where it cited the finances of the English Football League. It relies instead on recent measures bedding in, including the cap on bonus wagering requirements and the new opt-in requirements for direct marketing, and points to a NatCen evaluation of the post-white paper reforms due by the end of 2026.",
+    "The black market is the thread running through the response. The Illegal Gambling Taskforce will explore blocking influencer content promoting unlicensed operators, know-your-customer checks in the advertising supply chain, and action against so-called Not on Gamstop advertisements. The Commission will explore a kitemark for licensed operators. An annex acknowledges that the Commission does not have the powers to mandate action from social media or other technology companies, and says it is exploring with Ofcom whether Online Safety Act powers could reach some advertising on tech platforms.",
+    "The response also addresses video games. It states that PEGI age ratings are not a reliable basis for deciding where gambling advertisements can appear, and that gambling advertising in games must not be targeted at under-18s or placed in games made for children. Operators and their media buyers should review in-game and programmatic placements against that position, which aligns with the ASA's approach to strong appeal and audience composition.",
+    "Licensees should not read the rejection of a ban as a settled position. The Lords committee will continue to press its case, the Gambling Policy Commission's review of the 2005 Act is gathering evidence, and the NatCen evaluation could shift the debate if it finds the 2023 reforms have had limited effect. Operators should document the effectiveness of their marketing controls, tighten oversight of affiliates and influencers, and take advice from UK gambling regulatory counsel on how future section 328 regulations covering online advertising might affect their marketing model."
+   ]
+  },
+  {
+   "slug": "novig-v-ohio-casino-control-commission-prediction-markets-commerce-clause-preemption",
+   "title": "Novig Sues Ohio Over Prediction Market Enforcement",
+   "category": "Enforcement",
+   "excerpt": "Novig has sued Ohio Casino Control Commission officials, arguing Ohio's sports gaming law is preempted and breaches the Commerce Clause.",
+   "juris": [
+    "united-states"
+   ],
+   "firms": [
+    "ifrah-law-pllc",
+    "zwillgen-pllc",
+    "covington-and-burling-llp",
+    "fox-rothschild-llp",
+    "duane-morris-llp"
+   ],
+   "time": "2026-11-21T08:45:00Z",
+   "body": [
+    "The litigation over sports event contracts has opened another front. On 16 November 2026, Ludlow Exchange, LLC, which trades as Novig, filed a complaint for declaratory and injunctive relief in the US District Court for the Northern District of Ohio against the Ohio Attorney General and the officials of the Ohio Casino Control Commission, including its interim executive director and all seven commissioners, each sued in their official capacity. The case is docketed as No. 1:26-cv-03009.",
+    "The suit responds to a cease-and-desist letter the Commission sent on 2 October 2026, stating that Novig was operating online sports gaming without a licence and giving it 14 days to comply, with the threat of administrative, civil, nuisance and criminal action. The Commission sent similar letters the same day to other prediction market operators, including Polymarket US and Underdog Predict, and later warned its own licensees not to service unlicensed providers of sports event contracts.",
+    "Novig was designated by the CFTC as a designated contract market in June 2026. Its principal argument is familiar from earlier cases brought by Kalshi and others: that its sports event contracts are swaps within the meaning of the Commodity Exchange Act, and that the CEA's grant of exclusive jurisdiction to the CFTC over swaps traded on a DCM preempts state gambling law as applied to those contracts. The complaint relies on 7 U.S.C. section 2(a)(1)(A) and on the definition of swap in 7 U.S.C. section 1a(47), and invokes the CFTC's October 2026 rulemaking activity.",
+    "What distinguishes the complaint is its first count, which is based on the dormant Commerce Clause rather than preemption. Novig targets provisions of Chapter 3775 of the Ohio Revised Code that, it says, tie licence eligibility to in-state presence, require in-state servers and confine wagering to Ohio, backed by felony penalties. The argument is that, applied to a nationwide federally regulated exchange, those requirements discriminate against and unduly burden interstate commerce. If that theory gained traction, it could reach beyond prediction markets to the territorial architecture of state sports betting regimes generally.",
+    "The obstacle Novig faces is the Sixth Circuit. In KalshiEX LLC v. Schuler, decided on 25 September 2026, the Sixth Circuit, whose rulings bind the district courts in Ohio, rejected Kalshi's preemption challenge to Ohio's law. Novig's complaint acknowledges that decision and notes that rehearing en banc and petitions for certiorari are pending. Unless the Commerce Clause claim is treated as genuinely distinct, the district court is likely to consider itself bound on preemption, which may explain why Novig has framed its case on two independent grounds.",
+    "The filing comes amid sharp federal-state conflict. The CFTC has told exchanges to stop geofencing states within 30 days and has joined the Department of Justice in suing Arkansas and Louisiana, while nine Democratic senators have asked the agency not to interfere with state bans, and the Fourth Circuit has sided with Maryland. Meanwhile, an American Gaming Association poll reports that 82% of registered voters believe prediction markets should be regulated as gambling. A Supreme Court resolution of the circuit conflict now looks increasingly likely.",
+    "For state-licensed sportsbooks, the immediate compliance point is Ohio's instruction not to provide services to unlicensed event contract providers. Payment, data, marketing and technology vendors working with both sides of the market should review their contracts and counterparties. Prediction market operators, for their part, need jurisdiction-by-jurisdiction risk assessments that take account of the binding circuit law in each state. US gaming and derivatives counsel should be involved in any decision to operate in states that have issued cease-and-desist letters."
+   ]
+  },
+  {
+   "slug": "italy-budget-2027-amendments-preu-slot-tax-delay-online-gaming-tax-increase",
+   "title": "Italy Budget Amendments Shift Gambling Tax to Online",
+   "category": "Tax",
+   "excerpt": "Italian coalition amendments would delay the 2027 PREU rise on slots and fund it with higher taxes on online games set by ADM.",
+   "juris": [
+    "italy"
+   ],
+   "firms": [
+    "cms-italy",
+    "dla-piper-italy",
+    "studio-legale-sbordoni-and-partners",
+    "norton-rose-fulbright-italy"
+   ],
+   "time": "2026-11-21T10:00:00Z",
+   "body": [
+    "Italy's 2027 Budget Bill is moving through the Chamber of Deputies, and amendments filed by the governing coalition by the 17 November deadline could reshape how the gambling sector's contribution to public finances is divided between land-based and online operators. Lega deputy Andrea de Bertoldi and Forza Italia deputy Chiara Tenerini have tabled amendments that would ease the burden on gaming machines and shift part of it to remote gaming. With the coalition controlling around 232 of the Chamber's 398 seats, these proposals are far more likely to succeed than opposition amendments.",
+    "As introduced, the bill raises the PREU, the single levy on gaming machines, from 24% to 25% on AWP slot machines and from 8.6% to 9.6% on VLTs from January 2027. That increase is expected to generate about EUR 334 million of the roughly EUR 952 million that gambling is due to contribute to the 2027 budget. The increase sits alongside a new framework of stake and prize limits for machines, with the government's technical report assuming that slot takings will rise significantly under the new rules.",
+    "De Bertoldi's package would postpone the PREU increase to January 2030, while keeping the EUR 2 maximum stake and EUR 200 maximum prize. A separate amendment would reduce the minimum payout required to qualify for the reduced PREU rate from 70% to 69%, which is estimated to cost EUR 676 million in 2027. The proposed funding source is a tax increase on some online games from January 2027, with the choice of games and rates left to the Customs and Monopolies Agency (ADM). Other proposals would reduce the reduced PREU rate from 20% to 19%, lower the VLT extension fee from EUR 7,500 to EUR 6,000 per right, and replace the extension of the Gratta e Vinci instant lottery concession with a tender at a EUR 1.36 billion base price.",
+    "Tenerini's amendment would raise the tax on remote skill games by five percentage points from January 2028, generating about EUR 150 million a year to fund a tax break on reinvested profits, an idea promoted by the small business association Conflavoro PMI.",
+    "For online concessionaires, the most concerning element is the delegation to ADM. Italian constitutional law, under Article 23 of the Constitution, requires taxes to be imposed on the basis of law, and the courts allow some delegation of implementing detail to administrative authorities only where the statute sets sufficient criteria. An amendment that leaves both the games and the rates to ADM, with effect from January 2027, raises questions about legal certainty and could be vulnerable to challenge if adopted without clearer parameters. It also leaves operators with little time to model the effect on margins and pricing.",
+    "The amendments also sit uneasily with Italy's recent reorganisation of online gaming. Operators under the new remote gaming concessions paid EUR 7 million per licence and committed to business plans based on the existing tax structure. A mid-term tax increase on part of the online product range, designed to subsidise the retail machine sector, could prompt arguments about the balance of the concession relationship and the principle of legitimate expectations, although concession terms generally allow for changes in tax law.",
+    "The timetable is short. The Budget Committee was due to rule on admissibility on 23 November, and parties must select amendments for voting by 26 November, with the bill required to be approved by both chambers before the end of the year. Online operators and B2B suppliers should engage through their trade associations now, prepare impact assessments for the scenarios under discussion, and seek advice from Italian gaming counsel on the constitutional and concession law issues that a delegated tax increase would raise."
+   ]
+  },
+  {
+   "slug": "brazil-operation-cash-out-esportes-da-sorte-r2-3bn-asset-freeze-aml",
+   "title": "Brazil's Operation Cash Out: AML Lessons for Bet Operators",
+   "category": "Compliance",
+   "excerpt": "A R$2.3bn asset freeze in a probe linked to Esportes da Sorte shows the AML and tax risks of pre-regulation betting structures in Brazil.",
+   "juris": [
+    "brazil",
+    "curacao"
+   ],
+   "firms": [
+    "pinheiro-neto-advogados",
+    "mattos-filho",
+    "hambach-and-hambach"
+   ],
+   "time": "2026-11-21T11:20:00Z",
+   "body": [
+    "On 18 November 2026, Brazil's Federal Police launched Operation Cash Out, a joint investigation with the Federal Revenue Service and the Federal Public Prosecutor's Office targeting a business group linked to the betting operator Esportes da Sorte. A federal court ordered the freezing of more than R$2.3 billion in assets, and reports indicate that 59 search and seizure warrants were executed in several states, with seizure orders covering aircraft, vehicles, properties and a yacht. The group's founder and chief executive, Darwin Henrique da Silva Filho, was among those targeted.",
+    "The suspicions under investigation are wide-ranging: illegal exploitation of games and betting, capital flight, maintenance of undeclared funds abroad, tax evasion, money laundering and organised crime. Investigators reportedly identified remittances abroad of more than EUR 500 million, and the alleged structures include Brazilian and foreign companies, shell entities, simulated transactions and the payment of profits and dividends. Before Brazil's regulated market opened, the betting operation was allegedly run through an entity linked to Curaçao. Esportes da Sorte had not commented publicly at the time of the initial reports.",
+    "The investigation is not a finding of wrongdoing, and reports note that the suspicions relate mainly to activity before regulation and do not automatically make current licensed operations unlawful. But the case is important for the whole sector because it illustrates how Brazilian authorities are applying general criminal, tax and foreign exchange law to the period between the legalisation of fixed-odds betting by Law 13,756/2018 and the start of the licensed market under Law 14,790/2023 in January 2025. It follows a similar investigation involving the NSX group in August 2026.",
+    "For licensed operators, the first lesson concerns legacy exposure. Many groups now holding authorisations from the Secretariat of Prizes and Bets (SPA) previously served Brazilian players from offshore licences. The way revenues from that period were booked, repatriated or distributed, and whether funds held abroad were declared to the Central Bank and the Revenue Service, can give rise to liability under the money laundering law, Law 9,613/1998, the crimes against the tax order law and the rules on capital outflows, irrespective of the operator's current regulatory standing.",
+    "The second lesson concerns current anti-money laundering compliance. SPA ordinances impose detailed AML and counter-terrorist financing obligations on authorised operators, including customer due diligence, monitoring of transactions, reporting of suspicious activity to COAF and controls on related-party flows. Intra-group payments for licences, technology, marketing and management services between Brazilian entities and foreign affiliates are an obvious area of scrutiny and should be documented at arm's length, with transfer pricing support.",
+    "Asset freezes on this scale also carry operational consequences. An authorisation holder whose accounts or those of its controllers are frozen may struggle to maintain the financial reserve and guarantee required by the SPA and to pay player balances, which in turn can trigger regulatory action. The interaction with Provisional Measure 1,394/2026, which proposes a ban on fixed-odds betting and is currently being contested before Congress and the Supreme Federal Court, adds further uncertainty about the value of the licences themselves.",
+    "Operators active in Brazil should commission a privileged review of historic offshore structures, cash flows and tax filings, assess any exposure to voluntary disclosure, and test their AML programmes against the SPA's requirements. Investors and acquirers should extend due diligence to the pre-2025 period. Brazilian gaming, tax and criminal counsel should be involved together, because issues of regulatory standing, tax liability and criminal exposure now overlap in a way that a single specialism cannot properly address."
+   ]
+  },
+  {
+   "slug": "new-brunswick-bill-8-gaming-control-act-live-online-casino-atlantic-lottery",
+   "title": "New Brunswick Bill 8: Live Online Casino Under ALC Model",
+   "category": "Market Entry",
+   "excerpt": "New Brunswick's Bill 8 would permit live online casino games through a government agency model, leaving no route for private operators.",
+   "juris": [
+    "canada"
+   ],
+   "firms": [
+    "dickinson-wright-pllc",
+    "greenberg-traurig-llp",
+    "fox-rothschild-llp"
+   ],
+   "time": "2026-11-21T12:40:00Z",
+   "body": [
+    "New Brunswick is close to expanding its regulated online gambling offer. Bill 8, An Act to Amend the Gaming Control Act, would create a legal framework for live online casino games in the province. Introduced on 27 October 2026, the bill was debated at second reading in late October and early November, cleared the Standing Committee on Economic Policy on 17 November and, according to reports, has now completed its passage through the Legislative Assembly, leaving Royal Assent as the remaining formal step.",
+    "The legal framework explains the model chosen. Under section 207(1)(a) of the Criminal Code, lottery schemes, which include casino games offered online, are lawful in Canada only when conducted and managed by a provincial government, alone or with other provinces. Each province decides how to exercise that power. Ontario has done so through iGaming Ontario, which contracts with privately owned, AGCO-registered operators, and Alberta is following a similar path. New Brunswick has opted for the traditional approach: a government-designated agency will conduct and manage the games, and the Atlantic Lottery Corporation, owned jointly by the four Atlantic provinces, is expected to operate them.",
+    "In practical terms, Bill 8 does not open a licensing market for private B2C operators. ALC already offers online lottery, sports betting and casino products in the region through its own platform, and the bill extends the legal framework to live dealer games. Private companies can participate as suppliers of studios, platforms, content and services, but they will contract with ALC rather than serve players in their own name.",
+    "The policy rationale is channelisation. ALC estimates that about CAD 250 million a year leaves Atlantic Canada to illegal online gambling platforms, and live dealer games are among the products most commonly offered by unlicensed sites. The provincial government, which has expressed support for the framework through Finance Minister René Legacy, presents the bill as a way to bring that spending back into a regulated channel that funds public services and responsible gambling programmes.",
+    "The bill leaves important matters to regulations, which must be made before live games can launch, and a proclamation is needed to fix the commencement date. Those regulations will need to address game integrity and studio standards, player protection measures such as limits and self-exclusion, and the treatment of live studios located outside the province. Suppliers should watch for consultation on those regulations and for ALC procurement processes that follow.",
+    "For offshore operators that currently accept players from New Brunswick, the bill should be read as a sign of increased enforcement interest rather than an opportunity. The broader Canadian trend, from Ontario's enforcement programme to Alberta's regulated market and the IAGR licence-checking initiative, is towards tighter action against grey-market operators, including through payment and advertising channels. Operators that rely on the grey-market position in Atlantic Canada should assess their exposure, particularly in relation to advertising and payment processing.",
+    "Gaming suppliers interested in the Atlantic market should take advice on provincial supplier registration requirements, the terms of contracts with crown corporations, and the Criminal Code constraints that define how far private parties can participate. As provinces continue to choose between the Ontario model and the crown monopoly model, specialist Canadian gaming counsel can help businesses identify where real market entry opportunities exist."
+   ]
+  }
+ ],
+ "entries": [
+  "    {slug:\"uk-government-response-lords-gambling-ad-ban-section-333-online-advertising-powers\",title:\"UK Rejects Gambling Ad Ban but Targets Online Ad Powers\",category:\"Regulatory\",excerpt:\"The government has rejected a near-total gambling ad ban but will seek to close the section 333(6) gap limiting ministers' online ad powers.\",author:\"GamblingLawyers.com Editorial Team\",author_slug:\"\",publish_date:\"2026-11-21T07:30:00Z\",related_jurisdictions:[\"united-kingdom\"],related_firms:[\"harris-hagan\", \"wiggin-llp\", \"mishcon-de-reya-llp\", \"joelson-llp\", \"northridge-law-llp\"],related_lawyers:[]}",
+  "    {slug:\"novig-v-ohio-casino-control-commission-prediction-markets-commerce-clause-preemption\",title:\"Novig Sues Ohio Over Prediction Market Enforcement\",category:\"Enforcement\",excerpt:\"Novig has sued Ohio Casino Control Commission officials, arguing Ohio's sports gaming law is preempted and breaches the Commerce Clause.\",author:\"GamblingLawyers.com Editorial Team\",author_slug:\"\",publish_date:\"2026-11-21T08:45:00Z\",related_jurisdictions:[\"united-states\"],related_firms:[\"ifrah-law-pllc\", \"zwillgen-pllc\", \"covington-and-burling-llp\", \"fox-rothschild-llp\", \"duane-morris-llp\"],related_lawyers:[]}",
+  "    {slug:\"italy-budget-2027-amendments-preu-slot-tax-delay-online-gaming-tax-increase\",title:\"Italy Budget Amendments Shift Gambling Tax to Online\",category:\"Tax\",excerpt:\"Italian coalition amendments would delay the 2027 PREU rise on slots and fund it with higher taxes on online games set by ADM.\",author:\"GamblingLawyers.com Editorial Team\",author_slug:\"\",publish_date:\"2026-11-21T10:00:00Z\",related_jurisdictions:[\"italy\"],related_firms:[\"cms-italy\", \"dla-piper-italy\", \"studio-legale-sbordoni-and-partners\", \"norton-rose-fulbright-italy\"],related_lawyers:[]}",
+  "    {slug:\"brazil-operation-cash-out-esportes-da-sorte-r2-3bn-asset-freeze-aml\",title:\"Brazil's Operation Cash Out: AML Lessons for Bet Operators\",category:\"Compliance\",excerpt:\"A R$2.3bn asset freeze in a probe linked to Esportes da Sorte shows the AML and tax risks of pre-regulation betting structures in Brazil.\",author:\"GamblingLawyers.com Editorial Team\",author_slug:\"\",publish_date:\"2026-11-21T11:20:00Z\",related_jurisdictions:[\"brazil\", \"curacao\"],related_firms:[\"pinheiro-neto-advogados\", \"mattos-filho\", \"hambach-and-hambach\"],related_lawyers:[]}",
+  "    {slug:\"new-brunswick-bill-8-gaming-control-act-live-online-casino-atlantic-lottery\",title:\"New Brunswick Bill 8: Live Online Casino Under ALC Model\",category:\"Market Entry\",excerpt:\"New Brunswick's Bill 8 would permit live online casino games through a government agency model, leaving no route for private operators.\",author:\"GamblingLawyers.com Editorial Team\",author_slug:\"\",publish_date:\"2026-11-21T12:40:00Z\",related_jurisdictions:[\"canada\"],related_firms:[\"dickinson-wright-pllc\", \"greenberg-traurig-llp\", \"fox-rothschild-llp\"],related_lawyers:[]}"
+ ]
+}
