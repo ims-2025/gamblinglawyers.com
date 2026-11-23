@@ -1,0 +1,140 @@
+{
+ "A": [
+  {
+   "slug": "germany-ggl-early-detection-section-6i-glustv-evaluation-report-2026",
+   "title": "GGL Early Detection Review: Section 6i Duties Tested",
+   "category": "Compliance",
+   "excerpt": "Germany's GGL has shared first findings on operators' mandatory early-detection systems ahead of the GlüStV evaluation due 31 December.",
+   "juris": [
+    "germany"
+   ],
+   "firms": [
+    "hambach-and-hambach",
+    "cms-germany",
+    "redeker-sellner-dahs",
+    "bird-and-bird",
+    "taylor-wessing"
+   ],
+   "time": "2026-11-23T07:30:00Z",
+   "body": [
+    "Germany's Joint Gambling Authority of the Länder, the Gemeinsame Glücksspielbehörde der Länder (GGL), has begun to report on how well online operators detect problem gambling. On 19 November 2026 the authority presented its first findings on early detection of gambling addiction to the state coordinators of Germany's addiction-prevention offices at their annual exchange meeting, and followed with a press release on 20 November. The release did not include figures, operator names or details of the individual assessments. Even so, the timing matters: the findings feed into the statutory evaluation of the player-protection rules that is due by 31 December 2026.",
+    "The legal basis is section 6i(1) of the Interstate Treaty on Gambling 2021 (GlüStV 2021). It requires operators of online casino games, online poker and virtual slot games, as well as organisers and brokers of internet sports betting, to run an automated system for the early detection of players at risk of addiction, at their own expense. The treaty sets the principle. The operational detail is set in each operator's licence, and the authority has made clear that the system must be algorithm-based, scientifically grounded and fed with at least account-level data that is updated regularly.",
+    "In practice this is a demanding obligation. Detection on its own is not enough: an operator must also apply the measures in its social concept (Sozialkonzept), which are binding once approved. The expected escalation runs from an on-screen notice, to direct contact with the player, to a block imposed by the operator. Since 2023 the GGL has also required the use of its own markers when players apply for deposit limits above the standard cross-operator cap, and the authority says courts have upheld that requirement. Its guidance permits AI-based tools, provided they react to defined markers and pass flagged players to trained customer service staff.",
+    "The evaluation under section 32 GlüStV 2021 is the wider context. That provision requires the Länder supervisory authorities and the GGL, with the participation of the expert advisory board (Fachbeirat), to assess the player-protection rules in sections 6a to 6j and their effect on the black market. Those rules include the cross-operator deposit limit, the LUGAS activity file, the OASIS self-exclusion system and the stake and speed limits on virtual slots. Early detection is one of the few tools that operators design themselves, which makes it a natural focus for an authority deciding whether more prescriptive rules are needed.",
+    "Two questions remain open. The first is whether the GGL will publish its assessments of early-detection systems, either in aggregate or in a way that allows operators to benchmark themselves. The second is whether the evaluation will lead to stricter requirements on markers, data inputs or social concepts. A move towards prescribed markers or minimum response times would increase compliance costs and could expose operators whose systems were approved under a looser standard. It would also sit uneasily with the industry's argument that Germany's rules are already among the strictest in Europe and push players towards unlicensed sites.",
+    "Licensees should not wait for the report to review their position. The sensible steps now are to confirm that the early-detection model in use matches what was described in the licence application, to document the scientific basis of the markers and thresholds, and to test whether escalation steps are actually carried out within the timeframes set in the social concept. Operators should also check that data sharing with external vendors complies with the GDPR and German data protection law, since early-detection models process sensitive behavioural data.",
+    "The GGL's supervisory approach has increasingly focused on whether systems work in practice rather than whether they exist on paper. Operators with German licences, and those preparing applications, should take advice from specialist German gambling counsel on how to evidence the effectiveness of their early-detection programmes, how to respond to information requests from the authority, and how any changes following the 2026 evaluation could affect existing licence conditions."
+   ]
+  },
+  {
+   "slug": "wyoming-felony-online-sweepstakes-ban-27lso-0098-suppliers-payment-processors",
+   "title": "Wyoming Felony Sweepstakes Ban Would Reach Suppliers",
+   "category": "Enforcement",
+   "excerpt": "Wyoming's draft 27LSO-0098 would make running or supplying online sweepstakes a felony, reaching payment, hosting and geolocation firms.",
+   "juris": [
+    "united-states"
+   ],
+   "firms": [
+    "ifrah-law-pllc",
+    "zwillgen-pllc",
+    "greenberg-traurig-llp",
+    "holland-and-knight-llp",
+    "womble-bond-dickinson-us-llp"
+   ],
+   "time": "2026-11-23T08:45:00Z",
+   "body": [
+    "Wyoming has become the latest state to consider criminalising online sweepstakes casinos, and its draft legislation is among the broadest yet. On 23 November 2026, the state's Legislative Management Council was scheduled to consider whether to sponsor draft bill 27LSO-0098 for the 2027 session. The Select Committee on Gaming, co-chaired by Senator John Kolb, voted unanimously at its 5 to 6 October meeting in Rock Springs to sponsor the ban and sent it to the Council in a memo dated 9 November. A competing draft, 27LSO-0200, which would have authorised and regulated online sweepstakes, did not advance.",
+    "The current working draft, version 0.4, is titled Online sweepstakes prohibited. Earlier versions also addressed online casinos, but that language has reportedly been dropped. The mechanism is simple. Rather than creating a new offence, the draft brings the operation of online sweepstakes games within the existing offence of professional gambling under W.S. 6-7-102(b). That is a felony punishable by up to three years' imprisonment, a fine of up to $3,000, or both. If enacted, the ban would take effect on 1 July 2027.",
+    "The most significant feature for the wider industry is supplier liability. The draft applies to anyone who knowingly supplies an online sweepstakes game with geolocation, payment processing, server hosting, platform services, gaming content, data services, promotion or advertising. That list covers almost the entire technical and commercial stack behind a dual-currency sweepstakes casino. Players who participate only as players are exempt. Wyoming would therefore join states such as Oklahoma and Louisiana, which have moved beyond targeting operators to cover the vendors, payment providers and marketers that keep the model running.",
+    "The draft has drawn opposition. Bill Gantz, a lawyer for VGW, told the committee in October that the language was overbroad and could catch ordinary promotional sweepstakes tied to the purchase of goods or services. VGW says it has offered online sweepstakes in Wyoming since 2012. It is not yet clear whether version 0.4 narrows the definition. That drafting point matters: a definition that captures traditional consumer promotions would create uncertainty for retailers and marketers with no connection to casino-style gaming, and would be a likely focus of amendments during the session.",
+    "The enforcement context explains the push for legislation. The Wyoming Gaming Commission warned on 22 May 2025 that online casinos, poker rooms and sweepstakes sites are not licensed in the state. Its Executive Director, Nicholas Larramendy, has said that sweepstakes complaints are passed back and forth between his agency and consumer protection staff. A clear statutory prohibition, backed by felony penalties, would give prosecutors a firmer basis to act and would remove the argument that the sweepstakes model falls outside gambling law because no purchase is necessary.",
+    "The contrast with Washington DC is notable. On 18 November a DC Council committee voted 3 to 1 to advance an internet gaming bill that would license sweepstakes operators rather than ban them. States are therefore moving in two different directions: some towards licensing and taxation, others towards criminal prohibition with wide secondary liability. For businesses operating across many states, that divergence makes a single national compliance approach increasingly difficult to sustain.",
+    "Suppliers should treat the Wyoming draft as a warning. Payment processors, geolocation vendors, hosting providers, game studios and affiliates that serve sweepstakes operators should map their state-by-state exposure now, review contractual warranties and indemnities, and consider whether geoblocking or exit plans are needed before July 2027. The word knowingly in the draft means that notice from regulators or counterparties could be enough to establish liability. Specialist US gaming counsel can help assess that risk and engage with legislators before the 2027 session begins."
+   ]
+  },
+  {
+   "slug": "sdny-schofield-denies-cftc-bid-new-york-kalshi-enforcement-state-court",
+   "title": "Court Rejects CFTC Bid to Halt New York v Kalshi",
+   "category": "Regulatory",
+   "excerpt": "A federal judge refused to stop New York's case against Kalshi, leaving the state court route open and raising the stakes for event contracts.",
+   "juris": [
+    "united-states"
+   ],
+   "firms": [
+    "ifrah-law-pllc",
+    "covington-and-burling-llp",
+    "fox-rothschild-llp",
+    "duane-morris-llp",
+    "greenberg-traurig-llp"
+   ],
+   "time": "2026-11-23T10:00:00Z",
+   "body": [
+    "New York's enforcement case against Kalshi has survived a direct challenge from the federal government. On 20 November 2026, US District Judge Lorna Schofield of the Southern District of New York rejected the Commodity Futures Trading Commission's emergency request to block the state from enforcing its gambling laws against the prediction market. The judge found that the CFTC had not established a likelihood of success on the merits. The day before, the same court had ruled that New York's own case could proceed in the New York Supreme Court, the state's trial-level court, rather than in federal court as Kalshi had sought.",
+    "New York, through Governor Kathy Hochul and Attorney General Letitia James, announced its lawsuit in July, describing Kalshi as an illegal gambling operation. The state is seeking a restraining order to stop Kalshi operating in New York while the case is heard. The CFTC's position, which it has now advanced in suits against twelve states, is that it is the exclusive regulator of designated contract markets and that the Commodity Exchange Act pre-empts state gambling laws as applied to event contracts listed on those exchanges. A hearing in the state court was scheduled for 23 November.",
+    "The ruling matters for three reasons. First, it denies Kalshi and the CFTC the procedural advantage of a federal forum. State judges applying state gambling law are likely to be less receptive to arguments based on federal commodities regulation. Second, a denial at the preliminary stage signals that at least one more federal judge doubts the pre-emption theory, which adds to the decisions from the Fourth Circuit in Maryland's favour and from courts in the Ninth Circuit siding with Nevada. Third, the growing split, including the Third Circuit's ruling for Kalshi earlier this year, increases the likelihood that the US Supreme Court will eventually have to resolve the question.",
+    "Kalshi has argued that the consequences of a New York restraining order would reach well beyond the state. The company says it has around 1.2 million users in New York, and its lawyers have warned that an order could force it to stop all activity nationwide. That argument reflects a practical problem: if a state court orders Kalshi to cease offering sports event contracts to New York residents, the platform's ability to geofence reliably and to keep its federal exchange model consistent across all states may come under strain. Whether that claim is accurate or a litigation tactic, it shows how much now depends on state proceedings.",
+    "The CFTC's own conduct is also under scrutiny. The Commission has told Kalshi to stop offering so-called mention markets on presidential speeches, citing manipulation risk. That intervention sits awkwardly with its position that event contracts are ordinary federally supervised derivatives requiring no state oversight. State regulators and attorneys general are likely to argue that the episode shows the federal framework lacks the integrity controls, such as betting limits, insider rules and consumer protection, that state gambling regimes require.",
+    "For licensed sportsbooks and casino operators, the decision strengthens the position of states seeking to keep sports wagering within their licensing systems. For prediction market platforms and their partners, including brokers, payment providers and media companies that promote event contracts, the risk of state enforcement in New York has increased. Businesses that have structured products on the assumption that federal pre-emption would protect them should reassess that assumption now, state by state.",
+    "Operators, exchanges and investors should take advice on how the New York proceedings could affect their products and partnerships, and how to prepare for a fragmented outcome in which event contracts are lawful in some states and unlawful in others pending Supreme Court review. Specialist US gaming and derivatives counsel can help model those scenarios, review geolocation and compliance controls, and engage with state regulators."
+   ]
+  },
+  {
+   "slug": "argentina-senate-ley-de-ludopatia-online-betting-bill-26-november-advertising-ban",
+   "title": "Argentina's Online Betting Bill Faces Senate Deadline",
+   "category": "Market Entry",
+   "excerpt": "Argentina's Senate will debate the national online betting and gambling addiction bill on 26 November, days before it would lapse.",
+   "juris": [
+    "argentina"
+   ],
+   "firms": [
+    "cms",
+    "bird-and-bird",
+    "pinheiro-neto-advogados",
+    "mattos-filho"
+   ],
+   "time": "2026-11-23T11:20:00Z",
+   "body": [
+    "Argentina's national bill on online betting and gambling addiction has reached its decisive week. The Senate has unanimously agreed to debate the measure, widely known as the Ley de Ludopatía, on Thursday 26 November 2026. Without a vote, the bill would lose parliamentary status on 30 November and would have to start again in the Chamber of Deputies. The ruling party, La Libertad Avanza, has agreed that the bill may be taken to the floor with or without a committee report, but it is working on an alternative text, which means the version that reaches a vote may differ significantly from the one the lower house approved.",
+    "The Chamber of Deputies gave the bill preliminary approval, known as media sanción, in November 2024. The core of that text is a broad ban on the advertising, promotion and sponsorship of online gambling. La Libertad Avanza opposes the ban on two grounds: that it restricts commercial freedom and that gambling regulation is constitutionally a matter for the provinces rather than the federal government. In April, President Javier Milei sent Congress a separate executive draft that focuses on tackling illegal platforms rather than restricting lawful advertising.",
+    "The compromise now being drafted reportedly sits between the two. It would impose tighter advertising limits than the executive draft, while adding tools to block clandestine operators. Patricia Bullrich, who leads the La Libertad Avanza bloc in the Senate, has committed to bringing the issue to the floor before the ordinary session ends. Pressure has also come from outside Congress: the Comisión Episcopal de Pastoral Social, the Catholic Church's social affairs commission, has run a signature campaign timed to precede the visit of Pope Leo XIV to Argentina.",
+    "Supporters of the bill rely heavily on evidence about young people. Figures from UNICEF and a Red Cross survey cited in the debate suggest that 24 per cent of Argentine adolescents aged 12 to 17 have bet online at least once, that three in four people first learned about betting through advertising, and that one in eight bettors ended up in debt. Those figures make it difficult for senators to oppose advertising restrictions outright, even if they share the government's concerns about federal overreach.",
+    "For operators, the constitutional point is not academic. Argentina's online market is built on provincial licences, with Buenos Aires City, Buenos Aires Province, Córdoba, Mendoza and others each running their own regimes. A national law that bans advertising across all media would cut across those provincial frameworks and could be challenged as an intrusion on provincial competence. A narrower federal law focused on illegal operators, payment blocking and age verification would be easier to reconcile with the provincial model and could even strengthen licensed operators by reducing unlicensed competition.",
+    "The outcome will also shape market entry strategy. Over the past year, foreign operators have increasingly entered Argentina by acquiring existing provincial licensees rather than applying from scratch. A strict national advertising ban would reduce the value of those acquisitions, since customer acquisition in a multi-provincial market depends heavily on national media and sponsorship. A compromise focused on illegal operators would support the investment case. Due diligence on Argentine targets should therefore model both scenarios.",
+    "Operators, affiliates and media partners active in Argentina should follow the 26 November debate closely and review their marketing plans and sponsorship contracts for termination or change-of-law provisions. If the Senate amends the text, the bill would return to the Chamber of Deputies, extending uncertainty into 2027. Specialist gaming counsel with Latin American experience can advise on the interaction between federal and provincial rules and on structuring market entry while the national framework remains unsettled."
+   ]
+  },
+  {
+   "slug": "brazil-pl-5477-urgency-withdrawn-betting-criminalisation-bill-mp-1394-status",
+   "title": "Brazil Drops Urgency on Betting Crime Bill PL 5,477",
+   "category": "Licensing",
+   "excerpt": "Brazil's government withdrew constitutional urgency for PL 5,477, which would criminalise betting, but the MP 1.394 ban stays in force.",
+   "juris": [
+    "brazil"
+   ],
+   "firms": [
+    "pinheiro-neto-advogados",
+    "mattos-filho",
+    "machado-meyer",
+    "tozzinifreire-advogados",
+    "demarest-advogados"
+   ],
+   "time": "2026-11-23T12:40:00Z",
+   "body": [
+    "Brazil's federal government has stepped back, at least for now, from fast-tracking its bill to criminalise betting. On 17 November 2026, the government withdrew its request for constitutional urgency for PL 5,477/2026, formalised in the Official Gazette. The decision was announced by José Guimarães, Minister of the Secretariat of Institutional Relations, and agreed with the Chamber of Deputies. It does not change the underlying prohibition: Provisional Measure (MP) 1.394/2026, which bans the operation and advertising of fixed-odds betting, remains in force, and Congress extended its validity by a further 60 days last week.",
+    "The procedural reason is straightforward. Under Article 64 of the Federal Constitution, the President may request urgency for bills he introduces. Each house of Congress then has 45 days to vote. If it does not, the bill locks the house's agenda, preventing other legislation from being voted, a mechanism known as trancamento de pauta. PL 5,477 was introduced on 25 September, and the deadline in the Chamber expired on 13 November, from which date it began blocking the agenda. The government needs the Chamber free to vote on its fiscal adjustment package, PLP 299/2026, reportedly worth up to R$56.1 billion through 2027, and on rules for digital markets.",
+    "The bill itself is severe. It amends Law 13,756/2018, the legal basis of Brazil's regulated fixed-odds betting market, and the Criminal Misdemeanours Act. As reported, operating fixed-odds sports betting or online games would carry four to six years' imprisonment plus a fine, while advertising, recruiting bettors and providing financial facilitation would carry two to four years. Investigations would fall to the Federal Police and prosecutions to the federal courts. If enacted, the bill would turn what was, until recently, a licensed industry with more than 180 authorised platforms into a criminal enterprise.",
+    "The withdrawal of urgency does not mean the bill has been abandoned. The government has said it intends to request urgency again once the fiscal and digital markets bills are approved, with the aim of a vote before the end of 2026. Congress goes into recess on 23 December, which leaves a narrow window. In the meantime, the bill follows the ordinary priority procedure, and its pace now depends largely on the Chamber President, Hugo Motta, who controls the agenda.",
+    "The constitutional challenge to MP 1.394 remains the other key variable. Justice Luiz Fux is the rapporteur in the Federal Supreme Court (STF) case challenging the measure. As of the latest reports, he had neither ruled on the merits nor granted an injunction restoring the regulated market. A decision suspending the MP would not by itself stop Congress from passing PL 5,477, but it would change the political dynamics considerably and would raise questions about the legal certainty owed to operators that paid R$30 million licence fees under the previous regime.",
+    "For licensed operators, the practical position is unchanged: operating and advertising fixed-odds betting remain prohibited under the MP, and the financial reserve rules issued by the Secretariat of Prizes and Bets (SPA) govern the release of the R$5 million guarantee and refunds to bettors. The withdrawal of urgency buys time but no relief. Operators should continue to preserve records, manage wind-down obligations to players and suppliers, and prepare arguments for the STF case and for any compensation or damages claims against the state.",
+    "Suppliers, payment institutions, affiliates and media companies face the greatest potential exposure if PL 5,477 is enacted, because the facilitation and advertising offences would reach them directly. They should review their remaining Brazilian activities now and stop any conduct that could fall within the new offences before the law is passed. Specialist Brazilian gaming counsel can advise on the interaction between the MP, the bill and the STF litigation, and on the options for exiting or preserving a market position."
+   ]
+  }
+ ],
+ "entries": [
+  "    {slug:\"germany-ggl-early-detection-section-6i-glustv-evaluation-report-2026\",title:\"GGL Early Detection Review: Section 6i Duties Tested\",category:\"Compliance\",excerpt:\"Germany's GGL has shared first findings on operators' mandatory early-detection systems ahead of the GlüStV evaluation due 31 December.\",author:\"GamblingLawyers.com Editorial Team\",author_slug:\"\",publish_date:\"2026-11-23T07:30:00Z\",related_jurisdictions:[\"germany\"],related_firms:[\"hambach-and-hambach\", \"cms-germany\", \"redeker-sellner-dahs\", \"bird-and-bird\", \"taylor-wessing\"],related_lawyers:[]}",
+  "    {slug:\"wyoming-felony-online-sweepstakes-ban-27lso-0098-suppliers-payment-processors\",title:\"Wyoming Felony Sweepstakes Ban Would Reach Suppliers\",category:\"Enforcement\",excerpt:\"Wyoming's draft 27LSO-0098 would make running or supplying online sweepstakes a felony, reaching payment, hosting and geolocation firms.\",author:\"GamblingLawyers.com Editorial Team\",author_slug:\"\",publish_date:\"2026-11-23T08:45:00Z\",related_jurisdictions:[\"united-states\"],related_firms:[\"ifrah-law-pllc\", \"zwillgen-pllc\", \"greenberg-traurig-llp\", \"holland-and-knight-llp\", \"womble-bond-dickinson-us-llp\"],related_lawyers:[]}",
+  "    {slug:\"sdny-schofield-denies-cftc-bid-new-york-kalshi-enforcement-state-court\",title:\"Court Rejects CFTC Bid to Halt New York v Kalshi\",category:\"Regulatory\",excerpt:\"A federal judge refused to stop New York's case against Kalshi, leaving the state court route open and raising the stakes for event contracts.\",author:\"GamblingLawyers.com Editorial Team\",author_slug:\"\",publish_date:\"2026-11-23T10:00:00Z\",related_jurisdictions:[\"united-states\"],related_firms:[\"ifrah-law-pllc\", \"covington-and-burling-llp\", \"fox-rothschild-llp\", \"duane-morris-llp\", \"greenberg-traurig-llp\"],related_lawyers:[]}",
+  "    {slug:\"argentina-senate-ley-de-ludopatia-online-betting-bill-26-november-advertising-ban\",title:\"Argentina's Online Betting Bill Faces Senate Deadline\",category:\"Market Entry\",excerpt:\"Argentina's Senate will debate the national online betting and gambling addiction bill on 26 November, days before it would lapse.\",author:\"GamblingLawyers.com Editorial Team\",author_slug:\"\",publish_date:\"2026-11-23T11:20:00Z\",related_jurisdictions:[\"argentina\"],related_firms:[\"cms\", \"bird-and-bird\", \"pinheiro-neto-advogados\", \"mattos-filho\"],related_lawyers:[]}",
+  "    {slug:\"brazil-pl-5477-urgency-withdrawn-betting-criminalisation-bill-mp-1394-status\",title:\"Brazil Drops Urgency on Betting Crime Bill PL 5,477\",category:\"Licensing\",excerpt:\"Brazil's government withdrew constitutional urgency for PL 5,477, which would criminalise betting, but the MP 1.394 ban stays in force.\",author:\"GamblingLawyers.com Editorial Team\",author_slug:\"\",publish_date:\"2026-11-23T12:40:00Z\",related_jurisdictions:[\"brazil\"],related_firms:[\"pinheiro-neto-advogados\", \"mattos-filho\", \"machado-meyer\", \"tozzinifreire-advogados\", \"demarest-advogados\"],related_lawyers:[]}"
+ ]
+}
